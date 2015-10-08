@@ -19,7 +19,7 @@ public class ConexionSQLServer {
 
     // Parametros necesarios
     private static final String ipAddress = "localhost"; //nota: localhost= 127.0.0.1
-    private static final String dbName = "taller";
+    private static final String dbName = "liverpool";
     private static final String user = "sa";
     private static final String password = "root";
     private static final String service = "1433";
