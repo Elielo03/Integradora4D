@@ -16,7 +16,7 @@ import java.sql.SQLException;
  * @author PROFESOR
  */
 public class ConexionSQLServer {
-
+//esta esunasdflkjasdlfka
     // Parametros necesarios
     private static final String ipAddress = "localhost"; //nota: localhost= 127.0.0.1
     private static final String dbName = "liverpool";
