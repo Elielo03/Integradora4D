@@ -5,13 +5,23 @@
  */
 package Dao;
 
+import Beans.DepartamentoBean;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
  *
  * @author Eliel David
  */
-public class DepartamentoDao extends DaoAbstract{
+public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
+    
+    
+
+    public DepartamentoDao(Connection con) {
+        super(con);
+    }
 
     @Override
     public List getAll() {
@@ -19,22 +29,27 @@ public class DepartamentoDao extends DaoAbstract{
     }
 
     @Override
-    public Object get(int id) {
+    public DepartamentoBean get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean update(Object bean) {
+    public boolean update(DepartamentoBean bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean delete(Object id) {
+    public boolean delete(DepartamentoBean id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean add(Object bean) {
+    public boolean add(DepartamentoBean bean) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    List<DepartamentoBean> passResultSet(ResultSet res, List<DepartamentoBean> list) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
