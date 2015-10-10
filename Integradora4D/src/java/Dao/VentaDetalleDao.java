@@ -5,37 +5,52 @@
  */
 package Dao;
 
+import Beans.VentaDetalleBean;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
  *
  * @author Eliel David
  */
-public class VentaDetalleDao extends DaoAbstract{
+public class VentaDetalleDao extends DaoAbstract <VentaDetalleBean>{
+
+    public VentaDetalleDao(Connection con) {
+        super(con);
+    }
 
     @Override
-    public List getAll() {
+    List<VentaDetalleBean> passResultSet(ResultSet res, List<VentaDetalleBean> list) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Object get(int id) {
+    public List<VentaDetalleBean> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean update(Object bean) {
+    public VentaDetalleBean get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean delete(Object id) {
+    public boolean update(VentaDetalleBean bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean add(Object bean) {
+    public boolean delete(VentaDetalleBean id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public boolean add(VentaDetalleBean bean) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
     
 }

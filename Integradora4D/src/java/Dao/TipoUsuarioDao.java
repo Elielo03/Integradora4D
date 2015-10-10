@@ -5,37 +5,52 @@
  */
 package Dao;
 
+import Beans.TipoUsuarioBean;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
  *
  * @author Eliel David
  */
-public class TipoUsuarioDao extends DaoAbstract{
+public class TipoUsuarioDao extends DaoAbstract <TipoUsuarioBean>{
+
+    public TipoUsuarioDao(Connection con) {
+        super(con);
+    }
 
     @Override
-    public List getAll() {
+    List<TipoUsuarioBean> passResultSet(ResultSet res, List<TipoUsuarioBean> list) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Object get(int id) {
+    public List<TipoUsuarioBean> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean update(Object bean) {
+    public TipoUsuarioBean get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean delete(Object id) {
+    public boolean update(TipoUsuarioBean bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean add(Object bean) {
+    public boolean delete(TipoUsuarioBean id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public boolean add(TipoUsuarioBean bean) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
     
 }

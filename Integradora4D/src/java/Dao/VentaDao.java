@@ -5,37 +5,52 @@
  */
 package Dao;
 
+import Beans.VentaBean;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
  *
  * @author Eliel David
  */
-public class VentaDao extends DaoAbstract{
+public class VentaDao extends DaoAbstract<VentaBean>{
+
+    public VentaDao(Connection con) {
+        super(con);
+    }
 
     @Override
-    public List getAll() {
+    List<VentaBean> passResultSet(ResultSet res, List<VentaBean> list) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Object get(int id) {
+    public List<VentaBean> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean update(Object bean) {
+    public VentaBean get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean delete(Object id) {
+    public boolean update(VentaBean bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean add(Object bean) {
+    public boolean delete(VentaBean id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public boolean add(VentaBean bean) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
     
 }

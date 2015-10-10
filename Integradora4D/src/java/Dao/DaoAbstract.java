@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 /**
  *
  * @author Eliel David
+ * @param <T>
  */
 public abstract class DaoAbstract<T> implements DAO<T> {
     

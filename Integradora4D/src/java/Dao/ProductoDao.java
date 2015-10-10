@@ -5,37 +5,54 @@
  */
 package Dao;
 
+import Beans.ProductoBean;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
  *
  * @author Eliel David
  */
-public class ProductoDao extends DaoAbstract{
+public class ProductoDao extends DaoAbstract<ProductoBean>{
+    
+    
+
+    public ProductoDao(Connection con) {
+        super(con);
+    }
 
     @Override
-    public List getAll() {
+    List<ProductoBean> passResultSet(ResultSet res, List<ProductoBean> list) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Object get(int id) {
+    public List<ProductoBean> getAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean update(Object bean) {
+    public ProductoBean get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean delete(Object id) {
+    public boolean update(ProductoBean bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean add(Object bean) {
+    public boolean delete(ProductoBean id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public boolean add(ProductoBean bean) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
     
 }
