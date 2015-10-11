@@ -81,10 +81,3 @@ idProducto int,
 constraint pk_idVenta_detalle primary key (idVenta_Detalle),
 constraint fk_Venta_detalle_Venta foreign key (idVenta) references Venta(idVenta),
 constraint fk_Venta_detalle_Producto foreign key (idProducto) references Producto(idProducto))
-
-
-
-
-
-
-
