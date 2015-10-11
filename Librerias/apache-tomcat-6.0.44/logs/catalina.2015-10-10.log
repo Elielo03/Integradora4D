@@ -1,0 +1,200 @@
+oct 10, 2015 8:57:55 PM org.apache.catalina.core.AprLifecycleListener init
+INFORMACIÓN: Cargada la biblioteca nativa APR de Apache Tomcat 1.1.33 con la versión APR 1.5.1.
+oct 10, 2015 8:57:56 PM org.apache.catalina.core.AprLifecycleListener init
+INFORMACIÓN: Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true].
+oct 10, 2015 8:57:57 PM org.apache.catalina.core.AprLifecycleListener initializeSSL
+INFORMACIÓN: OpenSSL inicializado correctamente con versión OpenSSL 1.0.1m 19 Mar 2015
+oct 10, 2015 8:57:58 PM org.apache.coyote.http11.Http11AprProtocol init
+INFORMACIÓN: Inicializando Coyote HTTP/1.1 en puerto http-8080
+oct 10, 2015 8:57:58 PM org.apache.coyote.ajp.AjpAprProtocol init
+INFORMACIÓN: Inicializando Coyote AJP/1.3 en ajp-8009
+oct 10, 2015 8:57:58 PM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 2686 ms
+oct 10, 2015 8:57:58 PM org.apache.catalina.core.StandardService start
+INFORMACIÓN: Arrancando servicio Catalina
+oct 10, 2015 8:57:58 PM org.apache.catalina.core.StandardEngine start
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/6.0.44
+oct 10, 2015 8:57:58 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio docs de la aplicación web
+oct 10, 2015 8:57:58 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio examples de la aplicación web
+oct 10, 2015 8:57:59 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio host-manager de la aplicación web
+oct 10, 2015 8:57:59 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio manager de la aplicación web
+oct 10, 2015 8:57:59 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio ROOT de la aplicación web
+oct 10, 2015 8:58:00 PM org.apache.coyote.http11.Http11AprProtocol start
+INFORMACIÓN: Arrancando Coyote HTTP/1.1 en puerto http-8080
+oct 10, 2015 8:58:00 PM org.apache.coyote.ajp.AjpAprProtocol start
+INFORMACIÓN: Arrancando Coyote AJP/1.3 en ajp-8009
+oct 10, 2015 8:58:00 PM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 2135 ms
+oct 10, 2015 8:58:44 PM org.apache.coyote.http11.Http11AprProtocol pause
+INFORMACIÓN: Pausando Coyote HTTP/1.1 en puerto http-8080
+oct 10, 2015 8:58:44 PM org.apache.coyote.ajp.AjpAprProtocol pause
+INFORMACIÓN: Pausando Coyote AJP/1.3 en ajp-8009
+oct 10, 2015 8:58:45 PM org.apache.catalina.core.StandardService stop
+INFORMACIÓN: Parando servicio Catalina
+oct 10, 2015 8:58:45 PM org.apache.coyote.http11.Http11AprProtocol destroy
+INFORMACIÓN: Parando Coyote HTTP/1.1 en puerto http-8080
+oct 10, 2015 8:58:45 PM org.apache.coyote.ajp.AjpAprProtocol destroy
+INFORMACIÓN: Parando Coyote AJP/1.3 en ajp-8009
+oct 10, 2015 9:00:07 PM org.apache.catalina.core.AprLifecycleListener init
+INFORMACIÓN: Cargada la biblioteca nativa APR de Apache Tomcat 1.1.33 con la versión APR 1.5.1.
+oct 10, 2015 9:00:07 PM org.apache.catalina.core.AprLifecycleListener init
+INFORMACIÓN: Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true].
+oct 10, 2015 9:00:08 PM org.apache.catalina.core.AprLifecycleListener initializeSSL
+INFORMACIÓN: OpenSSL inicializado correctamente con versión OpenSSL 1.0.1m 19 Mar 2015
+oct 10, 2015 9:00:08 PM org.apache.coyote.http11.Http11AprProtocol init
+INFORMACIÓN: Inicializando Coyote HTTP/1.1 en puerto http-8080
+oct 10, 2015 9:00:08 PM org.apache.coyote.ajp.AjpAprProtocol init
+INFORMACIÓN: Inicializando Coyote AJP/1.3 en ajp-8009
+oct 10, 2015 9:00:08 PM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 1257 ms
+oct 10, 2015 9:00:08 PM org.apache.catalina.core.StandardService start
+INFORMACIÓN: Arrancando servicio Catalina
+oct 10, 2015 9:00:08 PM org.apache.catalina.core.StandardEngine start
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/6.0.44
+oct 10, 2015 9:00:08 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración host-manager.xml
+oct 10, 2015 9:00:08 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración manager.xml
+oct 10, 2015 9:00:08 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio docs de la aplicación web
+oct 10, 2015 9:00:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio examples de la aplicación web
+oct 10, 2015 9:00:09 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio ROOT de la aplicación web
+oct 10, 2015 9:00:09 PM org.apache.coyote.http11.Http11AprProtocol start
+INFORMACIÓN: Arrancando Coyote HTTP/1.1 en puerto http-8080
+oct 10, 2015 9:00:09 PM org.apache.coyote.ajp.AjpAprProtocol start
+INFORMACIÓN: Arrancando Coyote AJP/1.3 en ajp-8009
+oct 10, 2015 9:00:09 PM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 1020 ms
+oct 10, 2015 9:24:29 PM org.apache.coyote.http11.Http11AprProtocol pause
+INFORMACIÓN: Pausando Coyote HTTP/1.1 en puerto http-8080
+oct 10, 2015 9:24:30 PM org.apache.coyote.ajp.AjpAprProtocol pause
+INFORMACIÓN: Pausando Coyote AJP/1.3 en ajp-8009
+oct 10, 2015 9:24:31 PM org.apache.catalina.core.StandardService stop
+INFORMACIÓN: Parando servicio Catalina
+oct 10, 2015 9:24:31 PM org.apache.coyote.http11.Http11AprProtocol destroy
+INFORMACIÓN: Parando Coyote HTTP/1.1 en puerto http-8080
+oct 10, 2015 9:24:31 PM org.apache.coyote.ajp.AjpAprProtocol destroy
+INFORMACIÓN: Parando Coyote AJP/1.3 en ajp-8009
+oct 10, 2015 9:25:50 PM org.apache.catalina.core.AprLifecycleListener init
+INFORMACIÓN: Cargada la biblioteca nativa APR de Apache Tomcat 1.1.33 con la versión APR 1.5.1.
+oct 10, 2015 9:25:50 PM org.apache.catalina.core.AprLifecycleListener init
+INFORMACIÓN: Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true].
+oct 10, 2015 9:25:51 PM org.apache.catalina.core.AprLifecycleListener initializeSSL
+INFORMACIÓN: OpenSSL inicializado correctamente con versión OpenSSL 1.0.1m 19 Mar 2015
+oct 10, 2015 9:25:52 PM org.apache.coyote.http11.Http11AprProtocol init
+INFORMACIÓN: Inicializando Coyote HTTP/1.1 en puerto http-8080
+oct 10, 2015 9:25:52 PM org.apache.coyote.ajp.AjpAprProtocol init
+INFORMACIÓN: Inicializando Coyote AJP/1.3 en ajp-8009
+oct 10, 2015 9:25:52 PM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 3181 ms
+oct 10, 2015 9:25:52 PM org.apache.catalina.core.StandardService start
+INFORMACIÓN: Arrancando servicio Catalina
+oct 10, 2015 9:25:52 PM org.apache.catalina.core.StandardEngine start
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/6.0.44
+oct 10, 2015 9:25:52 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración host-manager.xml
+oct 10, 2015 9:25:53 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración manager.xml
+oct 10, 2015 9:25:53 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio docs de la aplicación web
+oct 10, 2015 9:25:53 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio examples de la aplicación web
+oct 10, 2015 9:25:54 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio ROOT de la aplicación web
+oct 10, 2015 9:25:54 PM org.apache.coyote.http11.Http11AprProtocol start
+INFORMACIÓN: Arrancando Coyote HTTP/1.1 en puerto http-8080
+oct 10, 2015 9:25:54 PM org.apache.coyote.ajp.AjpAprProtocol start
+INFORMACIÓN: Arrancando Coyote AJP/1.3 en ajp-8009
+oct 10, 2015 9:25:54 PM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 2003 ms
+oct 10, 2015 9:33:51 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración Integradora4D.xml
+oct 10, 2015 9:33:52 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts-default.xml]
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts-plugin.xml]
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts.xml]
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.ObjectFactory)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.FileManager)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.XWorkConverter)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.TextProvider)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.ActionProxyFactory)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ObjectTypeDeterminer)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.dispatcher.mapper.ActionMapper)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (jakarta) for (org.apache.struts2.dispatcher.multipart.MultiPartRequest)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.views.freemarker.FreemarkerManager)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.components.UrlRenderer)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.validator.ActionValidatorManager)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.ValueStackFactory)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionProvider)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionContextFactory)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.PatternMatcher)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.dispatcher.StaticContentLoader)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.UnknownHandlerManager)
+oct 10, 2015 9:33:53 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.views.util.UrlHelper)
+oct 10, 2015 9:33:54 PM org.apache.catalina.core.StandardContext start
+INFORMACIÓN: Ya ha sido arrancado el Contenedor org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/Integradora4D]
+oct 10, 2015 9:33:58 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: '' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 10, 2015 9:33:59 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: '' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 10, 2015 9:56:36 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: '' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 10, 2015 9:56:36 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: '' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 10, 2015 9:57:50 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: '' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 10, 2015 9:57:50 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: '' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 10, 2015 9:58:42 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: '' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 10, 2015 9:58:42 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: '' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 10, 2015 10:13:04 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: '' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 10, 2015 10:13:04 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: '' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 10, 2015 10:13:06 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: '' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 10, 2015 10:13:06 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: '' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 10, 2015 10:13:07 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: '' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 10, 2015 10:13:07 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: '' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 10, 2015 11:33:58 PM org.apache.coyote.http11.Http11AprProtocol pause
+INFORMACIÓN: Pausando Coyote HTTP/1.1 en puerto http-8080
+oct 10, 2015 11:33:58 PM org.apache.coyote.ajp.AjpAprProtocol pause
+INFORMACIÓN: Pausando Coyote AJP/1.3 en ajp-8009
+oct 10, 2015 11:33:59 PM org.apache.catalina.core.StandardService stop
+INFORMACIÓN: Parando servicio Catalina
+oct 10, 2015 11:34:07 PM org.apache.coyote.http11.Http11AprProtocol destroy
+INFORMACIÓN: Parando Coyote HTTP/1.1 en puerto http-8080
+oct 10, 2015 11:34:08 PM org.apache.coyote.ajp.AjpAprProtocol destroy
+INFORMACIÓN: Parando Coyote AJP/1.3 en ajp-8009

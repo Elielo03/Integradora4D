@@ -14,6 +14,7 @@ public class CategoriaBean {
     private String nombre;
     private int idDepartamento;
     private boolean estado;
+    //
 
     public CategoriaBean() {
     }

@@ -1,0 +1,370 @@
+oct 11, 2015 2:25:59 PM org.apache.catalina.core.AprLifecycleListener init
+INFORMACIÓN: Cargada la biblioteca nativa APR de Apache Tomcat 1.1.33 con la versión APR 1.5.1.
+oct 11, 2015 2:25:59 PM org.apache.catalina.core.AprLifecycleListener init
+INFORMACIÓN: Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true].
+oct 11, 2015 2:26:00 PM org.apache.catalina.core.AprLifecycleListener initializeSSL
+INFORMACIÓN: OpenSSL inicializado correctamente con versión OpenSSL 1.0.1m 19 Mar 2015
+oct 11, 2015 2:26:01 PM org.apache.coyote.http11.Http11AprProtocol init
+INFORMACIÓN: Inicializando Coyote HTTP/1.1 en puerto http-8080
+oct 11, 2015 2:26:01 PM org.apache.coyote.ajp.AjpAprProtocol init
+INFORMACIÓN: Inicializando Coyote AJP/1.3 en ajp-8009
+oct 11, 2015 2:26:01 PM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 1837 ms
+oct 11, 2015 2:26:01 PM org.apache.catalina.core.StandardService start
+INFORMACIÓN: Arrancando servicio Catalina
+oct 11, 2015 2:26:01 PM org.apache.catalina.core.StandardEngine start
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/6.0.44
+oct 11, 2015 2:26:01 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración host-manager.xml
+oct 11, 2015 2:26:01 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración Integradora4D.xml
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts-default.xml]
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts-plugin.xml]
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts.xml]
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.ObjectFactory)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.FileManager)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.XWorkConverter)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.TextProvider)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.ActionProxyFactory)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ObjectTypeDeterminer)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.dispatcher.mapper.ActionMapper)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (jakarta) for (org.apache.struts2.dispatcher.multipart.MultiPartRequest)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.views.freemarker.FreemarkerManager)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.components.UrlRenderer)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.validator.ActionValidatorManager)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.ValueStackFactory)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionProvider)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionContextFactory)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.PatternMatcher)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.dispatcher.StaticContentLoader)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.UnknownHandlerManager)
+oct 11, 2015 2:26:03 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.views.util.UrlHelper)
+oct 11, 2015 2:26:03 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración manager.xml
+oct 11, 2015 2:26:03 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio docs de la aplicación web
+oct 11, 2015 2:26:03 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio examples de la aplicación web
+oct 11, 2015 2:26:04 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio ROOT de la aplicación web
+oct 11, 2015 2:26:04 PM org.apache.coyote.http11.Http11AprProtocol start
+INFORMACIÓN: Arrancando Coyote HTTP/1.1 en puerto http-8080
+oct 11, 2015 2:26:04 PM org.apache.coyote.ajp.AjpAprProtocol start
+INFORMACIÓN: Arrancando Coyote AJP/1.3 en ajp-8009
+oct 11, 2015 2:26:04 PM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 3346 ms
+oct 11, 2015 2:26:26 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 2:26:27 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 2:27:55 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 2:27:55 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 2:30:22 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 2:30:22 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 2:31:23 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 2:31:23 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 2:33:43 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 2:33:43 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 2:49:28 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Integradora4D]
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts-default.xml]
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts-plugin.xml]
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts.xml]
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.ObjectFactory)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.FileManager)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.XWorkConverter)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.TextProvider)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.ActionProxyFactory)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ObjectTypeDeterminer)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.dispatcher.mapper.ActionMapper)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (jakarta) for (org.apache.struts2.dispatcher.multipart.MultiPartRequest)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.views.freemarker.FreemarkerManager)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.components.UrlRenderer)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.validator.ActionValidatorManager)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.ValueStackFactory)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionProvider)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionContextFactory)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.PatternMatcher)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.dispatcher.StaticContentLoader)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.UnknownHandlerManager)
+oct 11, 2015 2:49:30 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.views.util.UrlHelper)
+oct 11, 2015 2:49:32 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 2:49:32 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 2:54:04 PM org.apache.coyote.http11.Http11AprProtocol pause
+INFORMACIÓN: Pausando Coyote HTTP/1.1 en puerto http-8080
+oct 11, 2015 2:54:04 PM org.apache.coyote.ajp.AjpAprProtocol pause
+INFORMACIÓN: Pausando Coyote AJP/1.3 en ajp-8009
+oct 11, 2015 2:54:05 PM org.apache.catalina.core.StandardService stop
+INFORMACIÓN: Parando servicio Catalina
+oct 11, 2015 2:54:05 PM org.apache.coyote.http11.Http11AprProtocol destroy
+INFORMACIÓN: Parando Coyote HTTP/1.1 en puerto http-8080
+oct 11, 2015 2:54:05 PM org.apache.coyote.ajp.AjpAprProtocol destroy
+INFORMACIÓN: Parando Coyote AJP/1.3 en ajp-8009
+oct 11, 2015 2:58:35 PM org.apache.catalina.core.AprLifecycleListener init
+INFORMACIÓN: Cargada la biblioteca nativa APR de Apache Tomcat 1.1.33 con la versión APR 1.5.1.
+oct 11, 2015 2:58:35 PM org.apache.catalina.core.AprLifecycleListener init
+INFORMACIÓN: Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true].
+oct 11, 2015 2:58:35 PM org.apache.catalina.core.AprLifecycleListener initializeSSL
+INFORMACIÓN: OpenSSL inicializado correctamente con versión OpenSSL 1.0.1m 19 Mar 2015
+oct 11, 2015 2:58:36 PM org.apache.coyote.http11.Http11AprProtocol init
+INFORMACIÓN: Inicializando Coyote HTTP/1.1 en puerto http-8080
+oct 11, 2015 2:58:36 PM org.apache.coyote.ajp.AjpAprProtocol init
+INFORMACIÓN: Inicializando Coyote AJP/1.3 en ajp-8009
+oct 11, 2015 2:58:36 PM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 1411 ms
+oct 11, 2015 2:58:36 PM org.apache.catalina.core.StandardService start
+INFORMACIÓN: Arrancando servicio Catalina
+oct 11, 2015 2:58:36 PM org.apache.catalina.core.StandardEngine start
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/6.0.44
+oct 11, 2015 2:58:36 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración host-manager.xml
+oct 11, 2015 2:58:36 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración Integradora4D.xml
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts-default.xml]
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts-plugin.xml]
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts.xml]
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.ObjectFactory)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.FileManager)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.XWorkConverter)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.TextProvider)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.ActionProxyFactory)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ObjectTypeDeterminer)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.dispatcher.mapper.ActionMapper)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (jakarta) for (org.apache.struts2.dispatcher.multipart.MultiPartRequest)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.views.freemarker.FreemarkerManager)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.components.UrlRenderer)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.validator.ActionValidatorManager)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.ValueStackFactory)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionProvider)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionContextFactory)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.PatternMatcher)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.dispatcher.StaticContentLoader)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.UnknownHandlerManager)
+oct 11, 2015 2:58:37 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.views.util.UrlHelper)
+oct 11, 2015 2:58:38 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración manager.xml
+oct 11, 2015 2:58:38 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio docs de la aplicación web
+oct 11, 2015 2:58:38 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio examples de la aplicación web
+oct 11, 2015 2:58:38 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio ROOT de la aplicación web
+oct 11, 2015 2:58:38 PM org.apache.coyote.http11.Http11AprProtocol start
+INFORMACIÓN: Arrancando Coyote HTTP/1.1 en puerto http-8080
+oct 11, 2015 2:58:38 PM org.apache.coyote.ajp.AjpAprProtocol start
+INFORMACIÓN: Arrancando Coyote AJP/1.3 en ajp-8009
+oct 11, 2015 2:58:38 PM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 2609 ms
+oct 11, 2015 3:00:28 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Integradora4D]
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts-default.xml]
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts-plugin.xml]
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts.xml]
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.ObjectFactory)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.FileManager)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.XWorkConverter)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.TextProvider)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.ActionProxyFactory)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ObjectTypeDeterminer)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.dispatcher.mapper.ActionMapper)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (jakarta) for (org.apache.struts2.dispatcher.multipart.MultiPartRequest)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.views.freemarker.FreemarkerManager)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.components.UrlRenderer)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.validator.ActionValidatorManager)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.ValueStackFactory)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionProvider)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionContextFactory)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.PatternMatcher)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.dispatcher.StaticContentLoader)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.UnknownHandlerManager)
+oct 11, 2015 3:00:29 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.views.util.UrlHelper)
+oct 11, 2015 3:00:31 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:03:18 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:03:18 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:04:01 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:04:01 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:04:39 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:04:39 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroProducto' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:13:26 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registrarUsuario' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:13:26 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registrarUsuario' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:14:08 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registrarUsuario' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:14:09 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registrarUsuario' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:14:12 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registrarUsuario' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:14:12 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registrarUsuario' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:14:15 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registrarUsuario' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:14:15 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registrarUsuario' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:26:21 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroPersona' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:26:21 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: Struts has detected a file upload UI tag (s:file) being used without a form set to enctype 'multipart/form-data'. This is probably an error!
+oct 11, 2015 3:26:21 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: Struts has detected a file upload UI tag (s:file) being used without a form set to method 'POST'. This is probably an error!
+oct 11, 2015 3:26:21 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroPersona' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:28:58 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroPersona' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:28:58 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger warn
+ADVERTENCIA: No configuration found for the specified action: 'registroPersona' in namespace: '/Formularios'. Form action defaulting to 'action' attribute's literal value.
+oct 11, 2015 3:29:44 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Integradora4D]
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts-default.xml]
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts-plugin.xml]
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts.xml]
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.ObjectFactory)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.FileManager)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.XWorkConverter)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.TextProvider)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.ActionProxyFactory)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ObjectTypeDeterminer)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.dispatcher.mapper.ActionMapper)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (jakarta) for (org.apache.struts2.dispatcher.multipart.MultiPartRequest)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.views.freemarker.FreemarkerManager)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.components.UrlRenderer)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.validator.ActionValidatorManager)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.ValueStackFactory)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionProvider)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionContextFactory)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.PatternMatcher)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.dispatcher.StaticContentLoader)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.UnknownHandlerManager)
+oct 11, 2015 3:29:45 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.views.util.UrlHelper)
+oct 11, 2015 3:54:05 PM org.apache.coyote.http11.Http11AprProtocol pause
+INFORMACIÓN: Pausando Coyote HTTP/1.1 en puerto http-8080
+oct 11, 2015 3:54:05 PM org.apache.coyote.ajp.AjpAprProtocol pause
+INFORMACIÓN: Pausando Coyote AJP/1.3 en ajp-8009
+oct 11, 2015 3:54:06 PM org.apache.catalina.core.StandardService stop
+INFORMACIÓN: Parando servicio Catalina
+oct 11, 2015 3:54:08 PM org.apache.coyote.http11.Http11AprProtocol destroy
+INFORMACIÓN: Parando Coyote HTTP/1.1 en puerto http-8080
+oct 11, 2015 3:54:09 PM org.apache.coyote.ajp.AjpAprProtocol destroy
+INFORMACIÓN: Parando Coyote AJP/1.3 en ajp-8009

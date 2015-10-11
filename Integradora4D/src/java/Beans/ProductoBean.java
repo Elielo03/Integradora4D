@@ -19,10 +19,10 @@ public class ProductoBean {
     private String stock;
     private double precio_c;
     private double precio_v;
-    private int idMarca;
+    private int idMarca; //se elimino la tabla marca
     private boolean estado;
-    private String idCategoria;
-    private String marca;
+    private String idCategoria;//este debe ser una lista no?
+    private String marca;// ????
     private String imagen;
 
     public ProductoBean() {

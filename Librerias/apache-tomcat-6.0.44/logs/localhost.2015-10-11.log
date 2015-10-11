@@ -1,0 +1,51 @@
+oct 11, 2015 2:26:04 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: ContextListener: contextInitialized()
+oct 11, 2015 2:26:04 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: SessionListener: contextInitialized()
+oct 11, 2015 2:54:05 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: SessionListener: contextDestroyed()
+oct 11, 2015 2:54:05 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: ContextListener: contextDestroyed()
+oct 11, 2015 2:58:38 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: ContextListener: contextInitialized()
+oct 11, 2015 2:58:38 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: SessionListener: contextInitialized()
+oct 11, 2015 3:00:32 PM org.apache.catalina.core.StandardWrapperValve invoke
+GRAVE: Servlet.service() para servlet jsp lanzó excepción
+tag 'combobox', field 'list', name 'idCategoria': You must specify a collection/array/map/enumeration/iterator. Example: people or people.{name} - [unknown location]
+	at org.apache.struts2.components.Component.fieldError(Component.java:240)
+	at org.apache.struts2.components.Component.findValue(Component.java:361)
+	at org.apache.struts2.components.ComboBox.findListValue(ComboBox.java:156)
+	at org.apache.struts2.components.ComboBox.evaluateExtraParams(ComboBox.java:115)
+	at org.apache.struts2.components.UIBean.evaluateParams(UIBean.java:864)
+	at org.apache.struts2.components.UIBean.end(UIBean.java:516)
+	at org.apache.struts2.views.jsp.ComponentTagSupport.doEndTag(ComponentTagSupport.java:42)
+	at org.apache.jsp.Formularios.Producto_jsp._jspx_meth_s_005fcombobox_005f0(Producto_jsp.java:396)
+	at org.apache.jsp.Formularios.Producto_jsp._jspx_meth_s_005fform_005f0(Producto_jsp.java:153)
+	at org.apache.jsp.Formularios.Producto_jsp._jspService(Producto_jsp.java:82)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.struts2.dispatcher.FilterDispatcher.doFilter(FilterDispatcher.java:426)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11AprProcessor.process(Http11AprProcessor.java:879)
+	at org.apache.coyote.http11.Http11AprProtocol$Http11ConnectionHandler.process(Http11AprProtocol.java:617)
+	at org.apache.tomcat.util.net.AprEndpoint$Worker.run(AprEndpoint.java:1778)
+	at java.lang.Thread.run(Thread.java:745)
+
+oct 11, 2015 3:54:07 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: SessionListener: contextDestroyed()
+oct 11, 2015 3:54:07 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: ContextListener: contextDestroyed()
