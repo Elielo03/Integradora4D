@@ -12,8 +12,9 @@ package Beans;
 public class CategoriaBean {
     private int idCategoria;
     private String nombre;
-    private int idDepartamento;
+    
     private boolean estado;
+    private int idDepartamento;
 
     public CategoriaBean() {
     }

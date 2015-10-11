@@ -19,11 +19,12 @@ public class ProductoBean {
     private String stock;
     private double precio_c;
     private double precio_v;
-    private int idMarca;
-    private boolean estado;
+     private boolean estado;
+     private String marca;
+     private String imagen;
     private String idCategoria;
-    private String marca;
-    private String imagen;
+   
+    
 
     public ProductoBean() {
     }
@@ -93,13 +94,7 @@ public class ProductoBean {
     }
 
     
-    public int getIdMarca() {
-        return idMarca;
-    }
-
-    public void setIdMarca(int idMarca) {
-        this.idMarca = idMarca;
-    }
+   
 
     public boolean isEstado() {
         return estado;

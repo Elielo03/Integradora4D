@@ -10,22 +10,15 @@ package Beans;
  * @author Eliel David
  */
 public class VentaDetalleBean {
-    private int idVentaDetalle;
+    private int idVenta_detalle;
     private int cantidad;
-    private double costoVenta;
+    private double costo_venta;
     private int idVenta;
     private int idProducto;
 
     public VentaDetalleBean() {
     }
 
-    public int getIdVentaDetalle() {
-        return idVentaDetalle;
-    }
-
-    public void setIdVentaDetalle(int idVentaDetalle) {
-        this.idVentaDetalle = idVentaDetalle;
-    }
 
     
     public int getCantidad() {
@@ -36,13 +29,23 @@ public class VentaDetalleBean {
         this.cantidad = cantidad;
     }
 
-    public double getCostoVenta() {
-        return costoVenta;
+    public int getIdVenta_detalle() {
+        return idVenta_detalle;
     }
 
-    public void setCostoVenta(double costoVenta) {
-        this.costoVenta = costoVenta;
+    public void setIdVenta_detalle(int idVenta_detalle) {
+        this.idVenta_detalle = idVenta_detalle;
     }
+
+    public double getCosto_venta() {
+        return costo_venta;
+    }
+
+    public void setCosto_venta(double costo_venta) {
+        this.costo_venta = costo_venta;
+    }
+
+    
 
 
     public int getIdVenta() {

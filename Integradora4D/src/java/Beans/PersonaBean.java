@@ -17,12 +17,13 @@ public class PersonaBean {
     private String app;
     private String apm;
     private String direccion;
-    private Date fechaNac;
+    private Date fecha_nac;
     private boolean estado;
-    private int idUsuario;
-    private int idDepartamento;
+    
     private String correoE;
     private String telefono;
+    private int idUsuario;
+    private int idDepartamento;
 
     public PersonaBean() {
     }
@@ -67,13 +68,15 @@ public class PersonaBean {
         this.direccion = direccion;
     }
 
-    public Date getFechaNac() {
-        return fechaNac;
+    public Date getFecha_nac() {
+        return fecha_nac;
     }
 
-    public void setFechaNac(Date fechaNac) {
-        this.fechaNac = fechaNac;
+    public void setFecha_nac(Date fecha_nac) {
+        this.fecha_nac = fecha_nac;
     }
+
+   
 
     public boolean isEstado() {
         return estado;
