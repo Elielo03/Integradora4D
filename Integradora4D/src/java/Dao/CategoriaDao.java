@@ -37,13 +37,19 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
 
     @Override
     public CategoriaBean get(int id) {
-        String query="SELECT * from Categoria where idCtegoria=?;";
+        String query="SELECT * from Categoria where idCtegoria=? ;";
         CategoriaBean categoria = new CategoriaBean();
         
         try {
             PreparedStatement ps =con.prepareStatement(query);
             ps.setInt(1, id);
-          ps.close();
+          ResultSet result=ps.executeQuery();
+          if(result.next()){
+              categoria.setIdCategoria(result.getInt("idCategoria"));
+              categoria.setNombre(result.getString("nombre"));
+              categoria.setEstado(result.getBoolean("estado"));
+              categoria.setIdDepartamento(result.getInt("idDepartamento"));
+          }
         } catch (SQLException ex) {
             Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -54,18 +60,48 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
     }
 
     @Override
-    public boolean update(CategoriaBean bean) {
+    public boolean update(int bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean delete(CategoriaBean id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean delete(int id) {
+        String query ="DELETE FROM Categoria WHERE idCategoria=?;";
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, id);
+            if(ps.executeUpdate()>=1){
+                ps.close();
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return false;
     }
 
     @Override
     public boolean add(CategoriaBean bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       String query = "Insert into Categoria VALUES (?,?,?);";
+       
+        try {
+            PreparedStatement ps =con.prepareStatement(query);
+            ps.setString(1, bean.getNombre());
+            ps.setBoolean(2, bean.isEstado());
+            ps.setInt(2, bean.getIdDepartamento());
+            
+            if(ps.executeUpdate()>=1){
+                ps.close();
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return false;
     }
 
   

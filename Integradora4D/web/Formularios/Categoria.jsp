@@ -16,8 +16,9 @@
         <h1>Categoria</h1>
 
         <s:form action="registroCategoria">         
-            <s:textfield name="nombre" label="Nombre" title="Nombre Departamento" placeholder="Nombre"/>   
-            <%-- <s:combobox name="idDepartamento" label="Combo" list="" readonly="true"/> Error necesita una lista --%>      
+            <s:textfield name="nombre" label="Nombre" title="Nombre" placeholder="Nombre"/>  
+            
+                 
             <s:submit value="Guardar"/>
         </s:form>
     </body>

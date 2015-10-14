@@ -37,12 +37,12 @@ public class UsuarioDao extends DaoAbstract<UsuarioBean>{
     }
 
     @Override
-    public boolean update(UsuarioBean bean) {
+    public boolean update(int bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean delete(UsuarioBean id) {
+    public boolean delete(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
