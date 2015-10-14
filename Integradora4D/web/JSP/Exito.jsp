@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +13,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Prueba</h1>
+        <s:url id="consultaListas" action="llenarLista"/>
+        <s:a href="%{consultaListas}">Registar</s:a>
+        
     </body>
 </html>

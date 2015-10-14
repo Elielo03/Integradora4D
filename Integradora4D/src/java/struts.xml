@@ -6,9 +6,14 @@
    
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
-        <action name="registroCategoria" class="Operaciones.Categoria" method="get">
+        <action name="llenarLista" class="Operaciones.Categoria" method="llenarLista">
             
-            <result name="success">/JSP/Exito.jsp</result>
+            <result name="success">/Registrar/Categoria.jsp</result>
+        </action>
+            
+        <action name="select" class="Operaciones.Categoria" method="llenarListas">
+            
+            <result name="success" type="redirect">llenarLista</result>
         </action>
     </package>
 </struts>
