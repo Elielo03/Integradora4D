@@ -78,3 +78,4 @@ BEGIN
 				Usuario.idTipoUsuario = TipoUsuario.idTipoUsuario; 
 END
 
+EXECUTE InicioSesion 
