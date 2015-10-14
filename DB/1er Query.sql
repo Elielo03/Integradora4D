@@ -39,7 +39,7 @@ CREATE PROCEDURE InsertaPersona
 	@apm varchar(20),
 	@direccion varchar(50),
 	@fecha_nac date,
-	@estado bit,
+	@estado varchar(5),
 	@correoE varchar(30),
 	@telefono varchar(15),
 	@pass varchar(20),
