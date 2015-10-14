@@ -15,5 +15,9 @@
             
             <result name="success" type="redirect">llenarLista</result>
         </action>
+        
+        <action name="addDepartamento" class="Operaciones.Departamento" method="add">
+            <result name="success">/JSP/Exito1.jsp</result>
+        </action>
     </package>
 </struts>

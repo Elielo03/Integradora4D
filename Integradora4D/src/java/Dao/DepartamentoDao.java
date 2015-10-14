@@ -8,6 +8,7 @@ package Dao;
 import Beans.CategoriaBean;
 import Beans.DepartamentoBean;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -50,17 +51,62 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
 
     @Override
     public boolean update(DepartamentoBean bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String query="UPDATE Departamento SET"
+                + "nombre=?,"
+                + "estado=?,"
+                + "descripcion=?;";
+        
+        try {
+            PreparedStatement ps =con.prepareStatement(query);
+            ps.setString(1, bean.getNombre());
+            ps.setBoolean(2, bean.isEstado());
+            ps.setInt(3, bean.getIdDepartamento());
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return false;
     }
 
     @Override
     public boolean delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         String query ="DELETE FROM Departamento WHERE idDepartamento=?;";
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, id);
+            if(ps.executeUpdate()>=1){
+                ps.close();
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return false;
     }
 
     @Override
     public boolean add(DepartamentoBean bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String query = "Insert into Departamento VALUES (?,?,?);";
+       
+        try {
+            PreparedStatement ps =con.prepareStatement(query);
+            ps.setString(1, bean.getNombre());
+             ps.setString(2, bean.getDescripcion());
+            ps.setBoolean(3, bean.isEstado());
+           
+            
+            if(ps.executeUpdate()>=1){
+                ps.close();
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return false;
     }
 
     @Override
