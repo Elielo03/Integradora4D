@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Departamento
-    Created on : 10/10/2015, 08:38:59 PM
+    Document   : Categoria
+    Created on : 11/10/2015, 03:30:33 PM
     Author     : Hermanos Saucedo
 --%>
 
@@ -13,10 +13,12 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Departamento</h1>
-        <s:form action="registroCategoria">         
+        <h1>Categoria</h1>
+
+        <s:form action="addDepartamento">         
             <s:textfield name="nombre" label="Nombre" title="nombre de departamento" placeholder="Nombre"/>   
-            <s:textarea name="descripcion" label="Descripcion" title="descripcion de departamento" placeholder="Descripcion"/>
+            <%-- <s:combobox name="idDepartamento" label="Combo" list="" readonly="true"/> Error necesita una lista --%>    
+            
             <s:submit value="Guardar"/>
         </s:form>
     </body>
