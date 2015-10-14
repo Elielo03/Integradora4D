@@ -95,7 +95,7 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
             PreparedStatement ps =con.prepareStatement(query);
             ps.setString(1, bean.getNombre());
              ps.setString(2, bean.getDescripcion());
-            ps.setBoolean(3, bean.isEstado());
+            ps.setString(3, bean.isEstado()+"");
            
             
             if(ps.executeUpdate()>=1){
