@@ -42,12 +42,16 @@ CREATE PROCEDURE InsertaPersona
 	@estado bit,
 	@correoE varchar(30),
 	@telefono varchar(15),
+	@pass varchar(20),
+	@idTipoUsuario int,
 	@idUsuario int,
 	@idDepartamento int
 AS
 BEGIN
-	INSERT INTO Usuario VALUES ('alansaucedo','alan123', 4); /*Aqui se va a tomar la primera parte del correo y la contraseña, VERIFICAR ESO*/
-	INSERT INTO Persona VALUES (@nombre,@app,@apm,@direccion,@fecha_nac,@estado,@correoE,@telefono,@idUsuario,@idDepartamento);
+	DECLARE @id int;
+	INSERT INTO Usuario VALUES (@correoE,@pass, @idTipoUsuario); /*Aqui se va a tomar la primera parte del correo y la contraseña, VERIFICAR ESO*/
+	SELECT @id=idUsuario FROM Usuario WHERE username = @correoE AND pass = @pass;
+	INSERT INTO Persona VALUES (@nombre,@app,@apm,@direccion,@fecha_nac,@estado,@correoE,@telefono,@id,@idDepartamento);
 END
 
 EXECUTE InsertaPersona 'Alan', 'Saucedo', 'Colin', 'Conocida', '05-07-1989', 1, 'alansaucedo@outlook.com', '777-320-57-89', 3, 0
