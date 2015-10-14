@@ -37,7 +37,7 @@ public class VentaDao extends DaoAbstract<VentaBean>{
     }
 
     @Override
-    public boolean update(int bean) {
+    public boolean update(VentaBean bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

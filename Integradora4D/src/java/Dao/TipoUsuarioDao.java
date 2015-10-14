@@ -37,7 +37,7 @@ public class TipoUsuarioDao extends DaoAbstract <TipoUsuarioBean>{
     }
 
     @Override
-    public boolean update(int bean) {
+    public boolean update(TipoUsuarioBean bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

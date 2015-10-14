@@ -39,7 +39,7 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
     }
 
     @Override
-    public boolean update(int bean) {
+    public boolean update(ProductoBean bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

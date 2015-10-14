@@ -60,8 +60,22 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
     }
 
     @Override
-    public boolean update(int bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean update(CategoriaBean bean) {
+        String query="UPDATE Categoria SET"
+                + "nombre=?,"
+                + "estado=?,"
+                + "idDepartamento=?;";
+        
+        try {
+            PreparedStatement ps =con.prepareStatement(query);
+            ps.setString(1, bean.getNombre());
+            ps.setBoolean(2, bean.isEstado());
+            ps.setInt(3, bean.getIdDepartamento());
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return false;
     }
 
     @Override

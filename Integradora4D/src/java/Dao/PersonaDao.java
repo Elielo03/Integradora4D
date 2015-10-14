@@ -37,7 +37,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean>{
     }
 
     @Override
-    public boolean update(int bean) {
+    public boolean update(PersonaBean bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

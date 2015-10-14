@@ -37,7 +37,7 @@ public class VentaDetalleDao extends DaoAbstract <VentaDetalleBean>{
     }
 
     @Override
-    public boolean update(int bean) {
+    public boolean update(VentaDetalleBean bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

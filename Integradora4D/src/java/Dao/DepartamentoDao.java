@@ -34,7 +34,7 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
     }
 
     @Override
-    public boolean update(int bean) {
+    public boolean update(DepartamentoBean bean) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
