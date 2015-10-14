@@ -25,6 +25,7 @@ public class Departamento  extends ActionSupport{
     
 
     public Departamento() {
+        System.out.println("en el contructor");
         try {
             con=ConexionSQLServer.getConnection();
         } catch (SQLException ex) {
@@ -35,10 +36,8 @@ public class Departamento  extends ActionSupport{
     public String add(){
         DepartamentoDao dao = new DepartamentoDao(con);
         
-        
-        
-        
-        dao.add(departamento);
+       dao.add(departamento);
+       
         
         return SUCCESS;
     }

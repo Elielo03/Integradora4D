@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -89,13 +90,14 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
 
     @Override
     public boolean add(DepartamentoBean bean) {
-        String query = "Insert into Departamento VALUES (?,?,?);";
+        JOptionPane.showMessageDialog(null, "POR AQUI :D");
+        String query = "Insert into Departamento (nombre,descripcion) VALUES (?,?);";
        
         try {
             PreparedStatement ps =con.prepareStatement(query);
             ps.setString(1, bean.getNombre());
              ps.setString(2, bean.getDescripcion());
-            ps.setString(3, bean.isEstado()+"");
+           
            
             
             if(ps.executeUpdate()>=1){

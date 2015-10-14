@@ -15,8 +15,8 @@
     <body>
         <h1>Departamento</h1>
         <s:form action="addDepartamento">         
-            <s:textfield name="nombre" label="Nombre" title="nombre de departamento" placeholder="Nombre"/>   
-            <s:textarea name="descripcion" label="Descripcion" title="descripcion de departamento" placeholder="Descripcion"/>
+            <s:textfield name="departamento.nombre" label="Nombre" title="nombre de departamento" placeholder="Nombre"/>   
+            <s:textarea name="departamento.descripcion" label="Descripcion" title="descripcion de departamento" placeholder="Descripcion"/>
             <s:submit value="Guardar"/>
         </s:form>
     </body>
