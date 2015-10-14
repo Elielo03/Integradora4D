@@ -20,7 +20,7 @@ create table Departamento(
 idDepartamento int identity (0,1),
 nombre varchar(20) not null,
 descripcion varchar(45),
-estado bit not null,
+estado varchar(5) not null,
 constraint pk_idDepartamento primary key (idDepartamento))
 
 create table Persona(
@@ -30,7 +30,7 @@ app varchar(20)not null,
 apm varchar(20),
 direccion varchar(50)not null,
 fecha_nac date,
-estado bit not null,
+estado varchar(5) not null,
 correoE varchar(30) not null,
 telefono varchar(15),
 idUsuario int,
@@ -42,7 +42,7 @@ constraint fk_Persona_Departamento foreign key (idDepartamento) references Depar
 create table Categoria(
 idCategoria int identity(1,1),
 nombre varchar(45) not null,
-estado bit not null,
+estado varchar(5) not null,
 idDepartamento int,
 constraint pk_idCategoria primary key (idCategoria),
 constraint fk_Categoria_Departamento foreign key (idDepartamento) references Departamento(idDepartamento))
@@ -51,7 +51,7 @@ create table Venta(
 idVenta int identity(1,1),
 fecha_compra date not null,
 descripcion varchar(45),
-estado bit not null,
+estado varchar(5) not null,
 idPersona int,
 constraint pk_idVenta primary key (idVenta),
 constraint fk_Venta_Persona foreign key (idPersona) references Persona (idPersona))
@@ -65,7 +65,7 @@ existencias int,
 stock int,
 precio_c MONEY not null,
 precio_v MONEY not null,
-estado bit not null,
+estado varchar(5) not null,
 marca varchar(45) not null,
 imagen varchar(80) not null,
 idCategoria int,
