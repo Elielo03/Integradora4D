@@ -15,7 +15,7 @@
     <body>
         <h1>Categoria</h1>
 
-        <s:form action="addDepartamento">         
+        <s:form action="addCategoria">         
             <s:textfield name="nombre" label="Nombre" title="nombre de departamento" placeholder="Nombre"/>   
             <%-- <s:combobox name="idDepartamento" label="Combo" list="" readonly="true"/> Error necesita una lista --%>    
             
