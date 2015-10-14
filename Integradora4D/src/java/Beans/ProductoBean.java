@@ -19,10 +19,10 @@ public class ProductoBean {
     private String stock;
     private double precio_c;
     private double precio_v;
-    private int idMarca; //se elimino la tabla marca
+  
     private boolean estado;
-    private String idCategoria;//este debe ser una lista no?
-    private String marca;// ????
+    private int idCategoria;
+    private String marca;
     private String imagen;
 
     public ProductoBean() {
@@ -39,6 +39,7 @@ public class ProductoBean {
     public String getNombre() {
         return nombre;
     }
+    
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -93,13 +94,7 @@ public class ProductoBean {
     }
 
     
-    public int getIdMarca() {
-        return idMarca;
-    }
-
-    public void setIdMarca(int idMarca) {
-        this.idMarca = idMarca;
-    }
+  
 
     public boolean isEstado() {
         return estado;
@@ -109,15 +104,17 @@ public class ProductoBean {
         this.estado = estado;
     }
 
-
-
-    public String getIdCategoria() {
+    public int getIdCategoria() {
         return idCategoria;
     }
 
-    public void setIdCategoria(String idCategoria) {
+    public void setIdCategoria(int idCategoria) {
         this.idCategoria = idCategoria;
     }
+
+
+
+   
 
 
 

@@ -7,9 +7,12 @@ package Dao;
 
 import Beans.CategoriaBean;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,14 +25,32 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
     public CategoriaDao(Connection con) {
         super(con);
     }
+    
+    
 
+    
+
+    
    
 
    
 
     @Override
     public CategoriaBean get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String query="SELECT * from Categoria where idCtegoria=?;";
+        CategoriaBean categoria = new CategoriaBean();
+        
+        try {
+            PreparedStatement ps =con.prepareStatement(query);
+            ps.setInt(1, id);
+          ps.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return categoria;
+        
     }
 
     @Override

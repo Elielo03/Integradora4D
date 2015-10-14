@@ -19,8 +19,8 @@ public class PersonaBean {
     private String direccion;
     private Date fechaNac;
     private boolean estado;
-    private int idUsuario;//se supone que son listas no??
-    private int idDepartamento;//??????
+    private int idUsuario;
+    private int idDepartamento;
     private String correoE;
     private String telefono;
 
