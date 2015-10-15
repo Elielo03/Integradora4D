@@ -6,6 +6,7 @@
 package Dao;
 
 import Beans.CategoriaBean;
+import Beans.DepartamentoBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -48,7 +49,7 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
               categoria.setIdCategoria(result.getInt("idCategoria"));
               categoria.setNombre(result.getString("nombre"));
               categoria.setEstado(result.getBoolean("estado"));
-              categoria.setIdDepartamento(result.getInt("idDepartamento"));
+//              categoria.setDepartamento(result.get("departamento"));
           }
         } catch (SQLException ex) {
             Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -64,13 +65,13 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
         String query="UPDATE Categoria SET"
                 + "nombre=?,"
                 + "estado=?,"
-                + "idDepartamento=?;";
+                + "departamento=?;";
         
         try {
             PreparedStatement ps =con.prepareStatement(query);
             ps.setString(1, bean.getNombre());
             ps.setBoolean(2, bean.isEstado());
-            ps.setInt(3, bean.getIdDepartamento());
+            ps.setInt(3,bean.getDepartamento().getIdDepartamento());
         } catch (SQLException ex) {
             Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -106,7 +107,7 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
             ps.setString(1, bean.getNombre());
             
             ps.setBoolean(2, bean.isEstado());
-            ps.setInt(3, bean.getIdDepartamento());
+            ps.setInt(3, bean.getDepartamento().getIdDepartamento());
             
             if(ps.executeUpdate()>=1){
                 ps.close();

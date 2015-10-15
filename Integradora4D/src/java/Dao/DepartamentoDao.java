@@ -90,7 +90,7 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
 
     @Override
     public boolean add(DepartamentoBean bean) {
-        JOptionPane.showMessageDialog(null, "POR AQUI :D");
+        
         String query = "Insert into Departamento (nombre,descripcion) VALUES (?,?);";
        
         try {
@@ -100,7 +100,7 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
            
            
             
-            if(ps.executeUpdate()>=1){
+            if(ps.executeUpdate()==1){
                 ps.close();
                 return true;
             }
