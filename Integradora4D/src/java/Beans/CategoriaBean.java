@@ -12,7 +12,7 @@ package Beans;
 public class CategoriaBean {
     private int idCategoria;
     private String nombre;
-    private int idDepartamento;
+    private DepartamentoBean departamento;
     private boolean estado;
     //
 
@@ -35,13 +35,15 @@ public class CategoriaBean {
         this.nombre = nombre;
     }
 
-    public int getIdDepartamento() {
-        return idDepartamento;
+    public DepartamentoBean getDepartamento() {
+        return departamento;
     }
 
-    public void setIdDepartamento(int idDepartamento) {
-        this.idDepartamento = idDepartamento;
+    public void setDepartamento(DepartamentoBean departamento) {
+        this.departamento = departamento;
     }
+
+    
 
     public boolean isEstado() {
         return estado;
