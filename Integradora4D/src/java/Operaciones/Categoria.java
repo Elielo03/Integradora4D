@@ -47,7 +47,7 @@ public class Categoria extends ActionSupport {
     }
 
     public String llenarLista() {
-        System.out.println("ene l metodo llenar Lista");
+        
         DepartamentoDao daoD = new DepartamentoDao(con);
         departamentos = daoD.getAll();
         

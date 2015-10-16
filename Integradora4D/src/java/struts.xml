@@ -6,17 +6,17 @@
    
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
-         <!--
+         
         <action name="llenarLista" class="Operaciones.Categoria" method="llenarLista">
             
             <result name="success">/Registrar/Categoria.jsp</result>
         </action>
             
-        <action name="select" class="Operaciones.Categoria" method="llenarListas">
+        <action name="addCategoria" class="Operaciones.Categoria" method="llenarListas">
             
             <result name="success" type="redirect">llenarLista</result>
         </action>
-          -->
+          
         
         <action name="addDepartamento" class="Operaciones.Departamento" method="add">
             <result name="success">/JSP/Exito1.jsp</result>
