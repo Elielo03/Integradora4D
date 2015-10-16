@@ -21,24 +21,24 @@ import java.util.logging.Logger;
 public class Departamento  extends ActionSupport{
     Connection con;
     DepartamentoBean departamento= new DepartamentoBean();
-    
+     DepartamentoDao dao;
     
 
     public Departamento() {
+        System.out.println("en el contructor");
         try {
             con=ConexionSQLServer.getConnection();
         } catch (SQLException ex) {
             Logger.getLogger(Departamento.class.getName()).log(Level.SEVERE, null, ex);
         }
+          dao = new DepartamentoDao(con);
     }
     
     public String add(){
-        DepartamentoDao dao = new DepartamentoDao(con);
+       
         
-        
-        
-        
-        dao.add(departamento);
+       dao.add(departamento);
+       
         
         return SUCCESS;
     }
