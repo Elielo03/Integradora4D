@@ -85,3 +85,35 @@ END
 
 EXECUTE InsertaCategoria 'Blancos','true',1
 ---------------------------------------------------------------------------------------------
+/*Cuarto Procedimiento*/
+CREATE PROCEDURE InsertaDepartamento
+	@nombre varchar(20),
+	@descripcion varchar(45),
+	@estado varchar(5)
+AS
+BEGIN
+	INSERT INTO Departamento VALUES (@nombre, @descripcion, @estado);
+END
+
+EXECUTE InsertaDepartamento 'Electronica','Productos electronicos','true'
+------------------------------------------------------------------------------------------------
+/*Quinto Procedimiento*/
+CREATE PROCEDURE InsertaProducto
+	@nombre varchar(40),
+	@codigo varchar(45),
+	@descripcion varchar(50),
+	@existencias int,
+	@stock int,
+	@precio_c MONEY,
+	@precio_v MONEY,
+	@estado varchar(5),
+	@marca varchar(45),
+	@imagen varchar(80),
+	@idCategoria int
+AS
+BEGIN
+	INSERT INTO Producto VALUES (@nombre, @codigo, @descripcion, @existencias, @stock, @precio_c, @precio_v, @estado, @marca, @imagen, @idCategoria);
+END
+
+EXECUTE InsertaProducto 'Refrigerador','REF2015BLA1','Refrigerador GE de 2 Pies',2500,2000,8000,85000,'true','General Electric','http://localhost:8080/etc',1
+-----------------------------------------------------------------------------------------------------

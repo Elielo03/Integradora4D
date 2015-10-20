@@ -3,11 +3,13 @@ go
 use Liverpool
 go
 
+/*No procedure*/
 create table TipoUsuario(
 idTipoUsuario int identity(1,1),
 tipo varchar(20) not null,
 constraint pk_idTipo primary key (idTipoUsuario))
 
+/*Ya esta procedure*/
 create table Usuario(
 idUsuario int identity(1,1),
 username varchar(50)not null,
@@ -16,6 +18,7 @@ idTipoUsuario int,
 constraint pk_idUsuario primary key (idUsuario),
 constraint fk_Usuario_Tipo foreign key (idTipoUsuario) references TipoUsuario(idTipoUsuario))
 
+/*Ya esta procedure*/
 create table Departamento(
 idDepartamento int identity (0,1),
 nombre varchar(20) not null,
@@ -23,6 +26,7 @@ descripcion varchar(45),
 estado varchar(5) default ('true'),
 constraint pk_idDepartamento primary key (idDepartamento))
 
+/*Ya esta procedure*/
 create table Persona(
 idPersona int identity(1,1),
 nombre varchar(20)not null,
@@ -39,6 +43,7 @@ constraint pk_idPersona primary key (idPersona),
 constraint fk_persona_Usuario foreign key (idUsuario) references Usuario(idUsuario),
 constraint fk_Persona_Departamento foreign key (idDepartamento) references Departamento(idDepartamento))
 
+/*Ya esta procedure*/
 create table Categoria(
 idCategoria int identity(1,1),
 nombre varchar(45) not null,
@@ -56,6 +61,7 @@ idPersona int,
 constraint pk_idVenta primary key (idVenta),
 constraint fk_Venta_Persona foreign key (idPersona) references Persona (idPersona))
 
+/*Ya esta procedure*/
 create table Producto(
 idProducto int identity(1,1),
 nombre varchar(40) not null,
