@@ -31,7 +31,7 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
 
     @Override
     public List<DepartamentoBean> getAll() {
-        System.out.println("en el dao");
+        
         List<DepartamentoBean> lista= new ArrayList<>();
         
         String query="SELECT * From Departamento;";
@@ -47,7 +47,24 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
 
     @Override
     public DepartamentoBean get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String query="SELECT * FROM Departamento where idDepartamento =?;";
+        
+        DepartamentoBean bean = new DepartamentoBean();
+        try {
+            PreparedStatement ps =con.prepareStatement(query);
+            ps.setInt(1, id);
+            ResultSet result = ps.executeQuery();
+            while(result.next()){
+                bean.setIdDepartamento(result.getInt("idDepartamento"));
+                bean.setNombre(result.getString("nombre"));
+                bean.setDescripcion(result.getString("descripcion"));
+                bean.setEstado(result.getBoolean("estado"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DepartamentoDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return bean;
     }
 
     @Override

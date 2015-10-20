@@ -10,12 +10,14 @@
         <action name="llenarLista" class="Operaciones.Categoria" method="llenarLista">
             
             <result name="success">/Registrar/Categoria.jsp</result>
+           
+        </action>
+        <action name="addCategoria" class="Operaciones.Categoria" method="add">
+            <result name="success">/JSP/Exito1.jsp</result>
         </action>
             
-        <action name="addCategoria" class="Operaciones.Categoria" method="llenarListas">
-            
-            <result name="success" type="redirect">llenarLista</result>
-        </action>
+          
+        
           
         
         <action name="addDepartamento" class="Operaciones.Departamento" method="add">

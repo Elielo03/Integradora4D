@@ -14,8 +14,11 @@
     </head>
     <body>
         <h1>Prueba</h1>
-        <s:url id="consultaListas" action="llenarLista"/>
-        <s:a href="%{consultaListas}">Registar</s:a>
+        <s:form action="llenarLista">
+            
+            
+            <s:submit value="Aceptar"></s:submit>
+        </s:form>
         
     </body>
 </html>

@@ -29,7 +29,7 @@ public class Departamento  extends ActionSupport{
     }
 
     public Departamento() {
-        System.out.println("en el contructor");
+       
         try {
             con=ConexionSQLServer.getConnection();
         } catch (SQLException ex) {

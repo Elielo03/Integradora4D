@@ -100,14 +100,15 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
 
     @Override
     public boolean add(CategoriaBean bean) {
-       String query = "Insert into Categoria VALUES (?,?,?);";
+        System.out.println("en el dao de categorias addd");
+       String query = "Insert into Categoria(nombre,idDepartamento) VALUES (?,?);";
        
         try {
             PreparedStatement ps =con.prepareStatement(query);
             ps.setString(1, bean.getNombre());
             
-            ps.setBoolean(2, bean.isEstado());
-            ps.setInt(3, bean.getDepartamento().getIdDepartamento());
+           
+            ps.setInt(2, bean.getDepartamento().getIdDepartamento());
             
             if(ps.executeUpdate()>=1){
                 ps.close();

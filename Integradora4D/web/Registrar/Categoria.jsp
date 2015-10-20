@@ -15,10 +15,10 @@
     <body>
         <h1>Categoria</h1>
 
-        <s:form action="registroCategoria">         
-            <s:textfield name="nombre" label="Nombre" title="Nombre" placeholder="Nombre"/>  
-            <s:select name="departamentos" label="Selecciona un departamento" list="departamentos"
-                      listValue="idDepartamento" listKey="idDepartamento"></s:select>
+        <s:form action="addCategoria">         
+            <s:textfield name="categoria.nombre" label="Nombre" title="Nombre" placeholder="Nombre"/>  
+             <s:select name="idDepartamento" label="selecciona un depto" list="departamentos" listValue="nombre"
+                       listKey="idDepartamento"></s:select> 
                  
             <s:submit value="Guardar"/>
         </s:form>

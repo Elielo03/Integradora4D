@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,9 +25,10 @@ import java.util.logging.Logger;
  */
 public class Categoria extends ActionSupport {
 
-    List<CategoriaBean> categorias = new ArrayList<>();
     CategoriaBean categoria = new CategoriaBean();
+   
     List<DepartamentoBean> departamentos = new ArrayList<>();
+    String idDepartamento;
 
     Connection con;
 
@@ -38,36 +40,28 @@ public class Categoria extends ActionSupport {
         }
     }
 
-    public String get() {
+    public String add() {
+        
+        JOptionPane.showMessageDialog(null, idDepartamento);
+        
+        DepartamentoDao daoDepartamento = new DepartamentoDao(con);
+        DepartamentoBean beanDepartamento= new DepartamentoBean();
+       beanDepartamento=daoDepartamento.get(Integer.parseInt(idDepartamento) );
+       categoria.setDepartamento(beanDepartamento);
+       
+        CategoriaDao categoriaDao= new CategoriaDao(con);
+        if(categoriaDao.add(categoria))
+            return SUCCESS;
+       else
+        return ERROR;
 
-        CategoriaDao daoC = new CategoriaDao(con);
-        categorias = daoC.getAll();
-
-        return SUCCESS;
     }
 
     public String llenarLista() {
-        
         DepartamentoDao daoD = new DepartamentoDao(con);
         departamentos = daoD.getAll();
-        
+
         return SUCCESS;
-    }
-
-    public List<CategoriaBean> getCategorias() {
-        return categorias;
-    }
-
-    public void setCategorias(List<CategoriaBean> categorias) {
-        this.categorias = categorias;
-    }
-
-    public Connection getCon() {
-        return con;
-    }
-
-    public void setCon(Connection con) {
-        this.con = con;
     }
 
     public CategoriaBean getCategoria() {
@@ -85,5 +79,15 @@ public class Categoria extends ActionSupport {
     public void setDepartamentos(List<DepartamentoBean> departamentos) {
         this.departamentos = departamentos;
     }
+
+    public String getIdDepartamento() {
+        return idDepartamento;
+    }
+
+    public void setIdDepartamento(String idDepartamento) {
+        this.idDepartamento = idDepartamento;
+    }
+
+    
 
 }

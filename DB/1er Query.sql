@@ -55,3 +55,27 @@ BEGIN
 END
 
 EXECUTE InsertaPersona 'Alan', 'Saucedo', 'Colin', 'Conocida', '05-07-1989', 1, 'alansaucedo@outlook.com', '777-320-57-89', 3, 0
+
+CREATE PROCEDURE IncioSesion
+	@username varchar(20),
+	@pass varchar(20),
+	@nombre varchar(20) OUTPUT,
+	@app varchar(20) OUTPUT,
+	@apm varchar(20) OUTPUT,
+	@direccion varchar(50) OUTPUT,
+	@fecha_nac date OUTPUT,
+	@estado varchar(5) OUTPUT,
+	@correoE varchar(30) OUTPUT,
+	@telefono varchar(15) OUTPUT,
+	@idTipoUsuario int OUTPUT
+AS
+BEGIN
+	DECLARE @id int;
+	SELECT @id = idUsuario FROM Usuario WHERE username = @username AND pass = @pass;
+	SELECT @nombre = nombre, @app = app, @apm = apm, @direccion = direccion, @fecha_nac = fecha_nac,
+		@estado = estado, @correoE = correoE, @telefono = telefono, @idTipoUsuario = idTipoUsuario FROM
+			Persona JOIN Usuario ON Persona.idUsuario = Usuario.idUsuario JOIN TipoUsuario ON 
+				Usuario.idTipoUsuario = TipoUsuario.idTipoUsuario; 
+END
+
+EXECUTE InicioSesion 
