@@ -10,7 +10,7 @@ constraint pk_idTipo primary key (idTipoUsuario))
 
 create table Usuario(
 idUsuario int identity(1,1),
-username varchar(20)not null,
+username varchar(50)not null,
 pass varchar(20)not null,
 idTipoUsuario int,
 constraint pk_idUsuario primary key (idUsuario),
@@ -31,7 +31,7 @@ apm varchar(20),
 direccion varchar(50)not null,
 fecha_nac date,
 estado varchar(5) default ('true'),
-correoE varchar(30) not null,
+correoE varchar(50) not null,
 telefono varchar(15),
 idUsuario int,
 idDepartamento int,

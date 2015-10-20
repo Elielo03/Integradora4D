@@ -13,8 +13,8 @@ INSERT INTO Departamento VALUES ('Clintes', 'Clientes', 1)
 INSERT INTO Departamento VALUES ('Electronicos', 'Depto. Electronica', 1)
 
 /*Insert en Persona*/
-INSERT INTO Persona VALUES ('Francisco Javier', 'Juan', 'Amador', 'Calle Gavilan #14', '03-04-1990', 1, 'xavier_fjuan@outlook.com', '777-339-69-30', 1, null)
-INSERT INTO Persona VALUES ('Eliel David', 'Rodriguez', null, 'Conocida', '02-08-1992', 1, 'eliel_david@outlook.com', '777-123-45-67', 2, 0)
+INSERT INTO Persona VALUES ('Francisco Javier', 'Juan', 'Amador', 'Calle Gavilan #14', '03-04-1990', 'true', 'xavier_fjuan@outlook.com', '777-339-69-30', 1, null)
+INSERT INTO Persona VALUES ('Eliel David', 'Rodriguez', null, 'Conocida', '02-08-1992', 'true', 'eliel_david@outlook.com', '777-123-45-67', 2, 0)
 
 /*Insert en Categoria*/
 INSERT INTO Categoria VALUES('Blancos', 1, 1)
@@ -39,43 +39,37 @@ CREATE PROCEDURE InsertaPersona
 	@apm varchar(20),
 	@direccion varchar(50),
 	@fecha_nac date,
-	@estado varchar(5),
 	@correoE varchar(30),
 	@telefono varchar(15),
 	@pass varchar(20),
 	@idTipoUsuario int,
-	@idUsuario int,
 	@idDepartamento int
 AS
 BEGIN
 	DECLARE @id int;
-	INSERT INTO Usuario VALUES (@correoE,@pass, @idTipoUsuario); /*Aqui se va a tomar la primera parte del correo y la contraseña, VERIFICAR ESO*/
+	INSERT INTO Usuario VALUES (@correoE, @pass, @idTipoUsuario); /*Aqui se va a tomar la primera parte del correo y la contraseña, VERIFICAR ESO*/
 	SELECT @id=idUsuario FROM Usuario WHERE username = @correoE AND pass = @pass;
-	INSERT INTO Persona VALUES (@nombre,@app,@apm,@direccion,@fecha_nac,@estado,@correoE,@telefono,@id,@idDepartamento);
+	INSERT INTO Persona VALUES (@nombre,@app,@apm,@direccion,@fecha_nac,'true',@correoE,@telefono,@id,@idDepartamento);
 END
 
-EXECUTE InsertaPersona 'Alan', 'Saucedo', 'Colin', 'Conocida', '05-07-1989', 1, 'alansaucedo@outlook.com', '777-320-57-89', 3, 0
+EXECUTE InsertaPersona 'Alan', 'Saucedo', 'Colin', 'Conocida', '05-07-1989', 'alansaucedo@outlook.com', '777-320-57-89','AlanColin2',4,0
 
 CREATE PROCEDURE IncioSesion
 	@username varchar(20),
-	@pass varchar(20),
-	@nombre varchar(20) OUTPUT,
-	@app varchar(20) OUTPUT,
-	@apm varchar(20) OUTPUT,
-	@direccion varchar(50) OUTPUT,
-	@fecha_nac date OUTPUT,
-	@estado varchar(5) OUTPUT,
-	@correoE varchar(30) OUTPUT,
-	@telefono varchar(15) OUTPUT,
-	@idTipoUsuario int OUTPUT
+	@pass varchar(20)
 AS
 BEGIN
-	DECLARE @id int;
-	SELECT @id = idUsuario FROM Usuario WHERE username = @username AND pass = @pass;
-	SELECT @nombre = nombre, @app = app, @apm = apm, @direccion = direccion, @fecha_nac = fecha_nac,
-		@estado = estado, @correoE = correoE, @telefono = telefono, @idTipoUsuario = idTipoUsuario FROM
-			Persona JOIN Usuario ON Persona.idUsuario = Usuario.idUsuario JOIN TipoUsuario ON 
-				Usuario.idTipoUsuario = TipoUsuario.idTipoUsuario; 
+	DECLARE @resul varchar(5);
+	SELECT idUsuario FROM Usuario WHERE username = @username AND pass = @pass;
+	IF @@ROWCOUNT == 1
+	BEGIN
+		@resul = 'true'
+	END
+	ELSE
+	BEGIN
+		@resul = 'false'
+	END
+
 END
 
 EXECUTE InicioSesion 
