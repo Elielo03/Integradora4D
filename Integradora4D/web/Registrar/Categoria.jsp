@@ -17,8 +17,10 @@
 
         <s:form action="addCategoria">         
             <s:textfield name="categoria.nombre" label="Nombre" title="Nombre" placeholder="Nombre"/>  
-             <s:select name="idDepartamentos" label="selecciona un depto" list="departamentos" listValue="nombre"
-                       listKey="idDepartamento"></s:select> 
+            
+            
+            <s:select name="idDepartamentos" label="Selecciona un dpto" list="departamentos" listValue="nombre"
+                      listKey="idDepartamento"></s:select>
                  
             <s:submit value="Guardar"/>
         </s:form>
