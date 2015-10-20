@@ -117,3 +117,21 @@ END
 
 EXECUTE InsertaProducto 'Refrigerador','REF2015BLA1','Refrigerador GE de 2 Pies',2500,2000,8000,85000,'true','General Electric','http://localhost:8080/etc',1
 -----------------------------------------------------------------------------------------------------
+/*Secto Procedimiento*/
+CREATE PROCEDURE InsertaVenta
+	@fecha_compra DATE,
+	@descripcion varchar(45),
+	@estado varchar(5),
+	@idPersona int,
+	@cantidad int,
+	@costo_venta money,
+	@idProducto int
+AS
+BEGIN
+	DECLARE @idVenta int;
+	INSERT INTO Venta VALUES (@fecha_compra,@descripcion,@estado,@idPersona);
+	SELECT @idVenta = idVenta FROM Venta WHERE idPersona = @idPersona;
+	INSERT INTO Venta_detalle VALUES (@cantidad, @costo_venta, @idVenta, @idProducto);
+END
+
+EXECUTE InsertaVenta '30-10-2015','Compra tarjeta BANAMEX','true',1,1,8500,1
