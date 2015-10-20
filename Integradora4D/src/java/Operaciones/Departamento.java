@@ -21,6 +21,7 @@ import java.util.logging.Logger;
 public class Departamento  extends ActionSupport{
     Connection con;
     DepartamentoBean departamento= new DepartamentoBean();
+  
      
     
 

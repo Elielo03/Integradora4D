@@ -28,7 +28,7 @@ public class Categoria extends ActionSupport {
     CategoriaBean categoria = new CategoriaBean();
    
     List<DepartamentoBean> departamentos = new ArrayList<>();
-    String idDepartamento;
+    String idDepartamentos;
 
     Connection con;
 
@@ -42,11 +42,11 @@ public class Categoria extends ActionSupport {
 
     public String add() {
         
-        JOptionPane.showMessageDialog(null, idDepartamento);
+        
         
         DepartamentoDao daoDepartamento = new DepartamentoDao(con);
         DepartamentoBean beanDepartamento= new DepartamentoBean();
-       beanDepartamento=daoDepartamento.get(Integer.parseInt(idDepartamento) );
+       beanDepartamento=daoDepartamento.get(Integer.parseInt(idDepartamentos) );
        categoria.setDepartamento(beanDepartamento);
        
         CategoriaDao categoriaDao= new CategoriaDao(con);
@@ -80,13 +80,15 @@ public class Categoria extends ActionSupport {
         this.departamentos = departamentos;
     }
 
-    public String getIdDepartamento() {
-        return idDepartamento;
+    public String getIdDepartamentos() {
+        return idDepartamentos;
     }
 
-    public void setIdDepartamento(String idDepartamento) {
-        this.idDepartamento = idDepartamento;
+    public void setIdDepartamentos(String idDepartamentos) {
+        this.idDepartamentos = idDepartamentos;
     }
+
+   
 
     
 
