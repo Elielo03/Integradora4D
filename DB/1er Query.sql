@@ -30,9 +30,8 @@ INSERT INTO Venta_detalle VALUES (1, 7000, 1, 1)
 
 /*Select de prueba, no importante*/
 SELECT producto.nombre, cantidad, costo_venta FROM Venta_detalle, Producto WHERE Venta_detalle.idProducto = Producto.idProducto;
-
+------------------------------------------------------------------------------------------------------------------------------------
 /*Primer procedimiento*/
-
 CREATE PROCEDURE InsertaPersona
 	@nombre varchar(20),
 	@app varchar(20),
@@ -53,23 +52,36 @@ BEGIN
 END
 
 EXECUTE InsertaPersona 'Alan', 'Saucedo', 'Colin', 'Conocida', '05-07-1989', 'alansaucedo@outlook.com', '777-320-57-89','AlanColin2',4,0
-
+-----------------------------------------------------------------------------------------------------------------------------------------
+/*Segundo Procedimiento*/
 CREATE PROCEDURE IncioSesion
 	@username varchar(20),
-	@pass varchar(20)
+	@pass varchar(20),
+	@resul varchar(5) output
 AS
 BEGIN
-	DECLARE @resul varchar(5);
 	SELECT idUsuario FROM Usuario WHERE username = @username AND pass = @pass;
 	IF @@ROWCOUNT == 1
 	BEGIN
-		@resul = 'true'
+		set @resul = 'true'
 	END
 	ELSE
 	BEGIN
-		@resul = 'false'
+		set @resul = 'false'
 	END
-
 END
 
-EXECUTE InicioSesion 
+EXECUTE InicioSesion 'xavier_fjuan@outlook.com', 'JavierJuan1', @resul
+-----------------------------------------------------------------------------------------------------------------------------------------
+/*Tercer Procedimiento*/
+CREATE PROCEDURE InsertaCategoria
+	@nombre varchar(45),
+	@estado varchar(5),
+	@idDepartamento int
+AS
+BEGIN
+	INSERT INTO Categoria VALUES (@nombre, @estado, @idDepartamento);
+END
+
+EXECUTE InsertaCategoria 'Blancos','true',1
+---------------------------------------------------------------------------------------------
