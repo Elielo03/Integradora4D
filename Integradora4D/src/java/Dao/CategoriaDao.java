@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -125,12 +126,39 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
 
     @Override
     public List<CategoriaBean> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<CategoriaBean> lista = new ArrayList<>();
+        String query = "Select * from Categoria ORDER BY  idCategoria;";
+        
+        ResultSet result=executeQuery(query);
+        
+        try {
+            lista=passResultSet(result, lista);
+                    
+                    
+                    } catch (SQLException ex) {
+            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return lista;
     }
     
       @Override
     List<CategoriaBean> passResultSet(ResultSet res, List<CategoriaBean> list) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       while(res.next()){
+           CategoriaBean bean = new CategoriaBean();
+           
+             bean.setIdCategoria(res.getInt("idCategoria"));
+            bean.setNombre(res.getString("nombre"));
+           
+            bean.setEstado(res.getBoolean("estado"));
+            
+            DepartamentoBean departamento = new DepartamentoDao(con).get(res.getInt("idDepartamento"));
+            bean.setDepartamento(departamento);
+            
+            list.add(bean);
+       }
+       return list;
     }
     
 }

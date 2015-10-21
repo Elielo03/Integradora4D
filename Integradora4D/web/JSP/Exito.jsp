@@ -13,8 +13,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Prueba</h1>
+        <h1>AddCategoria</h1>
         <s:form action="llenarLista">
+            
+            
+            <s:submit value="Aceptar"></s:submit>
+        </s:form>
+        <h1>Llenas Categoria</h1>
+        <s:form action="readCategoria">
             
             
             <s:submit value="Aceptar"></s:submit>

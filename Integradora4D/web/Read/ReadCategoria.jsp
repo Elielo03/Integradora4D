@@ -22,12 +22,12 @@
                 <td>Estado</td>
                 <td>Departamento</td>
             </tr>
-        <s:iterator>
+            <s:iterator value="categorias">
             <tr>
                 <td><s:property value="idCategoria"></s:property></td>
                 <td><s:property value="nombre"></s:property></td>
                 <td><s:property value="estado"></s:property></td>
-                <td><s:property value="idDepartamento"></s:property></td>
+                <td><s:property value="departamento.nombre"></s:property></td>
                 <td></td>
                 
             </tr>

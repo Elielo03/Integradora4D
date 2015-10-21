@@ -16,7 +16,9 @@
             <result name="success">/JSP/Exito1.jsp</result>
         </action>
             
-          
+        <action name="readCategoria" class="Operaciones.Categoria" method="llenarLista">
+            <result name="success">/Read/ReadCategoria.jsp</result>
+        </action>
         
           
         
