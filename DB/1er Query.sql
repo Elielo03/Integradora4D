@@ -54,26 +54,6 @@ END
 EXECUTE InsertaPersona 'Alan', 'Saucedo', 'Colin', 'Conocida', '05-07-1989', 'alansaucedo@outlook.com', '777-320-57-89','AlanColin2',4,0
 -----------------------------------------------------------------------------------------------------------------------------------------
 /*Segundo Procedimiento*/
-CREATE PROCEDURE IncioSesion
-	@username varchar(20),
-	@pass varchar(20),
-	@resul varchar(5) output
-AS
-BEGIN
-	SELECT idUsuario FROM Usuario WHERE username = @username AND pass = @pass;
-	IF @@ROWCOUNT == 1
-	BEGIN
-		set @resul = 'true'
-	END
-	ELSE
-	BEGIN
-		set @resul = 'false'
-	END
-END
-
-EXECUTE InicioSesion 'xavier_fjuan@outlook.com', 'JavierJuan1', @resul
------------------------------------------------------------------------------------------------------------------------------------------
-/*Tercer Procedimiento*/
 CREATE PROCEDURE InsertaCategoria
 	@nombre varchar(45),
 	@estado varchar(5),
@@ -85,7 +65,7 @@ END
 
 EXECUTE InsertaCategoria 'Blancos','true',1
 ---------------------------------------------------------------------------------------------
-/*Cuarto Procedimiento*/
+/*Tercero Procedimiento*/
 CREATE PROCEDURE InsertaDepartamento
 	@nombre varchar(20),
 	@descripcion varchar(45),
@@ -97,7 +77,7 @@ END
 
 EXECUTE InsertaDepartamento 'Electronica','Productos electronicos','true'
 ------------------------------------------------------------------------------------------------
-/*Quinto Procedimiento*/
+/*Cuarto Procedimiento*/
 CREATE PROCEDURE InsertaProducto
 	@nombre varchar(40),
 	@codigo varchar(45),
@@ -117,7 +97,7 @@ END
 
 EXECUTE InsertaProducto 'Refrigerador','REF2015BLA1','Refrigerador GE de 2 Pies',2500,2000,8000,85000,'true','General Electric','http://localhost:8080/etc',1
 -----------------------------------------------------------------------------------------------------
-/*Secto Procedimiento*/
+/*Quinto Procedimiento*/
 CREATE PROCEDURE InsertaVenta
 	@fecha_compra DATE,
 	@descripcion varchar(45),
