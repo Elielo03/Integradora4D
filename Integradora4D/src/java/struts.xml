@@ -38,5 +38,14 @@
         <action name="addDepartamento" class="Operaciones.Departamento" method="add">
             <result name="success">/JSP/Exito1.jsp</result>
         </action>
+        
+        
+        <action name="readProducto" class="Operaciones.Producto" method="llenarLista">
+            
+            <result name="success">/Read/ReadProducto.jsp</result>
+        </action>
+        
+        
+        
     </package>
 </struts>

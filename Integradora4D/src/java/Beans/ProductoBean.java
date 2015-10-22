@@ -15,13 +15,13 @@ public class ProductoBean {
     private String nombre;
     private String codigo;
     private String descripcion;
-    private String existencias;
-    private String stock;
+    private int existencias;
+    private int stock;
     private double precio_c;
     private double precio_v;
   
     private boolean estado;
-    private int idCategoria;
+    private CategoriaBean categoria;
     private String marca;
     private String imagen;
 
@@ -61,21 +61,23 @@ public class ProductoBean {
         this.descripcion = descripcion;
     }
 
-    public String getExistencias() {
+    public int getExistencias() {
         return existencias;
     }
 
-    public void setExistencias(String existencias) {
+    public void setExistencias(int existencias) {
         this.existencias = existencias;
     }
 
-    public String getStock() {
+    public int getStock() {
         return stock;
     }
 
-    public void setStock(String stock) {
+    public void setStock(int stock) {
         this.stock = stock;
     }
+
+    
 
     public double getPrecio_c() {
         return precio_c;
@@ -104,13 +106,15 @@ public class ProductoBean {
         this.estado = estado;
     }
 
-    public int getIdCategoria() {
-        return idCategoria;
+    public CategoriaBean getCategoria() {
+        return categoria;
     }
 
-    public void setIdCategoria(int idCategoria) {
-        this.idCategoria = idCategoria;
+    public void setCategoria(CategoriaBean categoria) {
+        this.categoria = categoria;
     }
+
+    
 
 
 

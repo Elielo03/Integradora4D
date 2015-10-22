@@ -39,7 +39,7 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
 
     @Override
     public CategoriaBean get(int id) {
-        String query="SELECT * from Categoria where idCtegoria=? ;";
+        String query="SELECT * from Categoria where idCategoria=?;";
         CategoriaBean categoria = new CategoriaBean();
         
         try {
