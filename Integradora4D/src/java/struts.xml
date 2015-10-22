@@ -20,7 +20,10 @@
         <action name="LlenarPersona" class="Operaciones.Persona" method="LlenarLista">
             <result name="success">/Read/ReadPersona.jsp</result>     
         </action>
-         
+        
+        
+        
+          <!-- Categoria -->
         <action name="llenarLista" class="Operaciones.Categoria" method="llenarLista">       
             <result name="success">/Registrar/Categoria.jsp</result>        
         </action>
@@ -32,7 +35,15 @@
         <action name="readCategoria" class="Operaciones.Categoria" method="llenarLista">
             <result name="success">/Read/ReadCategoria.jsp</result>
         </action>
-        
+        <action name="update" class="Operaciones.Categoria" method="llenarLista" >
+            <result name="success">/Update/UpdateCategoria.jsp</result>
+        </action>
+        <action name="updateCategoria" class="Operaciones.Categoria" method="update">
+            <result name="success">/Read/ReadCategoria.jsp</result>
+        </action>
+        <!-- Categoria -->
+          
+          
           
         
         <action name="addDepartamento" class="Operaciones.Departamento" method="add">

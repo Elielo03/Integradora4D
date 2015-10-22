@@ -21,6 +21,8 @@
                 <td>Nombre</td>
                 <td>Estado</td>
                 <td>Departamento</td>
+                <td>Actualizar</td>
+                <td>Eliminar</td>
             </tr>
             <s:iterator value="categorias">
             <tr>
@@ -28,8 +30,12 @@
                 <td><s:property value="nombre"></s:property></td>
                 <td><s:property value="estado"></s:property></td>
                 <td><s:property value="departamento.nombre"></s:property></td>
-                <td></td>
-                
+                <td>  <s:form action="update">
+                        <s:hidden name="idCategoria"></s:hidden>
+                        <s:submit value="Actualizar"></s:submit>
+                    </s:form>
+                </td>
+                <td>Eliminar</td>
             </tr>
             
             

@@ -42,6 +42,7 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
         String query="SELECT * from Categoria where idCategoria=?;";
         CategoriaBean categoria = new CategoriaBean();
         
+        
         try {
             PreparedStatement ps =con.prepareStatement(query);
             ps.setInt(1, id);
@@ -50,7 +51,8 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
               categoria.setIdCategoria(result.getInt("idCategoria"));
               categoria.setNombre(result.getString("nombre"));
               categoria.setEstado(result.getBoolean("estado"));
-//              categoria.setDepartamento(result.get("departamento"));
+               DepartamentoBean departamento = new DepartamentoDao(con).get(result.getInt("idDepartamento"));
+            categoria.setDepartamento(departamento);
           }
         } catch (SQLException ex) {
             Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -64,15 +66,17 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
     @Override
     public boolean update(CategoriaBean bean) {
         String query="UPDATE Categoria SET"
+                + "idCategoria=?"
                 + "nombre=?,"
                 + "estado=?,"
-                + "departamento=?;";
+                + "idDepartamento=?;";
         
         try {
             PreparedStatement ps =con.prepareStatement(query);
-            ps.setString(1, bean.getNombre());
-            ps.setBoolean(2, bean.isEstado());
-            ps.setInt(3,bean.getDepartamento().getIdDepartamento());
+            ps.setInt(1, bean.getIdCategoria());
+            ps.setString(2, bean.getNombre());
+            ps.setBoolean(3, bean.isEstado());
+            ps.setInt(4,bean.getDepartamento().getIdDepartamento());
         } catch (SQLException ex) {
             Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
         }

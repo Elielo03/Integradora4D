@@ -30,7 +30,7 @@ public class Categoria extends ActionSupport {
     List<DepartamentoBean> departamentos = new ArrayList<>();
     List<CategoriaBean> categorias= new ArrayList<>();
     String idDepartamentos;
-
+    int idCategoria;
     Connection con;
 
     public Categoria() {
@@ -63,7 +63,17 @@ public class Categoria extends ActionSupport {
         CategoriaDao daoC= new CategoriaDao(con);
         departamentos = daoD.getAll();
         categorias=daoC.getAll();
-
+        System.out.println("el IDDDDDDDDDDDDDD:"+idCategoria);
+         categoria= daoC.get(idCategoria);
+        return SUCCESS;
+    }
+    
+    
+    
+    public String update(){
+        System.out.println("Nombre:   "+categoria.getNombre());
+        CategoriaDao dao= new CategoriaDao(con);
+       dao.update(categoria);
         return SUCCESS;
     }
 
@@ -97,6 +107,14 @@ public class Categoria extends ActionSupport {
 
     public void setCategorias(List<CategoriaBean> categorias) {
         this.categorias = categorias;
+    }
+
+    public int getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
    
