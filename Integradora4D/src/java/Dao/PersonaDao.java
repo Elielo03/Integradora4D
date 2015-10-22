@@ -27,38 +27,40 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
 
     @Override
     List<PersonaBean> passResultSet(ResultSet res, List<PersonaBean> list) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        while (res.next()) {
+            PersonaBean bean = new PersonaBean();
+
+            bean.setIdPersona(res.getInt(1));
+            bean.setNombre(res.getString(2));
+            bean.setApp(res.getString(3));
+            bean.setApm(res.getString(4));
+            bean.setDireccion(res.getString(5));
+            bean.setFechaNac(res.getDate(6));
+            bean.setEstado(res.getBoolean(7));
+            bean.setCorreoE(res.getString(8));
+            bean.setTelefono(res.getString(9));
+            bean.setIdUsuario(res.getInt(10));
+            bean.setIdUsuario(res.getInt(11));
+            list.add(bean);
+        }
+           return list;
     }
 
     @Override
     public List<PersonaBean> getAll() {
-        List<PersonaBean> resultado = new ArrayList();
-        String sql = "select * from Persona;";
-        try {
-            PreparedStatement stm = con.prepareStatement(sql);
-            ResultSet rs = stm.executeQuery();
-            while (rs.next()) {
-                PersonaBean persona = new PersonaBean();
-                persona.setIdPersona(rs.getInt(1));
-                persona.setNombre(rs.getString(2));
-                persona.setApp(rs.getString(3));
-                persona.setApm(rs.getString(4));
-                persona.setDireccion(rs.getString(5));
-                persona.setFechaNac(rs.getDate(6));
-                persona.setCorreoE(rs.getString(7));
-//                persona.setTelefono(rs.getString(8));
-                persona.setIdUsuario(rs.getInt(9));
-                persona.setIdDepartamento(rs.getInt(10));
-                persona.setEstado(rs.getBoolean(11));
-                resultado.add(persona);
-            }
-            stm.close();
+        List<PersonaBean> lista = new ArrayList<>();
+        String query = "Select * from Persona ORDER BY idPersona;";
 
-        } catch (Exception e) {
-            Logger.getLogger(PersonaDao.class.getName()).log(Level.SEVERE, null, e);
+        ResultSet result = executeQuery(query);
+
+        try {
+            lista = passResultSet(result, lista);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return resultado;
+        return lista;
     }
 
     @Override

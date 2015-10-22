@@ -48,14 +48,10 @@ public class Persona extends ActionSupport {
     }
     
     public String LlenarLista(){
+        System.out.println("entre almetodo llenar");
         PersonaDao daoPersona= new PersonaDao(con);
         listaPersona=daoPersona.getAll();
-        if (listaPersona==null) {
-            System.out.println("aqui");
-            return ERROR;
-        }else{
-            return SUCCESS;
-        }
+        return SUCCESS;
     }
     
     

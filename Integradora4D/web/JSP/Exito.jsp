@@ -24,6 +24,9 @@
          <s:form action="llenarVacio">
             <s:submit value="AddPersona"></s:submit>
         </s:form>
+        <s:form action="LlenarPersona">
+            <s:submit value="llenar tabla"></s:submit>
+        </s:form>
 
     </body>
 </html>

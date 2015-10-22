@@ -6,7 +6,7 @@
    
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
-        
+        <!-- Agrega una persona -->
         <action name="addPersona" class="Operaciones.Persona" method="addCliente">
             <result name="success">/Registrar/addPersonaCliente.jsp</result>     
         </action>
@@ -18,7 +18,7 @@
         
         <!-- Llena una lista con todas las personas -->
         <action name="LlenarPersona" class="Operaciones.Persona" method="LlenarLista">
-            <result name="success">/Registrar/ReadPersona.jsp</result>     
+            <result name="success">/Read/ReadPersona.jsp</result>     
         </action>
          
         <action name="llenarLista" class="Operaciones.Categoria" method="llenarLista">       

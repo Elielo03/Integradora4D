@@ -35,17 +35,17 @@
             <s:iterator value="listaPersona">
                 <tbody>
                     <tr>  
-                        <td><s:property value="persona.idPersona"/></td>
-                        <td><s:property value="persona.nombre"/></td>
-                        <td><s:property value="persona.app"/></td>
-                        <td><s:property value="persona.apm"/></td>
-                        <td><s:property value="persona.direccion"/></td>
-                         <td><s:property value="persona.fechaNac"/></td>
-                        <td><s:property value="persona.correoE"/></td>
-                        <td><s:property value="persona.telefono"/></td>     
-                        <td><s:property value="persona.idUsuario"/></td>
-                        <td><s:property value="persona.idDepartamento"/></td>
-                        <td><s:property value="persona.estado"/></td>
+                        <td><s:property value="idPersona"/></td>
+                        <td><s:property value="nombre"/></td>
+                        <td><s:property value="app"/></td>
+                        <td><s:property value="apm"/></td>
+                        <td><s:property value="direccion"/></td>
+                        <td><s:property value="fechaNac"/></td>
+                        <td><s:property value="correoE"/></td>
+                        <td><s:property value="telefono"/></td>     
+                        <td><s:property value="idUsuario"/></td>
+                        <td><s:property value="idDepartamento"/></td>
+                        <td><s:property value="estado"/></td>
                         <td>actualizar</td>
                         <td>elimina</td>
 
