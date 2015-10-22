@@ -34,7 +34,7 @@ public class Persona extends ActionSupport {
         if (daoPersona.add(persona)) {
             System.out.println("Funciono creo"); 
         }else{
-            System.out.println("algo anda mal poreldao");
+            System.out.println("algo anda mal poreldao\n jajaja tus debugs alannnnnnn");
         }
             
        
