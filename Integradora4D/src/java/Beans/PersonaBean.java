@@ -23,6 +23,7 @@ public class PersonaBean {
     private int idDepartamento;
     private String correoE;
     private String telefono;
+    private String pass;
 
     public PersonaBean() {
     }
@@ -116,5 +117,15 @@ public class PersonaBean {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+    
+    
     
 }
