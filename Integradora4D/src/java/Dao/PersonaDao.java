@@ -40,7 +40,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
             bean.setCorreoE(res.getString(8));
             bean.setTelefono(res.getString(9));
             bean.setIdUsuario(res.getInt(10));
-            bean.setIdUsuario(res.getInt(11));
+            bean.setIdDepartamento(res.getInt(11));
             list.add(bean);
         }
            return list;
