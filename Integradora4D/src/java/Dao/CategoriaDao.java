@@ -86,6 +86,7 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
 
     @Override
     public boolean delete(int id) {
+        System.out.println("En el Daoooo");
         String query ="DELETE FROM Categoria WHERE idCategoria=?;";
         
         try {

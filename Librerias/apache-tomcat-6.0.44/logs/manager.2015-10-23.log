@@ -1,0 +1,102 @@
+oct 23, 2015 12:22:50 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+oct 23, 2015 12:22:50 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: init: Global resources are available
+oct 23, 2015 12:22:50 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:22:50 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:22:50 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: install: Installing context configuration at 'file:/C:/Users/Comodin/AppData/Local/Temp/context843852097359100457.xml'
+oct 23, 2015 12:23:32 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:23:32 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application at '/Integradora4D'
+oct 23, 2015 12:23:32 PM org.apache.catalina.core.ApplicationContext log
+GRAVE: Manager: ManagerServlet.reload[/Integradora4D]
+java.lang.IllegalStateException: No se ha arrancado el Contenedor org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/Integradora4D]
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3443)
+	at org.apache.catalina.manager.ManagerServlet.reload(ManagerServlet.java:943)
+	at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:361)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:617)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:563)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11AprProcessor.process(Http11AprProcessor.java:879)
+	at org.apache.coyote.http11.Http11AprProtocol$Http11ConnectionHandler.process(Http11AprProtocol.java:617)
+	at org.apache.tomcat.util.net.AprEndpoint$Worker.run(AprEndpoint.java:1778)
+	at java.lang.Thread.run(Thread.java:745)
+
+oct 23, 2015 12:23:37 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:23:37 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:23:37 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: undeploy: Undeploying web application at '/Integradora4D'
+oct 23, 2015 12:23:37 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: install: Installing context configuration at 'file:/C:/Users/Comodin/AppData/Local/Temp/context5879114432912110290.xml'
+oct 23, 2015 12:29:51 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:29:51 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:29:51 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: undeploy: Undeploying web application at '/Integradora4D'
+oct 23, 2015 12:29:52 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: install: Installing context configuration at 'file:/C:/Users/Comodin/AppData/Local/Temp/context5569509993635684165.xml'
+oct 23, 2015 12:29:54 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: start: Starting web application at '/Integradora4D'
+oct 23, 2015 12:31:31 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+oct 23, 2015 12:31:31 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: init: Global resources are available
+oct 23, 2015 12:31:31 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:31:31 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: undeploy: Undeploying web application at '/Integradora4D'
+oct 23, 2015 12:35:28 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+oct 23, 2015 12:35:28 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: init: Global resources are available
+oct 23, 2015 12:35:28 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:35:28 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:35:28 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: install: Installing context configuration at 'file:/C:/Users/Comodin/AppData/Local/Temp/context8901758864542356479.xml'
+oct 23, 2015 12:35:30 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: start: Starting web application at '/Integradora4D'
+oct 23, 2015 12:36:05 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:36:05 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: undeploy: Undeploying web application at '/Integradora4D'
+oct 23, 2015 12:36:37 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:36:37 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:36:37 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: install: Installing context configuration at 'file:/C:/Users/Comodin/AppData/Local/Temp/context2340285850297239069.xml'
+oct 23, 2015 12:36:39 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: start: Starting web application at '/Integradora4D'
+oct 23, 2015 12:36:50 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:36:50 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:45:20 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:45:20 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application at '/Integradora4D'
+oct 23, 2015 12:46:09 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:46:09 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application at '/Integradora4D'
+oct 23, 2015 12:48:28 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 12:48:28 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application at '/Integradora4D'

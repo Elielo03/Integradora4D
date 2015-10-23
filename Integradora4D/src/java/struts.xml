@@ -42,8 +42,8 @@
             <result name="success">/Read/ReadCategoria.jsp</result>
         </action>
         
-        <action name="deleteCategoia" class="Operaciones.Categoia" method="delete">
-            <result type="redirect">readCategoia</result>
+        <action name="deleteCategoria" class="Operaciones.Categoria" method="delete">
+            <result type="redirect">readCategor ia</result>
         </action>
         <!-- Categoria -->
           
