@@ -53,7 +53,7 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
 
     @Override
     public List<ProductoBean> getAll() {
-        System.out.println("en el DAOOOOOOOOOOO");
+        
        List<ProductoBean> lista=new ArrayList<>();
        
        String quey= "SELECT * FROM Producto order by idProducto;";

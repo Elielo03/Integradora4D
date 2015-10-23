@@ -63,7 +63,7 @@ public class Categoria extends ActionSupport {
         CategoriaDao daoC= new CategoriaDao(con);
         departamentos = daoD.getAll();
         categorias=daoC.getAll();
-        System.out.println("el IDDDDDDDDDDDDDD:"+idCategoria);
+        
          categoria= daoC.get(idCategoria);
         return SUCCESS;
     }
@@ -71,9 +71,17 @@ public class Categoria extends ActionSupport {
     
     
     public String update(){
-        System.out.println("Nombre:   "+categoria.getNombre());
+       
         CategoriaDao dao= new CategoriaDao(con);
        dao.update(categoria);
+        return SUCCESS;
+    }
+    
+    public String delete(){
+        System.out.println("en el deleteeeeeeee :"+idCategoria);
+         CategoriaDao dao= new CategoriaDao(con);
+       dao.delete(idCategoria);
+        
         return SUCCESS;
     }
 

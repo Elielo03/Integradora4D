@@ -21,8 +21,8 @@
             
             
             <s:select name="idDepartamentos" label="Selecciona un dpto" list="departamentos" listValue="nombre"
-                      listKey="idDepartamento"></s:select>
-                 
+                      listKey="idDepartamento"  ></s:select>
+                      
             <s:submit value="Guardar"/>
         </s:form>
     </body>

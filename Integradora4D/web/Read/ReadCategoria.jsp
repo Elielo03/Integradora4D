@@ -35,7 +35,10 @@
                         <s:submit value="Actualizar"></s:submit>
                     </s:form>
                 </td>
-                <td>Eliminar</td>
+                <td><s:form action="deleteCategoria">
+                        <s:hidden name="idCategoria"></s:hidden>
+                        <s:submit value="Eliminar"></s:submit>
+                    </s:form></td>
             </tr>
             
             
