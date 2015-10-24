@@ -595,3 +595,47 @@ oct 24, 2015 2:40:10 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
 INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.UnknownHandlerManager)
 oct 24, 2015 2:40:10 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
 INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.views.util.UrlHelper)
+oct 24, 2015 2:41:43 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Integradora4D]
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts-default.xml]
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts-plugin.xml]
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Parsing configuration file [struts.xml]
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.ObjectFactory)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.FileManager)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.XWorkConverter)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.TextProvider)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.ActionProxyFactory)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ObjectTypeDeterminer)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.dispatcher.mapper.ActionMapper)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (jakarta) for (org.apache.struts2.dispatcher.multipart.MultiPartRequest)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.views.freemarker.FreemarkerManager)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.components.UrlRenderer)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.validator.ActionValidatorManager)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.ValueStackFactory)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionProvider)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionContextFactory)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.util.PatternMatcher)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.dispatcher.StaticContentLoader)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (com.opensymphony.xwork2.UnknownHandlerManager)
+oct 24, 2015 2:41:44 PM com.opensymphony.xwork2.util.logging.jdk.JdkLogger info
+INFORMACIÓN: Choosing bean (struts) for (org.apache.struts2.views.util.UrlHelper)
