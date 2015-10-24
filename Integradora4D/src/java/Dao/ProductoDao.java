@@ -142,7 +142,7 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
 
     @Override
     public boolean add(ProductoBean bean) {
-         String query="INSERT PRODUCTO VALUES(?,?;?;?,?,?,?,?,?,?,?); ";
+         String query="INSERT INTO Producto VALUES(?,?;?;?,?,?,?,?,?,?,?); ";
                
                     
         try {
@@ -167,7 +167,7 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
                   return true;
               }
         } catch (SQLException ex) {
-            Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
         }
         
         return false;

@@ -52,7 +52,8 @@ public class Producto  extends ActionSupport{
     }
     
     public String add(){
-        
+        ProductoDao dao= new ProductoDao(con);
+        dao.add(bean);
         
         return SUCCESS;
     }
