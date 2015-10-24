@@ -8,6 +8,7 @@ package Dao;
 import Beans.CategoriaBean;
 import Beans.ProductoBean;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -76,12 +77,40 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
 
     @Override
     public boolean update(ProductoBean bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String query="UPDATE PRODUCTO SET "
+                + "nombre=?, "
+                + "codigo=?, "
+                + "descripcion=?, "
+                + "existencias=?, "
+                + "stock=?, "
+                + "precio_c=?, "
+                + "precio_v=?, "
+                + "estado=?, "
+                + "marca=?, "
+                + "imagen=?, "
+                + "idCategoria=? "
+                + "WHERE idProducto =?;";
     }
 
     @Override
     public boolean delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String query="DELETE FROM Producto where idProducto=?;";
+        try {
+            
+            PreparedStatement ps=con.prepareStatement(query);
+            ps.setInt(1, id);
+             if(ps.executeUpdate()>=1){
+                 ps.close();
+                 return true;
+             }
+            
+            
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+         return false;
     }
 
     @Override

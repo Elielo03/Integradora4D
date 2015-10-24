@@ -55,11 +55,17 @@
         </action>
         
         
+        
+        <!-- Producto -->
         <action name="readProducto" class="Operaciones.Producto" method="llenarLista">
             
             <result name="success">/Read/ReadProducto.jsp</result>
         </action>
         
+        <action name="deleteProducto" class="Operaciones.Producto" method="delete">
+            <result name="success">/READ/ReadProducto.jsp</result>
+        </action>
+        <!-- Producto -->
         
         
     </package>

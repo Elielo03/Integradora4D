@@ -28,6 +28,8 @@
                 <td>Marca</td>
                 <td>Imagen</td>
                 <td>Categoria</td>
+                <td>Actualizar</td>
+                <td>Eliminar</td>
             </tr>
             <s:iterator value="productos">
                 <tr>
@@ -44,6 +46,13 @@
                     <td><s:property value="marca"></s:property></td>
                     <td><s:property value="imagen"></s:property></td>
                     <td><s:property value="categoria.nombre"></s:property></td>
+                    <td>Actualizar</td>
+                    <td>
+                    <s:form action="deleteProducto">
+                        <s:hidden name="idProducto"></s:hidden>
+                        <s:submit value="Eliminar"></s:submit>
+                    </s:form>
+                    </td>
                 </tr>
             </s:iterator>
             

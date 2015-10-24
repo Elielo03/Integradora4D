@@ -28,6 +28,7 @@ public class Producto  extends ActionSupport{
     List<ProductoBean> productos=new ArrayList<>();
     ProductoBean bean =new ProductoBean();
     Connection con;
+    int idProducto;
     
 
     public Producto() {
@@ -45,6 +46,14 @@ public class Producto  extends ActionSupport{
         categorias=daoC.getAll();
         productos=daoP.getAll();
         
+        
+        return SUCCESS;
+    }
+    
+    public String delete(){
+        
+        ProductoDao dao= new ProductoDao(con);
+        dao.delete(idProducto);
         
         return SUCCESS;
     }
@@ -71,6 +80,14 @@ public class Producto  extends ActionSupport{
 
     public void setBean(ProductoBean bean) {
         this.bean = bean;
+    }
+
+    public int getIdProducto() {
+        return idProducto;
+    }
+
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
     }
     
     

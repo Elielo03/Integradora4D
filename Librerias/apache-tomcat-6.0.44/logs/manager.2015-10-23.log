@@ -100,3 +100,41 @@ oct 23, 2015 12:48:28 PM org.apache.catalina.core.ApplicationContext log
 INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
 oct 23, 2015 12:48:28 PM org.apache.catalina.core.ApplicationContext log
 INFORMACIÓN: Manager: restart: Reloading web application at '/Integradora4D'
+oct 23, 2015 3:42:13 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 3:42:13 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application at '/Integradora4D'
+oct 23, 2015 3:43:51 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 3:46:49 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 3:46:49 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application at '/Integradora4D'
+oct 23, 2015 3:47:13 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 3:47:13 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application at '/Integradora4D'
+oct 23, 2015 3:48:01 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 3:48:01 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application at '/Integradora4D'
+oct 23, 2015 3:49:19 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 3:49:19 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application at '/Integradora4D'
+oct 23, 2015 3:52:25 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 3:52:25 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application at '/Integradora4D'
+oct 23, 2015 3:52:44 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 3:52:44 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application at '/Integradora4D'
+oct 23, 2015 4:01:35 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 4:01:35 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application at '/Integradora4D'
+oct 23, 2015 4:01:37 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: list: Listing contexts for virtual host 'localhost'
+oct 23, 2015 4:01:37 PM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: Manager: restart: Reloading web application at '/Integradora4D'
