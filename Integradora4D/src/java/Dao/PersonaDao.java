@@ -23,6 +23,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
 
     public PersonaDao(Connection con) {
         super(con);
+        //
     }
 
     @Override
