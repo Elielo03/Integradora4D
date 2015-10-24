@@ -46,12 +46,18 @@
                         <td><s:property value="idUsuario"/></td>
                         <td><s:property value="idDepartamento"/></td>
                         <td><s:property value="estado"/></td>
-                        <td>actualizar</td>
-                        <td>elimina</td>
-
-
-
-
+                        <td>
+                            <s:form action="updatePersona">
+                                <s:hidden name="idPersona" />
+                                <s:submit value="Actualizar"/>
+                            </s:form>                   
+                        </td>
+                        <td>
+                            <s:form action="deletePersona">
+                                <s:hidden name="idPersona" />
+                                <s:submit value="Eliminar"/>
+                            </s:form>
+                        </td>
                     </tr>
                 </tbody>
             </s:iterator>

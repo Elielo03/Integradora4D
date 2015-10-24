@@ -23,7 +23,6 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
 
     public PersonaDao(Connection con) {
         super(con);
-        //
     }
 
     @Override
@@ -44,7 +43,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
             bean.setIdDepartamento(res.getInt(11));
             list.add(bean);
         }
-           return list;
+        return list;
     }
 
     @Override
@@ -66,7 +65,31 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
 
     @Override
     public PersonaBean get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String query = "SELECT * from Persona where idPersona=? ;";
+        PersonaBean bean = new PersonaBean();
+
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, id);
+            ResultSet res = ps.executeQuery();
+            if (res.next()) {
+                bean.setIdPersona(res.getInt(1));
+                bean.setNombre(res.getString(2));
+                bean.setApp(res.getString(3));
+                bean.setApm(res.getString(4));
+                bean.setDireccion(res.getString(5));
+                bean.setFechaNac(res.getDate(6));
+                bean.setEstado(res.getBoolean(7));
+                bean.setCorreoE(res.getString(8));
+                bean.setTelefono(res.getString(9));
+                bean.setIdUsuario(res.getInt(10));
+                bean.setIdDepartamento(res.getInt(11));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return bean;
     }
 
     @Override
@@ -76,7 +99,18 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
 
     @Override
     public boolean delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         String sql = "UPDATE Persona set estado= 'false' where idPersona= ?;";
+        try (PreparedStatement stm = con.prepareStatement(sql)) {
+            stm.setInt(1, id);        
+            if (stm.executeUpdate() == 1) {
+                stm.close();
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PersonaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return false;
     }
 
     @Override

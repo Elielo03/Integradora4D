@@ -6,24 +6,30 @@
    
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
-        <!-- Agrega una persona -->
-        <action name="addPersona" class="Operaciones.Persona" method="addCliente">
-            <result name="success">/Registrar/addPersonaCliente.jsp</result>     
-        </action>
         
-        <!-- llena los campos ocultos de persona Cliente -->
+        <!-- Persona-->
+        <action name="addPersona" class="Operaciones.Persona" method="Intermediario">
+            <result name="success" type="redirect">LlenarPersona</result>      
+        </action>
+         
         <action name="llenarVacio" class="Operaciones.Persona" method="llenarVacio">
             <result name="success">/Registrar/addPersonaCliente.jsp</result>     
         </action>
         
-        <!-- Llena una lista con todas las personas -->
         <action name="LlenarPersona" class="Operaciones.Persona" method="LlenarLista">
-            <result name="success">/Read/ReadPersona.jsp</result>     
+            <result name="success">/Read/ReadPersonaCliente.jsp</result>     
+        </action>
+    
+        <action name="updatePersona" class="Operaciones.Persona" method="ConsultarPersona">
+            <result name="success">/Registrar/addPersonaCliente.jsp</result>     
         </action>
         
+         <action name="deletePersona" class="Operaciones.Persona" method="delete">
+            <result name="success" type="redirect">LlenarPersona</result>     
+        </action>
+        <!-- Fin persona -->
         
-        
-          <!-- Categoria -->
+        <!-- Categoria -->
         <action name="llenarLista" class="Operaciones.Categoria" method="llenarLista">       
             <result name="success">/Registrar/Categoria.jsp</result>        
         </action>

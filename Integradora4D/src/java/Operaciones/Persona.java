@@ -21,6 +21,7 @@ public class Persona extends ActionSupport {
 
     PersonaBean persona = new PersonaBean();
     List<PersonaBean> listaPersona = new ArrayList<PersonaBean>();
+    int idPersona;
     Connection con;
 
     public Persona() {
@@ -29,32 +30,70 @@ public class Persona extends ActionSupport {
         } catch (Exception e) {
         }
     }
-    public String addCliente(){
-        PersonaDao daoPersona= new PersonaDao(con);
+
+    public boolean add() {
+        PersonaDao daoPersona = new PersonaDao(con);
         if (daoPersona.add(persona)) {
-            System.out.println("Funciono creo"); 
-        }else{
-            System.out.println("algo anda mal poreldao\n jajaja tus debugs alannnnnnn");
+            return true;
+        } else {
+            return false;
         }
-            
-       
-        return SUCCESS;
     }
-    public String llenarVacio(){     
-        persona.setIdUsuario(0);
-        persona.setIdDepartamento(0);
+      public String delete() {
+        PersonaDao daoPersona = new PersonaDao(con);
+        if (daoPersona.delete(idPersona)) {
+            return SUCCESS;
+        } else {
+            return ERROR;
+        }
+
+    }
+    public boolean update(){
+       return true; 
+    }
+
+    public String llenarVacio() {
+        PersonaBean persona = new PersonaBean();
+        this.persona=persona;
         persona.setIdUsuario(4);
+        addFieldError("Tipo", "Agregar Persona");
         return SUCCESS;
     }
-    
-    public String LlenarLista(){
+
+    public String LlenarLista() {
         System.out.println("entre almetodo llenar");
-        PersonaDao daoPersona= new PersonaDao(con);
-        listaPersona=daoPersona.getAll();
+        PersonaDao daoPersona = new PersonaDao(con);
+        listaPersona = daoPersona.getAll();
         return SUCCESS;
     }
-    
-    
+
+    public String ConsultarPersona() {
+        PersonaDao daoPersona = new PersonaDao(con);
+        persona = daoPersona.get(idPersona);
+        if (persona != null) {
+            return SUCCESS;
+        } else {
+            return ERROR;
+        }
+    }
+
+  
+    public String Intermediario(){
+        if (persona.getIdPersona()==0) {
+            if (add()) {
+                return SUCCESS;
+            }else{
+                return ERROR;
+            }
+        }else{
+            if (update()) {
+                return SUCCESS;
+            }else{
+               return ERROR; 
+            }
+        }
+        
+    }
 
     //Get and set de todos----------------
     public PersonaBean getPersona() {
@@ -72,7 +111,13 @@ public class Persona extends ActionSupport {
     public void setListaPersona(List<PersonaBean> listaPersona) {
         this.listaPersona = listaPersona;
     }
-    
-    
+
+    public int getIdPersona() {
+        return idPersona;
+    }
+
+    public void setIdPersona(int idPersona) {
+        this.idPersona = idPersona;
+    }
 
 }
