@@ -77,19 +77,46 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
 
     @Override
     public boolean update(ProductoBean bean) {
-        String query="UPDATE PRODUCTO SET "
-                + "nombre=?, "
-                + "codigo=?, "
-                + "descripcion=?, "
-                + "existencias=?, "
-                + "stock=?, "
-                + "precio_c=?, "
-                + "precio_v=?, "
-                + "estado=?, "
-                + "marca=?, "
-                + "imagen=?, "
-                + "idCategoria=? "
-                + "WHERE idProducto =?;";
+         String query="UPDATE PRODUCTO SET "
+               
+                    + "nombre=?, "
+                    + "codigo=?, "
+                    + "descripcion=?, "
+                    + "existencias=?, "
+                    + "stock=?, "
+                    + "precio_c=?, "
+                    + "precio_v=?, "
+                    + "estado=?, "
+                    + "marca=?, "
+                    + "imagen=?, "
+                    + "idCategoria=? "
+                    + "WHERE idProducto =?;";
+        try {
+           
+            
+            PreparedStatement ps=con.prepareStatement(query);
+           
+            ps.setString(1, bean.getNombre());
+            ps.setString(2, bean.getCodigo());
+            ps.setString(3, bean.getDescripcion());
+            ps.setInt(4, bean.getExistencias());
+            ps.setInt(5, bean.getStock());
+            ps.setDouble(6, bean.getPrecio_c());
+            ps.setDouble(7, bean.getPrecio_v());
+            ps.setBoolean(8, bean.isEstado());
+             ps.setString(8, bean.getMarca());
+              ps.setString(9, bean.getImagen());
+              ps.setInt(10, bean.getCategoria().getIdCategoria());
+              ps.setInt(11, bean.getIdProducto());
+              if(ps.executeUpdate()>=1){
+                  ps.close();
+                  return true;
+              }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return false;
     }
 
     @Override

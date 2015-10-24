@@ -77,6 +77,10 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
             ps.setString(2, bean.getNombre());
             ps.setBoolean(3, bean.isEstado());
             ps.setInt(4,bean.getDepartamento().getIdDepartamento());
+            if(ps.executeUpdate()<=1){
+                ps.close();
+                return true;
+            }
         } catch (SQLException ex) {
             Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -106,7 +110,7 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
 
     @Override
     public boolean add(CategoriaBean bean) {
-        System.out.println("en el dao de categorias addd");
+        
        String query = "Insert into Categoria(nombre,idDepartamento) VALUES (?,?);";
        
         try {
