@@ -142,7 +142,35 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
 
     @Override
     public boolean add(ProductoBean bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         String query="INSERT PRODUCTO VALUES(?,?;?;?,?,?,?,?,?,?,?); ";
+               
+                    
+        try {
+           
+            
+            PreparedStatement ps=con.prepareStatement(query);
+           
+            ps.setString(1, bean.getNombre());
+            ps.setString(2, bean.getCodigo());
+            ps.setString(3, bean.getDescripcion());
+            ps.setInt(4, bean.getExistencias());
+            ps.setInt(5, bean.getStock());
+            ps.setDouble(6, bean.getPrecio_c());
+            ps.setDouble(7, bean.getPrecio_v());
+            ps.setBoolean(8, bean.isEstado());
+             ps.setString(8, bean.getMarca());
+              ps.setString(9, bean.getImagen());
+              ps.setInt(10, bean.getCategoria().getIdCategoria());
+              
+              if(ps.executeUpdate()>=1){
+                  ps.close();
+                  return true;
+              }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return false;
     }
 
     

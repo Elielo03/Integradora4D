@@ -79,6 +79,10 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
             ps.setString(1, bean.getNombre());
             ps.setBoolean(2, bean.isEstado());
             ps.setInt(3, bean.getIdDepartamento());
+            if(ps.executeUpdate()>=1){
+                ps.close();
+                return true;
+            }
         } catch (SQLException ex) {
             Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
         }

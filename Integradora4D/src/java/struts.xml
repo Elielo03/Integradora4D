@@ -57,13 +57,24 @@
         
         
         <!-- Producto -->
+        
+        <action name="addPro" class="Operaciones.Producto" method="llenarLista">
+            
+            <result name="success">/Registrar/addProducto.jsp</result>
+        </action>
+        
+        <action name="addProducto" class="Operaciones.Producto" method="add">
+            
+           <result name="success">/Read/ReadProducto.jsp</result>
+        </action>
+        
         <action name="readProducto" class="Operaciones.Producto" method="llenarLista">
             
             <result name="success">/Read/ReadProducto.jsp</result>
         </action>
         
         <action name="deleteProducto" class="Operaciones.Producto" method="delete">
-            <result name="success">/READ/ReadProducto.jsp</result>
+            <result name="success">/Read/ReadProducto.jsp</result>
         </action>
         <!-- Producto -->
         

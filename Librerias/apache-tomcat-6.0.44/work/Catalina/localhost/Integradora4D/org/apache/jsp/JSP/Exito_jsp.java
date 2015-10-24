@@ -91,6 +91,11 @@ public final class Exito_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_s_005fform_005f4(_jspx_page_context))
         return;
       out.write("\r\n");
+      out.write("        \r\n");
+      out.write("          ");
+      if (_jspx_meth_s_005fform_005f5(_jspx_page_context))
+        return;
+      out.write("\r\n");
       out.write("\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
@@ -399,6 +404,65 @@ public final class Exito_jsp extends org.apache.jasper.runtime.HttpJspBase
       return true;
     }
     _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fsubmit_005f4);
+    return false;
+  }
+
+  private boolean _jspx_meth_s_005fform_005f5(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  s:form
+    org.apache.struts2.views.jsp.ui.FormTag _jspx_th_s_005fform_005f5 = (org.apache.struts2.views.jsp.ui.FormTag) _005fjspx_005ftagPool_005fs_005fform_0026_005faction.get(org.apache.struts2.views.jsp.ui.FormTag.class);
+    _jspx_th_s_005fform_005f5.setPageContext(_jspx_page_context);
+    _jspx_th_s_005fform_005f5.setParent(null);
+    // /JSP/Exito.jsp(35,10) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fform_005f5.setAction("addPro");
+    int _jspx_eval_s_005fform_005f5 = _jspx_th_s_005fform_005f5.doStartTag();
+    if (_jspx_eval_s_005fform_005f5 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      if (_jspx_eval_s_005fform_005f5 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+        out = _jspx_page_context.pushBody();
+        _jspx_th_s_005fform_005f5.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+        _jspx_th_s_005fform_005f5.doInitBody();
+      }
+      do {
+        out.write("\r\n");
+        out.write("            ");
+        if (_jspx_meth_s_005fsubmit_005f5(_jspx_th_s_005fform_005f5, _jspx_page_context))
+          return true;
+        out.write("\r\n");
+        out.write("        ");
+        int evalDoAfterBody = _jspx_th_s_005fform_005f5.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+      if (_jspx_eval_s_005fform_005f5 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+        out = _jspx_page_context.popBody();
+      }
+    }
+    if (_jspx_th_s_005fform_005f5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fs_005fform_0026_005faction.reuse(_jspx_th_s_005fform_005f5);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fs_005fform_0026_005faction.reuse(_jspx_th_s_005fform_005f5);
+    return false;
+  }
+
+  private boolean _jspx_meth_s_005fsubmit_005f5(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fform_005f5, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  s:submit
+    org.apache.struts2.views.jsp.ui.SubmitTag _jspx_th_s_005fsubmit_005f5 = (org.apache.struts2.views.jsp.ui.SubmitTag) _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.ui.SubmitTag.class);
+    _jspx_th_s_005fsubmit_005f5.setPageContext(_jspx_page_context);
+    _jspx_th_s_005fsubmit_005f5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f5);
+    // /JSP/Exito.jsp(36,12) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fsubmit_005f5.setValue("aDD producto");
+    int _jspx_eval_s_005fsubmit_005f5 = _jspx_th_s_005fsubmit_005f5.doStartTag();
+    if (_jspx_th_s_005fsubmit_005f5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fsubmit_005f5);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fsubmit_005f5);
     return false;
   }
 }

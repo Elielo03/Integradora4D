@@ -40,11 +40,18 @@ public class Producto  extends ActionSupport{
     }
     
     public String llenarLista(){
+        System.out.println("AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
         ProductoDao daoP= new ProductoDao(con);
         CategoriaDao daoC=new CategoriaDao(con);
         
         categorias=daoC.getAll();
         productos=daoP.getAll();
+        
+        
+        return SUCCESS;
+    }
+    
+    public String add(){
         
         
         return SUCCESS;

@@ -31,6 +31,10 @@
           <s:form action="readProducto">
             <s:submit value="Read producto"></s:submit>
         </s:form>
+        
+          <s:form action="addPro">
+            <s:submit value="aDD producto"></s:submit>
+        </s:form>
 
     </body>
 </html>
