@@ -21,10 +21,12 @@ import java.util.logging.Logger;
  */
 public class PersonaDao extends DaoAbstract<PersonaBean> {
     DepartamentoDao departamento;
+    UsuarioDao usuario;
 
     public PersonaDao(Connection con) {
         super(con);
         departamento= new DepartamentoDao(con);
+        usuario= new UsuarioDao(con);
     }
 
     @Override
@@ -41,7 +43,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
             bean.setEstado(res.getBoolean(7));
             bean.setCorreoE(res.getString(8));
             bean.setTelefono(res.getString(9));
-            bean.setIdUsuario(res.getInt(10));
+            bean.setUsuario(usuario.get(res.getInt(10)));
             bean.setDepartamento(departamento.get(res.getInt(11)));
             bean.setPass(res.getString(12));
             list.add(bean);
@@ -85,7 +87,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
                 bean.setEstado(res.getBoolean(7));
                 bean.setCorreoE(res.getString(8));
                 bean.setTelefono(res.getString(9));
-                bean.setIdUsuario(res.getInt(10));
+                bean.setUsuario(usuario.get(res.getInt(10)));
                bean.setDepartamento(departamento.get(res.getInt(11)));
                 bean.setPass(res.getString(12));
             }
@@ -132,7 +134,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
             ps.setString(5, bean.getCorreoE());
             ps.setString(6, bean.getTelefono());
             ps.setString(7, bean.getPass());
-            ps.setInt(8, bean.getIdUsuario());
+            ps.setInt(8, bean.getUsuario().getIdTipoUsuario());
             ps.setInt(9, bean.getDepartamento().getIdDepartamento());
 
             if (ps.executeUpdate() >= 1) {

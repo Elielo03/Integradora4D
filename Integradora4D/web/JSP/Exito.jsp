@@ -27,6 +27,9 @@
         <s:form action="LlenarPersona">
             <s:submit value="llenar tabla"></s:submit>
         </s:form>
+         <s:form action="LlenarEmpleado">
+            <s:submit value="add personaempleado"></s:submit>
+        </s:form>
         
           <s:form action="readProducto">
             <s:submit value="Read producto"></s:submit>

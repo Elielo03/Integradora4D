@@ -26,7 +26,7 @@
             <s:textfield name="persona.telefono" label="telefono" title="telefono persona" placeholder="Telefono"/>
             <s:textfield name="persona.pass" label="contraseña" title="contraseña de persona" placeholder="contraseña"/>
             
-            <s:hidden name="persona.idUsuario"/> 
+            <s:hidden name="usuario.idTipoUsuario"/> 
             <s:hidden name="Departamento.idDepartamento"/> 
             
             <s:submit value="Guardar"/>

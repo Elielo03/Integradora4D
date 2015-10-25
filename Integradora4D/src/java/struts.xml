@@ -11,17 +11,21 @@
         <action name="addPersona" class="Operaciones.Persona" method="Intermediario">
             <result name="success" type="redirect">LlenarPersona</result>      
         </action>
+        <action name="LlenarEmpleado" class="Operaciones.Persona" method="LlenarListas" >
+            <result name="success">/Registrar/addPersonaEmpleado.jsp</result>
+            <result name="error">/JSP/Exito1.jsp</result>
+        </action>
          
         <action name="llenarVacio" class="Operaciones.Persona" method="llenarVacio">
             <result name="success">/Registrar/addPersonaCliente.jsp</result>     
         </action>
         
-        <action name="LlenarPersona" class="Operaciones.Persona" method="LlenarLista">
+        <action name="LlenarPersona" class="Operaciones.Persona" method="getAll">
             <result name="success">/Read/ReadPersonaCliente.jsp</result>     
         </action>
     
         <action name="updatePersona" class="Operaciones.Persona" method="ConsultarPersona">
-            <result name="success">/Registrar/addPersonaCliente.jsp</result>     
+            <result name="success">/Registrar/addPersonaEmpleado.jsp</result>     
         </action>
         
          <action name="deletePersona" class="Operaciones.Persona" method="delete">

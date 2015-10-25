@@ -13,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Persona</h1>
+        <h1>Persona Empleado</h1>
         <s:form action="addPersona">
             <s:hidden name="persona.idPersona" />
 
@@ -26,8 +26,12 @@
             <s:textfield name="persona.telefono" label="telefono" title="telefono persona" placeholder="Telefono"/>
             <s:textfield name="persona.pass" label="contraseña" title="contraseña de persona" placeholder="contraseña"/>
             
-            <s:hidden name="persona.idUsuario"/> 
-            <s:hidden name="persona.Departamento.nombre"/> 
+            <s:select name="departamento.idDepartamento" label="Selecciona un Departamento" list="listaDepartamento" listValue="nombre"
+                      listKey="idDepartamento"></s:select>
+            
+            <s:select name="usuario.idTipoUsuario" label="Selecciona un TipoUsuario" list="listaTipo" listValue="idTipoUsuario"
+                      listKey="idTipoUsuario"></s:select>
+           
 
             <s:submit value="Guardar"/>
         </s:form>
