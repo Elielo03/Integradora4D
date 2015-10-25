@@ -21,6 +21,7 @@
         <s:form action="readCategoria">
             <s:submit value="Aceptar"></s:submit>
         </s:form>
+      <h1>-----persona------</h1>
          <s:form action="llenarVacio">
             <s:submit value="AddPersona"></s:submit>
         </s:form>
@@ -30,7 +31,7 @@
          <s:form action="LlenarEmpleado">
             <s:submit value="add personaempleado"></s:submit>
         </s:form>
-        
+          <h1>-----fin persona------</h1>
           <s:form action="readProducto">
             <s:submit value="Read producto"></s:submit>
         </s:form>
