@@ -94,13 +94,10 @@ public class Persona extends ActionSupport {
         persona = daoPersona.get(idPersona);
         usuario = persona.getUsuario();
         departamento = persona.getDepartamento();
-        
-
-        if (persona != null) {
-
-            return SUCCESS;
-        } else {
-            return ERROR;
+        if (persona.getDepartamento().getIdDepartamento()==0) {
+            return "opcion1";
+        }else{
+            return "opcion2";
         }
     }
 

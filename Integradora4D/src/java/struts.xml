@@ -25,7 +25,8 @@
         </action>
     
         <action name="updatePersona" class="Operaciones.Persona" method="ConsultarPersona">
-            <result name="success">/Registrar/addPersonaEmpleado.jsp</result>     
+            <result name="opcion1">/Registrar/addPersonaCliente.jsp</result> 
+            <result name="opcion2">/Registrar/addPersonaEmpleado.jsp</result>     
         </action>
         
          <action name="deletePersona" class="Operaciones.Persona" method="delete">

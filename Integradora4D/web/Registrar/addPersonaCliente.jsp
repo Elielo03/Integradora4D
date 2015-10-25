@@ -13,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Persona</h1>
+        <h1>Persona cliente</h1>
         <s:form action="addPersona">
             <s:hidden name="persona.idPersona" />
             
