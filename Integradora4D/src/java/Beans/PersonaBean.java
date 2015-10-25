@@ -20,7 +20,7 @@ public class PersonaBean {
     private Date fechaNac;
     private boolean estado;
     private int idUsuario;
-    private int idDepartamento;
+    private DepartamentoBean Departamento;
     private String correoE;
     private String telefono;
     private String pass;
@@ -94,13 +94,15 @@ public class PersonaBean {
         this.idUsuario = idUsuario;
     }
 
-    public int getIdDepartamento() {
-        return idDepartamento;
+    public DepartamentoBean getDepartamento() {
+        return Departamento;
     }
 
-    public void setIdDepartamento(int idDepartamento) {
-        this.idDepartamento = idDepartamento;
+    public void setDepartamento(DepartamentoBean Departamento) {
+        this.Departamento = Departamento;
     }
+
+   
 
     public String getCorreoE() {
         return correoE;

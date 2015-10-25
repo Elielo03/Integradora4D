@@ -28,6 +28,7 @@
                     <th>idUsuario</th>
                     <th>idDepartamento</th>
                     <th>Estado</th>
+                    <th>pass</th>
                     <th>Actualizar</th>
                     <th>Eliminar</th>           
                 </tr>
@@ -44,8 +45,9 @@
                         <td><s:property value="correoE"/></td>
                         <td><s:property value="telefono"/></td>     
                         <td><s:property value="idUsuario"/></td>
-                        <td><s:property value="idDepartamento"/></td>
+                        <td><s:property value="Departamento.nombre"/></td>
                         <td><s:property value="estado"/></td>
+                       <td><s:property value="pass"/></td>
                         <td>
                             <s:form action="updatePersona">
                                 <s:hidden name="idPersona" />

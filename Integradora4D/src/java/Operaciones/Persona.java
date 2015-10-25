@@ -5,6 +5,7 @@
  */
 package Operaciones;
 
+import Beans.DepartamentoBean;
 import Beans.PersonaBean;
 import Conexion.ConexionSQLServer;
 import Dao.PersonaDao;
@@ -20,7 +21,10 @@ import java.util.List;
 public class Persona extends ActionSupport {
 
     PersonaBean persona = new PersonaBean();
+    DepartamentoBean departamento= new DepartamentoBean();
+    
     List<PersonaBean> listaPersona = new ArrayList<PersonaBean>();
+    
     int idPersona;
     Connection con;
 
@@ -32,6 +36,7 @@ public class Persona extends ActionSupport {
     }
 
     public boolean add() {
+        persona.setDepartamento(departamento);
         PersonaDao daoPersona = new PersonaDao(con);
         if (daoPersona.add(persona)) {
             return true;
@@ -49,21 +54,28 @@ public class Persona extends ActionSupport {
 
     }
     public boolean update(){
+        
        return true; 
     }
 
     public String llenarVacio() {
         PersonaBean persona = new PersonaBean();
         this.persona=persona;
-        persona.setIdUsuario(4);
-        addFieldError("Tipo", "Agregar Persona");
+        this.persona.setIdUsuario(4);
+//        addFieldError("Tipo", "Agregar Persona");
         return SUCCESS;
     }
 
     public String LlenarLista() {
-        System.out.println("entre almetodo llenar");
+        System.out.println("si entra");
         PersonaDao daoPersona = new PersonaDao(con);
         listaPersona = daoPersona.getAll();
+        if (listaPersona==null) {
+            System.out.println("esta vacio");
+        }else{
+            System.out.println("esta lleno");
+                    
+        }
         return SUCCESS;
     }
 
@@ -119,5 +131,14 @@ public class Persona extends ActionSupport {
     public void setIdPersona(int idPersona) {
         this.idPersona = idPersona;
     }
+
+    public DepartamentoBean getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(DepartamentoBean departamento) {
+        this.departamento = departamento;
+    }
+    
 
 }

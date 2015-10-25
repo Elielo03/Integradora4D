@@ -20,14 +20,16 @@ import java.util.logging.Logger;
  * @author Eliel David
  */
 public class PersonaDao extends DaoAbstract<PersonaBean> {
+    DepartamentoDao departamento;
 
     public PersonaDao(Connection con) {
         super(con);
+        departamento= new DepartamentoDao(con);
     }
 
     @Override
     List<PersonaBean> passResultSet(ResultSet res, List<PersonaBean> list) throws SQLException {
-        while (res.next()) {
+           while (res.next()) {
             PersonaBean bean = new PersonaBean();
 
             bean.setIdPersona(res.getInt(1));
@@ -40,16 +42,17 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
             bean.setCorreoE(res.getString(8));
             bean.setTelefono(res.getString(9));
             bean.setIdUsuario(res.getInt(10));
-            bean.setIdDepartamento(res.getInt(11));
+            bean.setDepartamento(departamento.get(res.getInt(11)));
+            bean.setPass(res.getString(12));
             list.add(bean);
         }
-        return list;
+           return list;
     }
 
     @Override
     public List<PersonaBean> getAll() {
         List<PersonaBean> lista = new ArrayList<>();
-        String query = "Select * from Persona ORDER BY idPersona;";
+        String query = "select p.idPersona,p.nombre,p.app,p.apm,p.direccion,p.fecha_nac,p.estado,p.correoE,p.telefono,p.idUsuario,p.idDepartamento,u.pass from Persona p join Usuario u on p.idUsuario=u.idUsuario ORDER BY idPersona;";
 
         ResultSet result = executeQuery(query);
 
@@ -57,7 +60,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
             lista = passResultSet(result, lista);
 
         } catch (SQLException ex) {
-            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PersonaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return lista;
@@ -65,7 +68,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
 
     @Override
     public PersonaBean get(int id) {
-        String query = "SELECT * from Persona where idPersona=? ;";
+        String query = "select p.idPersona,p.nombre,p.app,p.apm,p.direccion,p.fecha_nac,p.estado,p.correoE,p.telefono,p.idUsuario,p.idDepartamento,u.pass from Persona p join Usuario u on p.idUsuario=u.idUsuario where idPersona=?;";
         PersonaBean bean = new PersonaBean();
 
         try {
@@ -83,7 +86,8 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
                 bean.setCorreoE(res.getString(8));
                 bean.setTelefono(res.getString(9));
                 bean.setIdUsuario(res.getInt(10));
-                bean.setIdDepartamento(res.getInt(11));
+               bean.setDepartamento(departamento.get(res.getInt(11)));
+                bean.setPass(res.getString(12));
             }
         } catch (SQLException ex) {
             Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -129,7 +133,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
             ps.setString(6, bean.getTelefono());
             ps.setString(7, bean.getPass());
             ps.setInt(8, bean.getIdUsuario());
-            ps.setInt(9, bean.getIdDepartamento());
+            ps.setInt(9, bean.getDepartamento().getIdDepartamento());
 
             if (ps.executeUpdate() >= 1) {
                 ps.close();

@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>AddCategoria</h1>
-        <s:form action="llenarLista">
+        <s:form action="readCategoria">
             <s:submit value="Aceptar"></s:submit>
         </s:form>
         <h1>Llenas Categoria</h1>

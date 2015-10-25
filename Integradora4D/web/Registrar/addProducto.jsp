@@ -24,8 +24,6 @@
             <s:textfield name="precio_c" label="precio_c" title="precio_c producto" placeholder="precio_c"/>
             <s:textfield name="precio_v" label="precio_v" title="precio_v producto" placeholder="precio_v"/>
             <s:textfield name="marca" label="marca" title="marca producto" placeholder="marca"/> 
-             <s:select name="idProducto"   label="Seleccionar una Categoria" list="categorias" listValue="nombre"
-                      listKey="idProducto"></s:select>
            
             <s:file name="archivo" label="Selecciona tu imagen"/>
             
