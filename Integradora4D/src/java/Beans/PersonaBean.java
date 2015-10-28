@@ -12,6 +12,7 @@ import java.sql.Date;
  * @author Eliel David
  */
 public class PersonaBean {
+
     private int idPersona;
     private String nombre;
     private String app;
@@ -19,8 +20,8 @@ public class PersonaBean {
     private String direccion;
     private Date fechaNac;
     private boolean estado;
-    private int idUsuario;
-    private int idDepartamento;
+    private UsuarioBean Usuario;
+    private DepartamentoBean Departamento;
     private String correoE;
     private String telefono;
     private String pass;
@@ -84,22 +85,22 @@ public class PersonaBean {
         this.estado = estado;
     }
 
-
-
-    public int getIdUsuario() {
-        return idUsuario;
+    public UsuarioBean getUsuario() {
+        return Usuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setUsuario(UsuarioBean Usuario) {
+        this.Usuario = Usuario;
     }
 
-    public int getIdDepartamento() {
-        return idDepartamento;
+    
+
+    public DepartamentoBean getDepartamento() {
+        return Departamento;
     }
 
-    public void setIdDepartamento(int idDepartamento) {
-        this.idDepartamento = idDepartamento;
+    public void setDepartamento(DepartamentoBean Departamento) {
+        this.Departamento = Departamento;
     }
 
     public String getCorreoE() {
@@ -125,7 +126,5 @@ public class PersonaBean {
     public void setPass(String pass) {
         this.pass = pass;
     }
-    
-    
-    
+
 }

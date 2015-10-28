@@ -91,7 +91,7 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
     @Override
     public boolean delete(int id) {
         
-        String query ="DELETE FROM Categoria WHERE idCategoria=?;";
+        String query ="DELETE FROM Categoria WHERE idCategoria=?;";//se supone que tiene que ser logico?
         
         try {
             PreparedStatement ps = con.prepareStatement(query);

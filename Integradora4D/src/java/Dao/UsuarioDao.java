@@ -5,17 +5,23 @@
  */
 package Dao;
 
+import Beans.DepartamentoBean;
+
 import Beans.UsuarioBean;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Eliel David
  */
-public class UsuarioDao extends DaoAbstract<UsuarioBean>{
+public class UsuarioDao extends DaoAbstract<UsuarioBean> {
 
     public UsuarioDao(Connection con) {
         super(con);
@@ -23,17 +29,56 @@ public class UsuarioDao extends DaoAbstract<UsuarioBean>{
 
     @Override
     List<UsuarioBean> passResultSet(ResultSet res, List<UsuarioBean> list) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        while (res.next()) {
+            UsuarioBean bean = new UsuarioBean();
+
+            bean.setIdUsuario(res.getInt(1));
+            bean.setUserName(res.getString(2));
+            bean.setPass(res.getString(3));
+            bean.setIdTipoUsuario(res.getInt(4));
+            list.add(bean);
+        }
+        return list;
     }
 
     @Override
     public List<UsuarioBean> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<UsuarioBean> lista = new ArrayList<>();
+        String query = "Select * from Usuario ORDER BY idUsuario;";
+
+        ResultSet result = executeQuery(query);
+
+        try {
+            lista = passResultSet(result, lista);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return lista;
     }
 
     @Override
     public UsuarioBean get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        String query = "SELECT * from Usuario where idUsuario=?;";
+        UsuarioBean bean = new UsuarioBean();
+
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, id);
+            ResultSet res = ps.executeQuery();
+            if (res.next()) {
+                bean.setIdUsuario(res.getInt(1));
+                bean.setUserName(res.getString(2));
+                bean.setPass(res.getString(3));
+                bean.setIdTipoUsuario(res.getInt(4));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return bean;
     }
 
     @Override
@@ -51,6 +96,4 @@ public class UsuarioDao extends DaoAbstract<UsuarioBean>{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
-    
 }
