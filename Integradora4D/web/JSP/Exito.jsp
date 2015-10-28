@@ -36,9 +36,7 @@
             <s:submit value="aDD producto"></s:submit>
         </s:form>
         
-         <s:form action="addPro">
-            <s:submit value="Prueba"></s:submit>
-        </s:form>
+         
 
     </body>
 </html>

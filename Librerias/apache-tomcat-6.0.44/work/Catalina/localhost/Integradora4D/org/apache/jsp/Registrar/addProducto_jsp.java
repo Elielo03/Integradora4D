@@ -160,11 +160,14 @@ public final class addProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
         if (_jspx_meth_s_005fselect_005f0(_jspx_th_s_005fform_005f0, _jspx_page_context))
           return true;
         out.write("\r\n");
+        out.write("             \r\n");
+        out.write("            \r\n");
         out.write("           \r\n");
         out.write("            ");
         if (_jspx_meth_s_005ffile_005f0(_jspx_th_s_005fform_005f0, _jspx_page_context))
           return true;
         out.write("\r\n");
+        out.write("            \r\n");
         out.write("            \r\n");
         out.write("            ");
         if (_jspx_meth_s_005fsubmit_005f0(_jspx_th_s_005fform_005f0, _jspx_page_context))
@@ -197,7 +200,7 @@ public final class addProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_s_005ftextfield_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
     // /Registrar/addProducto.jsp(19,12) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005ftextfield_005f0.setName("nombre");
+    _jspx_th_s_005ftextfield_005f0.setName("bean.nombre");
     // /Registrar/addProducto.jsp(19,12) name = label type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f0.setLabel("Nombre");
     // /Registrar/addProducto.jsp(19,12) name = title type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
@@ -222,7 +225,7 @@ public final class addProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_s_005ftextfield_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
     // /Registrar/addProducto.jsp(20,12) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005ftextfield_005f1.setName("codigo");
+    _jspx_th_s_005ftextfield_005f1.setName("bean.codigo");
     // /Registrar/addProducto.jsp(20,12) name = label type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f1.setLabel("Codigo");
     // /Registrar/addProducto.jsp(20,12) name = title type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
@@ -247,7 +250,7 @@ public final class addProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_s_005ftextarea_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextarea_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
     // /Registrar/addProducto.jsp(21,12) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005ftextarea_005f0.setName("descripcion");
+    _jspx_th_s_005ftextarea_005f0.setName("bean.descripcion");
     // /Registrar/addProducto.jsp(21,12) name = label type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextarea_005f0.setLabel("Descripcion");
     // /Registrar/addProducto.jsp(21,12) name = title type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
@@ -272,7 +275,7 @@ public final class addProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_s_005ftextfield_005f2.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
     // /Registrar/addProducto.jsp(22,12) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005ftextfield_005f2.setName("existencias");
+    _jspx_th_s_005ftextfield_005f2.setName("bean.existencias");
     // /Registrar/addProducto.jsp(22,12) name = label type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f2.setLabel("Existancia");
     // /Registrar/addProducto.jsp(22,12) name = title type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
@@ -297,7 +300,7 @@ public final class addProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_s_005ftextfield_005f3.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
     // /Registrar/addProducto.jsp(23,12) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005ftextfield_005f3.setName("stock");
+    _jspx_th_s_005ftextfield_005f3.setName("bean.stock");
     // /Registrar/addProducto.jsp(23,12) name = label type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f3.setLabel("stock");
     // /Registrar/addProducto.jsp(23,12) name = title type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
@@ -322,7 +325,7 @@ public final class addProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_s_005ftextfield_005f4.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
     // /Registrar/addProducto.jsp(24,12) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005ftextfield_005f4.setName("precio_c");
+    _jspx_th_s_005ftextfield_005f4.setName("bean.precio_c");
     // /Registrar/addProducto.jsp(24,12) name = label type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f4.setLabel("precio_c");
     // /Registrar/addProducto.jsp(24,12) name = title type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
@@ -347,7 +350,7 @@ public final class addProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_s_005ftextfield_005f5.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
     // /Registrar/addProducto.jsp(25,12) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005ftextfield_005f5.setName("precio_v");
+    _jspx_th_s_005ftextfield_005f5.setName("bean.precio_v");
     // /Registrar/addProducto.jsp(25,12) name = label type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f5.setLabel("precio_v");
     // /Registrar/addProducto.jsp(25,12) name = title type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
@@ -372,7 +375,7 @@ public final class addProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_s_005ftextfield_005f6.setPageContext(_jspx_page_context);
     _jspx_th_s_005ftextfield_005f6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
     // /Registrar/addProducto.jsp(26,12) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005ftextfield_005f6.setName("marca");
+    _jspx_th_s_005ftextfield_005f6.setName("bean.marca");
     // /Registrar/addProducto.jsp(26,12) name = label type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ftextfield_005f6.setLabel("marca");
     // /Registrar/addProducto.jsp(26,12) name = title type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
@@ -397,7 +400,7 @@ public final class addProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_th_s_005fselect_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fselect_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
     // /Registrar/addProducto.jsp(27,13) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fselect_005f0.setName("idProducto");
+    _jspx_th_s_005fselect_005f0.setName("idCategoria");
     // /Registrar/addProducto.jsp(27,13) name = label type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f0.setLabel("Seleccionar una Categoria");
     // /Registrar/addProducto.jsp(27,13) name = list type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
@@ -405,7 +408,7 @@ public final class addProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
     // /Registrar/addProducto.jsp(27,13) name = listValue type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fselect_005f0.setListValue("nombre");
     // /Registrar/addProducto.jsp(27,13) name = listKey type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fselect_005f0.setListKey("idProducto");
+    _jspx_th_s_005fselect_005f0.setListKey("idCategoria");
     int _jspx_eval_s_005fselect_005f0 = _jspx_th_s_005fselect_005f0.doStartTag();
     if (_jspx_th_s_005fselect_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fs_005fselect_0026_005fname_005flistValue_005flistKey_005flist_005flabel_005fnobody.reuse(_jspx_th_s_005fselect_005f0);
@@ -423,9 +426,9 @@ public final class addProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts2.views.jsp.ui.FileTag _jspx_th_s_005ffile_005f0 = (org.apache.struts2.views.jsp.ui.FileTag) _005fjspx_005ftagPool_005fs_005ffile_0026_005fname_005flabel_005fnobody.get(org.apache.struts2.views.jsp.ui.FileTag.class);
     _jspx_th_s_005ffile_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005ffile_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
-    // /Registrar/addProducto.jsp(30,12) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /Registrar/addProducto.jsp(32,12) name = name type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ffile_005f0.setName("archivo");
-    // /Registrar/addProducto.jsp(30,12) name = label type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /Registrar/addProducto.jsp(32,12) name = label type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ffile_005f0.setLabel("Selecciona tu imagen");
     int _jspx_eval_s_005ffile_005f0 = _jspx_th_s_005ffile_005f0.doStartTag();
     if (_jspx_th_s_005ffile_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -444,7 +447,7 @@ public final class addProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts2.views.jsp.ui.SubmitTag _jspx_th_s_005fsubmit_005f0 = (org.apache.struts2.views.jsp.ui.SubmitTag) _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.ui.SubmitTag.class);
     _jspx_th_s_005fsubmit_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fsubmit_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fform_005f0);
-    // /Registrar/addProducto.jsp(32,12) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /Registrar/addProducto.jsp(35,12) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fsubmit_005f0.setValue("Guardar");
     int _jspx_eval_s_005fsubmit_005f0 = _jspx_th_s_005fsubmit_005f0.doStartTag();
     if (_jspx_th_s_005fsubmit_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {

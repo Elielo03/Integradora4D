@@ -10,25 +10,33 @@ import Beans.ProductoBean;
 import Conexion.ConexionSQLServer;
 import Dao.CategoriaDao;
 import Dao.ProductoDao;
+import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
+import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.apache.commons.io.FileUtils;
+import org.apache.struts2.ServletActionContext;
 
 /**
  *
  * @author Comodin
  */
 public class Producto  extends ActionSupport{
+    File archivo;
+    String url;
     
     List<CategoriaBean> categorias=new ArrayList<>();
     List<ProductoBean> productos=new ArrayList<>();
     ProductoBean bean =new ProductoBean();
     Connection con;
     int idProducto;
+    int idCategoria;
     
 
     public Producto() {
@@ -40,9 +48,10 @@ public class Producto  extends ActionSupport{
     }
     
     public String llenarLista(){
-        System.out.println("AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
+       
         ProductoDao daoP= new ProductoDao(con);
         CategoriaDao daoC=new CategoriaDao(con);
+       
         
         categorias=daoC.getAll();
         productos=daoP.getAll();
@@ -51,8 +60,29 @@ public class Producto  extends ActionSupport{
         return SUCCESS;
     }
     
-    public String add(){
+    public String add() throws IOException{
         ProductoDao dao= new ProductoDao(con);
+        CategoriaDao daoC= new CategoriaDao(con);
+         CategoriaBean categoria = new CategoriaBean();
+        
+         String infoTemporal="";
+        String path = ServletActionContext.getRequest().getSession()
+                .getServletContext().getRealPath("/");
+        
+       
+        
+        File archivoFinal = new File(path+bean.getCodigo()+".jpg",infoTemporal);
+        FileUtils.copyFile(archivo, archivoFinal);
+         
+    
+        
+        url = "http://localhost:8080/Integradora4D/"+archivoFinal.getName();
+      
+        System.out.println("IDDDD DE CATEGORIA: "+idCategoria);
+       categoria= daoC.get(idCategoria);
+        
+        bean.setCategoria(categoria);
+        bean.setImagen(url);
         dao.add(bean);
         
         return SUCCESS;
@@ -61,10 +91,19 @@ public class Producto  extends ActionSupport{
     public String delete(){
         
         ProductoDao dao= new ProductoDao(con);
+        
         dao.delete(idProducto);
         
         return SUCCESS;
     }
+    
+    
+    
+    
+    
+    
+    
+    
 
     public List<CategoriaBean> getCategorias() {
         return categorias;
@@ -97,6 +136,32 @@ public class Producto  extends ActionSupport{
     public void setIdProducto(int idProducto) {
         this.idProducto = idProducto;
     }
+
+    public File getArchivo() {
+        return archivo;
+    }
+
+    public void setArchivo(File archivo) {
+        this.archivo = archivo;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public int getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+    
+    
     
     
 }

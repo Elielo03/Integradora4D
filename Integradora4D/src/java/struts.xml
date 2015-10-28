@@ -71,7 +71,7 @@
         
         <action name="addProducto" class="Operaciones.Producto" method="add">
             
-           <result name="success">/Read/ReadProducto.jsp</result>
+           <result type="redirect">readProducto</result>
         </action>
         
         <action name="readProducto" class="Operaciones.Producto" method="llenarLista">
@@ -82,6 +82,10 @@
         <action name="deleteProducto" class="Operaciones.Producto" method="delete">
             <result name="success">/Read/ReadProducto.jsp</result>
         </action>
+        
+        
+       
+            
         <!-- Producto -->
         
         

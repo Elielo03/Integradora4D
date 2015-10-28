@@ -44,7 +44,7 @@
                     <td><s:property value="precio_v"></s:property></td>
                     <td><s:property value="estado"></s:property></td>
                     <td><s:property value="marca"></s:property></td>
-                    <td><s:property value="imagen"></s:property></td>
+                    <td><img src="<s:url value="%{url}"/>" width="120" height="120"/></td>
                     <td><s:property value="categoria.nombre"></s:property></td>
                     <td>Actualizar</td>
                     <td>

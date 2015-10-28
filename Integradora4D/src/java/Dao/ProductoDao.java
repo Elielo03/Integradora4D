@@ -134,7 +134,7 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
             
            
         } catch (SQLException ex) {
-            Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
         }
         
          return false;
@@ -142,7 +142,9 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
 
     @Override
     public boolean add(ProductoBean bean) {
-         String query="INSERT INTO Producto VALUES(?,?;?;?,?,?,?,?,?,?,?); ";
+        System.out.println("en el dao:" +bean.getImagen());
+        
+         String query="INSERT INTO Producto VALUES(?,?,?,?,?,?,?,?,?,?,?);";
                
                     
         try {
@@ -158,9 +160,9 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
             ps.setDouble(6, bean.getPrecio_c());
             ps.setDouble(7, bean.getPrecio_v());
             ps.setBoolean(8, bean.isEstado());
-             ps.setString(8, bean.getMarca());
-              ps.setString(9, bean.getImagen());
-              ps.setInt(10, bean.getCategoria().getIdCategoria());
+             ps.setString(9, bean.getMarca());
+              ps.setString(10, bean.getImagen());
+              ps.setInt(11, bean.getCategoria().getIdCategoria());
               
               if(ps.executeUpdate()>=1){
                   ps.close();

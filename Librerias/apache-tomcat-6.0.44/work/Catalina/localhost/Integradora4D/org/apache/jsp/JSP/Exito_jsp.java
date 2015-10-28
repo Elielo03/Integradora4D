@@ -96,6 +96,8 @@ public final class Exito_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_s_005fform_005f5(_jspx_page_context))
         return;
       out.write("\r\n");
+      out.write("        \r\n");
+      out.write("         \r\n");
       out.write("\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
