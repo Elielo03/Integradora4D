@@ -3,6 +3,11 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+    
+    
+   
+    
+    
    
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
@@ -39,22 +44,22 @@
             <result name="success">/Registrar/Categoria.jsp</result>        
         </action>
         
-        <action name="addCategoria" class="Operaciones.Categoria" method="add">
-            <result name="success">/JSP/Exito1.jsp</result>
+        <action name="addCategoria" class="Operaciones.Categoria" method="intermediario">
+            <result type="redirect">readCategoria</result>
         </action>
             
         <action name="readCategoria" class="Operaciones.Categoria" method="llenarLista">
             <result name="success">/Read/ReadCategoria.jsp</result>
         </action>
-        <action name="update" class="Operaciones.Categoria" method="llenarLista" >
-            <result name="success">/Update/UpdateCategoria.jsp</result>
+        <action name="botonUpdate" class="Operaciones.Categoria" method="llenarLista" >
+            <result name="success">/Registrar/Categoria.jsp</result>
         </action>
-        <action name="updateCategoria" class="Operaciones.Categoria" method="update">
-            <result name="success">/Read/ReadCategoria.jsp</result>
+        <action name="updateCategoria" class="Operaciones.Categoria" method="llenarLista">
+            <result name="redirect">addCategoria</result>
         </action>
         
         <action name="deleteCategoria" class="Operaciones.Categoria" method="delete">
-            <result type="redirect">readCategor ia</result>
+            <result type="redirect">readCategoria</result>
         </action>
         <!-- Categoria -->
           

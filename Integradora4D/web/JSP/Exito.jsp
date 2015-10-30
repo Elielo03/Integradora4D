@@ -18,7 +18,7 @@
             <s:submit value="Aceptar"></s:submit>
         </s:form>
         <h1>Llenas Categoria</h1>
-        <s:form action="readCategoria">
+        <s:form action="llenarLista">
             <s:submit value="Aceptar"></s:submit>
         </s:form>
       <h1>-----persona------</h1>

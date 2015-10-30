@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,10 +25,11 @@ import javax.swing.JOptionPane;
 public class Categoria extends ActionSupport {
 
     CategoriaBean categoria = new CategoriaBean();
-   
+    DepartamentoBean departamento = new DepartamentoBean();
+
     List<DepartamentoBean> departamentos = new ArrayList<>();
-    List<CategoriaBean> categorias= new ArrayList<>();
-    String idDepartamentos;
+    List<CategoriaBean> categorias = new ArrayList<>();
+    int idDepartamento;
     int idCategoria;
     Connection con;
 
@@ -41,48 +41,71 @@ public class Categoria extends ActionSupport {
         }
     }
 
-    public String add() {
-        
-        
-        
+    public boolean add() {
+
         DepartamentoDao daoDepartamento = new DepartamentoDao(con);
-        DepartamentoBean beanDepartamento= new DepartamentoBean();
-       beanDepartamento=daoDepartamento.get(Integer.parseInt(idDepartamentos) );
-       categoria.setDepartamento(beanDepartamento);
-       
-        CategoriaDao categoriaDao= new CategoriaDao(con);
-        if(categoriaDao.add(categoria))
-            return SUCCESS;
-       else
-            return ERROR;
+        DepartamentoBean beanDepartamento = new DepartamentoBean();
+        beanDepartamento = daoDepartamento.get(idDepartamento);
+        categoria.setDepartamento(beanDepartamento);
+
+        CategoriaDao categoriaDao = new CategoriaDao(con);
+        if (categoriaDao.add(categoria)) {
+            return true;
+        } else {
+            return false;
+        }
 
     }
 
     public String llenarLista() {
         DepartamentoDao daoD = new DepartamentoDao(con);
-        CategoriaDao daoC= new CategoriaDao(con);
+        CategoriaDao daoC = new CategoriaDao(con);
         departamentos = daoD.getAll();
-        categorias=daoC.getAll();
-        
-         categoria= daoC.get(idCategoria);
+        categorias = daoC.getAll();
+
+        categoria = daoC.get(idCategoria);
+        departamento = categoria.getDepartamento();
+
         return SUCCESS;
     }
-    
-    
-    
-    public String update(){
-       
-        CategoriaDao dao= new CategoriaDao(con);
-       dao.update(categoria);
+
+    public boolean update() {
+
+        DepartamentoDao daoD = new DepartamentoDao(con);
+        departamento = daoD.get(departamento.getIdDepartamento());
+        System.out.println("El departamento seleccionado es------------>: "+departamento.getNombre());
+        categoria.setDepartamento(departamento);
+        CategoriaDao dao = new CategoriaDao(con);
+        if (dao.update(categoria)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public String delete() {
+
+        CategoriaDao dao = new CategoriaDao(con);
+        dao.delete(idCategoria);
+
         return SUCCESS;
     }
-    
-    public String delete(){
-        System.out.println("en el deleteeeeeeee :"+idCategoria);
-         CategoriaDao dao= new CategoriaDao(con);
-       dao.delete(idCategoria);
-        
-        return SUCCESS;
+
+    public String intermediario() {
+
+        if (categoria.getIdCategoria() == 0) {
+            if (add()) {
+                return SUCCESS;
+            }
+
+        }
+
+        if (update()) {
+
+            return SUCCESS;
+        }
+
+        return ERROR;
     }
 
     public CategoriaBean getCategoria() {
@@ -101,12 +124,12 @@ public class Categoria extends ActionSupport {
         this.departamentos = departamentos;
     }
 
-    public String getIdDepartamentos() {
-        return idDepartamentos;
+    public int getIdDepartamento() {
+        return idDepartamento;
     }
 
-    public void setIdDepartamentos(String idDepartamentos) {
-        this.idDepartamentos = idDepartamentos;
+    public void setIdDepartamento(int idDepartamento) {
+        this.idDepartamento = idDepartamento;
     }
 
     public List<CategoriaBean> getCategorias() {
@@ -125,8 +148,12 @@ public class Categoria extends ActionSupport {
         this.idCategoria = idCategoria;
     }
 
-   
+    public DepartamentoBean getDepartamento() {
+        return departamento;
+    }
 
-    
+    public void setDepartamento(DepartamentoBean departamento) {
+        this.departamento = departamento;
+    }
 
 }

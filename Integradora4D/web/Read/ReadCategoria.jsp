@@ -15,7 +15,7 @@
     <body>
         <h1>Categorias: </h1>
         
-        <table border="1">
+        <table  border="1">
             <tr>
                 <td>Id</td>
                 <td>Nombre</td>
@@ -30,14 +30,14 @@
                 <td><s:property value="nombre"></s:property></td>
                 <td><s:property value="estado"></s:property></td>
                 <td><s:property value="departamento.nombre"></s:property></td>
-                <td>  <s:form action="update">
+                <td>  <s:form action="botonUpdate">
                         <s:hidden name="idCategoria"></s:hidden>
                         <s:submit value="Actualizar"></s:submit>
                     </s:form>
                 </td>
                 <td><s:form action="deleteCategoria">
                         <s:hidden name="idCategoria"></s:hidden>
-                        <s:submit value="Eliminar"></s:submit>
+                        <s:submit value="Eliminar" id="eliminar"></s:submit>
                     </s:form></td>
             </tr>
             
@@ -46,5 +46,11 @@
         </s:iterator>
             
             </table>
+        
+        
+        
+        
+        
+        
     </body>
 </html>

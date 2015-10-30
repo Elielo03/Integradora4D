@@ -65,18 +65,20 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
 
     @Override
     public boolean update(CategoriaBean bean) {
-        String query="UPDATE Categoria SET"
-                + "idCategoria=?"
+        String query="UPDATE Categoria SET "
+                
                 + "nombre=?,"
                 + "estado=?,"
-                + "idDepartamento=?;";
+                + "idDepartamento=?"
+                + " WHERE idCategoria=?;";
         
         try {
             PreparedStatement ps =con.prepareStatement(query);
-            ps.setInt(1, bean.getIdCategoria());
-            ps.setString(2, bean.getNombre());
-            ps.setBoolean(3, bean.isEstado());
-            ps.setInt(4,bean.getDepartamento().getIdDepartamento());
+            
+            ps.setString(1, bean.getNombre());
+          ps.setBoolean(2, bean.isEstado());
+            ps.setInt(3,bean.getDepartamento().getIdDepartamento());
+            ps.setInt(4, bean.getIdCategoria());
             if(ps.executeUpdate()>=1){
                 ps.close();
                 return true;
