@@ -122,7 +122,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
     @Override
     public boolean add(PersonaBean bean) {
 
-        String query = "EXECUTE InsertaPersona ?, ?, ?, ?, '05-07-1989', ?, ?, ?, ?, ?";
+        String query = "EXECUTE InsertaPersona ?, ?, ?, ?, ?, ?, ?, ?, ?, ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(query);
@@ -130,12 +130,12 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
             ps.setString(2, bean.getApp());
             ps.setString(3, bean.getApm());
             ps.setString(4, bean.getDireccion());
-//            ps.setDate(5, bean.getFechaNac());
-            ps.setString(5, bean.getCorreoE());
-            ps.setString(6, bean.getTelefono());
-            ps.setString(7, bean.getPass());
-            ps.setInt(8, bean.getUsuario().getIdTipoUsuario());
-            ps.setInt(9, bean.getDepartamento().getIdDepartamento());
+            ps.setDate(5, bean.getFechaNac());
+            ps.setString(6, bean.getCorreoE());
+            ps.setString(7, bean.getTelefono());
+            ps.setString(8, bean.getPass());
+            ps.setInt(9, bean.getUsuario().getIdTipoUsuario());
+            ps.setInt(10, bean.getDepartamento().getIdDepartamento());
 
             if (ps.executeUpdate() >= 1) {
                 ps.close();
