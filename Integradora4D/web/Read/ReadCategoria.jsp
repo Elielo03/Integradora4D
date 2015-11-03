@@ -48,7 +48,17 @@
             </table>
         
         
-        
+        <script type="text/javascript">
+            
+            function cambiar(x){
+                $(".eliminar").click(function (){
+                    
+                }
+                        )
+            }
+            
+            
+        </script>
         
         
         
