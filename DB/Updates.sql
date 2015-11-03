@@ -19,3 +19,13 @@ BEGIN
 END
 
 EXECUTE actualizaPersona 1,'nombre', 'app', 'apm', 'direccion', '20-12-1990', 'correoE', '777-3-20-54-63', 1, 0, 'pass', 4
+
+CREATE PROCEDURE actProductoExistencias
+	@codigo varchar(45),
+	@existencias int
+AS
+BEGIN
+	UPDATE Producto SET existencias = @existencias WHERE codigo = @codigo;
+END
+
+EXECUTE actProductoExistencias 1ABC,200
