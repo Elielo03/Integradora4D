@@ -47,7 +47,7 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
 
     @Override
     public DepartamentoBean get(int id) {
-        String query="SELECT * FROM Departamento where idDepartamento =?;";
+        String query="SELECT * FROM Departamento where idDepartamento = ?;";
         
         DepartamentoBean bean = new DepartamentoBean();
         try {
@@ -69,15 +69,16 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
 
     @Override
     public boolean update(DepartamentoBean bean) {
+        System.out.println("NOMBREEEEEEEE:--------> " +bean.getNombre());
         String query="UPDATE Departamento SET "
                 + "nombre=?,"
-                + "estado=?,"
-                + "descripcion=?;";
+                + "descripcion=?"
+                + " where idDepartamento=?;";
         
         try {
             PreparedStatement ps =con.prepareStatement(query);
             ps.setString(1, bean.getNombre());
-            ps.setBoolean(2, bean.isEstado());
+            ps.setString(2, bean.getDescripcion());
             ps.setInt(3, bean.getIdDepartamento());
             if(ps.executeUpdate()>=1){
                 ps.close();

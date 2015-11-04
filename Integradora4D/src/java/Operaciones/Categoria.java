@@ -76,11 +76,8 @@ public class Categoria extends ActionSupport {
        
         categoria.setDepartamento(departamento);
         CategoriaDao dao = new CategoriaDao(con);
-        if (dao.update(categoria)) {
-            return true;
-        } else {
-            return false;
-        }
+        
+        return dao.update(categoria);
     }
 
     public String delete() {

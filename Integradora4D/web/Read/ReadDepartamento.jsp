@@ -32,7 +32,7 @@
                  <td><s:property value="descripcion"></s:property></td>
                 <td><s:property value="estado"></s:property></td>
                 
-                <td>  <s:form action="updateDepartamento">
+                <td>  <s:form action="btnUpdateDepartamento">
                         <s:hidden name="idDepartamento"></s:hidden>
                         <s:submit value="Actualizar"></s:submit>
                     </s:form>

@@ -45,7 +45,7 @@ public class Departamento  extends ActionSupport{
     }
     
     public boolean add(){
-        System.out.println("NOMBREEEEEEEEEE:  "+departamento.getNombre());
+       
         DepartamentoDao dao = new DepartamentoDao(con);
       
        
@@ -56,10 +56,24 @@ public class Departamento  extends ActionSupport{
     
     public boolean update(){
         
-        System.out.println("IDDDDDDDDDDDDDDDD: "+ departamento.getIdDepartamento());
+        
         DepartamentoDao daoD= new DepartamentoDao(con);
-        departamento=daoD.get(departamento.getIdDepartamento());
+       
+       
         return daoD.update(departamento);
+    }
+    
+    public String delete(){
+        
+         DepartamentoDao daoD= new DepartamentoDao(con);
+         
+        if(daoD.delete(idDepartamento)){
+            return SUCCESS;
+        }
+       
+        return ERROR;
+        
+        
     }
     
     
@@ -68,6 +82,8 @@ public class Departamento  extends ActionSupport{
         
         DepartamentoDao daoD= new DepartamentoDao(con);
         departamentos=daoD.getAll();
+        
+      
         
         departamento=daoD.get(idDepartamento);
         
@@ -82,6 +98,7 @@ public class Departamento  extends ActionSupport{
             }
         }
         if(update()){
+           
             return SUCCESS;
         }
         

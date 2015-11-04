@@ -34,7 +34,7 @@
             <result name="opcion2">/Registrar/addPersonaEmpleado.jsp</result>     
         </action>
         
-         <action name="deletePersona" class="Operaciones.Persona" method="delete">
+        <action name="deletePersona" class="Operaciones.Persona" method="delete">
             <result name="success" type="redirect">LlenarPersona</result>     
         </action>
         <!-- Fin persona -->
@@ -54,9 +54,6 @@
         <action name="botonUpdate" class="Operaciones.Categoria" method="llenarLista" >
             <result name="success">/Registrar/Categoria.jsp</result>
         </action>
-        <action name="updateCategoria" class="Operaciones.Categoria" method="llenarLista">
-            <result name="redirect">addCategoria</result>
-        </action>
         
         <action name="deleteCategoria" class="Operaciones.Categoria" method="delete">
             <result type="redirect">readCategoria</result>
@@ -67,9 +64,9 @@
         
         
           
-          <!-- Departamento -->
+        <!-- Departamento -->
           
-         <action name="addDepa">
+        <action name="addDepa">
             <result name="success">/Registrar/addDepartamento.jsp</result>
         </action>
         
@@ -78,13 +75,19 @@
             <result name="error">/JSP/Exito1.jsp</result>
         </action>
         
-         <action name="readDepartamento" class="Operaciones.Departamento" method="llenarLista">
+        <action name="readDepartamento" class="Operaciones.Departamento" method="llenarLista">
             <result name="success">/Read/ReadDepartamento.jsp</result>
         </action>
         
-        <action name="updateDepartamento" class="Operaciones.Departamento" method="llenarLista">
-            <result type="redirect">addDepa</result>
+        <action name="btnUpdateDepartamento" class="Operaciones.Departamento" method="llenarLista">
+            <result name="success">/Registrar/addDepartamento.jsp</result>
         </action>
+        
+         <action name="deleteDepartamento" class="Operaciones.Departamento" method="delete">
+            <result type="redirect">readDepartamento</result>
+        </action>
+         
+        
         
         <!-- Departamento -->
         
@@ -99,7 +102,7 @@
         
         <action name="addProducto" class="Operaciones.Producto" method="add">
             
-           <result type="redirect">readProducto</result>
+            <result type="redirect">readProducto</result>
         </action>
         
         <action name="readProducto" class="Operaciones.Producto" method="llenarLista">
