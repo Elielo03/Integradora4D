@@ -69,7 +69,7 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
 
     @Override
     public boolean update(DepartamentoBean bean) {
-        String query="UPDATE Departamento SET"
+        String query="UPDATE Departamento SET "
                 + "nombre=?,"
                 + "estado=?,"
                 + "descripcion=?;";
@@ -112,7 +112,7 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
     @Override
     public boolean add(DepartamentoBean bean) {
         
-        String query = "Insert into Departamento (nombre,descripcion) VALUES (?,?);";
+        String query = "Insert INTO Departamento (nombre,descripcion) VALUES (?,?);";
        
         try {
             PreparedStatement ps =con.prepareStatement(query);

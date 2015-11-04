@@ -73,7 +73,7 @@ public class Categoria extends ActionSupport {
 
         DepartamentoDao daoD = new DepartamentoDao(con);
         departamento = daoD.get(departamento.getIdDepartamento());
-        System.out.println("El departamento seleccionado es------------>: "+departamento.getNombre());
+       
         categoria.setDepartamento(departamento);
         CategoriaDao dao = new CategoriaDao(con);
         if (dao.update(categoria)) {

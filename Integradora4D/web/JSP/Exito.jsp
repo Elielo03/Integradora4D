@@ -39,6 +39,14 @@
           <s:form action="addPro">
             <s:submit value="aDD producto"></s:submit>
         </s:form>
+          
+          <s:form action="addDepa">
+              <s:submit value="Add Departamento"></s:submit>
+          </s:form>
+          
+           <s:form action="readDepartamento">
+              <s:submit value="Read Departamento"></s:submit>
+          </s:form>
         
          
 

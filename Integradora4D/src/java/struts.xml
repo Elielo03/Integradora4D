@@ -62,13 +62,31 @@
             <result type="redirect">readCategoria</result>
         </action>
         <!-- Categoria -->
-          
-          
-          
         
-        <action name="addDepartamento" class="Operaciones.Departamento" method="add">
-            <result name="success">/JSP/Exito1.jsp</result>
+        
+        
+        
+          
+          <!-- Departamento -->
+          
+         <action name="addDepa">
+            <result name="success">/Registrar/addDepartamento.jsp</result>
         </action>
+        
+        <action name="addDepartamento" class="Operaciones.Departamento" method="intermediario">
+            <result type="redirect">readDepartamento</result>
+            <result name="error">/JSP/Exito1.jsp</result>
+        </action>
+        
+         <action name="readDepartamento" class="Operaciones.Departamento" method="llenarLista">
+            <result name="success">/Read/ReadDepartamento.jsp</result>
+        </action>
+        
+        <action name="updateDepartamento" class="Operaciones.Departamento" method="llenarLista">
+            <result type="redirect">addDepa</result>
+        </action>
+        
+        <!-- Departamento -->
         
         
         
