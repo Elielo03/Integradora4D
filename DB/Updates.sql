@@ -15,7 +15,7 @@ AS
 BEGIN
 	UPDATE Persona SET nombre = @nombre, app = @app, apm = @apm, direccion = @direccion, fecha_nac = @fecha_nac,
 		correoE = @correoE, telefono = @telefono, idDepartamento = @idDepartamento WHERE idPersona = @idPersona;
-	UPDATE Usuario SET pass = @pass, idTpoUsuario = @idTipoUsuario WHERE idUsuario = @idUsuario;
+	UPDATE Usuario SET pass = @pass, idTipoUsuario = @idTipoUsuario WHERE idUsuario = @idUsuario;
 END
 
 EXECUTE actualizaPersona 1,'nombre', 'app', 'apm', 'direccion', '20-12-1990', 'correoE', '777-3-20-54-63', 1, 0, 'pass', 4
