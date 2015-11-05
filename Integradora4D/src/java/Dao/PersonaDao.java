@@ -39,7 +39,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
             bean.setApp(res.getString(3));
             bean.setApm(res.getString(4));
             bean.setDireccion(res.getString(5));
-            bean.setFechaNac(res.getString(6));
+            bean.setFechaNac(res.getDate(6));
             bean.setEstado(res.getBoolean(7));
             bean.setCorreoE(res.getString(8));
             bean.setTelefono(res.getString(9));
@@ -83,7 +83,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
                 bean.setApp(res.getString(3));
                 bean.setApm(res.getString(4));
                 bean.setDireccion(res.getString(5));
-                bean.setFechaNac(res.getString(6));
+                bean.setFechaNac(res.getDate(6));
                 bean.setEstado(res.getBoolean(7));
                 bean.setCorreoE(res.getString(8));
                 bean.setTelefono(res.getString(9));
@@ -130,7 +130,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
             ps.setString(2, bean.getApp());
             ps.setString(3, bean.getApm());
             ps.setString(4, bean.getDireccion());
-            ps.setString(5, bean.getFechaNac());
+            ps.setDate(5, bean.getFechaNac());
             ps.setString(6, bean.getCorreoE());
             ps.setString(7, bean.getTelefono());
             ps.setString(8, bean.getPass());

@@ -60,7 +60,7 @@ public class Persona extends ActionSupport {
         persona.setUsuario(usuario);
         PersonaDao daoPersona = new PersonaDao(con);
         SimpleDateFormat formateador = new SimpleDateFormat("yyyy-MM-dd");
-        persona.setFechaNac(formateador.format(persona.getFechaNac()));
+        //persona.setFechaNac(formateador.format(persona.getFechaNac()));
         JOptionPane.showMessageDialog(null, persona.getFechaNac());
         daoPersona.add(persona);
         return true;
@@ -99,6 +99,7 @@ public class Persona extends ActionSupport {
         persona = daoPersona.get(idPersona);
         usuario = persona.getUsuario();
         departamento = persona.getDepartamento();
+        System.out.println("fecha "+persona.getFechaNac());
         if (persona.getDepartamento().getIdDepartamento() == 0) {
             return "opcion1";
         } else {

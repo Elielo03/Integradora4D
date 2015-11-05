@@ -13,6 +13,7 @@ public final class ReadPersonaCliente_jsp extends org.apache.jasper.runtime.Http
 
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fdate_0026_005fname_005fformat_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fform_0026_005faction;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fhidden_0026_005fname_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fvalue_005fnobody;
@@ -27,6 +28,7 @@ public final class ReadPersonaCliente_jsp extends org.apache.jasper.runtime.Http
   public void _jspInit() {
     _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fs_005fdate_0026_005fname_005fformat_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fs_005fform_0026_005faction = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fs_005fhidden_0026_005fname_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fvalue_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
@@ -37,6 +39,7 @@ public final class ReadPersonaCliente_jsp extends org.apache.jasper.runtime.Http
   public void _jspDestroy() {
     _005fjspx_005ftagPool_005fs_005fiterator_0026_005fvalue.release();
     _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.release();
+    _005fjspx_005ftagPool_005fs_005fdate_0026_005fname_005fformat_005fnobody.release();
     _005fjspx_005ftagPool_005fs_005fform_0026_005faction.release();
     _005fjspx_005ftagPool_005fs_005fhidden_0026_005fname_005fnobody.release();
     _005fjspx_005ftagPool_005fs_005fsubmit_0026_005fvalue_005fnobody.release();
@@ -160,17 +163,21 @@ public final class ReadPersonaCliente_jsp extends org.apache.jasper.runtime.Http
           return true;
         out.write("</td>\r\n");
         out.write("                        <td>");
+        if (_jspx_meth_s_005fdate_005f0(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
+          return true;
+        out.write("</td>\r\n");
+        out.write("                        <td>");
         if (_jspx_meth_s_005fproperty_005f5(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
           return true;
         out.write("</td>\r\n");
         out.write("                        <td>");
         if (_jspx_meth_s_005fproperty_005f6(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
           return true;
-        out.write("</td>\r\n");
+        out.write("</td>     \r\n");
         out.write("                        <td>");
         if (_jspx_meth_s_005fproperty_005f7(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
           return true;
-        out.write("</td>     \r\n");
+        out.write("</td>\r\n");
         out.write("                        <td>");
         if (_jspx_meth_s_005fproperty_005f8(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
           return true;
@@ -179,12 +186,8 @@ public final class ReadPersonaCliente_jsp extends org.apache.jasper.runtime.Http
         if (_jspx_meth_s_005fproperty_005f9(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
           return true;
         out.write("</td>\r\n");
-        out.write("                        <td>");
-        if (_jspx_meth_s_005fproperty_005f10(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
-          return true;
-        out.write("</td>\r\n");
         out.write("                       <td>");
-        if (_jspx_meth_s_005fproperty_005f11(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
+        if (_jspx_meth_s_005fproperty_005f10(_jspx_th_s_005fiterator_005f0, _jspx_page_context))
           return true;
         out.write("</td>\r\n");
         out.write("                        <td>\r\n");
@@ -313,6 +316,27 @@ public final class ReadPersonaCliente_jsp extends org.apache.jasper.runtime.Http
     return false;
   }
 
+  private boolean _jspx_meth_s_005fdate_005f0(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fiterator_005f0, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  s:date
+    org.apache.struts2.views.jsp.DateTag _jspx_th_s_005fdate_005f0 = (org.apache.struts2.views.jsp.DateTag) _005fjspx_005ftagPool_005fs_005fdate_0026_005fname_005fformat_005fnobody.get(org.apache.struts2.views.jsp.DateTag.class);
+    _jspx_th_s_005fdate_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_s_005fdate_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
+    // /Read/ReadPersonaCliente.jsp(44,28) name = name type = java.lang.String reqTime = false required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fdate_005f0.setName("fechaNac");
+    // /Read/ReadPersonaCliente.jsp(44,28) name = format type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fdate_005f0.setFormat("dd.MM.yyyy");
+    int _jspx_eval_s_005fdate_005f0 = _jspx_th_s_005fdate_005f0.doStartTag();
+    if (_jspx_th_s_005fdate_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fs_005fdate_0026_005fname_005fformat_005fnobody.reuse(_jspx_th_s_005fdate_005f0);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fs_005fdate_0026_005fname_005fformat_005fnobody.reuse(_jspx_th_s_005fdate_005f0);
+    return false;
+  }
+
   private boolean _jspx_meth_s_005fproperty_005f5(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fiterator_005f0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -321,8 +345,8 @@ public final class ReadPersonaCliente_jsp extends org.apache.jasper.runtime.Http
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f5 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f5.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /Read/ReadPersonaCliente.jsp(44,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f5.setValue("fechaNac");
+    // /Read/ReadPersonaCliente.jsp(45,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fproperty_005f5.setValue("correoE");
     int _jspx_eval_s_005fproperty_005f5 = _jspx_th_s_005fproperty_005f5.doStartTag();
     if (_jspx_th_s_005fproperty_005f5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f5);
@@ -340,8 +364,8 @@ public final class ReadPersonaCliente_jsp extends org.apache.jasper.runtime.Http
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f6 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f6.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /Read/ReadPersonaCliente.jsp(45,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f6.setValue("correoE");
+    // /Read/ReadPersonaCliente.jsp(46,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fproperty_005f6.setValue("telefono");
     int _jspx_eval_s_005fproperty_005f6 = _jspx_th_s_005fproperty_005f6.doStartTag();
     if (_jspx_th_s_005fproperty_005f6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f6);
@@ -359,8 +383,8 @@ public final class ReadPersonaCliente_jsp extends org.apache.jasper.runtime.Http
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f7 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f7.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /Read/ReadPersonaCliente.jsp(46,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f7.setValue("telefono");
+    // /Read/ReadPersonaCliente.jsp(47,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fproperty_005f7.setValue("Usuario.idTipoUsuario");
     int _jspx_eval_s_005fproperty_005f7 = _jspx_th_s_005fproperty_005f7.doStartTag();
     if (_jspx_th_s_005fproperty_005f7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f7);
@@ -378,8 +402,8 @@ public final class ReadPersonaCliente_jsp extends org.apache.jasper.runtime.Http
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f8 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f8.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f8.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /Read/ReadPersonaCliente.jsp(47,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f8.setValue("Usuario.idTipoUsuario");
+    // /Read/ReadPersonaCliente.jsp(48,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fproperty_005f8.setValue("Departamento.nombre");
     int _jspx_eval_s_005fproperty_005f8 = _jspx_th_s_005fproperty_005f8.doStartTag();
     if (_jspx_th_s_005fproperty_005f8.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f8);
@@ -397,8 +421,8 @@ public final class ReadPersonaCliente_jsp extends org.apache.jasper.runtime.Http
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f9 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f9.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f9.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /Read/ReadPersonaCliente.jsp(48,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f9.setValue("Departamento.nombre");
+    // /Read/ReadPersonaCliente.jsp(49,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fproperty_005f9.setValue("estado");
     int _jspx_eval_s_005fproperty_005f9 = _jspx_th_s_005fproperty_005f9.doStartTag();
     if (_jspx_th_s_005fproperty_005f9.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f9);
@@ -416,33 +440,14 @@ public final class ReadPersonaCliente_jsp extends org.apache.jasper.runtime.Http
     org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f10 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
     _jspx_th_s_005fproperty_005f10.setPageContext(_jspx_page_context);
     _jspx_th_s_005fproperty_005f10.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /Read/ReadPersonaCliente.jsp(49,28) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f10.setValue("estado");
+    // /Read/ReadPersonaCliente.jsp(50,27) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fproperty_005f10.setValue("pass");
     int _jspx_eval_s_005fproperty_005f10 = _jspx_th_s_005fproperty_005f10.doStartTag();
     if (_jspx_th_s_005fproperty_005f10.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f10);
       return true;
     }
     _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f10);
-    return false;
-  }
-
-  private boolean _jspx_meth_s_005fproperty_005f11(javax.servlet.jsp.tagext.JspTag _jspx_th_s_005fiterator_005f0, PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  s:property
-    org.apache.struts2.views.jsp.PropertyTag _jspx_th_s_005fproperty_005f11 = (org.apache.struts2.views.jsp.PropertyTag) _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.get(org.apache.struts2.views.jsp.PropertyTag.class);
-    _jspx_th_s_005fproperty_005f11.setPageContext(_jspx_page_context);
-    _jspx_th_s_005fproperty_005f11.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_s_005fiterator_005f0);
-    // /Read/ReadPersonaCliente.jsp(50,27) name = value type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fproperty_005f11.setValue("pass");
-    int _jspx_eval_s_005fproperty_005f11 = _jspx_th_s_005fproperty_005f11.doStartTag();
-    if (_jspx_th_s_005fproperty_005f11.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f11);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fs_005fproperty_0026_005fvalue_005fnobody.reuse(_jspx_th_s_005fproperty_005f11);
     return false;
   }
 
