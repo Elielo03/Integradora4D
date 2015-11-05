@@ -15,8 +15,10 @@ import Dao.PersonaDao;
 import Dao.TipoUsuarioDao;
 import com.opensymphony.xwork2.ActionSupport;
 import java.sql.Connection;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -53,10 +55,13 @@ public class Persona extends ActionSupport {
     }
 
     public boolean add() {
+        JOptionPane.showMessageDialog(null, persona.getFechaNac());
         persona.setDepartamento(departamento);
         persona.setUsuario(usuario);
         PersonaDao daoPersona = new PersonaDao(con);
-
+        SimpleDateFormat formateador = new SimpleDateFormat("yyyy-MM-dd");
+        persona.setFechaNac(formateador.format(persona.getFechaNac()));
+        JOptionPane.showMessageDialog(null, persona.getFechaNac());
         daoPersona.add(persona);
         return true;
 
@@ -94,9 +99,9 @@ public class Persona extends ActionSupport {
         persona = daoPersona.get(idPersona);
         usuario = persona.getUsuario();
         departamento = persona.getDepartamento();
-        if (persona.getDepartamento().getIdDepartamento()==0) {
+        if (persona.getDepartamento().getIdDepartamento() == 0) {
             return "opcion1";
-        }else{
+        } else {
             return "opcion2";
         }
     }

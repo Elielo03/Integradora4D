@@ -18,7 +18,7 @@ public class PersonaBean {
     private String app;
     private String apm;
     private String direccion;
-    private Date fechaNac;
+    private String fechaNac;
     private boolean estado;
     private UsuarioBean Usuario;
     private DepartamentoBean Departamento;
@@ -69,13 +69,19 @@ public class PersonaBean {
         this.direccion = direccion;
     }
 
-    public Date getFechaNac() {
+    public String getFechaNac() {
         return fechaNac;
     }
 
-    public void setFechaNac(Date fechaNac) {
+    public void setFechaNac(String fechaNac) {
         this.fechaNac = fechaNac;
     }
+
+  
+
+    
+
+    
 
     public boolean isEstado() {
         return estado;

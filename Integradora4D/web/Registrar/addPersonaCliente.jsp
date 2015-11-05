@@ -16,7 +16,13 @@
         <script src="<s:url value="../Utilerias/datepicker/js/bootstrap-datepicker.js"/>"></script>
         <script>
             $(function () {
-                $('.datepicker').datepicker();
+                $('.datepicker').datepicker({dateFormat: 'yy-mm-dd'});
+                $('.datepicker').datepicker({dateFormat: 'yyyy-mm-dd'}).bind("change", function () {
+                    var minValue = $(this).val();
+                    minValue = $.datepicker.parseDate("yyyy-mm-dd", minValue);
+                    minValue.setDate(minValue.getDate() + 1);
+                    $("#to").datepicker("option", "minDate", minValue);
+                })
             });
         </script>
         <title>JSP Page</title>
