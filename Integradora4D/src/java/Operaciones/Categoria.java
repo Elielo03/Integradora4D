@@ -62,6 +62,8 @@ public class Categoria extends ActionSupport {
         CategoriaDao daoC = new CategoriaDao(con);
         departamentos = daoD.getAll();
         categorias = daoC.getAll();
+        
+        
 
         categoria = daoC.get(idCategoria);
         departamento = categoria.getDepartamento();
