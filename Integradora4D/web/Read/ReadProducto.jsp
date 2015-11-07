@@ -14,7 +14,8 @@
     </head>
     <body>
         <h1>Lista Productos</h1>
-        <table border="1">
+        <table  id="tabla" class="table table-responsive table-striped table-bordered table-hover">
+            <thead>
             <tr>
                 <td>ID</td>
                 <td>Nombre</td>
@@ -31,6 +32,8 @@
                 <td>Actualizar</td>
                 <td>Eliminar</td>
             </tr>
+            </thead>
+            <tbody>
             <s:iterator value="productos">
                 <tr>
                     <td><s:property value="idProducto"></s:property></td>
@@ -55,10 +58,25 @@
                     </td>
                 </tr>
             </s:iterator>
+            </tbody>
             
             
             
         </table>
+        
+        
+        
+        
+         <script type="text/javascript">
+        $(document).ready( function () {
+    $('#tabla').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.7/i18n/Spanish.json"
+            }
+        } );
+} );
+</script>
+        
         
     </body>
 </html>

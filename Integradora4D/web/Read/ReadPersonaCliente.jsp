@@ -10,11 +10,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <%@include file="../Utilerias/metas.jsp" %>
         <title>JSP Page</title>
     </head>
     <body>
         <h1>Consultar Persona</h1>
-        <table border="1">
+         <table  id="tabla" class="table table-responsive table-striped table-bordered table-hover">
             <thead>
                 <tr>
                     <th>idPersona</th>
@@ -65,5 +66,19 @@
             </s:iterator>
 
         </table>
+        
+        
+        
+         <script type="text/javascript">
+        $(document).ready( function () {
+    $('#tabla').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.7/i18n/Spanish.json"
+            }
+        } );
+} );
+</script>
+        
+        
     </body>
 </html>

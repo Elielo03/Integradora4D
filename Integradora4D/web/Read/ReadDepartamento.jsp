@@ -10,12 +10,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <%@include file="../Utilerias/metas.jsp" %>
         <title>Categoria</title>
     </head>
     <body>
         <h1>Categorias: </h1>
+        <div class="container">
         
-        <table  border="1">
+        <table  id="tabla" class="table table-responsive table-striped table-bordered table-hover">
+            <thead>
             <tr>
                 <td>Id</td>
                 <td>Nombre</td>
@@ -25,6 +28,8 @@
                 <td>Actualizar</td>
                 <td>Eliminar</td>
             </tr>
+            </thead>
+            <tbody>
             <s:iterator value="departamentos">
             <tr>
                 <td><s:property value="idDepartamento"></s:property></td>
@@ -39,29 +44,40 @@
                 </td>
                 <td><s:form action="deleteDepartamento">
                         <s:hidden name="idDepartamento"></s:hidden>
-                        <s:submit value="Eliminar" id="eliminar"></s:submit>
+                        <s:submit  value="Eliminar" id="eliminar"></s:submit>
                     </s:form></td>
             </tr>
             
             
-            
+          
         </s:iterator>
-            
+              </tbody>
             </table>
+        </div>
         
         
         <script type="text/javascript">
-            
-            function cambiar(x){
-                $(".eliminar").click(function (){
-                    
-                }
-                        )
-            }
-            
-            
-        </script>
+		    $(document).ready(function (){
+			    $("#eliminar").click(function(){
+				if(!confirm("Seguro que desea eliminarla?")){
+					return false;
+				}
+			    });
+		    });
+	    </script>
         
+            
+            
+            
+             <script type="text/javascript">
+        $(document).ready( function () {
+    $('#tabla').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.7/i18n/Spanish.json"
+            }
+        } );
+} );
+</script>
         
         
     </body>
