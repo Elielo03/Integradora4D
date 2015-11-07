@@ -41,7 +41,7 @@
                         <td><s:property value="app"/></td>
                         <td><s:property value="apm"/></td>
                         <td><s:property value="direccion"/></td>
-                        <td><s:date name="fechaNac" format="dd.MM.yyyy"/></td>
+                        <td><s:property value="fechaNac"/></td>
                         <td><s:property value="correoE"/></td>
                         <td><s:property value="telefono"/></td>     
                         <td><s:property value="Usuario.idTipoUsuario"/></td>

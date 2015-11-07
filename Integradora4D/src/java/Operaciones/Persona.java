@@ -15,6 +15,7 @@ import Dao.PersonaDao;
 import Dao.TipoUsuarioDao;
 import com.opensymphony.xwork2.ActionSupport;
 import java.sql.Connection;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,7 @@ public class Persona extends ActionSupport {
     List<TipoUsuarioBean> listaTipo = new ArrayList<TipoUsuarioBean>();
 
     int idPersona;
+
     Connection con;
 
     public Persona() {
@@ -55,13 +57,11 @@ public class Persona extends ActionSupport {
     }
 
     public boolean add() {
-        JOptionPane.showMessageDialog(null, persona.getFechaNac());
+
         persona.setDepartamento(departamento);
         persona.setUsuario(usuario);
         PersonaDao daoPersona = new PersonaDao(con);
-        SimpleDateFormat formateador = new SimpleDateFormat("yyyy-MM-dd");
-        //persona.setFechaNac(formateador.format(persona.getFechaNac()));
-        JOptionPane.showMessageDialog(null, persona.getFechaNac());
+
         daoPersona.add(persona);
         return true;
 
@@ -78,8 +78,11 @@ public class Persona extends ActionSupport {
     }
 
     public boolean update() {
-
-        return true;
+        PersonaDao daoPersona = new PersonaDao(con);
+        persona.setDepartamento(departamento);
+        persona.setUsuario(usuario);
+        return daoPersona.update(persona);
+//        return true;
     }
 
     public String getAll() {
@@ -96,10 +99,11 @@ public class Persona extends ActionSupport {
     public String ConsultarPersona() {
         PersonaDao daoPersona = new PersonaDao(con);
         LlenarListas();
+
         persona = daoPersona.get(idPersona);
         usuario = persona.getUsuario();
         departamento = persona.getDepartamento();
-        System.out.println("fecha "+persona.getFechaNac());
+
         if (persona.getDepartamento().getIdDepartamento() == 0) {
             return "opcion1";
         } else {
@@ -124,6 +128,7 @@ public class Persona extends ActionSupport {
 
     }
 
+    
     //Get and set de todos----------------
     public PersonaBean getPersona() {
         return persona;
@@ -181,4 +186,6 @@ public class Persona extends ActionSupport {
         this.listaTipo = listaTipo;
     }
 
+
+    
 }

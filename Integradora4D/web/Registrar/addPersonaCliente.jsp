@@ -16,51 +16,67 @@
         <script src="<s:url value="../Utilerias/datepicker/js/bootstrap-datepicker.js"/>"></script>
         <script>
             $(function () {
-                $('.datepicker').datepicker({dateFormat: 'yy-mm-dd'});
-               
+                $('.datepicker').datepicker({
+                    format: 'yyyy-mm-dd',
+                });
             });
         </script>
         <title>JSP Page</title>
     </head>
     <body>
         <h1>Persona cliente</h1>
-        <s:form action="addPersona" theme="simple"  >
+        <s:form action="addPersona" theme="simple" cssClass="form-horizontal" >
             <div class="well  container" >
-
 
                 <s:hidden name="persona.idPersona" />
                 <div class="form-group  ">
-                    <label>Nombre: </label>
-                    <s:textfield name="persona.nombre" cssClass="form-control" title="nombre de Persona" placeholder="Nombre"/>    
+                    <label class="col-md-4 control-label" for="textinput">Nombre: </label>
+                    <div class="col-md-4">
+                        <s:textfield   name="persona.nombre" cssClass="form-control" title="nombre de Persona" placeholder="Nombre"/>    
+                    </div>
                 </div>
                 <div class="form-group  ">
-                    <label>Apellido Paterno: </label>
-                    <s:textfield name="persona.app" cssClass="form-control" title="Apellido paterno persona" placeholder="Apellido paterno"/>
+                    <label class="col-md-4 control-label" for="textinput">Apellido Paterno: </label>
+                    <div class="col-md-4">
+                        <s:textfield  name="persona.app" cssClass="form-control" title="Apellido paterno persona" placeholder="Apellido paterno"/>
+                    </div>
                 </div>
                 <div class="form-group ">
-                    <label>Apellido Materno: </label>
-                    <s:textfield name="persona.apm" cssClass="form-control" title="Apellido materno persona" placeholder="Apellido materno"/>
+                    <label class="col-md-4 control-label" for="textinput">Apellido Materno: </label>
+                    <div class="col-md-4">
+                        <s:textfield  name="persona.apm" cssClass="form-control" title="Apellido materno persona" placeholder="Apellido materno"/>
+                    </div>
                 </div>
                 <div class=" form-group ">
-                    <label>Fecha de Nacimiento: </label>
-                    <input name="persona.fechaNac" format="dd.MM.yyyy"  value="${persona.fechaNac}" class="datepicker form-control"  />
-                    
+                    <label class="col-md-4 control-label" for="textinput">Fecha de Nacimiento: </label>     
+                    <div class="col-md-4">
+                        <s:textfield  name="persona.fechaNac" cssClass="datepicker form-control"  />
+                    </div>
+                </div>
+
+                <div class="form-group ">
+                    <label class="col-md-4 control-label" for="textinput">Direccion: </label>
+                    <div class="col-md-4">
+                        <s:textarea  name="persona.direccion" cssClass="form-control" title="direccion persona" placeholder="Direccion"/>
+                    </div>
                 </div>
                 <div class="form-group ">
-                    <label>Direccion: </label>
-                    <s:textarea name="persona.direccion" cssClass="form-control" title="direccion persona" placeholder="Direccion"/>
+                    <label class="col-md-4 control-label" for="textinput">Correo: </label>
+                    <div class="col-md-4">
+                        <s:textfield  name="persona.correoE" cssClass="form-control" title="correoE persona" placeholder="Correo"/>
+                    </div>
                 </div>
                 <div class="form-group ">
-                    <label>Correo: </label>
-                    <s:textfield name="persona.correoE" cssClass="form-control" title="correoE persona" placeholder="Correo"/>
+                    <label class="col-md-4 control-label" for="textinput">Telefono: </label>
+                    <div class="col-md-4">
+                        <s:textfield  name="persona.telefono" cssClass="form-control"  title="telefono persona" placeholder="Telefono"/>
+                    </div>
                 </div>
                 <div class="form-group ">
-                    <label>Telefono: </label>
-                    <s:textfield name="persona.telefono" cssClass="form-control"  title="telefono persona" placeholder="Telefono"/>
-                </div>
-                <div class="form-group ">
-                    <label>Contraseña: </label>
-                    <s:textfield name="persona.pass" cssClass="form-control"  title="contraseña de persona" placeholder="contraseña"/>
+                    <label class="col-md-4 control-label" for="textinput">Contraseña: </label>
+                    <div class="col-md-4">
+                        <s:textfield  name="persona.pass" cssClass="form-control"  title="contraseña de persona" placeholder="contraseña"/>
+                    </div>
                 </div>             
                 <s:hidden name="usuario.idTipoUsuario"/> 
                 <s:hidden name="Departamento.idDepartamento"/> 
