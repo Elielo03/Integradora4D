@@ -79,10 +79,6 @@ public class PersonaBean {
 
   
 
-    
-
-    
-
     public boolean isEstado() {
         return estado;
     }

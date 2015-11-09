@@ -14,7 +14,8 @@
         
         <!-- Persona-->
         <action name="addPersona" class="Operaciones.Persona" method="Intermediario">
-            <result name="success" type="redirect">LlenarPersona</result>      
+            <result name="success" type="redirect">LlenarPersona</result> 
+                  <result name="error">/JSP/Exito1.jsp</result>
         </action>
         <action name="LlenarEmpleado" class="Operaciones.Persona" method="LlenarListas" >
             <result name="success">/Registrar/addPersonaEmpleado.jsp</result>
