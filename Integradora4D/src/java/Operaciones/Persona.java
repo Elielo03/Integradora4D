@@ -15,10 +15,8 @@ import Dao.PersonaDao;
 import Dao.TipoUsuarioDao;
 import com.opensymphony.xwork2.ActionSupport;
 import java.sql.Connection;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,11 +28,12 @@ public class Persona extends ActionSupport {
     DepartamentoBean departamento = new DepartamentoBean();
     UsuarioBean usuario = new UsuarioBean();
 
-    List<PersonaBean> listaPersona = new ArrayList<PersonaBean>();
-    List<DepartamentoBean> listaDepartamento = new ArrayList<DepartamentoBean>();
-    List<TipoUsuarioBean> listaTipo = new ArrayList<TipoUsuarioBean>();
+    List<PersonaBean> listaPersona = new ArrayList();
+    List<DepartamentoBean> listaDepartamento = new ArrayList();
+    List<TipoUsuarioBean> listaTipo = new ArrayList();
 
     int idPersona;
+
     Connection con;
 
     public Persona() {
@@ -55,16 +54,16 @@ public class Persona extends ActionSupport {
     }
 
     public boolean add() {
-        JOptionPane.showMessageDialog(null, persona.getFechaNac());
+        PersonaDao daoPersona = new PersonaDao(con);
         persona.setDepartamento(departamento);
         persona.setUsuario(usuario);
-        PersonaDao daoPersona = new PersonaDao(con);
-        SimpleDateFormat formateador = new SimpleDateFormat("yyyy-MM-dd");
-        //persona.setFechaNac(formateador.format(persona.getFechaNac()));
-        JOptionPane.showMessageDialog(null, persona.getFechaNac());
-        daoPersona.add(persona);
-        return true;
-
+        
+        if (daoPersona.add(persona)) {
+            System.out.println("algo para por aqui");
+              return true;
+        }else{
+              return false;
+        }
     }
 
     public String delete() {
@@ -78,8 +77,11 @@ public class Persona extends ActionSupport {
     }
 
     public boolean update() {
-
-        return true;
+        PersonaDao daoPersona = new PersonaDao(con);
+        persona.setDepartamento(departamento);
+        persona.setUsuario(usuario);
+        return daoPersona.update(persona);
+//        return true;
     }
 
     public String getAll() {
@@ -89,17 +91,20 @@ public class Persona extends ActionSupport {
     }
 
     public String llenarVacio() {
+        persona.setIdPersona(0);
         usuario.setIdTipoUsuario(4);
+        departamento.setIdDepartamento(0);
         return SUCCESS;
     }
 
     public String ConsultarPersona() {
         PersonaDao daoPersona = new PersonaDao(con);
         LlenarListas();
+
         persona = daoPersona.get(idPersona);
         usuario = persona.getUsuario();
         departamento = persona.getDepartamento();
-        System.out.println("fecha "+persona.getFechaNac());
+
         if (persona.getDepartamento().getIdDepartamento() == 0) {
             return "opcion1";
         } else {
