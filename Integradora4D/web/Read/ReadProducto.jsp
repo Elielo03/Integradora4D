@@ -10,6 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <%@include file="../Utilerias/metas.jsp" %>
         <title>Lista Productos</title>
     </head>
     <body>
@@ -45,9 +46,26 @@
                    
                     <td><s:property value="precio_c"></s:property></td>
                     <td><s:property value="precio_v"></s:property></td>
-                    <td><s:property value="estado"></s:property></td>
+                    <td>
+                        <%
+                                   String estado=""+pageContext.findAttribute("estado");
+                                    String strclass;
+                                   
+                                    if(estado.equals("true")){
+                                        
+                                        strclass="btn btn-success";
+                                    }else{
+                                         
+                                        strclass="btn btn-danger";
+                                    }
+                                    %>
+                                    <button    name="button2id" class="<%=strclass%>"> <%=estado%> </button>
+                        
+                        
+                        
+                    </td>
                     <td><s:property value="marca"></s:property></td>
-                    <td><img src="<s:url value="%{url}"/>" width="120" height="120"/></td>
+                    <td><img src="<s:url value="%{imagen}"/>" width="120" height="120"/></td>
                     <td><s:property value="categoria.nombre"></s:property></td>
                     <td>Actualizar</td>
                     <td>

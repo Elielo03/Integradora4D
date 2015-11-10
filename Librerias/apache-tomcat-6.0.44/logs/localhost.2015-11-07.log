@@ -1362,3 +1362,11 @@ java.lang.NullPointerException
 	at org.apache.tomcat.util.net.AprEndpoint$Worker.run(AprEndpoint.java:1778)
 	at java.lang.Thread.run(Thread.java:745)
 
+nov 07, 2015 2:06:33 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: SessionListener: contextDestroyed()
+nov 07, 2015 2:06:33 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: ContextListener: contextDestroyed()
+nov 07, 2015 9:02:19 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: ContextListener: contextInitialized()
+nov 07, 2015 9:02:19 AM org.apache.catalina.core.ApplicationContext log
+INFORMACIÓN: SessionListener: contextInitialized()

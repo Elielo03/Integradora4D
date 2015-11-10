@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -42,6 +43,7 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
             bean.setPrecio_v(res.getDouble("precio_v"));
             bean.setEstado(res.getBoolean("estado"));
             bean.setMarca(res.getString("marca"));
+            bean.setImagen(res.getString("imagen"));
             
             CategoriaBean categoria= new CategoriaDao(con).get(res.getInt("idCategoria"));
             bean.setCategoria(categoria);
@@ -142,7 +144,7 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
 
     @Override
     public boolean add(ProductoBean bean) {
-        System.out.println("en el dao:" +bean.getImagen());
+        
         
          String query="INSERT INTO Producto VALUES(?,?,?,?,?,?,?,?,?,?,?);";
                

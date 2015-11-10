@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 
@@ -71,14 +72,17 @@ public class Producto  extends ActionSupport{
         
        
         
-        File archivoFinal = new File(path+bean.getCodigo()+".jpg",infoTemporal);
+        File archivoFinal = new File(path+"/img/"+bean.getCodigo()+".jpg",infoTemporal);
         FileUtils.copyFile(archivo, archivoFinal);
          
     
         
-        url = "http://localhost:8080/Integradora4D/"+archivoFinal.getName();
+        url = "http://localhost:8080/Integradora4D/img/"+archivoFinal.getName();
+        
+         
+         
       
-        System.out.println("IDDDD DE CATEGORIA: "+idCategoria);
+        
        categoria= daoC.get(idCategoria);
         
         bean.setCategoria(categoria);

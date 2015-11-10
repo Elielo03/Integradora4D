@@ -57,7 +57,7 @@
                                         strclass="btn btn-danger";
                                     }
                                     %>
-                                    <button id="${idCategoria}"   name="button2id" class="<%=strclass%>"> <%=estado%> </button>
+                                    <button   name="button2id" class="<%=strclass%>"> <%=estado%> </button>
 
                                 </input> 
 

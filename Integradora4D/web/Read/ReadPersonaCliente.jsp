@@ -47,7 +47,24 @@
                         <td><s:property value="telefono"/></td>     
                         <td><s:property value="Usuario.idTipoUsuario"/></td>
                         <td><s:property value="Departamento.nombre"/></td>
-                        <td><s:property value="estado"/></td>
+                        <td>
+                            <%
+                                   String estado=""+pageContext.findAttribute("estado");
+                                    String strclass;
+                                   
+                                    if(estado.equals("true")){
+                                        
+                                        strclass="btn btn-success";
+                                    }else{
+                                         
+                                        strclass="btn btn-danger";
+                                    }
+                                    %>
+                                    <button    name="button2id" class="<%=strclass%>"> <%=estado%> </button>
+                            
+                            
+                            
+                        </td>
                        <td><s:property value="pass"/></td>
                         <td>
                             <s:form action="updatePersona">
