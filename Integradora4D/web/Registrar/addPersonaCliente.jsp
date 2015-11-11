@@ -14,10 +14,15 @@
         <link rel="stylesheet" type="text/css" href="<s:url value="../Utilerias/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>"/>
         <link rel="stylesheet" type="text/css" href="<s:url value="../Utilerias/datepicker/css/datepicker.css"/>"/>
 
-        <script type="text/javascript" src="<s:url value="../Utilerias/datepicker/js/main.js"/>"></script>
-        <script type="text/javascript" src="<s:url value="../Utilerias/datepicker/js/bootstrap-datepicker.js"/>"></script>
-
         
+        <script>
+            $(function () {
+                $('.datepicker').datepicker({
+                    format: 'yyyy-mm-dd',
+                });
+            });
+        </script>
+
         <title>JSP Page</title>
     </head>
 
@@ -109,6 +114,8 @@
         <script type="text/javascript" src="<s:url value="../Utilerias/bootstrap-3.3.5-dist/js/jQuery1.11.3.js"/> "></script>
         <script type="text/javascript" src=" <s:url value="../Utilerias/bootstrap-3.3.5-dist/js/bootstrap.min.js"/>"></script>
         <script type="text/javascript" src="<s:url value=" ../Utilerias/Otros/ValPersona.js"/> "></script>
-        
+        <script type="text/javascript" src="<s:url value="../Utilerias/datepicker/js/main.js"/>"></script>
+        <script type="text/javascript" src="<s:url value="../Utilerias/datepicker/js/bootstrap-datepicker.js"/>"></script>
+
     </body>
 </html>

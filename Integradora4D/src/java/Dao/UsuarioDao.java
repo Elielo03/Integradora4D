@@ -96,4 +96,27 @@ public class UsuarioDao extends DaoAbstract<UsuarioBean> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public UsuarioBean sesion(String nombre, String pass) {
+
+        String query = "SELECT * FROM Usuario where username=? and pass=?;";
+
+        UsuarioBean bean = new UsuarioBean();
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, nombre);
+            ps.setString(2, pass);
+            ResultSet result = ps.executeQuery();
+            while (result.next()) {
+                bean.setIdUsuario(result.getInt(1));
+                bean.setUserName(result.getString(2));
+                bean.setPass(result.getString(3));
+                bean.setIdTipoUsuario(result.getInt(4));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return bean;
+    }
+
 }

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -69,7 +69,6 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
 
     @Override
     public boolean update(DepartamentoBean bean) {
-        System.out.println("NOMBREEEEEEEE:--------> " +bean.getNombre());
         String query="UPDATE Departamento SET "
                 + "nombre=?,"
                 + "descripcion=?"
@@ -137,15 +136,13 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
     List<DepartamentoBean> passResultSet(ResultSet res, List<DepartamentoBean> list) throws SQLException {
         while(res.next()){
             DepartamentoBean bean=new DepartamentoBean();
-            
-            
+                       
             bean.setIdDepartamento(res.getInt("idDepartamento"));
             bean.setNombre(res.getString("nombre"));
             bean.setDescripcion(res.getString("descripcion"));
             bean.setEstado(res.getBoolean("estado"));
             list.add(bean);
-        }
-        
+        }     
         return list;
     }
     

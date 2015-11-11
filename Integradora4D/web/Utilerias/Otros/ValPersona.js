@@ -1,26 +1,40 @@
 //$(document).on("ready", inicio);
-//
+////
 //function inicio() {
 //    $("span.help-block").hide();
-//   $("#Guardar").click(function(){
-//		if(verificar()===false)
-//			alert("los campos no estan validados");
-//		else{
-//			alert("los campos estan validados");
-//		}
-//	});
+//  
+//                $('.datepicker').datepicker({
+//                    format: 'yyyy-mm-dd'
+//                });
+//            
+////   $("#Guardar").click(function(){
+////		if(verificar()===false)
+////			alert("los campos no estan validados");
+////		else{
+////			alert("los campos estan validados");
+////		}
+////	});
 //
 ////    $("#nombre").keyup(verificar);
 //
 //}
+
+
+$(function hola() {
+    $('.datepicker').datepicker({
+        format: 'yyyy-mm-dd'
+    });
+});
+
+
 function submitform()
 {
     if (verificar()) {
-          document.addPersona.submit();
-    }else{
+        document.addPersona.submit();
+    } else {
         alert("Existen campos vacios");
     }
-  
+
 }
 
 function verificar() {
