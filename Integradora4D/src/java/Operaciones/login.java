@@ -7,6 +7,7 @@ package Operaciones;
 
 import Beans.UsuarioBean;
 import Conexion.ConexionSQLServer;
+import Dao.UsuarioDao;
 import com.opensymphony.xwork2.ActionSupport;
 import java.sql.Connection;
 
@@ -27,7 +28,18 @@ public class login extends ActionSupport {
         }
     }
 
-    public void sesion() {
+    public String sesion() {
+        UsuarioDao dao = new UsuarioDao(con);
+        usuario = dao.sesion(usuario.getUserName(), usuario.getPass());
+        if (usuario != null) {
+            if (usuario.getIdTipoUsuario() == 4) {
+                return "opcion1";
+            } else {
+                return "opcion2";
+            }
+        } else {
+            return ERROR;
+        }
 
     }
 

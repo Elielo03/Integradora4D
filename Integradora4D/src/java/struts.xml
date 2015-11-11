@@ -120,6 +120,16 @@
             
         <!-- Producto -->
         
+        <!-- login -->
+        <action name="login" class="Operaciones.login" method="sesion">
+            <result name="opcion2">/JSP/Exito.jsp</result>
+             <result name="opcion1">/JSP/index.jsp</result>
+             <result name="error">/JSP/Exito1.jsp</result>
+        </action>
+        
+        <!-- login -->
+        
+        
         
     </package>
 </struts>

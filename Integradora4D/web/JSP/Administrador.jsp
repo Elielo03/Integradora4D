@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Exito1
-    Created on : 14-oct-2015, 15:57:31
-    Author     : Eliel David
+    Document   : Administrador
+    Created on : 11-nov-2015, 16:54:40
+    Author     : Xavier
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>error</h1>
+        <h1>admins</h1>
     </body>
 </html>

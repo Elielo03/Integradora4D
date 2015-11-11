@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>index</h1>
-        <s:form>
+        <s:form action="login">
             <s:textfield name="usuario.userName" /> 
             <s:textfield name="usuario.pass" />     
             <s:submit value="login"/>
