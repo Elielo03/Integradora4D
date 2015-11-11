@@ -16,9 +16,9 @@
 function submitform()
 {
     if (verificar()) {
-          document.myform.submit();
+          document.addPersona.submit();
     }else{
-        alert("no se puede");
+        alert("Existen campos vacios");
     }
   
 }
