@@ -3,19 +3,30 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-    
-    
-   
-    
-    
-   
+ 
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
         
+        <interceptors>
+            <interceptor name="validarPermisos" class="interceptores.Interceptor" />
+            <interceptor-stack name="interceptorDefault">
+                <interceptor-ref name="validarPermisos">
+                    <param name="actionPublico">login,llenarVacio</param>
+                    <param name="actionEmpleado">LlenarEmpleado,llenarVacio,LlenarPersona,addCategoria,readCategoria</param>
+                    <param name="actionAdministrador"></param>
+                </interceptor-ref>
+            </interceptor-stack>
+            
+        </interceptors>
+        
+        
+        <global-results>
+            <result name="index">/JSP/index.jsp</result>
+        </global-results>
         <!-- Persona-->
         <action name="addPersona" class="Operaciones.Persona" method="Intermediario">
             <result name="success" type="redirect">LlenarPersona</result> 
-                  <result name="error">/JSP/Exito1.jsp</result>
+            <result name="error">/JSP/Exito1.jsp</result>
         </action>
         <action name="LlenarEmpleado" class="Operaciones.Persona" method="LlenarListas" >
             <result name="success">/Registrar/addPersonaEmpleado.jsp</result>
@@ -84,7 +95,7 @@
             <result name="success">/Registrar/addDepartamento.jsp</result>
         </action>
         
-         <action name="deleteDepartamento" class="Operaciones.Departamento" method="delete">
+        <action name="deleteDepartamento" class="Operaciones.Departamento" method="delete">
             <result type="redirect">readDepartamento</result>
         </action>
          
@@ -123,8 +134,8 @@
         <!-- login -->
         <action name="login" class="Operaciones.login" method="sesion">
             <result name="opcion2">/JSP/Exito.jsp</result>
-             <result name="opcion1">/JSP/index.jsp</result>
-             <result name="error">/JSP/Exito1.jsp</result>
+            <result name="opcion1">/JSP/index.jsp</result>
+            <result name="error">/JSP/Exito1.jsp</result>
         </action>
         
         <!-- login -->

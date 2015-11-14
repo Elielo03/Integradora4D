@@ -8,8 +8,10 @@ package Operaciones;
 import Beans.UsuarioBean;
 import Conexion.ConexionSQLServer;
 import Dao.UsuarioDao;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import java.sql.Connection;
+import java.util.Map;
 
 /**
  *
@@ -29,13 +31,25 @@ public class login extends ActionSupport {
     }
 
     public String sesion() {
+        Map objetosSesion = ActionContext.getContext().getSession();
         UsuarioDao dao = new UsuarioDao(con);
         usuario = dao.sesion(usuario.getUserName(), usuario.getPass());
         if (usuario != null) {
-            if (usuario.getIdTipoUsuario() == 4) {
-                return "opcion1";
-            } else {
+            if (usuario.getIdTipoUsuario() == 2) {
+                objetosSesion.put("tipo", usuario.getIdTipoUsuario());
+                objetosSesion.put("nombre", usuario.getUserName());
+                objetosSesion.put("idUsuario", usuario.getIdUsuario());
                 return "opcion2";
+            } else if (usuario.getIdTipoUsuario() == 3) {
+                objetosSesion.put("tipo", usuario.getIdTipoUsuario());
+                objetosSesion.put("nombre", usuario.getUserName());
+                objetosSesion.put("idUsuario", usuario.getIdUsuario());
+                return "opcion2";
+            } else {
+                objetosSesion.put("tipo", usuario.getIdTipoUsuario());
+                objetosSesion.put("nombre", usuario.getUserName());
+                objetosSesion.put("idUsuario", usuario.getIdUsuario());
+                return "opcion1";
             }
         } else {
             return ERROR;

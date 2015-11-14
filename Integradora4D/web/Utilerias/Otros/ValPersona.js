@@ -42,7 +42,7 @@ function verificar() {
     v1 = validar('nombre');
     v2 = validar('paterno');
 //    v3 = validar('apellido2');
-    v4 = validar('fecha');
+//    v4 = validar('fecha');
     v5 = validar('direccion');
 //    v6 = validar('correo');
     v7 = validar('telefono');
@@ -119,7 +119,7 @@ function validar(campo) {
             $("#" + campo).parent().children("span").text("El campo " + campo + " esta vacio").show();
             $("#" + campo).parent().append("<span id='icono" + campo + "' class='glyphicon glyphicon-remove form-control-feedback'></span>");
             return false;
-        } else if (!isNaN(valor)) {
+        } else {
             $("#icono" + campo).remove();
             $("#" + campo).parent().parent().attr("class", "form-group has-success has-feedback");
             $("#" + campo).parent().children("span").text("").hide();

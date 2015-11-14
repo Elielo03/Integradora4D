@@ -14,14 +14,6 @@
         <link rel="stylesheet" type="text/css" href="<s:url value="../Utilerias/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>"/>
         <link rel="stylesheet" type="text/css" href="<s:url value="../Utilerias/datepicker/css/datepicker.css"/>"/>
 
-        
-        <script>
-            $(function () {
-                $('.datepicker').datepicker({
-                    format: 'yyyy-mm-dd',
-                });
-            });
-        </script>
 
         <title>JSP Page</title>
     </head>
@@ -81,7 +73,7 @@
                 <div class="form-group ">
                     <label class="col-md-4 control-label" for="textinput">Correo: </label>
                     <div class="col-md-4">
-                        <s:textfield id="correo"  name="persona.correoE" cssClass="form-control" title="correoE persona" placeholder="Correo"/>
+                        <s:textfield id="correo" onkeyup="validar('correo');"  name="persona.correoE" cssClass="form-control" title="correoE persona" placeholder="Correo"/>
                         <span class="help-block"></span>
                     </div>
                 </div>

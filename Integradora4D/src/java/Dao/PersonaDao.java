@@ -93,7 +93,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
                 bean.setPass(res.getString(12));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PersonaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return bean;
@@ -123,7 +123,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
                 return true;
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PersonaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return false;
@@ -168,7 +168,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
                 return true;
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PersonaDao.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return false;
