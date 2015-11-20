@@ -9,21 +9,21 @@ INSERT INTO Usuario VALUES ('xavier_fjuan', 'JavierJuan', 1)
 INSERT INTO Usuario VALUES ('eliel_david', 'elielo',4)
 
 /*Insert en Departamento, DEPARTAMENTO EMPIEZA CON SU ID EN 0*/
-INSERT INTO Departamento VALUES ('Clintes', 'Clientes', 1)
-INSERT INTO Departamento VALUES ('Electronicos', 'Depto. Electronica', 1)
+INSERT INTO Departamento VALUES ('Clientes', 'Clientes', 'true')
+INSERT INTO Departamento VALUES ('Electronicos', 'Depto. Electronica', 'true')
 
 /*Insert en Persona*/
 INSERT INTO Persona VALUES ('Francisco Javier', 'Juan', 'Amador', 'Calle Gavilan #14', '03-04-1990', 'true', 'xavier_fjuan@outlook.com', '777-339-69-30', 1, null)
 INSERT INTO Persona VALUES ('Eliel David', 'Rodriguez', null, 'Conocida', '02-08-1992', 'true', 'eliel_david@outlook.com', '777-123-45-67', 2, 0)
 
 /*Insert en Categoria*/
-INSERT INTO Categoria VALUES('Blancos', 1, 1)
+INSERT INTO Categoria VALUES('Blancos', 'true', 1)
 
 /*Insert en Producto*/
-INSERT INTO Producto VALUES ('Refrigerador Wirpool', 'DEB0125', 'Refrigerador de 3 pies', 20, 50, 6500, 7000, 1, 'Wirpool', 'localhost/8080/imagen1.jpg', 1)
+INSERT INTO Producto VALUES ('Refrigerador Wirpool', 'DEB0125', 'Refrigerador de 3 pies', 20, 50, 6500, 7000, 'true', 'Wirpool', 'localhost/8080/imagen1.jpg', 1)
 
 /*Insert en Venta*/
-INSERT INTO Venta VALUES ('10-10-2015', 'Refrigerador Wirpool 3 Pies, Cliente Premium', 1, 1)
+INSERT INTO Venta VALUES ('10-10-2015', 'Refrigerador Wirpool 3 Pies, Cliente Premium', 'true', 1)
 
 /*Insert en Venta_detalle*/
 INSERT INTO Venta_detalle VALUES (1, 7000, 1, 1)
