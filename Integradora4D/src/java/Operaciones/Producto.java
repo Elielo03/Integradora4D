@@ -146,6 +146,13 @@ public class Producto  extends ActionSupport{
     
     
     
+    public String addExist(){
+    ProductoDao dao = new ProductoDao(con);
+    
+    dao.get(idProducto)
+    return SUCCESS;
+    }
+    
     
     
     
