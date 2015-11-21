@@ -6,24 +6,11 @@
  
    <!--  Configuration for the default package. -->
     <package name="default" extends="struts-default">
-        <!--
-        <interceptors>
-            <interceptor name="validarPermisos" class="interceptores.Interceptor" />
-            <interceptor-stack name="interceptorDefault">
-                <interceptor-ref name="validarPermisos">
-                    <param name="actionPublico">login,llenarVacio</param>
-                    <param name="actionEmpleado">LlenarEmpleado,llenarVacio,LlenarPersona,addCategoria,readCategoria</param>
-                    <param name="actionAdministrador"></param>
-                </interceptor-ref>
-            </interceptor-stack>
-            
-        </interceptors>
         
         
-        <global-results>
-            <result name="index">/JSP/index.jsp</result>
-        </global-results>
-        -->
+        
+        
+        
         <!-- Persona-->
         <action name="addPersona" class="Operaciones.Persona" method="Intermediario">
             <result name="success" type="redirect">LlenarPersona</result> 
@@ -113,7 +100,7 @@
             <result name="success">/Registrar/addProducto.jsp</result>
         </action>
         
-        <action name="addProducto" class="Operaciones.Producto" method="add">
+        <action name="addProducto" class="Operaciones.Producto" method="intermediario">
             
             <result type="redirect">readProducto</result>
         </action>
@@ -122,6 +109,15 @@
             
             <result name="success">/Read/ReadProducto.jsp</result>
         </action>
+        
+        <action name="updateProducto" class="Operaciones.Producto" method="llenarLista">
+            
+            <result name="success">/Registrar/addProducto.jsp</result>
+        </action>
+        
+        
+        
+        
         
         <action name="deleteProducto" class="Operaciones.Producto" method="delete">
             <result name="success">/Read/ReadProducto.jsp</result>
@@ -140,8 +136,6 @@
         </action>
         
         <!-- login -->
-        
-        
-        
+          
     </package>
 </struts>

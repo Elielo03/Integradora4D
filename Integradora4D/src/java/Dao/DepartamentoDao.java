@@ -34,7 +34,22 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
         
         List<DepartamentoBean> lista= new ArrayList<>();
         
-        String query="SELECT * From Departamento;";
+        String query="SELECT * From Departamento order by idDepartamento";
+        ResultSet result = executeQuery(query);
+        try {
+            lista=passResultSet(result, lista);
+        } catch (SQLException ex) {
+            Logger.getLogger(DepartamentoDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return lista;
+    }
+    
+     public List<DepartamentoBean> getAllActive() {
+        
+        List<DepartamentoBean> lista= new ArrayList<>();
+        
+        String query="SELECT * From Departamento where estado='true' order by idDepartamento";
         ResultSet result = executeQuery(query);
         try {
             lista=passResultSet(result, lista);

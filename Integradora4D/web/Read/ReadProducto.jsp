@@ -67,7 +67,12 @@
                     <td><s:property value="marca"></s:property></td>
                     <td><img src="<s:url value="%{imagen}"/>" width="120" height="120"/></td>
                     <td><s:property value="categoria.nombre"></s:property></td>
-                    <td>Actualizar</td>
+                    <td>
+                        <s:form action="updateProducto">
+                        <s:hidden name="idProducto"></s:hidden>
+                        <s:submit value="Actualizar"></s:submit>
+                        </s:form>
+                    </td>
                     <td>
                     <s:form action="deleteProducto">
                         <s:hidden name="idProducto"></s:hidden>

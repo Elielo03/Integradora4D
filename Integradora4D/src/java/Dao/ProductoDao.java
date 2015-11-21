@@ -60,7 +60,7 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
         
        List<ProductoBean> lista=new ArrayList<>();
        
-       String quey= "SELECT * FROM Producto order by idProducto;";
+       String quey= "SELECT * FROM Producto  order by idProducto;";
        
        ResultSet result=executeQuery(quey);
         try {
@@ -72,6 +72,24 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
        
        return lista;
     }
+    
+     public List<ProductoBean> getAllActive() {
+        
+       List<ProductoBean> lista=new ArrayList<>();
+       
+       String quey= "SELECT * FROM Producto where estado='true' order by idProducto;";
+       
+       ResultSet result=executeQuery(quey);
+        try {
+            lista=passResultSet(result, lista);
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+       
+       return lista;
+    }
+    
 
     @Override
     public ProductoBean get(int id) {
@@ -84,14 +102,14 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
             ps.setInt(1, id);
           ResultSet result=ps.executeQuery();
           if(result.next()){
-              producto.setIdProducto(result.getInt("idCategoria"));
+              producto.setIdProducto(result.getInt("idProducto"));
               producto.setNombre(result.getString("nombre"));
               producto.setCodigo(result.getString("codigo"));
               producto.setDescripcion(result.getString("descripcion"));
               producto.setExistencias(result.getInt("existencias"));
                producto.setStock(result.getInt("stock"));
                 producto.setPrecio_c(result.getDouble("precio_c"));
-                producto.setPrecio_c(result.getDouble("precio_c"));
+                producto.setPrecio_v(result.getDouble("precio_v"));
               
               producto.setEstado(result.getBoolean("estado"));
                producto.setMarca(result.getString("marca"));

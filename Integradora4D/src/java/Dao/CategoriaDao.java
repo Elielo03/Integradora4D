@@ -138,7 +138,25 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
     @Override
     public List<CategoriaBean> getAll() {
         List<CategoriaBean> lista = new ArrayList<>();
-        String query = "Select * from Categoria ORDER BY  idCategoria;";
+        String query = "Select * from Categoria  ORDER BY  idCategoria;";
+        
+        ResultSet result=executeQuery(query);
+        
+        try {
+            lista=passResultSet(result, lista);
+                    
+                    
+                    } catch (SQLException ex) {
+            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return lista;
+    }
+    
+    public List<CategoriaBean> getAllActive() {
+        List<CategoriaBean> lista = new ArrayList<>();
+        String query = "Select * from Categoria where estado= 'true'  ORDER BY  idCategoria;";
         
         ResultSet result=executeQuery(query);
         
