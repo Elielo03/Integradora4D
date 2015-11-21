@@ -86,6 +86,7 @@
         <action name="deleteDepartamento" class="Operaciones.Departamento" method="delete">
             <result type="redirect">readDepartamento</result>
         </action>
+        
          
         
         
@@ -123,6 +124,9 @@
             <result name="success">/Read/ReadProducto.jsp</result>
         </action>
         
+        <action name="actualizaProducto" class="Operaciones.Producto" method="addExist">
+             <result name="success">/Registrar/ActualizarProducto.jsp</result>
+        </action>
         
        
             
