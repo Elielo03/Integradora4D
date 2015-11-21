@@ -27,6 +27,9 @@
              <s:select name="idCategoria"   label="Seleccionar una Categoria" list="categorias" listValue="nombre"
                       listKey="idCategoria"></s:select>
              
+             
+            <s:hidden name="url"></s:hidden>
+             
             
            
             <s:file name="archivo" label="Selecciona tu imagen"/>

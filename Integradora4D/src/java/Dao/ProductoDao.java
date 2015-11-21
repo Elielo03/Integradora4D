@@ -6,6 +6,7 @@
 package Dao;
 
 import Beans.CategoriaBean;
+import Beans.DepartamentoBean;
 import Beans.ProductoBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -74,7 +75,36 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
 
     @Override
     public ProductoBean get(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String query="SELECT * from Producto where idProducto=?;";
+        ProductoBean producto = new ProductoBean();
+        
+        
+        try {
+            PreparedStatement ps =con.prepareStatement(query);
+            ps.setInt(1, id);
+          ResultSet result=ps.executeQuery();
+          if(result.next()){
+              producto.setIdProducto(result.getInt("idCategoria"));
+              producto.setNombre(result.getString("nombre"));
+              producto.setCodigo(result.getString("codigo"));
+              producto.setDescripcion(result.getString("descripcion"));
+              producto.setExistencias(result.getInt("existencias"));
+               producto.setStock(result.getInt("stock"));
+                producto.setPrecio_c(result.getDouble("precio_c"));
+                producto.setPrecio_c(result.getDouble("precio_c"));
+              
+              producto.setEstado(result.getBoolean("estado"));
+               producto.setMarca(result.getString("marca"));
+              producto.setImagen(result.getString("imagen"));
+               CategoriaBean categoria = new CategoriaDao(con).get(result.getInt("idCategoria"));
+            producto.setCategoria(categoria);
+          }
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return producto;
     }
 
     @Override

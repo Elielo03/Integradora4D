@@ -4,9 +4,9 @@
 
 <struts>
  
-    <!-- Configuration for the default package. -->
+   <!--  Configuration for the default package. -->
     <package name="default" extends="struts-default">
-        
+        <!--
         <interceptors>
             <interceptor name="validarPermisos" class="interceptores.Interceptor" />
             <interceptor-stack name="interceptorDefault">
@@ -23,6 +23,7 @@
         <global-results>
             <result name="index">/JSP/index.jsp</result>
         </global-results>
+        -->
         <!-- Persona-->
         <action name="addPersona" class="Operaciones.Persona" method="Intermediario">
             <result name="success" type="redirect">LlenarPersona</result> 

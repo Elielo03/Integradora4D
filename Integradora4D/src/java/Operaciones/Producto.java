@@ -61,10 +61,72 @@ public class Producto  extends ActionSupport{
         return SUCCESS;
     }
     
-    public String add() throws IOException{
+    public boolean add() throws IOException{
         ProductoDao dao= new ProductoDao(con);
         CategoriaDao daoC= new CategoriaDao(con);
          CategoriaBean categoria = new CategoriaBean();
+        
+         addImagen();
+        
+         
+         
+      
+        
+       categoria= daoC.get(idCategoria);
+        
+        bean.setCategoria(categoria);
+        bean.setImagen(url);
+       return dao.add(bean);
+        
+        
+    }
+    
+    public boolean update() throws IOException{
+        ProductoDao dao= new ProductoDao(con);
+        bean= dao.get(bean.getIdProducto());
+        
+        if(url!=bean.getImagen()){
+            return dao.update(bean);
+        }else{
+            System.out.println("---------------------->AQIOOOOOOOOO");
+            addImagen();
+            
+        }
+        
+        
+        return dao.update(bean);
+    }
+    
+    
+    public String delete(){
+        
+        ProductoDao dao= new ProductoDao(con);
+        
+        dao.delete(idProducto);
+        
+        return SUCCESS;
+    }
+    
+    
+    public String intermediario() throws IOException {
+
+        if (bean.getIdProducto()== 0) {
+            if (add()) {
+                return SUCCESS;
+            }
+
+        }
+
+        if (update()) {
+
+            return SUCCESS;
+        }
+
+        return ERROR;
+    }
+    
+    
+    public void addImagen() throws IOException{
         
          String infoTemporal="";
         String path = ServletActionContext.getRequest().getSession()
@@ -78,27 +140,8 @@ public class Producto  extends ActionSupport{
     
         
         url = "http://localhost:8080/Integradora4D/img/"+archivoFinal.getName();
-        
-         
-         
-      
-        
-       categoria= daoC.get(idCategoria);
-        
-        bean.setCategoria(categoria);
         bean.setImagen(url);
-        dao.add(bean);
         
-        return SUCCESS;
-    }
-    
-    public String delete(){
-        
-        ProductoDao dao= new ProductoDao(con);
-        
-        dao.delete(idProducto);
-        
-        return SUCCESS;
     }
     
     
