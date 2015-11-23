@@ -70,6 +70,21 @@ public class Categoria extends ActionSupport {
 
         return SUCCESS;
     }
+    
+     public String getActive() {
+        DepartamentoDao daoD = new DepartamentoDao(con);
+        CategoriaDao daoC = new CategoriaDao(con);
+        departamentos = daoD.getAllActive();
+        categorias = daoC.getAllActive();
+        
+        
+
+        categoria = daoC.get(idCategoria);
+        departamento = categoria.getDepartamento();
+
+        return SUCCESS;
+    }
+    
 
     public boolean update() {
 

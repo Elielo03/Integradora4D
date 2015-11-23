@@ -91,6 +91,19 @@ public class Departamento  extends ActionSupport{
     }
     
     
+    public String getActive(){
+        
+        DepartamentoDao daoD= new DepartamentoDao(con);
+        departamentos=daoD.getAllActive();
+        
+      
+        
+        departamento=daoD.get(idDepartamento);
+        
+        return SUCCESS;
+    }
+    
+    
     public String intermediario(){
         if(departamento.getIdDepartamento()==0){
             if(add()){

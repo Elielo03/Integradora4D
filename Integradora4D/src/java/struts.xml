@@ -40,7 +40,7 @@
         <!-- Fin persona -->
         
         <!-- Categoria -->
-        <action name="llenarLista" class="Operaciones.Categoria" method="llenarLista">       
+        <action name="llenarLista" class="Operaciones.Categoria" method="getActive">       
             <result name="success">/Registrar/Categoria.jsp</result>        
         </action>
         
@@ -51,7 +51,7 @@
         <action name="readCategoria" class="Operaciones.Categoria" method="llenarLista">
             <result name="success">/Read/ReadCategoria.jsp</result>
         </action>
-        <action name="botonUpdate" class="Operaciones.Categoria" method="llenarLista" >
+        <action name="botonUpdate" class="Operaciones.Categoria" method="getActive" >
             <result name="success">/Registrar/Categoria.jsp</result>
         </action>
         
@@ -79,7 +79,7 @@
             <result name="success">/Read/ReadDepartamento.jsp</result>
         </action>
         
-        <action name="btnUpdateDepartamento" class="Operaciones.Departamento" method="llenarLista">
+        <action name="btnUpdateDepartamento" class="Operaciones.Departamento" method="getActive">
             <result name="success">/Registrar/addDepartamento.jsp</result>
         </action>
         
@@ -96,7 +96,7 @@
         
         <!-- Producto -->
         
-        <action name="addPro" class="Operaciones.Producto" method="llenarLista">
+        <action name="addPro" class="Operaciones.Producto" method="getActive">
             
             <result name="success">/Registrar/addProducto.jsp</result>
         </action>
@@ -111,7 +111,7 @@
             <result name="success">/Read/ReadProducto.jsp</result>
         </action>
         
-        <action name="updateProducto" class="Operaciones.Producto" method="llenarLista">
+        <action name="updateProducto" class="Operaciones.Producto" method="getActive">
             
             <result name="success">/Registrar/addProducto.jsp</result>
         </action>
@@ -140,6 +140,25 @@
         </action>
         
         <!-- login -->
+        
+        
+        
+        <!-- ventas -->
+         <action name="compras" class="Operaciones.Producto" method="llenarLista">
+            
+            <result name="success">/Read/ReadProductoVenta.jsp</result>
+        </action>
+        
+        <action name="agregarCarro" class="Operaciones.Compras" method="addCarrito">
+            
+            <result type="redirect">compras</result>
+        </action>
+        
+         <action name="readCarrito" class="Operaciones.Compras" method="obtenerElementosCarro">
+            
+            <result name="success">/Read/Carrito.jsp</result>
+        </action>
+         <!-- ventas -->
           
     </package>
 </struts>

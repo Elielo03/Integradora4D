@@ -59,6 +59,19 @@ public class Producto extends ActionSupport {
 
         return SUCCESS;
     }
+    
+    public String getActive() {
+
+        ProductoDao daoP = new ProductoDao(con);
+        CategoriaDao daoC = new CategoriaDao(con);
+
+        categorias = daoC.getAllActive();
+        productos = daoP.getAllActive();
+        bean = daoP.get(idProducto);
+
+        return SUCCESS;
+    }
+    
 
     public boolean add() throws IOException {
 
