@@ -50,10 +50,10 @@ public class Compras extends ActionSupport {
 
         producto = dao.get(idProducto);
         
-        carrito.put("1", "hola1");
-        carrito.put("2", "hola2");
-        carrito.put("3", "hola3");
-        carrito.put("4", "hola4");
+        carrito.put("imagen", producto.getImagen());
+        carrito.put("nombre", producto.getNombre());
+        carrito.put("nombre", producto.getExistencias());
+        carrito.put("precio_v", producto.getPrecio_v());
         productos.add(carrito);
 
         return SUCCESS;

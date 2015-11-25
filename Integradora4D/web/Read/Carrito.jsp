@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container">
-        <h1>Lista Productos</h1>
+        <h1>Lista Carrito</h1>
         
 
         <table  id="tabla" class="table table-responsive table-striped table-bordered table-hover">
