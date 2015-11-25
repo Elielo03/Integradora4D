@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
-<!-- 2015-11-25T01:55:52 -->
+<!-- 2015-11-25T12:54:34 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteEstadisticoAdmin2" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9a94cfeb-8e96-4ea0-8d73-dddb064d3bb4">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="nombre" class="java.lang.String"/>
+	<parameter name="desde" class="java.lang.String"/>
+	<parameter name="hasta" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[]]>
+		<![CDATA[SELECT v.fecha_compra, SUM(vd.costo_venta) AS SumaCostoVenta
+FROM Venta_detalle vd JOIN Venta v ON vd.idVenta = v.idVenta
+WHERE v.fecha_compra BETWEEN $P{desde} AND $P{hasta} GROUP BY v.fecha_compra
+ORDER BY v.fecha_compra]]>
 	</queryString>
-	<group name="fechas">
+	<field name="fecha_compra" class="java.sql.Date"/>
+	<field name="SumaCostoVenta" class="java.math.BigDecimal"/>
+	<variable name="SumaCostoVenta1" class="java.math.BigDecimal" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{SumaCostoVenta}]]></variableExpression>
+	</variable>
+	<group name="Fechas">
+		<groupExpression><![CDATA[$F{fecha_compra}]]></groupExpression>
 		<groupHeader>
-			<band height="50"/>
+			<band height="22">
+				<textField pattern="d &apos;de&apos; MMMM &apos;del&apos; yyyy">
+					<reportElement mode="Opaque" x="0" y="0" width="570" height="20" backcolor="#F06CD8" uuid="3d9f2813-2319-4294-a520-f266c5bbb0ad"/>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{fecha_compra}]]></textFieldExpression>
+				</textField>
+			</band>
 		</groupHeader>
-		<groupFooter>
-			<band height="50"/>
-		</groupFooter>
 	</group>
 	<background>
 		<band splitType="Stretch"/>
@@ -70,18 +87,53 @@
 		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch"/>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="180" height="20" uuid="10f137d1-4b33-4b46-8a89-925922a68a7d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Venta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="1" width="200" height="19" uuid="ee7c155d-bd96-4e9c-82f5-953c156d465f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Venta del dia]]></text>
+			</staticText>
+		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="20" splitType="Stretch">
+			<textField pattern="d &apos;de&apos; MMMM &apos;del&apos; yyyy">
+				<reportElement x="0" y="0" width="180" height="20" uuid="58f0f9a6-08a2-40f6-b4de-6c4cccf6be38"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha_compra}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤#,##0.###;¤(-#,##0.###)">
+				<reportElement x="280" y="0" width="200" height="20" uuid="9cc45123-f3aa-4c45-ba90-17086ade32a1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{SumaCostoVenta}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch"/>
+		<band height="22" splitType="Stretch">
+			<textField pattern="¤#,##0.###;¤(-#,##0.###)">
+				<reportElement x="480" y="0" width="90" height="20" uuid="2e1d642e-4854-4036-a07b-bdb6447e8713"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{SumaCostoVenta1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="0" width="200" height="20" uuid="f9625859-97cb-4a2e-aa79-7a15f938a088"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Monto total del ventas en el periodo:]]></text>
+			</staticText>
+		</band>
 	</columnFooter>
-	<pageFooter>
-		<band height="54" splitType="Stretch"/>
-	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch"/>
-	</summary>
 </jasperReport>
