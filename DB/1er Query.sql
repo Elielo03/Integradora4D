@@ -49,10 +49,10 @@ INSERT INTO Venta VALUES ('2015-10-14', 'Venta6', 'true', 2)
 
 /*Insert en Venta_detalle*/
 INSERT INTO Venta_detalle VALUES (1, 7000, 1, 1)
-INSERT INTO Venta_detalle VALUES (3, 5000, 2, 2)
-INSERT INTO Venta_detalle VALUES (2, 10000, 3, 3)
-INSERT INTO Venta_detalle VALUES (9, 3000, 4, 2)
-INSERT INTO Venta_detalle VALUES (4, 90000, 5, 1)
+INSERT INTO Venta_detalle VALUES (3, 15000, 2, 2)
+INSERT INTO Venta_detalle VALUES (2, 2000, 3, 3)
+INSERT INTO Venta_detalle VALUES (9, 45000, 4, 2)
+INSERT INTO Venta_detalle VALUES (4, 28000, 5, 1)
 INSERT INTO Venta_detalle VALUES (10, 15000, 6, 4)
 
 /*Select de prueba, no importante*/
