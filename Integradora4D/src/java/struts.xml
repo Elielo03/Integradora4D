@@ -128,9 +128,13 @@
             <result name="success">/Read/ReadProducto.jsp</result>
         </action>
         
-        <action name="actualizaProducto" class="Operaciones.Producto" method="addExist">
-             <result name="success">/Registrar/ActualizarProducto.jsp</result>
+        <action name="addExistente" class="Operaciones.Producto" method="llenarLista">
+             <result name="success">/Registrar/addProductExistente.jsp</result>
         </action>
+        <action name="addExist" class="Operaciones.Producto" method="llenarLista">
+             <result name="success">/Read/ReadProducto.jsp</result>
+        </action>
+        
         
        
             

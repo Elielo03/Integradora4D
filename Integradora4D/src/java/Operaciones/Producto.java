@@ -149,8 +149,15 @@ public class Producto  extends ActionSupport{
     public String addExist(){
     ProductoDao dao = new ProductoDao(con);
     
-    dao.get(idProducto)
-    return SUCCESS;
+   bean= dao.getByCodigo(bean.getCodigo());
+        System.out.println(bean.getExistencias());
+        System.out.println(bean.getStock());
+        System.out.println("--------------------------------> "+bean.getNombre());
+   
+   if(dao.updateExistente(bean.getIdProducto(), bean.getExistencias(), bean.getStock())){
+       return SUCCESS;
+   }else
+   return ERROR;
     }
     
     

@@ -14,7 +14,13 @@
     </head>
     <body>
         <h1>Producto</h1>
+        <a href="<s:url action="addExistente"/>">asdfasdf</a>
         <s:form action="addProducto" enctype="multipart/form-data" method="POST" >
+            
+            
+            
+            
+           
 
             <s:textfield name="bean.nombre" label="Nombre" title="nombre de Producto" placeholder="Nombre"/>
             <s:textfield name="bean.codigo" label="Codigo" title="codigo producto" placeholder="Codigo"/>

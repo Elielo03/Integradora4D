@@ -106,6 +106,40 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
         
         return producto;
     }
+    
+    
+     public ProductoBean getByCodigo(String codigo) {
+        String query="SELECT * from Producto where codigo=?;";
+        ProductoBean producto = new ProductoBean();
+        
+        
+        try {
+            PreparedStatement ps =con.prepareStatement(query);
+            ps.setString(1, codigo);
+          ResultSet result=ps.executeQuery();
+          if(result.next()){
+              producto.setIdProducto(result.getInt("idCategoria"));
+              producto.setNombre(result.getString("nombre"));
+              producto.setCodigo(result.getString("codigo"));
+              producto.setDescripcion(result.getString("descripcion"));
+              producto.setExistencias(result.getInt("existencias"));
+               producto.setStock(result.getInt("stock"));
+                producto.setPrecio_c(result.getDouble("precio_c"));
+                producto.setPrecio_c(result.getDouble("precio_c"));
+              
+              producto.setEstado(result.getBoolean("estado"));
+               producto.setMarca(result.getString("marca"));
+              producto.setImagen(result.getString("imagen"));
+               CategoriaBean categoria = new CategoriaDao(con).get(result.getInt("idCategoria"));
+            producto.setCategoria(categoria);
+          }
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return producto;
+    }
 
     @Override
     public boolean update(ProductoBean bean) {
@@ -149,6 +183,30 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
         }
         
         return false;
+    }
+    
+    public boolean updateExistente(int id, int existencias, int stock){
+        String query = "execute addProdExistente ?,?,?";
+        
+        PreparedStatement ps;
+        try {
+            ps = con.prepareStatement(query);
+            ps.setInt(1, id);
+            ps.setInt(2, existencias);
+            ps.setInt(3, stock);
+            if(ps.executeUpdate(query)>=1){
+                ps.close();
+                return true;
+            } else {
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+       return false;
+        
+        
+        
+         
     }
 
     @Override
