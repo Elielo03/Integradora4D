@@ -52,7 +52,12 @@
               <s:submit value="Compras"></s:submit>
           </s:form>
           
+          <h1>-------Reportes--------</h1>  
           
+          <s:form action="FullReportAdmin">
+              Nombre Admin: <s:textfield name="nombreuser"/>
+              <s:submit value="Admin Report"/>
+          </s:form>
          
          
 
