@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Report;
+package Reports;
 
 import Conexion.ConexionSQLServer;
 import com.opensymphony.xwork2.ActionSupport;
@@ -15,11 +15,28 @@ import java.util.Map;
  *
  * @author spown
  */
-public class AdminReport extends ActionSupport {
+public class AdminReports extends ActionSupport {
 
-    String nombreuser;
+    String nombreuser, desde, hasta;
     private Map params;
     private Connection conn;
+
+    public String getDesde() {
+        return desde;
+    }
+
+    public void setDesde(String desde) {
+        this.desde = desde;
+    }
+
+    public String getHasta() {
+        return hasta;
+    }
+
+    public void setHasta(String hasta) {
+        this.hasta = hasta;
+    }
+    
 
     public String getNombreuser() {
         return nombreuser;
@@ -45,13 +62,30 @@ public class AdminReport extends ActionSupport {
         this.conn = conn;
     }
 
-    @Override
-    public String execute() throws Exception {
+    public String AdminProductReport() throws Exception {
 
         params = new HashMap();
         conn = ConexionSQLServer.getConnection();
         params.put("nombreuser", nombreuser);
 
+        return SUCCESS;
+    }
+
+    public String AdminSalesReportGraph() throws Exception {
+        params = new HashMap();
+        conn = ConexionSQLServer.getConnection();
+        params.put("desde", desde);
+        params.put("hasta", hasta);
+        params.put("nombre", nombreuser);
+        return SUCCESS;
+    }
+
+    public String AdminSalesReport() throws Exception {
+        params = new HashMap();
+        conn = ConexionSQLServer.getConnection();
+        params.put("desde", desde);
+        params.put("hasta", hasta);
+        params.put("nombre", nombreuser);
         return SUCCESS;
     }
 

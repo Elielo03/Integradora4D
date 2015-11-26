@@ -46,6 +46,8 @@ INSERT INTO Venta VALUES ('2015-10-12', 'Venta3', 'true', 1)
 INSERT INTO Venta VALUES ('2015-10-12', 'Venta4', 'true', 2)
 INSERT INTO Venta VALUES ('2015-10-13', 'Venta5', 'true', 1)
 INSERT INTO Venta VALUES ('2015-10-14', 'Venta6', 'true', 2)
+INSERT INTO Venta VALUES ('2015-10-14', 'Venta7', 'true', 2)
+
 
 /*Insert en Venta_detalle*/
 INSERT INTO Venta_detalle VALUES (1, 7000, 1, 1, 'true')
@@ -54,6 +56,7 @@ INSERT INTO Venta_detalle VALUES (2, 2000, 3, 3, 'true')
 INSERT INTO Venta_detalle VALUES (9, 45000, 4, 2, 'true')
 INSERT INTO Venta_detalle VALUES (4, 28000, 5, 1, 'true')
 INSERT INTO Venta_detalle VALUES (10, 15000, 6, 4, 'true')
+INSERT INTO Venta_detalle VALUES (10, 15000, 7, 4, 'true')
 
 /*Select de prueba, no importante*/
 SELECT producto.nombre, cantidad, costo_venta FROM Venta_detalle, Producto WHERE Venta_detalle.idProducto = Producto.idProducto;

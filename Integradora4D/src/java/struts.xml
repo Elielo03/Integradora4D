@@ -13,8 +13,6 @@
         </result-types>
         <!-- REPORTES -->
         
-        
-        
         <!-- Persona-->
         <action name="addPersona" class="Operaciones.Persona" method="Intermediario">
             <result name="success" type="redirect">LlenarPersona</result> 
@@ -64,9 +62,7 @@
         </action>
         <!-- Categoria -->
         
-        
-        
-        
+
           
         <!-- Departamento -->
           
@@ -165,7 +161,8 @@
         <!-- ventas -->
          
         <!-- Reportes -->
-        <action name="FullReportAdmin" class="Report.AdminReport" method="execute">
+        <!--Admin-->
+        <action name="AdminProductReport" class="Reports.AdminReports" method="AdminProductReport">
             <result name = "success" type = "jasper">
                 <param name = "location">/WEB-INF/Prueba1.jasper</param>
                 <param name = "connection">conn</param>
@@ -173,6 +170,46 @@
                 <param name = "format">PDF</param>
             </result>
         </action>
+        
+        <action name="AdminSalesReportGraph" class="Reports.AdminReports" method="AdminSalesReportGraph">
+            <result name = "success" type = "jasper">
+                <param name = "location">/WEB-INF/Prueba2.jasper</param>
+                <param name = "connection">conn</param>
+                <param name = "reportParameters">params</param>
+                <param name = "format">PDF</param>
+            </result>
+        </action>
+        
+        <action name="AdminSalesReport" class="Reports.AdminReports" method="AdminSalesReport">
+            <result name = "success" type = "jasper">
+                <param name = "location">/WEB-INF/Prueba3.jasper</param>
+                <param name = "connection">conn</param>
+                <param name = "reportParameters">params</param>
+                <param name = "format">PDF</param>
+            </result>
+        </action>
+        <!--Fin Admin-->
+        <!--Empleado-->
+        
+        <action name="EmployeeProductReport" class="Reports.EmployeeReports" method="EmployeeProductReport">
+            <result name = "success" type = "jasper">
+                <param name = "location">/WEB-INF/Prueba4.jasper</param>
+                <param name = "connection">conn</param>
+                <param name = "reportParameters">params</param>
+                <param name = "format">PDF</param>
+            </result>
+        </action>
+        
+        <action name="EmployeeSalesReport" class="Reports.EmployeeReports" method="EmployeeSalesReport">
+            <result name = "success" type = "jasper">
+                <param name = "location">/WEB-INF/Prueba5.jasper</param>
+                <param name = "connection">conn</param>
+                <param name = "reportParameters">params</param>
+                <param name = "format">PDF</param>
+            </result>
+        </action>
+                
+        <!--Fin Empleado-->
         <!-- Fin reportes -->
           
     </package>

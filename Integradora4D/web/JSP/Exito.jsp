@@ -21,45 +21,70 @@
         <s:form action="llenarLista">
             <s:submit value="Aceptar"></s:submit>
         </s:form>
-      <h1>-----persona------</h1>
-         <s:form action="llenarVacio">
+        <h1>-----persona------</h1>
+        <s:form action="llenarVacio">
             <s:submit value="AddPersona"></s:submit>
         </s:form>
         <s:form action="LlenarPersona">
             <s:submit value="llenar tabla"></s:submit>
         </s:form>
-         <s:form action="LlenarEmpleado">
+        <s:form action="LlenarEmpleado">
             <s:submit value="add personaempleado"></s:submit>
         </s:form>
-          <h1>-----fin persona------</h1>
-          <s:form action="readProducto">
+        <h1>-----fin persona------</h1>
+        <s:form action="readProducto">
             <s:submit value="Read producto"></s:submit>
         </s:form>
-        
-          <s:form action="addPro">
+
+        <s:form action="addPro">
             <s:submit value="aDD producto"></s:submit>
         </s:form>
-          
-          <s:form action="addDepa">
-              <s:submit value="Add Departamento"></s:submit>
-          </s:form>
-          
-           <s:form action="readDepartamento">
-              <s:submit value="Read Departamento"></s:submit>
-          </s:form>
-          
-         <s:form action="compras">
-              <s:submit value="Compras"></s:submit>
-          </s:form>
-          
-          <h1>-------Reportes--------</h1>  
-          
-          <s:form action="FullReportAdmin">
-              Nombre Admin: <s:textfield name="nombreuser"/>
-              <s:submit value="Admin Report"/>
-          </s:form>
-         
-         
+
+        <s:form action="addDepa">
+            <s:submit value="Add Departamento"></s:submit>
+        </s:form>
+
+        <s:form action="readDepartamento">
+            <s:submit value="Read Departamento"></s:submit>
+        </s:form>
+
+        <s:form action="compras">
+            <s:submit value="Compras"></s:submit>
+        </s:form>
+
+        <h1>-------Reportes--------</h1>  
+        <h1>ADMINISTRADOR</h1>
+        <s:form action="AdminProductReport">
+            Nombre Admin: <s:textfield name="nombreuser"/>
+            <s:submit value="Productos"/>
+        </s:form>
+
+        <s:form action = "AdminSalesReportGraph">
+            Nombre Admin: <s:textfield name="nombreuser"/>
+            Fecha Inicio: <s:textfield name="desde"/>
+            Fecha Final: <s:textfield name="hasta"/>
+            <s:submit value="Ventas + Grafica"/>
+        </s:form>
+
+        <s:form action = "AdminSalesReport">
+            Nombre Admin: <s:textfield name="nombreuser"/>
+            Fecha Inicio: <s:textfield name="desde"/>
+            Fecha Final: <s:textfield name="hasta"/>
+            <s:submit value="Ventas"/>
+        </s:form>
+        <h1>EMPLEADO</h1>
+        <s:form action = "EmployeeProductReport">
+            Nombre Empleado: <s:textfield name="nombreuser"/>
+            Departamento: <s:textfield name="depto"/>
+            <s:submit value="Productos"/>
+        </s:form>
+        <s:form action = "EmployeeSalesReport">
+            Nombre Empleado: <s:textfield name="nombreuser"/>
+            Desde: <s:textfield name="desde"/>
+            Hasta: <s:textfield name="hasta"/>
+            Departamento: <s:textfield name="depto"/>
+            <s:submit value="Ventas"/>
+        </s:form>
 
     </body>
 </html>
