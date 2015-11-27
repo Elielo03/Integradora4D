@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
-<!-- 2015-11-19T22:52:32 -->
+<!-- 2015-11-25T01:58:19 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteProducto" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4cf2d4a1-f2ea-4b10-856d-c18e0f9f99c7">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="nombreuser" class="java.lang.String"/>
@@ -53,7 +53,7 @@ ORDER BY Categoria.nombre]]>
 		<band height="87" splitType="Stretch">
 			<image hAlign="Center" vAlign="Middle">
 				<reportElement x="0" y="0" width="180" height="79" uuid="458d99e8-ce15-47ee-8dbc-fbf22743c13b"/>
-				<imageExpression><![CDATA["C:/Users/Thelma/Desktop/Documentos Javier/Reprtes Int/Liverpool-Mexico-logo.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["C:/Users/spown/Documents/GitHub/Integradora4D/Reportes sin compilar/Liverpool-Mexico-logo.jpg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="190" y="0" width="200" height="30" uuid="bb7990bc-7537-46ef-aeb0-8c9578c5a7f2"/>
@@ -141,7 +141,7 @@ ORDER BY Categoria.nombre]]>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="35" splitType="Stretch">
+		<band height="41" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="0" width="80" height="20" uuid="b5e5b20b-60af-4de1-9ef0-2e64277ee3e3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
