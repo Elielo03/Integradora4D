@@ -4,12 +4,14 @@
 
 <struts>
  
-   <!--  Configuration for the default package. -->
+    <!--  Configuration for the default package. -->
     <package name="default" extends="struts-default">
         
-        
-        
-        
+        <!-- REPORTES -->
+        <result-types>
+            <result-type name = "jasper" class = "org.apache.struts2.views.jasperreports.JasperReportsResult"/>
+        </result-types>
+        <!-- REPORTES -->
         
         <!-- Persona-->
         <action name="addPersona" class="Operaciones.Persona" method="Intermediario">
@@ -60,9 +62,7 @@
         </action>
         <!-- Categoria -->
         
-        
-        
-        
+
           
         <!-- Departamento -->
           
@@ -125,7 +125,7 @@
         </action>
         
         <action name="actualizaProducto" class="Operaciones.Producto" method="addExist">
-             <result name="success">/Registrar/ActualizarProducto.jsp</result>
+            <result name="success">/Registrar/ActualizarProducto.jsp</result>
         </action>
         
        
@@ -144,7 +144,7 @@
         
         
         <!-- ventas -->
-         <action name="compras" class="Operaciones.Producto" method="llenarLista">
+        <action name="compras" class="Operaciones.Producto" method="llenarLista">
             
             <result name="success">/Read/ReadProductoVenta.jsp</result>
         </action>
@@ -154,12 +154,73 @@
             <result name="success">/Read/Carrito.jsp</result>
         </action>
         
+<<<<<<< HEAD
         <action name="readCarrito" class="Operaciones.Compras" method="obtenerCarrito" >
+=======
+        <action name="readCarrito" class="Operaciones.Compras" method="obtenerElementosCarro">
+            
+>>>>>>> origin/master
             <result name="success">/Read/Carrito.jsp</result>
             
         </action>
+<<<<<<< HEAD
          
          <!-- ventas -->
+=======
+        <!-- ventas -->
+         
+        <!-- Reportes -->
+        <!--Admin-->
+        <action name="AdminProductReport" class="Reports.AdminReports" method="AdminProductReport">
+            <result name = "success" type = "jasper">
+                <param name = "location">/WEB-INF/Prueba1.jasper</param>
+                <param name = "connection">conn</param>
+                <param name = "reportParameters">params</param>
+                <param name = "format">PDF</param>
+            </result>
+        </action>
+        
+        <action name="AdminSalesReportGraph" class="Reports.AdminReports" method="AdminSalesReportGraph">
+            <result name = "success" type = "jasper">
+                <param name = "location">/WEB-INF/Prueba2.jasper</param>
+                <param name = "connection">conn</param>
+                <param name = "reportParameters">params</param>
+                <param name = "format">PDF</param>
+            </result>
+        </action>
+        
+        <action name="AdminSalesReport" class="Reports.AdminReports" method="AdminSalesReport">
+            <result name = "success" type = "jasper">
+                <param name = "location">/WEB-INF/Prueba3.jasper</param>
+                <param name = "connection">conn</param>
+                <param name = "reportParameters">params</param>
+                <param name = "format">PDF</param>
+            </result>
+        </action>
+        <!--Fin Admin-->
+        <!--Empleado-->
+        
+        <action name="EmployeeProductReport" class="Reports.EmployeeReports" method="EmployeeProductReport">
+            <result name = "success" type = "jasper">
+                <param name = "location">/WEB-INF/Prueba4.jasper</param>
+                <param name = "connection">conn</param>
+                <param name = "reportParameters">params</param>
+                <param name = "format">PDF</param>
+            </result>
+        </action>
+        
+        <action name="EmployeeSalesReport" class="Reports.EmployeeReports" method="EmployeeSalesReport">
+            <result name = "success" type = "jasper">
+                <param name = "location">/WEB-INF/Prueba5.jasper</param>
+                <param name = "connection">conn</param>
+                <param name = "reportParameters">params</param>
+                <param name = "format">PDF</param>
+            </result>
+        </action>
+                
+        <!--Fin Empleado-->
+        <!-- Fin reportes -->
+>>>>>>> origin/master
           
     </package>
 </struts>

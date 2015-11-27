@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2015-11-26T11:33:24 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EmployeeSalesReport" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b412e869-4b9a-49c1-8791-1fd6db795e4d">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="nombreuser" class="java.lang.String"/>
+	<parameter name="depto" class="java.lang.String"/>
+	<parameter name="desde" class="java.lang.String"/>
+	<parameter name="hasta" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT dept.nombre AS Departamento, v.fecha_compra, pr.nombre, pr.app, pr.apm, SUM(vd.costo_venta) AS TotalCompra
+FROM Venta_detalle vd JOIN Producto pd ON vd.idProducto = pd.idProducto
+JOIN Categoria cat ON pd.idCategoria = cat.idCategoria JOIN Departamento dept ON cat.idDepartamento = dept.idDepartamento
+JOIN Venta v ON vd.idVenta = v.idVenta JOIN Persona pr ON v.idPersona = pr.idPersona WHERE dept.nombre =  $P{depto}  AND v.fecha_compra BETWEEN $P{desde} AND $P{hasta}  
+GROUP BY pr.nombre, pr.app, pr.apm, v.fecha_compra, dept.nombre ORDER BY v.fecha_compra]]>
+	</queryString>
+	<field name="Departamento" class="java.lang.String"/>
+	<field name="fecha_compra" class="java.sql.Date"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="app" class="java.lang.String"/>
+	<field name="apm" class="java.lang.String"/>
+	<field name="TotalCompra" class="java.math.BigDecimal"/>
+	<variable name="TotalCompra1" class="java.math.BigDecimal" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{TotalCompra}]]></variableExpression>
+	</variable>
+	<group name="Departamento">
+		<groupExpression><![CDATA[$F{Departamento}]]></groupExpression>
+	</group>
+	<group name="fecha_compra">
+		<groupExpression><![CDATA[$F{fecha_compra}]]></groupExpression>
+	</group>
+	<group name="nombre">
+		<groupExpression><![CDATA[$F{nombre}]]></groupExpression>
+	</group>
+	<group name="app">
+		<groupExpression><![CDATA[$F{app}]]></groupExpression>
+	</group>
+	<group name="apm">
+		<groupExpression><![CDATA[$F{apm}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="0" y="0" width="180" height="81" uuid="a8c70766-1d13-469c-a0c5-babcb14087dd"/>
+				<imageExpression><![CDATA["C:/Users/spown/Documents/GitHub/Integradora4D/Reportes sin compilar/Liverpool-Mexico-logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="190" y="0" width="200" height="30" uuid="ada18f00-ea53-496f-81bf-d3e1e202c76e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="20"/>
+				</textElement>
+				<text><![CDATA[Reporte de Ventas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="29" width="200" height="20" uuid="3aa796b0-3c9e-426e-a95c-267ee051402e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Reporte generado para control interno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="49" width="200" height="30" uuid="73da27b2-7875-49ee-856b-0396793d7e6e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Se muestran las ventas realizadas en el departamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="170" height="20" uuid="70c8fd38-a820-4aa2-81d6-e5e4656e8d22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de generación de reporte:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="40" width="50" height="20" uuid="90cc95be-4a22-40f2-8715-fbe45960f244"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Usuario:]]></text>
+			</staticText>
+			<textField pattern="d &apos;de&apos; MMMM &apos;del&apos; yyyy">
+				<reportElement x="400" y="20" width="170" height="20" uuid="aba779ad-2854-43f1-aee9-60bf48176519"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="60" width="170" height="21" uuid="c7e85d80-fba9-4778-95da-5da8d9b15032"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{nombreuser}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="290" y="80" width="100" height="20" uuid="0d2700c9-b24a-440a-9ba6-f3c972df32a9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Departamento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="81" width="170" height="20" uuid="0e85fa70-c02d-45d5-b8f8-0a3dcd2cd640"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{depto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="22" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement x="0" y="0" width="570" height="20" uuid="d51614be-0830-400e-846e-1bea121d5ec6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Periodo de ventas del " + $P{desde} + " al " + $P{hasta}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="140" height="20" uuid="7ebcdf85-8c82-4f13-a580-5c807c6a7288"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de compra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="0" width="270" height="20" uuid="88d95bc8-4c33-43a7-9753-b4f9b0c395e3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="0" width="100" height="20" uuid="4de798f7-87d2-46db-bbdf-f63c5038b057"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de la compra]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField pattern="d &apos;de&apos; MMMM &apos;del&apos; yyyy">
+				<reportElement x="0" y="0" width="140" height="20" uuid="90ec8401-7b27-4256-ab56-3557b4612dc9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fecha_compra}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="150" y="0" width="270" height="20" uuid="80a4761a-68a8-454f-b92e-ac6dbda59151"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombre} + " " + $F{app} + " " + $F{apm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="0" width="100" height="20" uuid="f772677f-1ca4-464a-877e-db4d9a987e1c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{TotalCompra}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="281" y="0" width="190" height="20" uuid="24fef99e-305f-4021-873f-b0ba4f114d5e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Monto total de las compras del periodo:]]></text>
+			</staticText>
+			<textField pattern="¤#,##0.###;¤(-#,##0.###)">
+				<reportElement x="471" y="0" width="100" height="20" uuid="78abe090-9d57-459e-991f-07901d96a8b1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{TotalCompra1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

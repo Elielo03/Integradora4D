@@ -52,9 +52,45 @@
             <s:submit value="Compras"></s:submit>
         </s:form>
 
+<<<<<<< HEAD
 
 
 
+=======
+        <h1>-------Reportes--------</h1>  
+        <h1>ADMINISTRADOR</h1>
+        <s:form action="AdminProductReport">
+            Nombre Admin: <s:textfield name="nombreuser"/>
+            <s:submit value="Productos"/>
+        </s:form>
+
+        <s:form action = "AdminSalesReportGraph">
+            Nombre Admin: <s:textfield name="nombreuser"/>
+            Fecha Inicio: <s:textfield name="desde"/>
+            Fecha Final: <s:textfield name="hasta"/>
+            <s:submit value="Ventas + Grafica"/>
+        </s:form>
+
+        <s:form action = "AdminSalesReport">
+            Nombre Admin: <s:textfield name="nombreuser"/>
+            Fecha Inicio: <s:textfield name="desde"/>
+            Fecha Final: <s:textfield name="hasta"/>
+            <s:submit value="Ventas"/>
+        </s:form>
+        <h1>EMPLEADO</h1>
+        <s:form action = "EmployeeProductReport">
+            Nombre Empleado: <s:textfield name="nombreuser"/>
+            Departamento: <s:textfield name="depto"/>
+            <s:submit value="Productos"/>
+        </s:form>
+        <s:form action = "EmployeeSalesReport">
+            Nombre Empleado: <s:textfield name="nombreuser"/>
+            Desde: <s:textfield name="desde"/>
+            Hasta: <s:textfield name="hasta"/>
+            Departamento: <s:textfield name="depto"/>
+            <s:submit value="Ventas"/>
+        </s:form>
+>>>>>>> origin/master
 
     </body>
 </html>
