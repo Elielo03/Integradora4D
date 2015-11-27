@@ -93,6 +93,7 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
 
     @Override
     public ProductoBean get(int id) {
+        System.out.println("---------------------------------- el id es; "+id);
         String query="SELECT * from Producto where idProducto=?;";
         ProductoBean producto = new ProductoBean();
         

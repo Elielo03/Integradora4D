@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,34 +16,34 @@
     </head>
     <body>
         <div class="container">
+          
+           
+            
+            
         <h1>Lista Carrito</h1>
-        
+      
 
         <table  id="tabla" class="table table-responsive table-striped table-bordered table-hover">
             <thead>
                 <tr>
-                    <td>Imagen</td>
-                    <td>Nombre</td>
-                    <td>Existencias</td>
+                   
+                    <td>Codigo Producto</td>
                     <td>Precio Venta</td>
 
-                    <td>Compra</td>
+                   
                 </tr>
             </thead>
             <tbody>
-                <s:iterator value="productos" var="carrito">
-                    <s:iterator>
-                    <tr>
-                        <td><img src="<s:url value="%{imagen}"/>" width="120" height="120"/></td>
-                        <td><s:property value="carrito.nombre"></s:property></td>
-                        <td><s:property value="carrito.existencias"></s:property></td>
-                            <td><s:property value="carrito.precio_v"></s:property></td>
-                            <td>
-                            <s:hidden value="carrito.idProducto"></s:hidden>
-                                <a href="<s:url action="agregarCarro"/>" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-tag"></span> Agregar Al Carrito</a>
-                        </td>
-                    </tr>
-                </s:iterator>
+                <s:iterator value="#session.listaProductos">
+                     <tr>
+                <td>
+                    <s:property value="codigo"/> 
+                </td>
+                <td>
+                    <s:property value="precio_v" />
+                </td>
+                     </tr>
+                     
                     </s:iterator>
             </tbody>
 

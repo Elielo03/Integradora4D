@@ -27,11 +27,14 @@ import static jdk.nashorn.internal.objects.NativeArray.map;
  */
 public class Compras extends ActionSupport {
 
-    List<Map> productos = new ArrayList<>();
+    
     int idProducto;
+    
     ProductoBean producto = new ProductoBean();
     Connection con;
-    Map carrito;
+    
+   
+   
     
 
     public Compras() {
@@ -41,42 +44,33 @@ public class Compras extends ActionSupport {
             Logger.getLogger(Producto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    
 
-    public String addCarrito() {
-         carrito = new HashMap<>();
-
-        ProductoDao dao = new ProductoDao(con);
-        //Map carrito = ActionContext.getContext().getSession();
-
-        producto = dao.get(idProducto);
+    
+    public String addCarro() {
+         ProductoDao dao = new ProductoDao(con);
         
-        carrito.put("imagen", producto.getImagen());
-        carrito.put("nombre", producto.getNombre());
-        carrito.put("nombre", producto.getExistencias());
-        carrito.put("precio_v", producto.getPrecio_v());
-        productos.add(carrito);
-
+        Map carrito = ActionContext.getContext().getSession();
+            
+            if(!carrito.containsKey("listaProductos")){
+                List<ProductoBean> productos = new ArrayList<>();
+                productos.add(producto = dao.get(idProducto));
+                carrito.put("listaProductos", productos);
+                 
+            }else{
+                producto = dao.get(idProducto);
+                System.out.println("En el add elsee"+producto.getNombre());
+              ((List<ProductoBean>) carrito.get("listaProductos")).add(producto);
+            }
+            
+            
         return SUCCESS;
     }
 
-    public String obtenerElementosCarro() {
-        System.out.println("-------------------------> obteniendo el MAAAAAAAAAAAAAAAPAAAAAAAAAAAAA");
-        
-       
-       carrito=getCarrito();
-       
-      
-        
-        return SUCCESS;
-    }
+    
 
-    public List<Map> getProductos() {
-        return productos;
-    }
-
-    public void setProductos(List<Map> productos) {
-        this.productos = productos;
-    }
+   
 
     public int getIdProducto() {
         return idProducto;
@@ -90,8 +84,8 @@ public class Compras extends ActionSupport {
         return producto;
     }
 
-    public Map getCarrito() {
-        return carrito;
-    }
+   
+    
+    
 
 }

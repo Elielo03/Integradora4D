@@ -21,40 +21,40 @@
         <s:form action="llenarLista">
             <s:submit value="Aceptar"></s:submit>
         </s:form>
-      <h1>-----persona------</h1>
-         <s:form action="llenarVacio">
+        <h1>-----persona------</h1>
+        <s:form action="llenarVacio">
             <s:submit value="AddPersona"></s:submit>
         </s:form>
         <s:form action="LlenarPersona">
             <s:submit value="llenar tabla"></s:submit>
         </s:form>
-         <s:form action="LlenarEmpleado">
+        <s:form action="LlenarEmpleado">
             <s:submit value="add personaempleado"></s:submit>
         </s:form>
-          <h1>-----fin persona------</h1>
-          <s:form action="readProducto">
+        <h1>-----fin persona------</h1>
+        <s:form action="readProducto">
             <s:submit value="Read producto"></s:submit>
         </s:form>
-        
-          <s:form action="addPro">
+
+        <s:form action="addPro">
             <s:submit value="aDD producto"></s:submit>
         </s:form>
-          
-          <s:form action="addDepa">
-              <s:submit value="Add Departamento"></s:submit>
-          </s:form>
-          
-           <s:form action="readDepartamento">
-              <s:submit value="Read Departamento"></s:submit>
-          </s:form>
-          
-         <s:form action="compras">
-              <s:submit value="Compras"></s:submit>
-          </s:form>
-          
-          
-         
-         
+
+        <s:form action="addDepa">
+            <s:submit value="Add Departamento"></s:submit>
+        </s:form>
+
+        <s:form action="readDepartamento">
+            <s:submit value="Read Departamento"></s:submit>
+        </s:form>
+
+        <s:form action="compras">
+            <s:submit value="Compras"></s:submit>
+        </s:form>
+
+
+
+
 
     </body>
 </html>

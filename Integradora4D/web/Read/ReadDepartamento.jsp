@@ -36,6 +36,7 @@
                             <td><s:property value="nombre"></s:property></td>
                             <td><s:property value="descripcion"></s:property></td>
                                 <td>
+                                    <form action="UpdateDepartamento">
                                 <%
                                     String estado = "" + pageContext.findAttribute("estado");
                                     String strclass;
@@ -48,9 +49,9 @@
                                         strclass = "btn btn-danger";
                                     }
                                 %>
-                                <button    name="button2id" class="<%=strclass%>"> <%=estado%> </button>
+                                <button onclick="updateDepartamento()"   name="button2id" class="<%=strclass%>"> <%=estado%> </button>
 
-
+                                    </form>
                             </td>
 
                             <td>  <s:form action="btnUpdateDepartamento">
@@ -70,6 +71,10 @@
                 </tbody>
             </table>
         </div>
+        
+        <script>
+            
+            </script>
 
 
         <script type="text/javascript">

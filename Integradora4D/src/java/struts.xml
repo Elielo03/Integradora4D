@@ -149,15 +149,16 @@
             <result name="success">/Read/ReadProductoVenta.jsp</result>
         </action>
         
-        <action name="agregarCarro" class="Operaciones.Compras" method="addCarrito">
-            
-            <result type="redirect">compras</result>
-        </action>
-        
-         <action name="readCarrito" class="Operaciones.Compras" method="obtenerElementosCarro">
+        <action name="agregarCarro" class="Operaciones.Compras" method="addCarro">
             
             <result name="success">/Read/Carrito.jsp</result>
         </action>
+        
+        <action name="readCarrito" class="Operaciones.Compras" method="obtenerCarrito" >
+            <result name="success">/Read/Carrito.jsp</result>
+            
+        </action>
+         
          <!-- ventas -->
           
     </package>
