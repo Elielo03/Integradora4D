@@ -55,7 +55,7 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
     @Override
     public List<PersonaBean> getAll() {
         List<PersonaBean> lista = new ArrayList<>();
-        String query = "select p.idPersona,p.nombre,p.app,p.apm,p.direccion,p.fecha_nac,p.estado,p.correoE,p.telefono,p.idUsuario,p.idDepartamento,u.pass from Persona p join Usuario u on p.idUsuario=u.idUsuario where  ORDER BY idPersona;";
+        String query = "select p.idPersona,p.nombre,p.app,p.apm,p.direccion,p.fecha_nac,p.estado,p.correoE,p.telefono,p.idUsuario,p.idDepartamento,u.pass from Persona p join Usuario u on p.idUsuario=u.idUsuario ORDER BY idPersona;";
 
         ResultSet result = executeQuery(query);
 

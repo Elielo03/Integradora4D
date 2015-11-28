@@ -60,7 +60,7 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
         
        List<ProductoBean> lista=new ArrayList<>();
        
-       String quey= "SELECT * FROM Producto  order by idProducto;";
+       String quey= "SELECT * FROM Producto order by idProducto;";
        
        ResultSet result=executeQuery(quey);
         try {
@@ -72,28 +72,9 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
        
        return lista;
     }
-    
-     public List<ProductoBean> getAllActive() {
-        
-       List<ProductoBean> lista=new ArrayList<>();
-       
-       String quey= "SELECT * FROM Producto where estado='true' order by idProducto;";
-       
-       ResultSet result=executeQuery(quey);
-        try {
-            lista=passResultSet(result, lista);
-        } catch (SQLException ex) {
-            Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
-       
-       return lista;
-    }
-    
 
     @Override
     public ProductoBean get(int id) {
-        System.out.println("---------------------------------- el id es; "+id);
         String query="SELECT * from Producto where idProducto=?;";
         ProductoBean producto = new ProductoBean();
         
@@ -103,14 +84,48 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
             ps.setInt(1, id);
           ResultSet result=ps.executeQuery();
           if(result.next()){
-              producto.setIdProducto(result.getInt("idProducto"));
+              producto.setIdProducto(result.getInt("idCategoria"));
               producto.setNombre(result.getString("nombre"));
               producto.setCodigo(result.getString("codigo"));
               producto.setDescripcion(result.getString("descripcion"));
               producto.setExistencias(result.getInt("existencias"));
                producto.setStock(result.getInt("stock"));
                 producto.setPrecio_c(result.getDouble("precio_c"));
-                producto.setPrecio_v(result.getDouble("precio_v"));
+                producto.setPrecio_c(result.getDouble("precio_c"));
+              
+              producto.setEstado(result.getBoolean("estado"));
+               producto.setMarca(result.getString("marca"));
+              producto.setImagen(result.getString("imagen"));
+               CategoriaBean categoria = new CategoriaDao(con).get(result.getInt("idCategoria"));
+            producto.setCategoria(categoria);
+          }
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return producto;
+    }
+    
+    
+     public ProductoBean getByCodigo(String codigo) {
+        String query="SELECT * from Producto where codigo=?;";
+        ProductoBean producto = new ProductoBean();
+        
+        
+        try {
+            PreparedStatement ps =con.prepareStatement(query);
+            ps.setString(1, codigo);
+          ResultSet result=ps.executeQuery();
+          if(result.next()){
+              producto.setIdProducto(result.getInt("idCategoria"));
+              producto.setNombre(result.getString("nombre"));
+              producto.setCodigo(result.getString("codigo"));
+              producto.setDescripcion(result.getString("descripcion"));
+              producto.setExistencias(result.getInt("existencias"));
+               producto.setStock(result.getInt("stock"));
+                producto.setPrecio_c(result.getDouble("precio_c"));
+                producto.setPrecio_c(result.getDouble("precio_c"));
               
               producto.setEstado(result.getBoolean("estado"));
                producto.setMarca(result.getString("marca"));
@@ -168,6 +183,30 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
         }
         
         return false;
+    }
+    
+    public boolean updateExistente(int id, int existencias, int stock){
+        String query = "execute addProdExistente ?,?,?";
+        
+        PreparedStatement ps;
+        try {
+            ps = con.prepareStatement(query);
+            ps.setInt(1, id);
+            ps.setInt(2, existencias);
+            ps.setInt(3, stock);
+            if(ps.executeUpdate(query)>=1){
+                ps.close();
+                return true;
+            } else {
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+       return false;
+        
+        
+        
+         
     }
 
     @Override

@@ -28,118 +28,91 @@ import org.apache.struts2.ServletActionContext;
  *
  * @author Comodin
  */
-public class Producto extends ActionSupport {
-
+public class Producto  extends ActionSupport{
     File archivo;
     String url;
-
-    List<CategoriaBean> categorias = new ArrayList<>();
-    List<ProductoBean> productos = new ArrayList<>();
-    ProductoBean bean = new ProductoBean();
+    
+    List<CategoriaBean> categorias=new ArrayList<>();
+    List<ProductoBean> productos=new ArrayList<>();
+    ProductoBean bean =new ProductoBean();
     Connection con;
     int idProducto;
     int idCategoria;
+    
 
     public Producto() {
         try {
-            con = ConexionSQLServer.getConnection();
+            con=ConexionSQLServer.getConnection();
         } catch (SQLException ex) {
             Logger.getLogger(Producto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    public String llenarLista() {
-
-        ProductoDao daoP = new ProductoDao(con);
-        CategoriaDao daoC = new CategoriaDao(con);
-
-        categorias = daoC.getAll();
-        productos = daoP.getAll();
-        bean = daoP.get(idProducto);
-
+    
+    public String llenarLista(){
+       
+        ProductoDao daoP= new ProductoDao(con);
+        CategoriaDao daoC=new CategoriaDao(con);
+       
+        
+        categorias=daoC.getAll();
+        productos=daoP.getAll();
+        
+        
         return SUCCESS;
     }
     
-    public String getActive() {
-
-        ProductoDao daoP = new ProductoDao(con);
-        CategoriaDao daoC = new CategoriaDao(con);
-
-        categorias = daoC.getAllActive();
-        productos = daoP.getAllActive();
-        bean = daoP.get(idProducto);
-
-        return SUCCESS;
-    }
-    
-
-    public boolean add() throws IOException {
-
-        ProductoDao dao = new ProductoDao(con);
-        CategoriaDao daoC = new CategoriaDao(con);
-        CategoriaBean categoria = new CategoriaBean();
-
-        addImagen();
-
-        categoria = daoC.get(idCategoria);
-
+    public boolean add() throws IOException{
+        ProductoDao dao= new ProductoDao(con);
+        CategoriaDao daoC= new CategoriaDao(con);
+         CategoriaBean categoria = new CategoriaBean();
+        
+         addImagen();
+        
+         
+         
+      
+        
+       categoria= daoC.get(idCategoria);
+        
         bean.setCategoria(categoria);
         bean.setImagen(url);
-        bean.setEstado(true);
-        return dao.add(bean);
-
+       return dao.add(bean);
+        
+        
     }
-
-    public boolean update() throws IOException {
-
-        ProductoDao dao = new ProductoDao(con);
-        String infoTemporal = "";
-        String path = ServletActionContext.getRequest().getSession()
-                .getServletContext().getRealPath("/");
-
-        File archivoFinal = new File(path + "/img/" + bean.getCodigo() + ".jpg", infoTemporal);
-        FileUtils.copyFile(archivo, archivoFinal);
-
-        url = "http://localhost:8080/Integradora4D/img/" + archivoFinal.getName();
-       
-
-        if (bean.getImagen().equals(url)) {
+    
+    public boolean update() throws IOException{
+        ProductoDao dao= new ProductoDao(con);
+        bean= dao.get(bean.getIdProducto());
+        
+        if(url!=bean.getImagen()){
             return dao.update(bean);
-        } else {
-            bean.setImagen(url);
-            return dao.update(bean);
+        }else{
+            System.out.println("---------------------->AQIOOOOOOOOO");
+            addImagen();
+            
         }
-
-//
-//        System.out.println("URL------------------------->" + archivo);
-//        addImagen();
-//        if (bean.getImagen().equals(archivo)) {
-//
-//            return dao.update(bean);
-//        } else {
-//
-//            addImagen();
-//            bean.setImagen(url);
-//            return dao.update(bean);
-//        }
+        
+        
+        return dao.update(bean);
     }
-
-    public String delete() {
-
-        ProductoDao dao = new ProductoDao(con);
-
+    
+    
+    public String delete(){
+        
+        ProductoDao dao= new ProductoDao(con);
+        
         dao.delete(idProducto);
-
+        
         return SUCCESS;
     }
-
+    
+    
     public String intermediario() throws IOException {
-        System.out.println("el IDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD: " + bean.getIdProducto());
-        if (bean.getIdProducto() == 0) {
+
+        if (bean.getIdProducto()== 0) {
             if (add()) {
                 return SUCCESS;
-            } else {
-                return ERROR;
             }
 
         }
@@ -147,23 +120,51 @@ public class Producto extends ActionSupport {
         if (update()) {
 
             return SUCCESS;
-        } else {
-            return ERROR;
         }
+
+        return ERROR;
     }
-
-    public void addImagen() throws IOException {
-
-        String infoTemporal = "";
+    
+    
+    public void addImagen() throws IOException{
+        
+         String infoTemporal="";
         String path = ServletActionContext.getRequest().getSession()
                 .getServletContext().getRealPath("/");
-
-        File archivoFinal = new File(path + "/img/" + bean.getCodigo() + ".jpg", infoTemporal);
+        
+       
+        
+        File archivoFinal = new File(path+"/img/"+bean.getCodigo()+".jpg",infoTemporal);
         FileUtils.copyFile(archivo, archivoFinal);
-
-        url = "http://localhost:8080/Integradora4D/img/" + archivoFinal.getName();
-
+         
+    
+        
+        url = "http://localhost:8080/Integradora4D/img/"+archivoFinal.getName();
+        bean.setImagen(url);
+        
     }
+    
+    
+    
+    public String addExist(){
+    ProductoDao dao = new ProductoDao(con);
+    
+   bean= dao.getByCodigo(bean.getCodigo());
+        System.out.println(bean.getExistencias());
+        System.out.println(bean.getStock());
+        System.out.println("--------------------------------> "+bean.getNombre());
+   
+   if(dao.updateExistente(bean.getIdProducto(), bean.getExistencias(), bean.getStock())){
+       return SUCCESS;
+   }else
+   return ERROR;
+    }
+    
+    
+    
+    
+    
+    
 
     public List<CategoriaBean> getCategorias() {
         return categorias;
@@ -220,5 +221,8 @@ public class Producto extends ActionSupport {
     public void setIdCategoria(int idCategoria) {
         this.idCategoria = idCategoria;
     }
-
+    
+    
+    
+    
 }
