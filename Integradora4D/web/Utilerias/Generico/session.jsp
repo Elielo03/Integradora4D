@@ -5,7 +5,7 @@
 --%>
 
 
-<%@taglib prefix="s" uri="/struts-tags" %>
+
 <ul class="nav navbar-nav navbar-right">
     <li><p class="navbar-text"></p></li>
     <li class="dropdown">
