@@ -61,6 +61,17 @@ public class Producto  extends ActionSupport{
         return SUCCESS;
     }
     
+    public String getActive(){
+         ProductoDao daoP= new ProductoDao(con);
+        CategoriaDao daoC=new CategoriaDao(con);
+       
+        
+        categorias=daoC.getAllActive();
+        productos=daoP.getAllActive();
+        
+        return SUCCESS;
+    }
+    
     public boolean add() throws IOException{
         ProductoDao dao= new ProductoDao(con);
         CategoriaDao daoC= new CategoriaDao(con);
@@ -88,7 +99,7 @@ public class Producto  extends ActionSupport{
         if(url!=bean.getImagen()){
             return dao.update(bean);
         }else{
-            System.out.println("---------------------->AQIOOOOOOOOO");
+            
             addImagen();
             
         }
@@ -96,7 +107,18 @@ public class Producto  extends ActionSupport{
         
         return dao.update(bean);
     }
-    
+    public String updateEstado(){
+        ProductoDao dao= new ProductoDao(con);
+        bean= dao.get(idProducto);
+        
+        if(bean.isEstado()){
+            dao.updateeSTADO(bean, false);
+            
+        }else
+            dao.updateeSTADO(bean, true);
+        
+        return SUCCESS;
+    }
     
     public String delete(){
         
@@ -136,7 +158,7 @@ public class Producto  extends ActionSupport{
         
         File archivoFinal = new File(path+"/img/"+bean.getCodigo()+".jpg",infoTemporal);
         FileUtils.copyFile(archivo, archivoFinal);
-         
+        System.out.println("URRRRRRLLLLLLLLLLLLLLLLLLLLLLL"+path);
     
         
         url = "http://localhost:8080/Integradora4D/img/"+archivoFinal.getName();

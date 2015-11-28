@@ -33,6 +33,7 @@ public class Compras extends ActionSupport {
     ProductoBean producto = new ProductoBean();
     Connection con;
     
+    
    
    
     
@@ -60,13 +61,32 @@ public class Compras extends ActionSupport {
                  
             }else{
                 producto = dao.get(idProducto);
-                System.out.println("En el add elsee"+producto.getNombre());
+                
               ((List<ProductoBean>) carrito.get("listaProductos")).add(producto);
             }
-            
-            
         return SUCCESS;
     }
+    
+     public String removeElement(){
+         List<ProductoBean> lista = new ArrayList();
+               ProductoDao dao= new ProductoDao(con);
+         Map carrito = ActionContext.getContext().getSession();
+        lista= ((List<ProductoBean>) carrito.get("listaProductos"));
+         System.out.println("id que llega::::::::::::::::::."+idProducto);
+         for (ProductoBean productoBean : lista) {
+             System.out.println("idddddddddd"+productoBean.getIdProducto());
+             if(productoBean.getIdProducto()==idProducto){
+                 
+                 lista.remove(productoBean);
+             }
+         }
+                 
+
+         carrito.put("listaProductos", lista);
+         
+         
+               return SUCCESS;
+           }
 
     
 

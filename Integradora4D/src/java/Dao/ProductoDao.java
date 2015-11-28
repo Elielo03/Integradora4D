@@ -72,6 +72,24 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
        
        return lista;
     }
+    
+     public List<ProductoBean> getAllActive() {
+        
+       List<ProductoBean> lista=new ArrayList<>();
+       
+       String quey= "SELECT * FROM Producto where estado= 'true' order by idProducto;";
+       
+       ResultSet result=executeQuery(quey);
+        try {
+            lista=passResultSet(result, lista);
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+       
+       return lista;
+    }
+    
 
     @Override
     public ProductoBean get(int id) {
@@ -174,6 +192,34 @@ public class ProductoDao extends DaoAbstract<ProductoBean>{
               ps.setString(9, bean.getImagen());
               ps.setInt(10, bean.getCategoria().getIdCategoria());
               ps.setInt(11, bean.getIdProducto());
+              if(ps.executeUpdate()>=1){
+                  ps.close();
+                  return true;
+              }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return false;
+    }
+    
+     public boolean updateeSTADO(ProductoBean bean,boolean estado) {
+         System.out.println("-----------------idddddddddddddddddd"+bean.getIdProducto());
+         String query="UPDATE PRODUCTO SET "
+               
+                   
+                    + " estado= ? "
+                    
+                    + " WHERE idProducto = ?;";
+        try {
+           
+            
+            PreparedStatement ps=con.prepareStatement(query);
+           
+            
+            ps.setBoolean(1, estado);
+           
+              ps.setInt(2, bean.getIdProducto());
               if(ps.executeUpdate()>=1){
                   ps.close();
                   return true;

@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,9 +26,10 @@
         <table  id="tabla" class="table table-responsive table-striped table-bordered table-hover">
             <thead>
                 <tr>
-                   
+                    <td>Nombre Producto</td>
                     <td>Codigo Producto</td>
                     <td>Precio Venta</td>
+                    <td>Eliminar </td>
 
                    
                 </tr>
@@ -36,12 +37,26 @@
             <tbody>
                 <s:iterator value="#session.listaProductos">
                      <tr>
+                         <td>
+                    <s:property value="nombre"/> 
+                </td>
                 <td>
                     <s:property value="codigo"/> 
                 </td>
                 <td>
                     <s:property value="precio_v" />
                 </td>
+                <td>
+                    <s:form action="eliminarElemento">
+                        <s:hidden name="idProducto"></s:hidden> 
+                        <s:submit value="Eliminar del Carrito"></s:submit>
+                        
+                        
+                    </s:form>
+                    
+                </td>
+                
+                
                      </tr>
                      
                     </s:iterator>

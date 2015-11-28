@@ -13,10 +13,10 @@ import java.sql.Date;
  */
 public class VentaBean {
     private int idVenta;
-    private Date fecha_compra;
+    private String fecha_compra;
     private String descripcion;
     private boolean estado;
-    private int idPersona;
+    private PersonaBean persona;
     
 
     public VentaBean() {
@@ -30,13 +30,15 @@ public class VentaBean {
         this.idVenta = idVenta;
     }
 
-    public Date getFecha_compra() {
+    public String getFecha_compra() {
         return fecha_compra;
     }
 
-    public void setFecha_compra(Date fecha_compra) {
+    public void setFecha_compra(String fecha_compra) {
         this.fecha_compra = fecha_compra;
     }
+
+   
 
    
 
@@ -49,13 +51,15 @@ public class VentaBean {
         this.descripcion = descripcion;
     }
 
-    public int getIdPersona() {
-        return idPersona;
+    public PersonaBean getPersona() {
+        return persona;
     }
 
-    public void setIdPersona(int idPersona) {
-        this.idPersona = idPersona;
+    public void setPersona(PersonaBean persona) {
+        this.persona = persona;
     }
+
+    
 
     public boolean isEstado() {
         return estado;

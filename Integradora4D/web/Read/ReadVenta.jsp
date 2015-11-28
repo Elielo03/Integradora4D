@@ -21,16 +21,19 @@
         <table  id="tabla" class="table table-responsive table-striped table-bordered table-hover">
             <thead>
                 <tr>
-                    <td>Imagen</td>
-                    <td>Nombre</td>
-                    <td>Existencias</td>
-                    <td>Precio Venta</td>
+                    <td>ID</td>
+                    <td>Fecha Compra</td>
+                    <td>Descripcion </td>
+                    <td>Estado</td>
+                    <td>Cliente</td>
+                    <td>Actualizar</td>
+                    <td>Eliminar</td>
 
-                    <td>Compra</td>
+                    
                 </tr>
             </thead>
             <tbody>
-                <s:iterator value="productos">
+                <s:iterator value="ventas">
                     <tr>
                         <td><img src="<s:url value="%{imagen}"/>" width="120" height="120"/></td>
                         <td><s:property value="nombre"></s:property></td>

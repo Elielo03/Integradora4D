@@ -5,6 +5,8 @@
  */
 package Beans;
 
+import java.util.List;
+
 /**
  *
  * @author Eliel David
@@ -14,7 +16,7 @@ public class VentaDetalleBean {
     private int cantidad;
     private double costo_venta;
     private int idVenta;
-    private int idProducto;
+    private  List<ProductoBean> productos;
 
     public VentaDetalleBean() {
     }
@@ -56,13 +58,15 @@ public class VentaDetalleBean {
         this.idVenta = idVenta;
     }
 
-    public int getIdProducto() {
-        return idProducto;
+    public List<ProductoBean> getProductos() {
+        return productos;
     }
 
-    public void setIdProducto(int idProducto) {
-        this.idProducto = idProducto;
+    public void setProductos(List<ProductoBean> productos) {
+        this.productos = productos;
     }
+
+    
 
    
     

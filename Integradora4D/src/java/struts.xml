@@ -128,6 +128,11 @@
             <result name="success">/Registrar/addProducto.jsp</result>
         </action>
         
+        <action name="updateEstadoProducto" class="Operaciones.Producto" method="updateEstado">
+            
+            <result type="redirect">readProducto</result>
+        </action>
+        
         
         
         
@@ -163,7 +168,17 @@
         
         <action name="agregarCarro" class="Operaciones.Compras" method="addCarro">
             
+            <result type="redirect">compras</result>
+        </action>
+        
+        <action name="readCarrito">
+            
             <result name="success">/Read/Carrito.jsp</result>
+        </action>
+        
+        <action name="eliminarElemento" class="Operaciones.Compras" method="removeElement">
+            <result name="success">/Read/Carrito.jsp</result>
+            
         </action>
         
 
