@@ -158,7 +158,7 @@ public class Producto  extends ActionSupport{
         
         File archivoFinal = new File(path+"/img/"+bean.getCodigo()+".jpg",infoTemporal);
         FileUtils.copyFile(archivo, archivoFinal);
-        System.out.println("URRRRRRLLLLLLLLLLLLLLLLLLLLLLL"+path);
+     
     
         
         url = "http://localhost:8080/Integradora4D/img/"+archivoFinal.getName();
