@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container">
-        <h1>Lista Productos</h1>
+        <h1>Lista Ventas</h1>
         
 
         <table  id="tabla" class="table table-responsive table-striped table-bordered table-hover">
@@ -35,16 +35,17 @@
             <tbody>
                 <s:iterator value="ventas">
                     <tr>
-                        <td><img src="<s:url value="%{imagen}"/>" width="120" height="120"/></td>
-                        <td><s:property value="nombre"></s:property></td>
-                        <td><s:property value="existencias"></s:property></td>
-                            <td><s:property value="precio_v"></s:property></td>
+                        <td><s:property value="fecha_compra"></s:property></td>
+                        <td><s:property value="descripcion"></s:property></td>
+                        <td><s:property value="estado"></s:property></td>
+                        <td><s:property value="persona"></s:property></td>
+                            
                             <td>
-                            <s:form action="agregarCarro">
-                            <s:hidden name="idProducto"></s:hidden>
-                               
-                                <s:submit  value="agregar al Carro"/> 
-                             </s:form>
+                            <s:submit value="actualizar"></s:submit>
+                            </td>
+                            
+                             <td>
+                            <s:submit value="borrar"></s:submit>
                             </td>
                         
                     </tr>
