@@ -151,9 +151,13 @@
         
         <!-- login -->
         <action name="login" class="Operaciones.login" method="sesion">
-            <result name="opcion2">/JSP/Exito.jsp</result>
+            <result name="opcion2">/JSP/index.jsp</result>
             <result name="opcion1">/JSP/index.jsp</result>
             <result name="error">/JSP/Exito1.jsp</result>
+        </action>
+        
+         <action name="cerrar" class="Operaciones.login" method="cerrar">
+            <result name="success">/JSP/index.jsp</result>        
         </action>
         
         <!-- login -->
@@ -194,6 +198,10 @@
          
         <!-- Reportes -->
         <!--Admin-->
+        <action name="reportes">
+             <result>/JSP/Reportes.jsp</result>
+        </action>
+        
         <action name="AdminProductReport" class="Reports.AdminReports" method="AdminProductReport">
             <result name = "success" type = "jasper">
                 <param name = "location">/WEB-INF/Prueba1.jasper</param>

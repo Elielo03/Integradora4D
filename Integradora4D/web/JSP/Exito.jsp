@@ -8,7 +8,7 @@
 <%@page import="java.util.Map"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
-<%Map objetosSesion = ActionContext.getContext().getSession();%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +16,9 @@
         <title>JSP Page</title>
     </head>
     <body>
+
         <h2><%--<%=objetosSesion.get("idUsuario")%>--%></h2>
+
         <h1>AddCategoria</h1>
         <s:form action="readCategoria">
             <s:submit value="Aceptar"></s:submit>
@@ -84,15 +86,11 @@
         </s:form>
         <h1>EMPLEADO</h1>
         <s:form action = "EmployeeProductReport">
-            Nombre Empleado: <s:textfield name="nombreuser"/>
-            Departamento: <s:textfield name="depto"/>
             <s:submit value="Productos"/>
         </s:form>
         <s:form action = "EmployeeSalesReport">
-            Nombre Empleado: <s:textfield name="nombreuser"/>
             Desde: <s:textfield name="desde"/>
             Hasta: <s:textfield name="hasta"/>
-            Departamento: <s:textfield name="depto"/>
             <s:submit value="Ventas"/>
         </s:form>
 

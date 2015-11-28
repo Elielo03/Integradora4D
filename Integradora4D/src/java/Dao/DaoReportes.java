@@ -23,15 +23,16 @@ import java.util.logging.Logger;
 public class DaoReportes {
 
     Connection con;
+    DepartamentoDao departamento;
 
     public DaoReportes() throws SQLException {
         con = ConexionSQLServer.getConnection();
+        departamento = new DepartamentoDao(con);
     }
 
     public PersonaBean get(int id) {
         String query = "SELECT * from Persona where idUsuario=?;";
         PersonaBean bean = new PersonaBean();
-
         try {
             PreparedStatement ps = con.prepareStatement(query);
             ps.setInt(1, id);
@@ -46,16 +47,30 @@ public class DaoReportes {
                 bean.setEstado(res.getBoolean(7));
                 bean.setCorreoE(res.getString(8));
                 bean.setTelefono(res.getString(9));
-//                bean.setUsuario(usuario.get(res.getInt(10)));
-//                bean.setDepartamento(departamento.get(res.getInt(11)));
                 bean.setPass(res.getString(10));
             }
         } catch (SQLException ex) {
             Logger.getLogger(DaoReportes.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         return bean;
-
     }
 
+    public DepartamentoBean getdept(int id) {
+        String query = "SELECT * FROM Departamento d JOIN Persona ON Persona.idDepartamento = d.idDepartamento WHERE Persona.idUsuario = ?;";
+        DepartamentoBean bean = new DepartamentoBean();
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, id);
+            ResultSet res = ps.executeQuery();
+            if (res.next()) {
+                bean.setIdDepartamento(1);
+                bean.setNombre(res.getString(2));
+                bean.setDescripcion(res.getString(3));
+                bean.setEstado(res.getBoolean(4));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoReportes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return bean;
+    }
 }
