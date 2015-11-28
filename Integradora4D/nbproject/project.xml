@@ -19,6 +19,17 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
+<<<<<<< a3918e100f2d1250352540abebb78e30429f329e
+                    <file>${file.reference.commons-collections-3.2.1.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.commons-digester-2.1.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+=======
+>>>>>>> Librerias y demas
                     <file>${file.reference.commons-logging-1.1.1.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
@@ -48,10 +59,13 @@
                 </library>
                 <library dirs="200">
                     <file>${file.reference.poi-3.10.1.jar}</file>
+<<<<<<< a3918e100f2d1250352540abebb78e30429f329e
+=======
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
                     <file>${file.reference.sqljdbc4.jar}</file>
+>>>>>>> Librerias y demas
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>
