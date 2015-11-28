@@ -67,7 +67,7 @@ public class Departamento  extends ActionSupport{
         
         DepartamentoDao daoD= new DepartamentoDao(con);
        departamento= daoD.get(idDepartamento);
-        System.out.println("-------------------blaaaaaaa"+departamento.getNombre());
+        
        
        if(departamento.isEstado()){
            daoD.updateEstado(departamento, false);

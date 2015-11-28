@@ -44,6 +44,22 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
         
         return lista;
     }
+    
+    public List<DepartamentoBean> getAllActive() {
+        
+        List<DepartamentoBean> lista= new ArrayList<>();
+        
+        String query="SELECT * From Departamento where estado='true';";
+        ResultSet result = executeQuery(query);
+        try {
+            lista=passResultSet(result, lista);
+        } catch (SQLException ex) {
+            Logger.getLogger(DepartamentoDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return lista;
+    }
+
 
     @Override
     public DepartamentoBean get(int id) {
