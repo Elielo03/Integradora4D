@@ -104,6 +104,27 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
         
         return false;
     }
+    
+    public boolean updateEstado(DepartamentoBean bean,boolean estado) {
+        String query="UPDATE Departamento SET "
+                + "estado=? "
+               
+                + " where idDepartamento=?;";
+        
+        try {
+            PreparedStatement ps =con.prepareStatement(query);
+            ps.setBoolean(1, estado);
+            ps.setInt(2, bean.getIdDepartamento());
+            if(ps.executeUpdate()>=1){
+                ps.close();
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return false;
+    }
 
     @Override
     public boolean delete(int id) {

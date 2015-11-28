@@ -39,6 +39,8 @@
         <action name="deletePersona" class="Operaciones.Persona" method="delete">
             <result name="success" type="redirect">LlenarPersona</result>     
         </action>
+        
+        
         <!-- Fin persona -->
         
         <!-- Categoria -->
@@ -55,6 +57,10 @@
         </action>
         <action name="botonUpdate" class="Operaciones.Categoria" method="getActive" >
             <result name="success">/Registrar/Categoria.jsp</result>
+        </action>
+        
+        <action name="updateEstadoCategoria" class="Operaciones.Categoria" method="updateEstado" >
+            <result type="redirect">readCategoria</result>
         </action>
         
         <action name="deleteCategoria" class="Operaciones.Categoria" method="delete">
@@ -84,6 +90,10 @@
         </action>
         
         <action name="deleteDepartamento" class="Operaciones.Departamento" method="delete">
+            <result type="redirect">readDepartamento</result>
+        </action>
+        
+        <action name="updateDepartamento" class="Operaciones.Departamento" method="updateEstado">
             <result type="redirect">readDepartamento</result>
         </action>
         

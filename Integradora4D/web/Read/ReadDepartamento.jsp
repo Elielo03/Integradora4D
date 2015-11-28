@@ -36,7 +36,8 @@
                             <td><s:property value="nombre"></s:property></td>
                             <td><s:property value="descripcion"></s:property></td>
                                 <td>
-                                    <form action="UpdateDepartamento">
+                                    <form action="updateDepartamento" name="updateDepartamento">
+                                         <s:hidden name="idDepartamento"></s:hidden>
                                 <%
                                     String estado = "" + pageContext.findAttribute("estado");
                                     String strclass;
@@ -73,7 +74,9 @@
         </div>
         
         <script>
-            
+            function updateDepartamento(){
+                document.updateDepartamento.submit();
+            };
             </script>
 
 

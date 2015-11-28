@@ -128,10 +128,27 @@ public class PersonaDao extends DaoAbstract<PersonaBean> {
 
         return false;
     }
+    
+    
+    public boolean updateEstado(int id, boolean estado) {
+        String sql = "UPDATE Persona set estado= ? where idPersona= ?;";
+        try (PreparedStatement stm = con.prepareStatement(sql)) {
+            stm.setBoolean(1, estado);
+            stm.setInt(2, id);
+            if (stm.executeUpdate() == 1) {
+                stm.close();
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PersonaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return false;
+    }
 
     @Override
     public boolean delete(int id) {
-        String sql = "UPDATE Persona set estado= 'false' where idPersona= ?;";
+        String sql = "Delete from Persona  where idPersona= ?;";
         try (PreparedStatement stm = con.prepareStatement(sql)) {
             stm.setInt(1, id);
             if (stm.executeUpdate() == 1) {

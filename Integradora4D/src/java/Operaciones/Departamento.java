@@ -62,6 +62,23 @@ public class Departamento  extends ActionSupport{
        
         return daoD.update(departamento);
     }
+    public String updateEstado(){
+        
+        
+        DepartamentoDao daoD= new DepartamentoDao(con);
+       departamento= daoD.get(idDepartamento);
+        System.out.println("-------------------blaaaaaaa"+departamento.getNombre());
+       
+       if(departamento.isEstado()){
+           daoD.updateEstado(departamento, false);
+           
+       }else
+           daoD.updateEstado(departamento, true);
+       
+       return SUCCESS;
+       
+       
+    }
     
     public String delete(){
         
@@ -71,7 +88,7 @@ public class Departamento  extends ActionSupport{
             return SUCCESS;
         }
        
-        return ERROR;
+        return SUCCESS;
         
         
     }

@@ -89,6 +89,32 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
         
         return false;
     }
+    
+    
+   
+    public boolean updateEstado(CategoriaBean bean,boolean estado) {
+       
+        String query="UPDATE Categoria SET "
+                
+                 +"estado = ? where idCategoria=?;";
+        
+        try {
+            PreparedStatement ps =con.prepareStatement(query);
+            ps.setBoolean(1, estado);
+            ps.setInt(2, bean.getIdCategoria());
+          
+           
+            if(ps.executeUpdate()>=1){
+                ps.close();
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return false;
+    }
+    
 
     @Override
     public boolean delete(int id) {
@@ -109,6 +135,11 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
         
         return false;
     }
+    
+    
+    
+    
+    
 
     @Override
     public boolean add(CategoriaBean bean) {

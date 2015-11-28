@@ -48,6 +48,7 @@
                         <td><s:property value="Usuario.idTipoUsuario"/></td>
                         <td><s:property value="Departamento.nombre"/></td>
                         <td>
+                            <form action="updatePersonaCliente" name="updatePersonaCliente">
                             <%
                                    String estado=""+pageContext.findAttribute("estado");
                                     String strclass;
@@ -60,9 +61,9 @@
                                         strclass="btn btn-danger";
                                     }
                                     %>
-                                    <button    name="button2id" class="<%=strclass%>"> <%=estado%> </button>
+                                    <button  onclick="updatePersonaCliente()"  name="button2id" class="<%=strclass%>"> <%=estado%> </button>
                             
-                            
+                            </form>
                             
                         </td>
                        <td><s:property value="pass"/></td>
@@ -84,7 +85,11 @@
 
         </table>
         
-        
+        <script>
+            function updatePersonaCliente(){
+                document.updatePersonaCliente.submit();
+            }
+            </script>
         
          <script type="text/javascript">
         $(document).ready( function () {

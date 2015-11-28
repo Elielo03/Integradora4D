@@ -41,7 +41,10 @@
                         <tr>
                             <td><s:property value="idCategoria"></s:property></td>
                             <td><s:property value="nombre"></s:property></td>
-                            <td><input  id="${idCategoria}" type="hidden" value="${estado}" name="hola"> 
+                            
+                            <td>
+                                <form action="updateEstadoCategoria">
+                                 <s:hidden name="idCategoria"></s:hidden>
                                 
                                 
                                 
@@ -57,9 +60,9 @@
                                         strclass="btn btn-danger";
                                     }
                                     %>
-                                    <button   name="button2id" class="<%=strclass%>"> <%=estado%> </button>
+                                    <button  onclick="updateCategoria()" name="button2id" class="<%=strclass%>"> <%=estado%> </button>
 
-                                </input> 
+                                </form>
 
 
 
@@ -82,8 +85,8 @@
 
             </table>
         </div>
-
-
+        
+        
 
 
         <script type="text/javascript">

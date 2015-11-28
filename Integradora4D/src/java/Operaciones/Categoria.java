@@ -104,6 +104,22 @@ public class Categoria extends ActionSupport {
 
         return SUCCESS;
     }
+    
+    
+    public String updateEstado(){
+        
+        CategoriaDao dao = new CategoriaDao(con);
+        categoria=dao.get(idCategoria);
+        
+        
+        if(categoria.isEstado()){
+            dao.updateEstado(categoria,false);
+        }else
+            dao.updateEstado(categoria, true);
+                
+        
+        return SUCCESS;
+    }
 
     public String intermediario() {
 
