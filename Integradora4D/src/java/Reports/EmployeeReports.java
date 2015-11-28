@@ -67,6 +67,7 @@ public class EmployeeReports extends ActionSupport {
         int id = (int) objetosSesion.get("idUsuario");
         persona = dao.get(id);
         depto = dao.getdept(id);
+        System.out.println(persona.getNombre() + " " + depto.getNombre());
         if (persona != null) {
             params = new HashMap();
             conn = ConexionSQLServer.getConnection();
@@ -84,15 +85,14 @@ public class EmployeeReports extends ActionSupport {
         int id = (int) objetosSesion.get("idUsuario");
         persona = dao.get(id);
         depto = dao.getdept(id);
+        System.out.println(id);
         if (persona != null) {
             params = new HashMap();
             conn = ConexionSQLServer.getConnection();
-            System.out.println(persona.getNombre() + persona.getApp());
-            System.out.println(depto.getNombre());
-//            params.put("nombreuser", persona.getNombre() + " " + persona.getApp());
-//            params.put("depto", depto.getNombre());
-//            params.put("desde", desde);
-//            params.put("hasta", hasta);
+            params.put("nombreuser", persona.getNombre() + " " + persona.getApp());
+            params.put("depto", depto.getNombre());
+            params.put("desde", desde);
+            params.put("hasta", hasta);
             return SUCCESS;
         } else {
             return ERROR;

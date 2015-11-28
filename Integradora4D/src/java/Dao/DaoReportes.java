@@ -54,19 +54,21 @@ public class DaoReportes {
         }
         return bean;
     }
-    
-    
-    public DepartamentoBean getdept(int id){
-        String query = "SELECT d.nombre FROM Departamento d JOIN Persona ON Persona.idDepartamento = d.idDepartamento WHERE Persona.idUsuario = ?;";
+
+    public DepartamentoBean getdept(int id) {
+        String query = "SELECT * FROM Departamento d JOIN Persona ON Persona.idDepartamento = d.idDepartamento WHERE Persona.idUsuario = ?;";
         DepartamentoBean bean = new DepartamentoBean();
-        try{
+        try {
             PreparedStatement ps = con.prepareStatement(query);
             ps.setInt(1, id);
             ResultSet res = ps.executeQuery();
-            if(res.next()){
-               bean.setNombre(res.getString("d.nombre"));
+            if (res.next()) {
+                bean.setIdDepartamento(1);
+                bean.setNombre(res.getString(2));
+                bean.setDescripcion(res.getString(3));
+                bean.setEstado(res.getBoolean(4));
             }
-        }catch(SQLException ex){
+        } catch (SQLException ex) {
             Logger.getLogger(DaoReportes.class.getName()).log(Level.SEVERE, null, ex);
         }
         return bean;
