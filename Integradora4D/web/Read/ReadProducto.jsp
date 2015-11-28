@@ -47,6 +47,7 @@
                     <td><s:property value="precio_c"></s:property></td>
                     <td><s:property value="precio_v"></s:property></td>
                     <td>
+                        <form action="updateEstadoProducto" name="updateEstadoProducto">
                         <%
                                    String estado=""+pageContext.findAttribute("estado");
                                     String strclass;
@@ -61,7 +62,7 @@
                                     %>
                                     <button    name="button2id" class="<%=strclass%>"> <%=estado%> </button>
                         
-                        
+                        </form>
                         
                     </td>
                     <td><s:property value="marca"></s:property></td>
@@ -88,7 +89,11 @@
         </table>
         
         
-        
+        <script>
+            function updateEstado(){
+                document.updateEstadoProducto.submit();
+            }
+            </script>
         
          <script type="text/javascript">
         $(document).ready( function () {
