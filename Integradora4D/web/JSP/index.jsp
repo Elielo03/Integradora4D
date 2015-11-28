@@ -9,20 +9,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">      
         <link rel="stylesheet" type="text/css" href="<s:url value="../Utilerias/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>"/>
         <script src="https://code.jquery.com/jquery.js"></script>
-        <link rel="stylesheet" type="text/css" href="../Otros/otros.css"/>
+        <link rel="stylesheet" type="text/css" href="../Utilerias/Otros/otros.css"/>
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>index</h1>
         <%@include file="../Utilerias/Generico/Nav.jsp" %>
-        <s:form action="login">
-            <s:textfield name="usuario.userName" /> 
-            <s:textfield name="usuario.pass" />     
-            <s:submit value="login"/>
-        </s:form>   
+
 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     </body>
