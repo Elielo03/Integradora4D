@@ -46,7 +46,7 @@
         <!-- Fin persona -->
         
         <!-- Categoria -->
-        <action name="llenarLista" class="Operaciones.Categoria" method="getActive">       
+        <action name="llenarLista" class="Operaciones.Categoria" method="llenarLista">       
             <result name="success">/Registrar/Categoria.jsp</result>        
         </action>
         

@@ -4,8 +4,7 @@
     Author     : Eliel David
 --%>
 
-<%@page import="com.opensymphony.xwork2.ActionContext"%>
-<%@page import="java.util.Map"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
 
@@ -17,7 +16,7 @@
     </head>
     <body>
 
-        <h2><%--<%=objetosSesion.get("idUsuario")%>--%></h2>
+       
 
         <h1>AddCategoria</h1>
         <s:form action="readCategoria">
