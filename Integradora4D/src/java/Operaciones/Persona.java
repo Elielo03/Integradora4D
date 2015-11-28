@@ -90,7 +90,11 @@ public class Persona extends ActionSupport {
         persona.setDepartamento(departamento);
         persona.setUsuario(usuario);
         
-        
+        if(persona.isEstado()){
+            daoPersona.updateEstado(idPersona, false);
+            
+        }else
+             daoPersona.updateEstado(idPersona, false);
         
         
         

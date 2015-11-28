@@ -40,6 +40,11 @@
             <result name="success" type="redirect">LlenarPersona</result>     
         </action>
         
+        <action name="updatePersonaCliente" class="Operaciones.Persona" method="ConsultarPersona">
+            <result type="redirect">LlnearPersona</result> 
+                
+        </action>
+        
         
         <!-- Fin persona -->
         
