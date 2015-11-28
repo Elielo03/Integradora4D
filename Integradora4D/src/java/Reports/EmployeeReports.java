@@ -5,8 +5,12 @@
  */
 package Reports;
 
+import Beans.DepartamentoBean;
+import Beans.PersonaBean;
 import Conexion.ConexionSQLServer;
+import Dao.DaoReportes;
 import static com.opensymphony.xwork2.Action.SUCCESS;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import java.sql.Connection;
 import java.util.HashMap;
@@ -18,7 +22,10 @@ import java.util.Map;
  */
 public class EmployeeReports extends ActionSupport {
 
-    String nombreuser, depto, desde, hasta;
+    PersonaBean persona = new PersonaBean();
+    DepartamentoBean depto = new DepartamentoBean();
+
+    String desde, hasta;
     private Map params;
     private Connection conn;
 
@@ -46,22 +53,6 @@ public class EmployeeReports extends ActionSupport {
         this.conn = conn;
     }
 
-    public String getNombreuser() {
-        return nombreuser;
-    }
-
-    public void setNombreuser(String nombreuser) {
-        this.nombreuser = nombreuser;
-    }
-
-    public String getDepto() {
-        return depto;
-    }
-
-    public void setDepto(String depto) {
-        this.depto = depto;
-    }
-
     public Map getParams() {
         return params;
     }
@@ -71,26 +62,41 @@ public class EmployeeReports extends ActionSupport {
     }
 
     public String EmployeeProductReport() throws Exception {
-
-        params = new HashMap();
-        conn = ConexionSQLServer.getConnection();
-        params.put("nombreuser", nombreuser);
-        params.put("depto", depto);
-
-        return SUCCESS;
+        Map objetosSesion = ActionContext.getContext().getSession();
+        DaoReportes dao = new DaoReportes();
+        int id = (int) objetosSesion.get("idUsuario");
+        persona = dao.get(id);
+        depto = dao.getdept(id);
+        if (persona != null) {
+            params = new HashMap();
+            conn = ConexionSQLServer.getConnection();
+            params.put("nombreuser", persona.getNombre() + " " + persona.getApp());
+            params.put("depto", depto.getNombre());
+            return SUCCESS;
+        } else {
+            return ERROR;
+        }
     }
-    
+
     public String EmployeeSalesReport() throws Exception {
-        
-        params = new HashMap();
-        conn = ConexionSQLServer.getConnection();
-        params.put("nombreuser", nombreuser);
-        params.put("desde", desde);
-        params.put("hasta", hasta);
-        params.put("depto", depto);
-        
-        return SUCCESS;
-        
+        Map objetosSesion = ActionContext.getContext().getSession();
+        DaoReportes dao = new DaoReportes();
+        int id = (int) objetosSesion.get("idUsuario");
+        persona = dao.get(id);
+        depto = dao.getdept(id);
+        if (persona != null) {
+            params = new HashMap();
+            conn = ConexionSQLServer.getConnection();
+            System.out.println(persona.getNombre() + persona.getApp());
+            System.out.println(depto.getNombre());
+//            params.put("nombreuser", persona.getNombre() + " " + persona.getApp());
+//            params.put("depto", depto.getNombre());
+//            params.put("desde", desde);
+//            params.put("hasta", hasta);
+            return SUCCESS;
+        } else {
+            return ERROR;
+        }
     }
 
 }

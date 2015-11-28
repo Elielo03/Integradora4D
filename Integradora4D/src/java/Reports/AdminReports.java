@@ -21,7 +21,7 @@ import java.util.Map;
  */
 public class AdminReports extends ActionSupport {
 
-    String nombreuser, desde, hasta;
+    String desde, hasta;
 
     private Map params;
     private Connection conn;
@@ -42,14 +42,6 @@ public class AdminReports extends ActionSupport {
 
     public void setHasta(String hasta) {
         this.hasta = hasta;
-    }
-
-    public String getNombreuser() {
-        return nombreuser;
-    }
-
-    public void setNombreuser(String nombreuser) {
-        this.nombreuser = nombreuser;
     }
 
     public Map getParams() {
