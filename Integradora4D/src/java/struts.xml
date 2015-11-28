@@ -156,6 +156,10 @@
             <result name="error">/JSP/Exito1.jsp</result>
         </action>
         
+         <action name="cerrar" class="Operaciones.login" method="cerrar">
+            <result name="success">/JSP/index.jsp</result>        
+        </action>
+        
         <!-- login -->
         
         

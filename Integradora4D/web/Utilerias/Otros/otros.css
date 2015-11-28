@@ -1,6 +1,6 @@
 
 body{
-    background:url('http://www.wallpaperup.com/uploads/wallpapers/2012/10/21/20181/cad2441dd3252cf53f12154412286ba0.jpg');
+  background-image: url(../Imagenes/ws_Smooth_Blue_Gradient_2560x1600.png);
  padding-top: 50px;
 }
 
@@ -53,4 +53,23 @@ body{
         background-color: inherit;
         border-top:0 none;
     }
+}
+
+.navbar-login
+{
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-login-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.icon-size
+{
+    font-size: 87px;
 }

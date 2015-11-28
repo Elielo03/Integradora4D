@@ -3,6 +3,10 @@
     Created on : 25/11/2015, 09:43:40 AM
     Author     : Hermanos Saucedo
 --%>
+
+<%@page import="com.opensymphony.xwork2.ActionContext"%>
+<%@page import="java.util.Map"%>
+<%Map objetosSesion = ActionContext.getContext().getSession();%>
 <div class="container">
     <nav class="navbar navbar-default navbar-inverse" role="navigation">
         <div class="container-fluid">
@@ -20,10 +24,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
+                    <li><a href="#"></a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Departamentos <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#">Action</a></li>
                             <li><a href="#">Another action</a></li>
@@ -41,37 +44,15 @@
                     </div>
                     <button type="submit" class="btn btn-default">Buscar</button>
                 </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><p class="navbar-text"></p></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Iniciar sesión</b> <span class="caret"></span></a>
-                        <ul id="login-dp" class="dropdown-menu">
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-12">
+                <%
+                    if (objetosSesion.get("estado") == null) {
+                %><%@include file="session.jsp"%><%
+                } else {
+                %><%@include file="Cerrar.jsp"%><%
+                    }
+                %>
 
-                                        <s:form action="login"  theme="simple" >
-                                            <div class="form-group">                                  
-                                                <s:textfield name="usuario.userName" cssClass="form-control" placeholder="Correo Electronico" />
-                                            </div>
-                                            <div class="form-group">                                         
-                                                <s:textfield name="usuario.pass" cssClass="form-control" placeholder="Contraseña" /> 
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-block">Iniciar</button>
-                                            </div>
-                                        </s:form> 
 
-                                    </div>
-
-                                    <div class="bottom text-center">
-                                        No tienes cuenta créate una <a href="#"><b>Aqui</b></a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>

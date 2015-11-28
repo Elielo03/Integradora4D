@@ -31,32 +31,36 @@ public class login extends ActionSupport {
     }
 
     public String sesion() {
-        
+
         Map objetosSesion = ActionContext.getContext().getSession();
         UsuarioDao dao = new UsuarioDao(con);
         usuario = dao.sesion(usuario.getUserName(), usuario.getPass());
-        System.out.println("usuario "+usuario.getIdTipoUsuario());
+        System.out.println("usuario " + usuario.getIdTipoUsuario());
         if (usuario != null) {
             if (usuario.getIdTipoUsuario() == 1) {
                 System.out.println("entre tipo 1--------------");
                 objetosSesion.put("tipo", usuario.getIdTipoUsuario());
                 objetosSesion.put("nombre", usuario.getUserName());
                 objetosSesion.put("idUsuario", usuario.getIdUsuario());
+                objetosSesion.put("estado", true);
                 return "opcion2";
-            }else if (usuario.getIdTipoUsuario() == 2) {
+            } else if (usuario.getIdTipoUsuario() == 2) {
                 objetosSesion.put("tipo", usuario.getIdTipoUsuario());
                 objetosSesion.put("nombre", usuario.getUserName());
                 objetosSesion.put("idUsuario", usuario.getIdUsuario());
+                objetosSesion.put("estado", true);
                 return "opcion2";
             } else if (usuario.getIdTipoUsuario() == 3) {
                 objetosSesion.put("tipo", usuario.getIdTipoUsuario());
                 objetosSesion.put("nombre", usuario.getUserName());
                 objetosSesion.put("idUsuario", usuario.getIdUsuario());
+                objetosSesion.put("estado", true);
                 return "opcion2";
             } else {
                 objetosSesion.put("tipo", usuario.getIdTipoUsuario());
                 objetosSesion.put("nombre", usuario.getUserName());
                 objetosSesion.put("idUsuario", usuario.getIdUsuario());
+                objetosSesion.put("estado", true);
                 return "opcion1";
             }
         } else {
@@ -65,7 +69,20 @@ public class login extends ActionSupport {
 
     }
 
+    public String cerrar() {
+        Map objetosSesion
+                = ActionContext.getContext().getSession();
+
+        objetosSesion.remove("tipo");
+        objetosSesion.remove("nombre");
+        objetosSesion.remove("idUsuario");
+        objetosSesion.remove("estado");
+
+        return SUCCESS;
+    }
+
     //get and set
+
     public UsuarioBean getUsuario() {
         return usuario;
     }
