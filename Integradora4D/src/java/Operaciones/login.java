@@ -31,11 +31,19 @@ public class login extends ActionSupport {
     }
 
     public String sesion() {
+        
         Map objetosSesion = ActionContext.getContext().getSession();
         UsuarioDao dao = new UsuarioDao(con);
         usuario = dao.sesion(usuario.getUserName(), usuario.getPass());
+        System.out.println("usuario "+usuario.getIdTipoUsuario());
         if (usuario != null) {
-            if (usuario.getIdTipoUsuario() == 2) {
+            if (usuario.getIdTipoUsuario() == 1) {
+                System.out.println("entre tipo 1--------------");
+                objetosSesion.put("tipo", usuario.getIdTipoUsuario());
+                objetosSesion.put("nombre", usuario.getUserName());
+                objetosSesion.put("idUsuario", usuario.getIdUsuario());
+                return "opcion2";
+            }else if (usuario.getIdTipoUsuario() == 2) {
                 objetosSesion.put("tipo", usuario.getIdTipoUsuario());
                 objetosSesion.put("nombre", usuario.getUserName());
                 objetosSesion.put("idUsuario", usuario.getIdUsuario());

@@ -154,19 +154,8 @@
             <result name="success">/Read/Carrito.jsp</result>
         </action>
         
-<<<<<<< HEAD
-        <action name="readCarrito" class="Operaciones.Compras" method="obtenerCarrito" >
-=======
-        <action name="readCarrito" class="Operaciones.Compras" method="obtenerElementosCarro">
-            
->>>>>>> origin/master
-            <result name="success">/Read/Carrito.jsp</result>
-            
-        </action>
-<<<<<<< HEAD
-         
-         <!-- ventas -->
-=======
+
+        
         <!-- ventas -->
          
         <!-- Reportes -->
@@ -220,7 +209,7 @@
                 
         <!--Fin Empleado-->
         <!-- Fin reportes -->
->>>>>>> origin/master
+
           
     </package>
 </struts>

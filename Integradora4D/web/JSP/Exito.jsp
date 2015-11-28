@@ -60,7 +60,6 @@
         <h1>-------Reportes--------</h1>  
         <h1>ADMINISTRADOR</h1>
         <s:form action="AdminProductReport">
-            Nombre Admin: <s:textfield name="nombreuser"/>
             <s:submit value="Productos"/>
         </s:form>
 

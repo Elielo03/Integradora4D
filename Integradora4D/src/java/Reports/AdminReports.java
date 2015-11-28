@@ -6,7 +6,9 @@
 package Reports;
 
 import Conexion.ConexionSQLServer;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.inject.Context;
 import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +22,7 @@ public class AdminReports extends ActionSupport {
     String nombreuser, desde, hasta;
     private Map params;
     private Connection conn;
-
+    Map objetosSesion = ActionContext.getContext().getSession();
     public String getDesde() {
         return desde;
     }
@@ -66,8 +68,10 @@ public class AdminReports extends ActionSupport {
 
         params = new HashMap();
         conn = ConexionSQLServer.getConnection();
-        params.put("nombreuser", nombreuser);
-
+        System.out.println(objetosSesion.get("nombre"));
+        params.put("nombreuser", objetosSesion.get("nombre"));
+        
+     
         return SUCCESS;
     }
 
