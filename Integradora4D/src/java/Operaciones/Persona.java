@@ -86,8 +86,13 @@ public class Persona extends ActionSupport {
     
      public String updatePersonaCliente() {
         PersonaDao daoPersona = new PersonaDao(con);
+        persona=daoPersona.get(idPersona);
         persona.setDepartamento(departamento);
         persona.setUsuario(usuario);
+        
+        
+        
+        
         
         return SUCCESS;
     }
