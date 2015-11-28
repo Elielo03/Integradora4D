@@ -10,39 +10,106 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Producto</h1>
-        <a href="<s:url action="addExistente"/>">asdfasdf</a>
-        <s:form action="addProducto" enctype="multipart/form-data" method="POST" >
+        <div class="form-group">
+        <h1>Agregar Producto</h1>
+        <a href="<s:url action="addExistente"/>">Agregar Existente</a>
+        <s:form action="addProducto" enctype="multipart/form-data" method="POST" cssClass="form-horizontal" theme="simple">
             
             
             
             
            
-
-            <s:textfield name="bean.nombre" label="Nombre" title="nombre de Producto" placeholder="Nombre"/>
-            <s:textfield name="bean.codigo" label="Codigo" title="codigo producto" placeholder="Codigo"/>
-            <s:textarea name="bean.descripcion" label="Descripcion" title="descripcion producto" placeholder="Descripcion"/>
-            <s:textfield name="bean.existencias" label="Existancia" title="existencias producto" placeholder="existencias"/>
-            <s:textfield name="bean.stock" label="stock" title="stock producto" placeholder="stock"/>
-            <s:textfield name="bean.precio_c" label="precio_c" title="precio_c producto" placeholder="precio_c"/>
-            <s:textfield name="bean.precio_v" label="precio_v" title="precio_v producto" placeholder="precio_v"/>
-            <s:textfield name="bean.marca" label="marca" title="marca producto" placeholder="marca"/> 
-             <s:select name="idCategoria"   label="Seleccionar una Categoria" list="categorias" listValue="nombre"
-                      listKey="idCategoria"></s:select>
+             <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Nombre:</label>  
+            <div class="col-md-4">
+            <s:textfield name="bean.nombre" type="text"   cssClass="form-control input-md" required=""/>
+            </div>
+        </div>
+            
+            
+           <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Codigo</label>  
+            <div class="col-md-4">
+            <s:textfield name="bean.codigo" type="text"   cssClass="form-control input-md" required=""/>
+             </div>
+        </div>
+            
+            <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Descripcion</label>  
+            <div class="col-md-4">
+          <s:textarea name="bean.descripcion" type="text"   cssClass="form-control input-md" required=""/>
+          </div>
+        </div>
+          
+           
+                
+                
+                <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Existencias:</label>  
+            <div class="col-md-4">
+          <s:textfield name="bean.existencias" type="text"   cssClass="form-control input-md" required=""/>
+           </div>
+        </div>
+          
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Stock</label>  
+            <div class="col-md-4">
+          <s:textfield name="bean.stock" type="text"   cssClass="form-control input-md" required=""/>
+            </div>
+        </div>
+          
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Precio Compra</label>  
+            <div class="col-md-4">
+          <s:textfield name="bean.precio_c" type="text"   cssClass="form-control input-md" required=""/>
+           </div>
+        </div>
+          
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Precio Venta</label>  
+            <div class="col-md-4">
+          <s:textfield name="bean.precio_v" type="text"   cssClass="form-control input-md" required=""/>
+           </div>
+        </div>
+          
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Marca: </label>  
+            <div class="col-md-4">
+          <s:textfield name="bean.marca" type="text"   cssClass="form-control input-md" required=""/> 
+          </div>
+        </div>   
+          
+          
+           <!-- Select Basic -->
+        
+            <label class="col-md-4 control-label" for="departamento.idDepartamento">Categoria</label>
+            <div class="col-md-4">
+          <s:select name="idCategoria"   label="Seleccionar una Categoria" list="categorias" listValue="nombre"
+                      listKey="idCategoria" cssClass="form-control"></s:select>
+                 
              
              
             <s:hidden name="url"></s:hidden>
              
             
-           
+            <div class="form-group">
+                <div class="col-md-4">
+                    
             <s:file name="archivo" label="Selecciona tu imagen"/>
             
             
+            
             <s:submit value="Guardar"/>
+            </div>
+            </div>
+            </div>
 
         </s:form>
+        </div>
     </body>
 </html>

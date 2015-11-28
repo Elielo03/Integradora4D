@@ -79,11 +79,12 @@ public class VentaDao extends DaoAbstract <VentaBean>{
     @Override
     public boolean add(VentaBean bean) {
         
-        String query="INSERT INTO Venta VALUES (GETDATE(), ?,  ?, ?);";
+        String query="INSERT INTO Venta(fecha_compra,descripcion,idPersona) VALUES (GETDATE(), ?, ?);";
         
         try {
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, bean.getDescripcion());
+            ps.setInt(2, bean.getPersona().getIdPersona());
             
             if(ps.executeUpdate()>=1){
                 ps.close();
@@ -91,7 +92,7 @@ public class VentaDao extends DaoAbstract <VentaBean>{
             }
         } catch (SQLException ex) {
             System.out.println(ex);
-        }
+        } 
         
         return false;
     }
