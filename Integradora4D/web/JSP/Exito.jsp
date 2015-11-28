@@ -16,7 +16,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h2><%=objetosSesion.get("idUsuario")%></h2>
+        <h2><%--<%=objetosSesion.get("idUsuario")%>--%></h2>
         <h1>AddCategoria</h1>
         <s:form action="readCategoria">
             <s:submit value="Aceptar"></s:submit>

@@ -24,29 +24,22 @@
                     <td>ID</td>
                     <td>Fecha Compra</td>
                     <td>Descripcion </td>
-                    <td>Estado</td>
+                    
                     <td>Cliente</td>
-                    <td>Actualizar</td>
-                    <td>Eliminar</td>
-
+                    
                     
                 </tr>
             </thead>
             <tbody>
                 <s:iterator value="ventas">
                     <tr>
+                        <td><s:property value="idVenta"></s:property></td>
                         <td><s:property value="fecha_compra"></s:property></td>
                         <td><s:property value="descripcion"></s:property></td>
-                        <td><s:property value="estado"></s:property></td>
-                        <td><s:property value="persona"></s:property></td>
+                        
+                        <td><s:property value="persona.nombre"></s:property></td>
                             
-                            <td>
-                            <s:submit value="actualizar"></s:submit>
-                            </td>
                             
-                             <td>
-                            <s:submit value="borrar"></s:submit>
-                            </td>
                         
                     </tr>
                 </s:iterator>

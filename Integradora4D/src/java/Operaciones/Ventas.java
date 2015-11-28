@@ -8,11 +8,13 @@ package Operaciones;
 import Beans.VentaBean;
 import Conexion.ConexionSQLServer;
 import Dao.VentaDao;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -40,11 +42,13 @@ public class Ventas extends ActionSupport {
         VentaDao dao= new VentaDao(con);
         ventas=dao.getAll();
         
+        
         return SUCCESS;
     }
     
     public String addVenta(){
-        
+        Map carrito=ActionContext.getContext().getSession();
+        VentaDao dao= new VentaDao(con);
         
         return SUCCESS;
     }

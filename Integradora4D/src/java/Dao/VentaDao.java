@@ -10,6 +10,7 @@ import Beans.PersonaBean;
 import Beans.VentaBean;
 import Beans.VentaDetalleBean;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -77,7 +78,22 @@ public class VentaDao extends DaoAbstract <VentaBean>{
 
     @Override
     public boolean add(VentaBean bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        String query="INSERT INTO Venta VALUES (GETDATE(), ?,  ?, ?);";
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, bean.getDescripcion());
+            
+            if(ps.executeUpdate()>=1){
+                ps.close();
+                return true;
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        
+        return false;
     }
 
     @Override

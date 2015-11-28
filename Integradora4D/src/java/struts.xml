@@ -186,6 +186,7 @@
         <!-- ventas -->
         <action name="readVentas" class="Operaciones.Ventas" method="getAll">
             <result name="success">/Read/ReadVenta.jsp</result>
+            
         </action>
         
         <!-- ventas -->
