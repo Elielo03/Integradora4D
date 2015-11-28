@@ -160,7 +160,7 @@
         
         
         
-        <!-- ventas -->
+        <!-- compras -->
         <action name="compras" class="Operaciones.Producto" method="llenarLista">
             
             <result name="success">/Read/ReadProductoVenta.jsp</result>
@@ -181,9 +181,15 @@
             
         </action>
         
-
+        <!-- compras -->
         
         <!-- ventas -->
+        <action name="readVentas" class="Operaciones.Ventas" method="getAll">
+            <result name="success">/Read/ReadVenta.jsp</result>
+        </action>
+        
+        <!-- ventas -->
+        
          
         <!-- Reportes -->
         <!--Admin-->

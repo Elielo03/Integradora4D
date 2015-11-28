@@ -7,6 +7,7 @@ package Operaciones;
 
 import Beans.VentaBean;
 import Conexion.ConexionSQLServer;
+import Dao.VentaDao;
 import com.opensymphony.xwork2.ActionSupport;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -36,8 +37,8 @@ public class Ventas extends ActionSupport {
     }
     
     public String getAll(){
-        VentaDao dao= new VentaDao(con):
-        ventas=
+        VentaDao dao= new VentaDao(con);
+        ventas=dao.getAll();
         
         return SUCCESS;
     }

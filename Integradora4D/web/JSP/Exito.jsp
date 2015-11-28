@@ -51,6 +51,10 @@
         <s:form action="compras">
             <s:submit value="Compras"></s:submit>
         </s:form>
+        
+        <s:form action="readVentas">
+            <s:submit value="readVentas"></s:submit>
+        </s:form>
 
 <<<<<<< HEAD
 
