@@ -84,7 +84,7 @@ cantidad int,
 costo_venta MONEY,
 idVenta int,
 idProducto int,
-estado varchar(5) default 'true',
+estado varchar(5) default ('true'),
 constraint pk_idVenta_detalle primary key (idVenta_Detalle),
 constraint fk_Venta_detalle_Venta foreign key (idVenta) references Venta(idVenta),
 constraint fk_Venta_detalle_Producto foreign key (idProducto) references Producto(idProducto))
