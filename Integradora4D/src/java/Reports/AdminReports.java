@@ -5,7 +5,9 @@
  */
 package Reports;
 
+import Beans.PersonaBean;
 import Conexion.ConexionSQLServer;
+import Dao.DaoReportes;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.inject.Context;
@@ -20,9 +22,12 @@ import java.util.Map;
 public class AdminReports extends ActionSupport {
 
     String nombreuser, desde, hasta;
+
     private Map params;
     private Connection conn;
-    Map objetosSesion = ActionContext.getContext().getSession();
+
+    PersonaBean persona = new PersonaBean();
+
     public String getDesde() {
         return desde;
     }
@@ -38,7 +43,6 @@ public class AdminReports extends ActionSupport {
     public void setHasta(String hasta) {
         this.hasta = hasta;
     }
-    
 
     public String getNombreuser() {
         return nombreuser;
@@ -65,32 +69,53 @@ public class AdminReports extends ActionSupport {
     }
 
     public String AdminProductReport() throws Exception {
-
-        params = new HashMap();
-        conn = ConexionSQLServer.getConnection();
-        System.out.println(objetosSesion.get("nombre"));
-        params.put("nombreuser", objetosSesion.get("nombre"));
-        
-     
-        return SUCCESS;
+        Map objetosSesion = ActionContext.getContext().getSession();
+        DaoReportes dao = new DaoReportes();
+        int id = (int) objetosSesion.get("idUsuario");
+        persona = dao.get(id);
+        if (persona != null) {
+            params = new HashMap();
+            conn = ConexionSQLServer.getConnection();
+            params.put("nombreuser", persona.getNombre() + " " + persona.getApp());
+            return SUCCESS;
+        } else {
+            return ERROR;
+        }
     }
 
     public String AdminSalesReportGraph() throws Exception {
-        params = new HashMap();
-        conn = ConexionSQLServer.getConnection();
-        params.put("desde", desde);
-        params.put("hasta", hasta);
-        params.put("nombre", nombreuser);
-        return SUCCESS;
+        Map objetosSesion = ActionContext.getContext().getSession();
+        DaoReportes dao = new DaoReportes();
+        int id = (int) objetosSesion.get("idUsuario");
+        persona = dao.get(id);
+        if (persona != null) {
+            params = new HashMap();
+            conn = ConexionSQLServer.getConnection();
+            params.put("desde", desde);
+            params.put("hasta", hasta);
+            params.put("nombre", persona.getNombre() + " " + persona.getApp());
+            return SUCCESS;
+        } else {
+            return ERROR;
+        }
+
     }
 
     public String AdminSalesReport() throws Exception {
-        params = new HashMap();
-        conn = ConexionSQLServer.getConnection();
-        params.put("desde", desde);
-        params.put("hasta", hasta);
-        params.put("nombre", nombreuser);
-        return SUCCESS;
+        Map objetoSesion = ActionContext.getContext().getSession();
+        DaoReportes dao = new DaoReportes();
+        int id = (int) objetoSesion.get("idUsuario");
+        persona = dao.get(id);
+        if (persona != null) {
+            params = new HashMap();
+            conn = ConexionSQLServer.getConnection();
+            params.put("desde", desde);
+            params.put("hasta", hasta);
+            params.put("nombre", persona.getNombre() + " " + persona.getApp());
+            return SUCCESS;
+        }else{
+            return ERROR;
+        }
     }
 
 }

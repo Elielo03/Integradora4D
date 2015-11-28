@@ -200,6 +200,7 @@
                 <param name = "reportParameters">params</param>
                 <param name = "format">PDF</param>
             </result>
+            <result name="error">/JSP/Exito1.jsp</result>
         </action>
         
         <action name="AdminSalesReportGraph" class="Reports.AdminReports" method="AdminSalesReportGraph">

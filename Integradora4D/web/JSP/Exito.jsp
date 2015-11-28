@@ -4,8 +4,11 @@
     Author     : Eliel David
 --%>
 
+<%@page import="com.opensymphony.xwork2.ActionContext"%>
+<%@page import="java.util.Map"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
+<%Map objetosSesion = ActionContext.getContext().getSession();%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,6 +16,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <h2><%=objetosSesion.get("idUsuario")%></h2>
         <h1>AddCategoria</h1>
         <s:form action="readCategoria">
             <s:submit value="Aceptar"></s:submit>
@@ -68,14 +72,12 @@
         </s:form>
 
         <s:form action = "AdminSalesReportGraph">
-            Nombre Admin: <s:textfield name="nombreuser"/>
             Fecha Inicio: <s:textfield name="desde"/>
             Fecha Final: <s:textfield name="hasta"/>
             <s:submit value="Ventas + Grafica"/>
         </s:form>
 
         <s:form action = "AdminSalesReport">
-            Nombre Admin: <s:textfield name="nombreuser"/>
             Fecha Inicio: <s:textfield name="desde"/>
             Fecha Final: <s:textfield name="hasta"/>
             <s:submit value="Ventas"/>
@@ -93,7 +95,7 @@
             Departamento: <s:textfield name="depto"/>
             <s:submit value="Ventas"/>
         </s:form>
->>>>>>> origin/master
+
 
     </body>
 </html>
