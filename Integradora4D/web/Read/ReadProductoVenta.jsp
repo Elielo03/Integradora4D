@@ -25,13 +25,14 @@
                         <td>Nombre</td>
                         <td>Existencias</td>
                         <td>Precio Venta</td>
-                        <td>Cantidad</td>
+                        
 
                         <td>Compra</td>
                     </tr>
                 </thead>
                 <tbody>
                     <s:iterator value="productos">
+                       
                         <tr>
                             <td><img src="<s:url value="%{imagen}"/>" width="120" height="120"/></td>
                             <td><s:property value="nombre"></s:property></td>
@@ -41,14 +42,17 @@
 
                             
                                     
-                                <td> <s:textfield name="cantidad" ondblclick="setValue()" name="cantidad"  size="1" theme="simple"></s:textfield>
-
+                               
                                 
 
 
                                 <td>
                                <s:form action="agregarCarro">
-                                   <s:textfield id="cantidadHidden"    name="cantidadHidden"></s:textfield>
+                                    <td> <s:textfield  name="cantidadHidden"   size="13" theme="simple">
+                                    
+                                </s:textfield>
+                                </td>
+                               
                                     <s:hidden name="idProducto"></s:hidden>
 
                                     <s:submit  value="agregar al Carro"/> 
@@ -56,6 +60,8 @@
                             </td>
 
                         </tr>
+                        
+                       
                     </s:iterator>
 
                 </tbody>
@@ -69,11 +75,15 @@
             </s:form>
         </div>
 
+        
+        
+            
 
         <script>
             function setValue(){
                 
-               document.getElementByName("cantidad").value=document.getElementByName("cantidadHidden").value;
+               document.getElementById("cantidadHidden").value=document.getElementById("cantidad").value;
+                      
                       
                 
             }

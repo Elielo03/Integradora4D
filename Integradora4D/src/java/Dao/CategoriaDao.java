@@ -55,7 +55,7 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
             categoria.setDepartamento(departamento);
           }
         } catch (SQLException ex) {
-            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
         }
         
         

@@ -7,6 +7,7 @@ package Dao;
 
 import Beans.VentaDetalleBean;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -48,7 +49,25 @@ public class VentaDetalleDao extends DaoAbstract <VentaDetalleBean>{
 
     @Override
     public boolean add(VentaDetalleBean bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       String query="INSERT INTO Venta_detalle(cantidad,costo_venta,idVenta,idProducto) values(?, ? , ?,  ?);";
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+           ps.setInt(1, bean.getCantidad());
+           ps.setDouble(2, bean.getCosto_venta());
+           ps.setInt(3, bean.getIdVenta());
+           ps.setInt(4, bean.getIdProducto());
+            
+            if(ps.executeUpdate()>=1){
+               
+                ps.close();
+                return true;
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        } 
+        
+        return false;
     }
 
    
