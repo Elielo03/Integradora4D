@@ -11,14 +11,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          <%@include file="../Utilerias/metas.jsp" %>
-        <title>JSP Page</title>
+        <title>Lista Persona Cliente</title>
     </head>
     <body>
-        <h1>Consultar Persona</h1>
+        <h1>Lista Clientes</h1>
          <table  id="tabla" class="table table-responsive table-striped table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>idPersona</th>
+                   
                     <th>nombre</th>
                     <th>Apellido Paterno</th>
                     <th>Apellido Materno</th>
@@ -37,7 +37,7 @@
             <s:iterator value="listaPersona">
                 <tbody>
                     <tr>  
-                        <td><s:property value="idPersona"/></td>
+                        
                         <td><s:property value="nombre"/></td>
                         <td><s:property value="app"/></td>
                         <td><s:property value="apm"/></td>

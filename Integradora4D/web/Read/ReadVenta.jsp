@@ -11,11 +11,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../Utilerias/metas.jsp" %>
-        <title>Lista Productos</title>
+        <title>Lista de Ventas</title>
     </head>
     <body>
         <div class="container">
-        <h1>Lista Ventas</h1>
+        <h1>Lista de Ventas</h1>
         
 
         <table  id="tabla" class="table table-responsive table-striped table-bordered table-hover">

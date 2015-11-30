@@ -24,6 +24,7 @@ public class ProductoBean {
     private CategoriaBean categoria;
     private String marca;
     private String imagen;
+    private int cantidad;
 
     public ProductoBean() {
     }
@@ -112,6 +113,14 @@ public class ProductoBean {
 
     public void setCategoria(CategoriaBean categoria) {
         this.categoria = categoria;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
     

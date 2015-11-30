@@ -14,11 +14,11 @@
         <title>Lista Productos</title>
     </head>
     <body>
-        <h1>Lista Productos</h1>
+        <h1>Lista de Productos</h1>
         <table  id="tabla" class="table table-responsive table-striped table-bordered table-hover">
             <thead>
             <tr>
-                <td>ID</td>
+                
                 <td>Nombre</td>
                 <td>Codigo</td>
                 <td>Descripción</td>
@@ -37,7 +37,7 @@
             <tbody>
             <s:iterator value="productos">
                 <tr>
-                    <td><s:property value="idProducto"></s:property></td>
+                    
                     <td><s:property value="nombre"></s:property></td>
                     <td><s:property value="codigo"></s:property></td>
                     <td><s:property value="descripcion"></s:property></td>

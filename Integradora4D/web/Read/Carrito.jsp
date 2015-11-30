@@ -23,7 +23,7 @@
         <h1>Lista Carrito</h1>
       
 
-        <table  id="tabla" class="table table-responsive table-striped table-bordered table-hover">
+        <table   id="tabla" class="table table-responsive table-striped table-bordered table-hover" >
             <thead>
                 <tr>
                     <td>Nombre Producto</td>

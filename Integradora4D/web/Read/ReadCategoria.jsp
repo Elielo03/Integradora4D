@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../Utilerias/metas.jsp" %>
-        <title>Categoria</title>
+        <title>Lista de Categorias</title>
 
 
 
@@ -20,13 +20,13 @@
 
 
 
-        <h1>Categorias: </h1>
+        <h1>Lista de Categorias </h1>
         <div class="container">
 
             <table  id="tabla" class="table table-responsive table-striped table-bordered table-hover">
                 <thead>
                     <tr>
-                        <td>Id</td>
+                        
                         <td>Nombre</td>
                         <td>Estado</td>
                         <td>Departamento</td>
@@ -39,7 +39,7 @@
                        
                         
                         <tr>
-                            <td><s:property value="idCategoria"></s:property></td>
+                           
                             <td><s:property value="nombre"></s:property></td>
                             
                             <td>

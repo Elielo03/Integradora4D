@@ -13,7 +13,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -32,6 +32,7 @@ public class Compras extends ActionSupport {
     
     ProductoBean producto = new ProductoBean();
     Connection con;
+    int cantidadHidden;
     
     
    
@@ -53,10 +54,16 @@ public class Compras extends ActionSupport {
          ProductoDao dao = new ProductoDao(con);
         
         Map carrito = ActionContext.getContext().getSession();
-            
+        
+        
+            System.out.println("------------------------------------->"+cantidadHidden);
             if(!carrito.containsKey("listaProductos")){
                 List<ProductoBean> productos = new ArrayList<>();
                 productos.add(producto = dao.get(idProducto));
+               
+                
+                
+                
                 carrito.put("listaProductos", productos);
                  
             }else{
@@ -68,14 +75,16 @@ public class Compras extends ActionSupport {
     }
     
      public String removeElement(){
+         
          List<ProductoBean> lista = new ArrayList();
                ProductoDao dao= new ProductoDao(con);
          Map carrito = ActionContext.getContext().getSession();
         lista= ((List<ProductoBean>) carrito.get("listaProductos"));
-         System.out.println("id que llega::::::::::::::::::."+idProducto);
+        producto=dao.get(idProducto);
+         
          for (ProductoBean productoBean : lista) {
-             System.out.println("idddddddddd"+productoBean.getIdProducto());
-             if(productoBean.getIdProducto()==idProducto){
+             
+             if(productoBean.getIdProducto()==producto.getIdProducto()){
                  
                  lista.remove(productoBean);
              }
@@ -87,6 +96,21 @@ public class Compras extends ActionSupport {
          
                return SUCCESS;
            }
+     
+     public String compra(){
+          List<ProductoBean> lista = new ArrayList();
+               ProductoDao dao= new ProductoDao(con);
+         Map carrito = ActionContext.getContext().getSession();
+        lista= ((List<ProductoBean>) carrito.get("listaProductos"));
+        
+        HashSet<ProductoBean> hashSet = new HashSet<>(lista);
+		lista.clear();
+		lista.addAll(hashSet);
+                
+         
+         
+         return SUCCESS;
+     }
 
     
 
@@ -103,6 +127,14 @@ public class Compras extends ActionSupport {
     public ProductoBean getProducto() {
         return producto;
     }
+
+    public int getCantidadHidden() {
+        return cantidadHidden;
+    }
+
+    
+
+    
 
    
     

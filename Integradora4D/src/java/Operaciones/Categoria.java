@@ -74,6 +74,13 @@ public class Categoria extends ActionSupport {
         DepartamentoDao daoD = new DepartamentoDao(con);
         CategoriaDao daoC = new CategoriaDao(con);
          departamentos = daoD.getAllActive();
+         
+         for (DepartamentoBean departamento1 : departamentos) {
+             System.out.println(departamento1.getNombre());
+        }
+         
+        
+    
         categorias = daoC.getAllActive();
         return SUCCESS;
     }

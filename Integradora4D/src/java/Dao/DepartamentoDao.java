@@ -49,7 +49,7 @@ public class DepartamentoDao extends DaoAbstract<DepartamentoBean>{
         
         List<DepartamentoBean> lista= new ArrayList<>();
         
-        String query="SELECT * From Departamento where estado='true';";
+        String query="SELECT * From Departamento where estado='true' and idDepartamento>0;";
         ResultSet result = executeQuery(query);
         try {
             lista=passResultSet(result, lista);
