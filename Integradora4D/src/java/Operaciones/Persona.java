@@ -54,7 +54,9 @@ public class Persona extends ActionSupport {
     }
 
     public boolean add() {
+        System.out.println("estoy en add");
         PersonaDao daoPersona = new PersonaDao(con);
+        System.out.println("usuario"+usuario.getIdTipoUsuario());
         persona.setDepartamento(departamento);
         persona.setUsuario(usuario);
         
@@ -115,8 +117,10 @@ public class Persona extends ActionSupport {
     }
 
     public String Intermediario() {
+        System.out.println("entro al inter");
         if (persona.getIdPersona() == 0) {
             if (add()) {
+                System.out.println("entro al add");
                 return SUCCESS;
             } else {
                 return ERROR;

@@ -73,7 +73,7 @@
                 <div class="form-group ">
                     <label class="col-md-4 control-label" for="textinput">Correo: </label>
                     <div class="col-md-4">
-                        <s:textfield id="correo" onkeyup="validar('correo');"  name="persona.correoE" cssClass="form-control" title="correoE persona" placeholder="Correo"/>
+                        <s:textfield id="correo"  name="persona.correoE" cssClass="form-control" title="correoE persona" placeholder="Correo"/>
                         <span class="help-block"></span>
                     </div>
                 </div>
