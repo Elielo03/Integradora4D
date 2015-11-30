@@ -185,6 +185,11 @@
             
         </action>
         
+        <action name="realizarCompra" class="Operaciones.Compras" method="realizarCompra">
+            <result name="success">/JSP/Exito.jsp</result>
+            
+        </action>
+        
         <!-- compras -->
         
         <!-- ventas -->

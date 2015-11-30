@@ -66,6 +66,11 @@
 
         </table>
         </div>
+        
+        <s:form action="realizarCompra">
+            <s:submit value="realizar Compra"></s:submit>
+            
+        </s:form>
 
         
 

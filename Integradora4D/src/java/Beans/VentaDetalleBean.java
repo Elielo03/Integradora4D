@@ -16,7 +16,7 @@ public class VentaDetalleBean {
     private int cantidad;
     private double costo_venta;
     private int idVenta;
-    private  List<ProductoBean> productos;
+    private  int idProducto;
 
     public VentaDetalleBean() {
     }
@@ -58,13 +58,15 @@ public class VentaDetalleBean {
         this.idVenta = idVenta;
     }
 
-    public List<ProductoBean> getProductos() {
-        return productos;
+    public int getIdProducto() {
+        return idProducto;
     }
 
-    public void setProductos(List<ProductoBean> productos) {
-        this.productos = productos;
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
     }
+
+    
 
     
 

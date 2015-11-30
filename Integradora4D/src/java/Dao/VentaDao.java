@@ -7,6 +7,7 @@ package Dao;
 
 import Beans.DepartamentoBean;
 import Beans.PersonaBean;
+import Beans.ProductoBean;
 import Beans.VentaBean;
 import Beans.VentaDetalleBean;
 import java.sql.Connection;
@@ -78,7 +79,9 @@ public class VentaDao extends DaoAbstract <VentaBean>{
 
     @Override
     public boolean add(VentaBean bean) {
+       
         
+        System.out.println("La venta ess: "+bean.getDescripcion()+bean.getPersona());
         String query="INSERT INTO Venta(fecha_compra,descripcion,idPersona) VALUES (GETDATE(), ?, ?);";
         
         try {
@@ -87,6 +90,7 @@ public class VentaDao extends DaoAbstract <VentaBean>{
             ps.setInt(2, bean.getPersona().getIdPersona());
             
             if(ps.executeUpdate()>=1){
+               
                 ps.close();
                 return true;
             }
@@ -101,7 +105,29 @@ public class VentaDao extends DaoAbstract <VentaBean>{
     public VentaBean get(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    public int lastSell(){
+     
+        VentaBean bean= new VentaBean();
+        String query  ="select top 1 * from Venta order by idVenta desc ";
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ResultSet result=ps.executeQuery();
+            if(result.next()){
+                bean.setIdVenta(result.getInt("idVenta"));
+                
+            }
+            return bean.getIdVenta();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        
+        
+        return 0;
+    }
 
+    
    
     
 }
