@@ -113,7 +113,7 @@ public class Compras extends ActionSupport {
         VentaDetalleDao daoDetalle = new VentaDetalleDao(con);
         VentaDetalleBean beanDetalle = new VentaDetalleBean();
         beanP=daoP.get(2);
-        System.out.println("La persona es: "+beanP.getNombre());
+        
 
         Map carrito = ActionContext.getContext().getSession();
         lista = ((List<ProductoBean>) carrito.get("listaProductos"));
@@ -134,9 +134,14 @@ public class Compras extends ActionSupport {
             beanDetalle.setIdVenta(dao.lastSell());
             daoDetalle.add(beanDetalle);
         }
-       }else
+          Map objetosSesion = 
+                ActionContext.getContext().getSession();
+        
+        objetosSesion.remove("listaProductos");
+        
+       }else{
             return ERROR;
-
+       }
         
 
         return SUCCESS;
