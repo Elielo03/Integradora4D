@@ -50,10 +50,7 @@
 
         </table>
         
-         <s:form action="readCarrito">
-                    <s:submit value="ir al carrito"></s:submit>
-                </s:form>
-        </div>
+         
 
         
 

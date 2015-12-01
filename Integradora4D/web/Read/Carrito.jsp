@@ -29,6 +29,7 @@
                     <td>Nombre Producto</td>
                     <td>Codigo Producto</td>
                     <td>Precio Venta</td>
+                    <td>Cantidad</td>
                     <td>Eliminar </td>
 
                    
@@ -46,6 +47,8 @@
                 <td>
                     <s:property value="precio_v" />
                 </td>
+                
+                <td><s:property value="cantidad" /></td>
                 <td>
                     <s:form action="eliminarElemento">
                         <s:hidden name="idProducto"></s:hidden> 

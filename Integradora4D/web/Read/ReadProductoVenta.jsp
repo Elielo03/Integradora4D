@@ -48,7 +48,7 @@
 
                                 <td>
                                <s:form action="agregarCarro">
-                                    <td> <s:textfield  name="cantidadHidden"   size="13" theme="simple">
+                                    <td> <s:textfield  name="cantidadHidden"   value="1" size="13" theme="simple">
                                     
                                 </s:textfield>
                                 </td>
