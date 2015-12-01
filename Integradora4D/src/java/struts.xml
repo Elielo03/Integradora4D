@@ -186,8 +186,8 @@
         </action>
         
         <action name="realizarCompra" class="Operaciones.Compras" method="realizarCompra">
-            <result name="success">/Read/ReadVenta.jsp</result>
-            <result name="success">/JSP/Exito1.jsp</result>
+            <result type="redirect">readVentas</result>
+            
             
         </action>
         

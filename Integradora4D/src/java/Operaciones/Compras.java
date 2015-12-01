@@ -134,14 +134,11 @@ public class Compras extends ActionSupport {
             beanDetalle.setIdVenta(dao.lastSell());
             daoDetalle.add(beanDetalle);
         }
-          Map objetosSesion = 
-                ActionContext.getContext().getSession();
-        
-        objetosSesion.remove("listaProductos");
-        
-       }else{
-            return ERROR;
        }
+           carrito =ActionContext.getContext().getSession();
+           carrito.remove("listaProductos");
+        
+        
         
 
         return SUCCESS;
