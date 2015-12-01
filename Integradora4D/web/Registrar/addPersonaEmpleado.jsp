@@ -80,7 +80,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">Departamento: </label>
                     <div class="col-md-4">
-                        <s:select cssClass="form-control" name="departamento.idDepartamento" label="Selecciona un Departamento" list="listaDepartamento" listValue="nombre"
+                        <s:select cssClass="form-control" name="departamento.idDepartamento"  list="listaDepartamento" listValue="nombre"
                                   listKey="idDepartamento"></s:select>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="textinput">Tipo usuario: </label>
                         <div class="col-md-4">
-                        <s:select cssClass="form-control" name="usuario.idTipoUsuario" label="Selecciona un TipoUsuario" list="listaTipo" listValue="tipo"
+                        <s:select cssClass="form-control" name="usuario.idTipoUsuario" list="listaTipo" listValue="tipo"
                                   listKey="idTipoUsuario"></s:select>
                         </div>
                     </div>
