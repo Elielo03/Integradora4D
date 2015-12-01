@@ -26,7 +26,7 @@
                 <ul class="nav navbar-nav">
 
                     <%
-                        if (objetosSesion.get("estado") == null) {
+                        if (objetosSesion.get("estado") == null || (Integer) objetosSesion.get("tipo") == 4) {
 
 
                     %>
@@ -42,6 +42,7 @@
                             <li><a href="#">One more separated link</a></li>
                         </ul>
                     </li>
+
                     <%                        }
                         if (objetosSesion.get("estado") != null) {
 
@@ -79,17 +80,37 @@
                             <li><a href="<s:url action="readProducto"/>">Consultar</a></li>         
                         </ul>
                     </li>
+                    <li><a href="<s:url action="reportesEmpleado"/>">Reportes</a></li>
+                    <p style="color: white"> estas como empleado</p>
+                    <%
+                    } else if ((Integer) objetosSesion.get("tipo") == 1) {
+                    %>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registro de Personal <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="<s:url action="LlenarEmpleado"/>">Agregar</a></li>
+                            <li class="divider"></li>
+                            <li><a href="<s:url action="LlenarPersona"/>">Consultar</a></li>         
+                        </ul>
+                    </li>
+                    <p style="color: white"> estas como superadmin</p>
+                    <%
+                    } else if ((Integer) objetosSesion.get("tipo") == 2) {
+                    %>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registro de Empleados <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="<s:url action="LlenarEmpleado"/>">Agregar</a></li>
+                            <li class="divider"></li>
+                            <li><a href="<s:url action="LlenarPersona"/>">Consultar</a></li>         
+                        </ul>
+                    </li>
                     <li><a href="<s:url action="reportes"/>">Reportes</a></li>
-                        <%                            }
+                    <p style="color: white"> estas como admin</p>
+                    <%
                             }
-                           
-                        %>
-                   
-
-
-
-
-
+                        }
+                    %>
 
                 </ul>
                 <form class="navbar-form navbar-left" role="search">
@@ -101,7 +122,51 @@
                 <%                    if (objetosSesion.get("estado") == null) {
                 %><%@include file="session.jsp"%><%
                 } else {
-                %><%@include file="Cerrar.jsp"%><%
+                %>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-user"></span> 
+                            <strong><%=objetosSesion.get("nombre")%></strong>
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="navbar-login">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <p class="text-center">
+                                                <span class="glyphicon glyphicon-user icon-size"></span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <p class="text-left"><strong>Nombre Apellido</strong></p>
+                                            <p class="text-left small"></p>
+                                            <p class="text-left">
+                                                <a href="#" class="btn btn-primary btn-block btn-sm">Actualizar Datos</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <div class="navbar-login navbar-login-session">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <p>
+                                                <s:form action="cerrar"  theme="simple" >
+                                                    <button type="submit" class="btn btn-danger btn-block">Cerrar Sesion</button>
+                                                </s:form>             
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <%
                     }
                 %>
 
@@ -109,4 +174,37 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
+</div>
+
+<div class="container">
+    <div class="jumbotron">
+        <%
+         if (objetosSesion.get("estado") != null) {
+
+                if ((Integer) objetosSesion.get("tipo") == 1) {
+        %>
+        <h1>Bienvenido SuperAdministrador</h1>
+        <%
+        } else if ((Integer) objetosSesion.get("tipo") == 2) {
+        %>
+        <h1>Bienvenido Administrador</h1>
+        <%
+        } else if ((Integer) objetosSesion.get("tipo") == 3) {
+        %>
+        <h1>Bienvenido Empleado</h1>
+        <%
+        } else if ((Integer) objetosSesion.get("tipo") == 4) {
+        %>
+        <h1>Bienvenido Cliente</h1>
+        <%
+            }
+        } else {
+        %>
+        <h1>Bienvenido Usuario</h1>
+        <%
+            }
+        %>
+
+        <p>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.</p>
+    </div>
 </div>

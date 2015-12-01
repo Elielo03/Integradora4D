@@ -61,11 +61,6 @@
             <s:submit value="readVentas"></s:submit>
         </s:form>
 
-<<<<<<< HEAD
-
-
-
-=======
         <h1>-------Reportes--------</h1>  
         <h1>ADMINISTRADOR</h1>
         <s:form action="AdminProductReport">
