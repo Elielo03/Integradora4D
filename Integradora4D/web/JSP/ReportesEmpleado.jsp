@@ -32,7 +32,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading">Productos Reporte</div>
                     <div class="panel-body">
-                        <s:form action="EmployeeProductRepo">
+                        <s:form action="EmployeeProductReport">
                             <s:submit cssClass="btn btn-default" value="Productos"/>
                         </s:form>
                     </div>
