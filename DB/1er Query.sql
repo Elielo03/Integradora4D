@@ -8,6 +8,7 @@ INSERT INTO TipoUsuario VALUES ('Usuario')
 INSERT INTO Usuario VALUES ('xavier_fjuan', 'JavierJuan', 1)
 INSERT INTO Usuario VALUES ('eliel_david', 'elielo',4)
 INSERT INTO Usuario VALUES ('alan', 'alan', 2)
+INSERT INTO Usuario VALUES ('javierv','vargas',3)
 
 /*Insert en Departamento, DEPARTAMENTO EMPIEZA CON SU ID EN 0*/
 INSERT INTO Departamento VALUES ('Clientes', 'Clientes', 'true')
@@ -17,9 +18,10 @@ INSERT INTO Departamento Values ('Ropa', 'Ropa para la familia', 'true')
 INSERT INTO Departamento Values ('Muebleria', 'Depto. de Muebles para el hogar', 'true')
 
 /*Insert en Persona*/
-INSERT INTO Persona VALUES ('Francisco Javier', 'Juan', 'Amador', 'Calle Gavilan #14', '03-04-1990', 'true', 'xavier_fjuan@outlook.com', '777-339-69-30', 1, null)
-INSERT INTO Persona VALUES ('Eliel David', 'Rodriguez', null, 'Conocida', '02-08-1992', 'true', 'eliel_david@outlook.com', '777-123-45-67', 2, 0)
-INSERT INTO Persona VALUES ('Alan','Saucedo','Colin','27-11-2015','true','alan@outlook.com','777-123-45-67','3',2)
+INSERT INTO Persona VALUES ('Francisco Javier', 'Juan', 'Amador', 'Calle Gavilan #14', '03-04-1990', 'true', 'xavier_fjuan@outlook.com', '7773396930', 1, null)
+INSERT INTO Persona VALUES ('Eliel David', 'Rodriguez', null, 'Conocida', '02-08-1992', 'true', 'eliel_david@outlook.com', '7771234567', 2, 0)
+INSERT INTO Persona VALUES ('Alan','Saucedo','Colin','Conocida','02-08-1992','true','alan@outlook.com','7771234567',3,2)
+INSERT INTO Persona VALUES ('Javier','Vargas', 'Albavera', 'Conocida', '12-12-1990','true', 'vargas@outlook.com', '7779876543', 4, 2)
 
 /*Insert en Categoria*/
 INSERT INTO Categoria VALUES('Blancos', 'true', 1)
@@ -133,18 +135,16 @@ EXECUTE InsertaProducto 'Refrigerador','REF2015BLA1','Refrigerador GE de 2 Pies'
 CREATE PROCEDURE InsertaVenta
 	@fecha_compra DATE,
 	@descripcion varchar(45),
-	@estado varchar(5),
 	@idPersona int,
 	@cantidad int,
 	@costo_venta money,
-	@idProducto int,
-	@estadoVenta varchar(5)
+	@idProducto int
 AS
 BEGIN
 	DECLARE @idVenta int;
-	INSERT INTO Venta VALUES (@fecha_compra,@descripcion,@estado,@idPersona);
+	INSERT INTO Venta VALUES (@fecha_compra,@descripcion,@idPersona);
 	SELECT @idVenta = idVenta FROM Venta WHERE idPersona = @idPersona;
-	INSERT INTO Venta_detalle VALUES (@cantidad, @costo_venta, @idVenta, @idProducto, @estadoVenta);
+	INSERT INTO Venta_detalle VALUES (@cantidad, @costo_venta, @idVenta, @idProducto);
 END
 
-EXECUTE InsertaVenta '30-10-2015','Compra tarjeta BANAMEX','true',1,1,8500,1
+EXECUTE InsertaVenta '30-10-2015','Compra tarjeta BANAMEX',1,1,8500,1
