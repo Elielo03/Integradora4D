@@ -23,7 +23,7 @@ create table Departamento(
 idDepartamento int identity (0,1),
 nombre varchar(20) not null,
 descripcion varchar(45),
-estado varchar(5) default ('true'),
+estado varchar(5) default 'true',
 constraint pk_idDepartamento primary key (idDepartamento))
 
 /*Ya esta procedure - CONSULTA*/
@@ -34,7 +34,7 @@ app varchar(20)not null,
 apm varchar(20),
 direccion varchar(50)not null,
 fecha_nac date,
-estado varchar(5) default ('true'),
+estado varchar(5) default 'true',
 correoE varchar(50) unique not null,
 telefono varchar(15),
 idUsuario int,
@@ -43,11 +43,20 @@ constraint pk_idPersona primary key (idPersona),
 constraint fk_persona_Usuario foreign key (idUsuario) references Usuario(idUsuario),
 constraint fk_Persona_Departamento foreign key (idDepartamento) references Departamento(idDepartamento))
 
+create table carrito(
+idCarrito int identity(1,1),
+idPersona int,
+idProducto int
+constraint pk_idCarrito primary key (idCarrito),
+constraint fk_Carrito_Persona foreign key (idPersona) references Persona (idPersona),
+constraint fk_Carrito_Producto foreign key (idProducto) references Producto (idProducto)
+);
+
 /*Ya esta procedure*/
 create table Categoria(
 idCategoria int identity(1,1),
 nombre varchar(45) not null,
-estado varchar(5)  default ('true'),
+estado varchar(5)  default 'true',
 idDepartamento int,
 constraint pk_idCategoria primary key (idCategoria),
 constraint fk_Categoria_Departamento foreign key (idDepartamento) references Departamento(idDepartamento))
@@ -70,7 +79,7 @@ existencias int,
 stock int,
 precio_c MONEY not null,
 precio_v MONEY not null,
-estado varchar(5)  default ('true'),
+estado varchar(5)  default 'true',
 marca varchar(45) not null,
 imagen varchar(80) not null,
 idCategoria int,
