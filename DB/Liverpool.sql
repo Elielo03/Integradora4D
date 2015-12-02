@@ -43,15 +43,6 @@ constraint pk_idPersona primary key (idPersona),
 constraint fk_persona_Usuario foreign key (idUsuario) references Usuario(idUsuario),
 constraint fk_Persona_Departamento foreign key (idDepartamento) references Departamento(idDepartamento))
 
-create table carrito(
-idCarrito int identity(1,1),
-idPersona int,
-idProducto int
-constraint pk_idCarrito primary key (idCarrito),
-constraint fk_Carrito_Persona foreign key (idPersona) references Persona (idPersona),
-constraint fk_Carrito_Producto foreign key (idProducto) references Producto (idProducto)
-);
-
 /*Ya esta procedure*/
 create table Categoria(
 idCategoria int identity(1,1),
@@ -95,3 +86,12 @@ idProducto int,
 constraint pk_idVenta_detalle primary key (idVenta_Detalle),
 constraint fk_Venta_detalle_Venta foreign key (idVenta) references Venta(idVenta),
 constraint fk_Venta_detalle_Producto foreign key (idProducto) references Producto(idProducto))
+
+create table carrito(
+idCarrito int identity(1,1),
+idPersona int,
+idProducto int
+constraint pk_idCarrito primary key (idCarrito),
+constraint fk_Carrito_Persona foreign key (idPersona) references Persona (idPersona),
+constraint fk_Carrito_Producto foreign key (idProducto) references Producto (idProducto)
+);
