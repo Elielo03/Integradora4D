@@ -27,9 +27,9 @@
             <thead>
                 <tr>
                     <td>Nombre Producto</td>
-                    <td>Codigo Producto</td>
-                    <td>Precio Venta</td>
-                    <td>Cantidad</td>
+                   
+                    <td>Persona</td>
+                    
                     <td>Eliminar </td>       
 
                    
@@ -39,18 +39,14 @@
                 <s:iterator value="carrito">
                      <tr>
                          <td>
-                    <s:property value="nombre"/> 
+                    <s:property value="producto.nombre"/> 
                 </td>
                 <td>
-                    <s:property value="codigo"/> 
-                </td>
-                <td>
-                    <s:property value="precio_v" />
+                    <s:property value="idPersona"/> 
                 </td>
                 
-                <td>
-                    <s:textfield  name="cantidadHidden"   value="1" size="12" theme="simple"></s:textfield>
-                <td> 
+                
+               
                 </td>
                 <td>
                     <s:form action="eliminarElemento">

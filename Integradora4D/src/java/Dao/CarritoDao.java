@@ -33,6 +33,8 @@ public class CarritoDao extends DaoAbstract <CarritoBean>{
         List<CarritoBean> carrito= new ArrayList<>();
         
          String query="SELECT * From carrito;";
+         
+          
         ResultSet result = executeQuery(query);
         try {
             carrito=passResultSet(result, carrito);

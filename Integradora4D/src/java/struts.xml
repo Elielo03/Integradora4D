@@ -186,7 +186,7 @@
             <result name="success">/Read/Carrito.jsp</result>
         </action>
         
-        <action name="readCarrito_1">
+        <action name="readCarrito_1" class="Operaciones.Compras" method="getCar">
             
             <result name="success">/Read/Carrito_1.jsp</result>
         </action>
