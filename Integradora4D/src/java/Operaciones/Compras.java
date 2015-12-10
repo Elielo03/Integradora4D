@@ -20,12 +20,10 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static jdk.nashorn.internal.objects.NativeArray.map;
 
 /**
  *
@@ -52,7 +50,7 @@ public class Compras extends ActionSupport {
 
         Map carrito = ActionContext.getContext().getSession();
 
-        System.out.println("------------------------------------->" + cantidadHidden);
+        
         if (!carrito.containsKey("listaProductos")) {
             List<ProductoBean> productos = new ArrayList<>();
 
