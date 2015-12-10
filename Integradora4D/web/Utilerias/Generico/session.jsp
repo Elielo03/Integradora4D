@@ -21,7 +21,7 @@
 
                             </div>
                             <div class="form-group">                                         
-                                <input required="" id="Contraseña"  name="usuario.pass" class="form-control" placeholder="Contraseña" /> 
+                                <input required="" id="Contraseña" type="password"  name="usuario.pass" class="form-control" placeholder="Contraseña" /> 
 
                             </div>
                             <div class="form-group">

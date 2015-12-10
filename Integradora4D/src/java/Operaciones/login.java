@@ -38,7 +38,7 @@ public class login extends ActionSupport {
         System.out.println("usuario " + usuario.getIdTipoUsuario());
         if (usuario != null) {
             if (usuario.getIdTipoUsuario() == 1) {
-                System.out.println("entre tipo 1--------------");
+
                 objetosSesion.put("tipo", usuario.getIdTipoUsuario());
                 objetosSesion.put("nombre", usuario.getUserName());
                 objetosSesion.put("idUsuario", usuario.getIdUsuario());
