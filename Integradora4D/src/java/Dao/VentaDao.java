@@ -37,7 +37,7 @@ public class VentaDao extends DaoAbstract <VentaBean>{
             bean.setIdVenta(res.getInt("idVenta"));
             bean.setFecha_compra(res.getString("fecha_compra"));
             bean.setDescripcion(res.getString("descripcion"));
-            bean.setEstado(res.getBoolean("estado"));
+            
             
             PersonaBean persona = new PersonaDao(con).get(res.getInt("idPersona"));
             bean.setPersona(persona);

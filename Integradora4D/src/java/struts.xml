@@ -175,6 +175,12 @@
             <result type="redirect">compras</result>
         </action>
         
+        <action name="addCar" class="Operaciones.Compras" method="addCar">
+            
+            <result type="redirect">readCarrito</result>
+        </action>
+        
+        
         <action name="readCarrito">
             
             <result name="success">/Read/Carrito.jsp</result>

@@ -29,7 +29,7 @@
                     <td>Nombre Producto</td>
                     <td>Codigo Producto</td>
                     <td>Precio Venta</td>
-                    <td>Compra</td>
+                    <td>Cantidad</td>
                     <td>Eliminar </td>       
 
                    
@@ -49,10 +49,7 @@
                 </td>
                 
                 <td>
-                    <s:form action="addCar">
-                    <button onclick="" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Comprar Después </button>
-                    <s:hidden name="idProducto"></s:hidden>
-                    </s:form>
+                    <s:textfield  name="cantidadHidden"   value="1" size="12" theme="simple"></s:textfield>
                 <td> 
                 </td>
                 <td>
@@ -76,25 +73,13 @@
         </table>
          <s:form action="realizarCompra">
              
-             <button onclick="realizarCompra()" class="btn btn-success"><span class="glyphicon glyphicon-log-in"></span> Realizar compra </button>
+            <s:submit value="realizar Compra"></s:submit>
             
         </s:form>
         
         </div>
         
-        <script>
-            function formulario(){
-                document.addCar.submit();
-            }
-            
-            </script>
-            
-            <script>
-            function realizarCompra(){
-                document.realizarCompra.submit();
-            }
-            
-            </script>
+       
 
         
 

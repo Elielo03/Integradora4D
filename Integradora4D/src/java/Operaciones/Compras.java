@@ -5,11 +5,13 @@
  */
 package Operaciones;
 
+import Beans.CarritoBean;
 import Beans.PersonaBean;
 import Beans.ProductoBean;
 import Beans.VentaBean;
 import Beans.VentaDetalleBean;
 import Conexion.ConexionSQLServer;
+import Dao.CarritoDao;
 import Dao.PersonaDao;
 import Dao.ProductoDao;
 import Dao.VentaDao;
@@ -139,6 +141,24 @@ public class Compras extends ActionSupport {
         
         
 
+        return SUCCESS;
+    }
+    
+    public String addCar(){
+        
+       System.out.println("id producto es: "+ idProducto);
+       ProductoDao productoD= new ProductoDao(con);
+       CarritoDao daoC= new CarritoDao(con);
+       CarritoBean carritoB=new CarritoBean();
+        ProductoBean beanP= new ProductoBean();
+              beanP=  productoD.get(idProducto);
+              Map carrito = ActionContext.getContext().getSession();
+           int user=   (Integer)carrito.get("idUsuario");
+           
+           carritoB.setIdPersona(user);
+           carritoB.setIdProducto(beanP.getIdProducto());
+           daoC.add(carritoB);
+       
         return SUCCESS;
     }
 
