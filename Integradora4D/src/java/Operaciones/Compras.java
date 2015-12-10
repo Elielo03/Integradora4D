@@ -169,7 +169,7 @@ public class Compras extends ActionSupport {
         CarritoDao daoC= new CarritoDao(con);
         
         carrito=daoC.getAll();
-        
+        System.out.println("listaaaaaaaaaaaa: "+carrito.size());
         
         return SUCCESS;
     }
