@@ -35,32 +35,32 @@ INSERT INTO Categoria VALUES('Salas', 'true', 4)
 
 /*Insert en Producto*/
 INSERT INTO Producto VALUES ('Refrigerador Wirpool', 'DEB0125', 'Refrigerador de 3 pies', 20, 50, 6500, 7000, 'true', 'Wirpool', 'localhost/8080/imagen1.jpg', 1)
-INSERT INTO Producto VALUES ('Laptop Toshiba', 'DEB0126', 'Laptop 2015', 20, 50, 4500, 5000, 'true', 'Toshiba', 'localhost/8080/imagen1.jpg', 2)
-INSERT INTO Producto VALUES ('Perfume Hugo Boss', 'DEB0127', 'Perfume Importado', 20, 50, 1000, 1500, 'true', 'Hugo Boss', 'localhost/8080/imagen1.jpg', 3)
-INSERT INTO Producto VALUES ('Perfume Carolina Herrera', 'DEB0128', 'Perfume Nacional', 20, 50, 1000, 1500, 'true', 'CH', 'localhost/8080/imagen1.jpg', 4)
-INSERT INTO Producto VALUES ('Mameluco', 'DEB0129', 'Mameluco Niños 1 año', 20, 50, 800, 1300, 'true', 'Pata de Perro', 'localhost/8080/imagen1.jpg', 5)
-INSERT INTO Producto VALUES ('Falda', 'DEB0130', 'Falda niñas', 20, 50, 300, 500, 'true', 'NonStop', 'localhost/8080/imagen1.jpg', 6)
-INSERT INTO Producto VALUES ('Cunero', 'DEB0131', 'Cunero con cambiador', 20, 50, 4000, 4500, 'true', 'Mueble1', 'localhost/8080/imagen1.jpg', 7)
-INSERT INTO Producto VALUES ('Sala California', 'DEB0132', 'Sala de 3 piezas', 20, 50, 8000, 12000, 'true', 'Mueble2', 'localhost/8080/imagen1.jpg', 8)
-
+INSERT INTO Producto VALUES ('Laptop Toshiba', 'DEB0126', 'Laptop 2015', 20, 50, 4500, 5000, 'true', 'Toshiba', 'localhost/8080/imagen2.jpg', 2)
+INSERT INTO Producto VALUES ('Perfume Hugo Boss', 'DEB0127', 'Perfume Importado', 20, 50, 1000, 1500, 'true', 'Hugo Boss', 'localhost/8080/imagen3.jpg', 3)
+INSERT INTO Producto VALUES ('Perfume Carolina Herrera', 'DEB0128', 'Perfume Nacional', 20, 50, 1000, 1500, 'true', 'CH', 'localhost/8080/imagen4.jpg', 4)
+INSERT INTO Producto VALUES ('Mameluco', 'DEB0129', 'Mameluco Niños 1 año', 20, 50, 800, 1300, 'true', 'Pata de Perro', 'localhost/8080/imagen5.jpg', 5)
+INSERT INTO Producto VALUES ('Falda', 'DEB0130', 'Falda niñas', 20, 50, 300, 500, 'true', 'NonStop', 'localhost/8080/imagen6.jpg', 6)
+INSERT INTO Producto VALUES ('Cunero', 'DEB0131', 'Cunero con cambiador', 20, 50, 4000, 4500, 'true', 'Mueble1', 'localhost/8080/imagen7.jpg', 7)
+INSERT INTO Producto VALUES ('Sala California', 'DEB0132', 'Sala de 3 piezas', 20, 50, 8000, 12000, 'true', 'Mueble2', 'localhost/8080/imagen8.jpg', 8)
+select * from Venta
 /*Insert en Venta*/
-INSERT INTO Venta VALUES ('2015-10-10', 'Refrigerador Wirpool 3 Pies, Cliente Premium', 'true', 1)
-INSERT INTO Venta VALUES ('2015-10-10', 'Venta2', 'true', 2)
-INSERT INTO Venta VALUES ('2015-10-12', 'Venta3', 'true', 1)
-INSERT INTO Venta VALUES ('2015-10-12', 'Venta4', 'true', 2)
-INSERT INTO Venta VALUES ('2015-10-13', 'Venta5', 'true', 1)
-INSERT INTO Venta VALUES ('2015-10-14', 'Venta6', 'true', 2)
-INSERT INTO Venta VALUES ('2015-10-14', 'Venta7', 'true', 2)
+INSERT INTO Venta VALUES ('2015-10-10', 'Refrigerador Wirpool 3 Pies, Cliente Premium',  1)
+INSERT INTO Venta VALUES ('2015-10-10', 'Venta2', 2)
+INSERT INTO Venta VALUES ('2015-10-12', 'Venta3',  1)
+INSERT INTO Venta VALUES ('2015-10-12', 'Venta4',  2)
+INSERT INTO Venta VALUES ('2015-10-13', 'Venta5',  1)
+INSERT INTO Venta VALUES ('2015-10-14', 'Venta6',  2)
+INSERT INTO Venta VALUES ('2015-10-14', 'Venta7',  2)
 
 
 /*Insert en Venta_detalle*/
-INSERT INTO Venta_detalle VALUES (1, 7000, 1, 1, 'true')
-INSERT INTO Venta_detalle VALUES (3, 15000, 2, 2, 'true')
-INSERT INTO Venta_detalle VALUES (2, 2000, 3, 3, 'true')
-INSERT INTO Venta_detalle VALUES (9, 45000, 4, 2, 'true')
-INSERT INTO Venta_detalle VALUES (4, 28000, 5, 1, 'true')
-INSERT INTO Venta_detalle VALUES (10, 15000, 6, 4, 'true')
-INSERT INTO Venta_detalle VALUES (10, 15000, 7, 4, 'true')
+INSERT INTO Venta_detalle VALUES (1, 7000, 1, 1)
+INSERT INTO Venta_detalle VALUES (3, 15000, 2, 2)
+INSERT INTO Venta_detalle VALUES (2, 2000, 3, 3)
+INSERT INTO Venta_detalle VALUES (9, 45000, 4, 2)
+INSERT INTO Venta_detalle VALUES (4, 28000, 5, 1)
+INSERT INTO Venta_detalle VALUES (10, 15000, 6, 4)
+INSERT INTO Venta_detalle VALUES (10, 15000, 7, 4)
 
 /*Select de prueba, no importante*/
 SELECT producto.nombre, cantidad, costo_venta FROM Venta_detalle, Producto WHERE Venta_detalle.idProducto = Producto.idProducto;

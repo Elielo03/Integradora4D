@@ -48,14 +48,14 @@
 
                                 <td>
                                <s:form action="agregarCarro">
-                                    <td> <s:textfield  name="cantidadHidden"   value="1" size="13" theme="simple">
+                                    <td> <s:textfield  name="cantidadHidden"   value="1" size="16" theme="simple">
                                     
                                 </s:textfield>
                                 </td>
                                
                                     <s:hidden name="idProducto"></s:hidden>
 
-                                    <s:submit  value="agregar al Carro"/> 
+                        <button onclick="formulario()" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Agregar al carro</button>
                                 </s:form>
                             </td>
 
@@ -69,6 +69,7 @@
 
 
             </table>
+            
 
             <s:form action="readCarrito">
                 <s:submit value="ir al carrito"></s:submit>
@@ -76,7 +77,13 @@
         </div>
 
         
-        
+         <script>
+                            function formulario(){
+                                alert("Elemento agregado al carro de Compras!");
+                                document.agregarCarro.submit();
+                            }
+                            
+                            </script>
             
 
         <script>

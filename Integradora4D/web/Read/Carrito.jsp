@@ -48,7 +48,10 @@
                     <s:property value="precio_v" />
                 </td>
                 
-                <td><s:property value="cantidad" /></td>
+                <td>
+                    <s:textfield  name="cantidadHidden"   value="1" size="12" theme="simple"></s:textfield>
+                <td> 
+                </td>
                 <td>
                     <s:form action="eliminarElemento">
                         <s:hidden name="idProducto"></s:hidden> 
@@ -68,12 +71,15 @@
 
 
         </table>
-        </div>
-        
-        <s:form action="realizarCompra">
+         <s:form action="realizarCompra">
+             
             <s:submit value="realizar Compra"></s:submit>
             
         </s:form>
+        
+        </div>
+        
+       
 
         
 

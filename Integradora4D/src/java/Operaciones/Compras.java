@@ -56,10 +56,10 @@ public class Compras extends ActionSupport {
 
             productos.add(producto = dao.get(idProducto));
             if (cantidadHidden == 0 || cantidadHidden == 1) {
-                System.out.println("solo uno manooo");
+                
                 producto.setCantidad(1);
             } else {
-                System.out.println("massssss de uno tronko");
+                
                 producto.setCantidad(cantidadHidden);
             }
 
@@ -68,10 +68,10 @@ public class Compras extends ActionSupport {
         } else {
             producto = dao.get(idProducto);
             if (cantidadHidden == 0 || cantidadHidden == 1) {
-                System.out.println("solo uno manooo");
+                
                 producto.setCantidad(1);
             } else {
-                System.out.println("massssss de uno tronko");
+                
                 producto.setCantidad(cantidadHidden);
             }
 
@@ -116,16 +116,16 @@ public class Compras extends ActionSupport {
         Map carrito = ActionContext.getContext().getSession();
         lista = ((List<ProductoBean>) carrito.get("listaProductos"));
 
-        HashSet<ProductoBean> hashSet = new HashSet<>(lista);
-        lista.clear();
-        lista.addAll(hashSet);
+//        HashSet<ProductoBean> hashSet = new HashSet<>(lista);
+//        lista.clear();
+//        lista.addAll(hashSet);
 
         bean.setPersona(beanP);
-        bean.setDescripcion("Eliel esta Guapoooooooo");
+        bean.setDescripcion("Sin Obervaciones");
 
        if( dao.add(bean)){
           for (ProductoBean productoBean : lista) {
-            System.out.println("producto: " + productoBean.getNombre() + productoBean.getCantidad());
+            
             beanDetalle.setCantidad(productoBean.getCantidad());
             beanDetalle.setCosto_venta(productoBean.getPrecio_v());
             beanDetalle.setIdProducto(productoBean.getIdProducto());
