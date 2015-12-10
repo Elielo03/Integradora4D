@@ -112,11 +112,12 @@ public class Compras extends ActionSupport {
 
         VentaDetalleDao daoDetalle = new VentaDetalleDao(con);
         VentaDetalleBean beanDetalle = new VentaDetalleBean();
-        beanP=daoP.get(2);
+        
         
 
         Map carrito = ActionContext.getContext().getSession();
         lista = ((List<ProductoBean>) carrito.get("listaProductos"));
+        beanP=daoP.get((Integer)carrito.get("idUsuario"));
 
 //        HashSet<ProductoBean> hashSet = new HashSet<>(lista);
 //        lista.clear();
