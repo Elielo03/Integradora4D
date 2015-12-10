@@ -12,7 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../Utilerias/metas.jsp" %>
-        <title>Lista Carrito</title>
+        <title>Lista Carrito User</title>
     </head>
     <body>
         <div class="container">
@@ -20,13 +20,13 @@
            
             
             
-        <h1>Lista Carrito</h1>
+        <h1>Lista Carrito Usuario</h1>
       
 
         <table   id="tabla" class="table table-responsive table-striped table-bordered table-hover" >
             <thead>
                 <tr>
-                    <td>Nombre Producto</td>
+                   
                    
                     <td>Persona</td>
                     
@@ -38,16 +38,14 @@
             <tbody>
                 <s:iterator value="carrito">
                      <tr>
-                         <td>
-                    <s:property value="producto.nombre"/> 
-                </td>
+                        
                 <td>
                     <s:property value="idPersona"/> 
                 </td>
                 
                 
                
-                </td>
+                
                 <td>
                     <s:form action="eliminarElemento">
                         <s:hidden name="idProducto"></s:hidden> 

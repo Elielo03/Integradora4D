@@ -6,6 +6,9 @@
 package Dao;
 
 import Beans.CarritoBean;
+import Beans.CategoriaBean;
+import Beans.DepartamentoBean;
+import Beans.ProductoBean;
 import Beans.VentaDetalleBean;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -84,7 +87,20 @@ public class CarritoDao extends DaoAbstract <CarritoBean>{
 
     @Override
     List<CarritoBean> passResultSet(ResultSet res, List<CarritoBean> list) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        while(res.next()){
+           CarritoBean bean = new CarritoBean();
+           
+             bean.setIdPersona(res.getInt("idPersona"));
+            
+           
+           
+            
+            ProductoBean producto = new ProductoDao(con).get(res.getInt("idProducto"));
+            bean.setProducto(producto);
+            
+            list.add(bean);
+       }
+       return list;
     }
 
     @Override

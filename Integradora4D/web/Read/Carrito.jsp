@@ -53,12 +53,13 @@
                     <button onclick="" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Comprar Después </button>
                     <s:hidden name="idProducto"></s:hidden>
                     </s:form>
-                <td> 
                 </td>
+                
                 <td>
                     <s:form action="eliminarElemento">
                         <s:hidden name="idProducto"></s:hidden> 
-                        <s:submit value="Eliminar del Carrito"></s:submit>
+                        
+                        <button onclick="eliminar()" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Eliminar del Carrito</button>
                         
                         
                     </s:form>
@@ -85,6 +86,13 @@
         <script>
             function formulario(){
                 document.addCar.submit();
+            }
+            
+            </script>
+            
+            <script>
+            function eliminar(){
+                document.eliminarElemento.submit();
             }
             
             </script>
