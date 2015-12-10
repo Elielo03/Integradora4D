@@ -255,7 +255,7 @@
         
         <action name="EmployeeProductReport" class="Reports.EmployeeReports" method="EmployeeProductReport">
             <result name = "success" type = "jasper">
-                <param name = "location">/WEB-INF/Prueba4.jasper</param>
+                <param name = "location">/WEB-INF/EmployeeProductReport.jasper</param>
                 <param name = "connection">conn</param>
                 <param name = "reportParameters">params</param>
                 <param name = "format">PDF</param>
