@@ -36,7 +36,7 @@ AS
 BEGIN
 	SELECT @idProducto = idProducto, @nombre = nombre, @codigo = codigo,
 		@descripcion = descripcion, @existencias = existencias, @stock = stock, @precio_c = precio_c,
-		@precio_v = precio_v, @estado = estado, @marca = marca, @imagen = imagen, @idCategoria = categoria FROM Producto;
+		@precio_v = precio_v, @estado = estado, @marca = marca, @imagen = imagen FROM Producto;
 END
 
 EXECUTE ConsultaProducto @idProducto, @nombre, @codigo, @descripcion, @existencias, @stock, @precio_c, @precio_v, @estado, @marca, @imagen, @idCategoria

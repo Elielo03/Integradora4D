@@ -205,8 +205,12 @@
         <!-- Reportes -->
         <!--Admin-->
         <action name="reportes">
-             <result>/JSP/Reportes.jsp</result>
+             <result>/JSP/ReportesAdmin.jsp</result>
         </action>
+        <action name="reportesEmpleado">
+             <result>/JSP/ReportesEmpleado.jsp</result>
+        </action>
+        
         
         <action name="AdminProductReport" class="Reports.AdminReports" method="AdminProductReport">
             <result name = "success" type = "jasper">
