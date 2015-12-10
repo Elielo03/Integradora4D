@@ -60,7 +60,24 @@ public class CarritoDao extends DaoAbstract <CarritoBean>{
 
     @Override
     public boolean add(CarritoBean bean) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+            String query ="insert into carrito (idPersona,idProducto) values (?,?);";
+            try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, bean.getIdPersona());
+            ps.setInt(2,  bean.getIdProducto());
+            
+            if(ps.executeUpdate()>=1){
+               
+                ps.close();
+                return true;
+            }
+            
+            
+        } catch (SQLException ex) {
+                System.out.println(ex);
+        }
+            return false;
     }
 
     @Override

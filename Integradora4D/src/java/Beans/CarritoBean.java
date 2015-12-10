@@ -12,7 +12,7 @@ package Beans;
 public class CarritoBean {
     private int idCarrito;
     private int idPersona;
-    private double idProducto;
+    private int idProducto;
     
 
     public CarritoBean() {
@@ -34,31 +34,30 @@ public class CarritoBean {
         this.idPersona = idPersona;
     }
 
-    public double getIdProducto() {
+    public int getIdProducto() {
         return idProducto;
     }
-
-    public void setIdProducto(double idProducto) {
-        this.idProducto = idProducto;
-    }
-
-
-   
-
-   
-
-   
-
-   
-
-    
-
-
-    
 
     public void setIdProducto(int idProducto) {
         this.idProducto = idProducto;
     }
+
+    
+
+   
+
+   
+
+   
+
+   
+
+    
+
+
+    
+
+  
 
     
 
