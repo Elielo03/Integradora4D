@@ -65,7 +65,7 @@ public class CarritoDao extends DaoAbstract <CarritoBean>{
             try {
             PreparedStatement ps = con.prepareStatement(query);
             ps.setInt(1, bean.getIdPersona());
-            ps.setInt(2,  bean.getIdProducto());
+            ps.setInt(2,  bean.getProducto().getIdProducto());
             
             if(ps.executeUpdate()>=1){
                

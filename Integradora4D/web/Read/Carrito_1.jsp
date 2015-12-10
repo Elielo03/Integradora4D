@@ -36,7 +36,7 @@
                 </tr>
             </thead>
             <tbody>
-                <s:iterator value="#session.listaProductos">
+                <s:iterator value="carrito">
                      <tr>
                          <td>
                     <s:property value="nombre"/> 

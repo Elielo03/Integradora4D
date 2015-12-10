@@ -186,6 +186,11 @@
             <result name="success">/Read/Carrito.jsp</result>
         </action>
         
+        <action name="readCarrito_1">
+            
+            <result name="success">/Read/Carrito_1.jsp</result>
+        </action>
+        
         <action name="eliminarElemento" class="Operaciones.Compras" method="removeElement">
             <result name="success">/Read/Carrito.jsp</result>
             

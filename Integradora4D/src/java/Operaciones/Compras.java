@@ -32,7 +32,7 @@ import java.util.logging.Logger;
  * @author Eliel Rodriguez
  */
 public class Compras extends ActionSupport {
-
+    List<CarritoBean> carrito= new ArrayList();
     int idProducto;
 
     ProductoBean producto = new ProductoBean();
@@ -154,12 +154,19 @@ public class Compras extends ActionSupport {
         ProductoBean beanP= new ProductoBean();
               beanP=  productoD.get(idProducto);
               Map carrito = ActionContext.getContext().getSession();
-           int user=   (Integer)carrito.get("idUsuario");
+             
            
-           carritoB.setIdPersona(user);
-           carritoB.setIdProducto(beanP.getIdProducto());
+           carritoB.setIdPersona((Integer)carrito.get("idUsuario"));
+           carritoB.setProducto(beanP);
            daoC.add(carritoB);
        
+        return SUCCESS;
+    }
+    
+    public String getCar(){
+        CarritoDao daoC= new CarritoDao(con);
+        carrito=daoC.getAll();
+        
         return SUCCESS;
     }
 
