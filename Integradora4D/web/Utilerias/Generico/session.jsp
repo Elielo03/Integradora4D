@@ -9,7 +9,7 @@
 <ul class="nav navbar-nav navbar-right">
     <li><p class="navbar-text"></p></li>
     <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Iniciar sesión</b> <span class="caret"></span></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"style="color: white;"><b>Iniciar sesión</b> <span class="caret"></span></a>
         <ul id="login-dp" class="dropdown-menu">
             <li>
                 <div class="row">
@@ -39,3 +39,6 @@
         </ul>
     </li>
 </ul>
+
+
+               
