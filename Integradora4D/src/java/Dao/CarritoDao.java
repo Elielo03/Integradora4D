@@ -75,7 +75,23 @@ public class CarritoDao extends DaoAbstract <CarritoBean>{
 
     @Override
     public boolean delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        try {
+            String quuery="DELETE FROM carrito where idProducto=?;";
+            
+            PreparedStatement ps= con.prepareStatement(quuery);
+            ps.setInt(1, id);
+            
+            if(ps.executeUpdate()>=1){
+                ps.close();
+                return true;
+            }
+           
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        
+         return false;
     }
 
     

@@ -196,6 +196,12 @@
             
         </action>
         
+        <action name="deleteCar" class="Operaciones.Compras" method="deleteCar">
+            <result type="redirect">readCarrito_1</result>
+            
+        </action>
+        
+        
         <action name="realizarCompra" class="Operaciones.Compras" method="realizarCompra">
             <result type="redirect">readVentas</result>
             

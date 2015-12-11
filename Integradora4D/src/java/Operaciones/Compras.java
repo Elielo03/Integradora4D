@@ -89,7 +89,7 @@ public class Compras extends ActionSupport {
         Map carrito = ActionContext.getContext().getSession();
         lista = ((List<ProductoBean>) carrito.get("listaProductos"));
         
-        System.out.println("el id esssssssssssssssssssssssss: "+idProducto);
+        
         for (ProductoBean productoBean : lista) {
 
             if (productoBean.getIdProducto() == idProducto) {
@@ -99,11 +99,25 @@ public class Compras extends ActionSupport {
             
             carrito.put("listaProductos", lista);
         }
-
+        
+       
         
 
         return SUCCESS;
     }
+    
+    
+     public String deleteCar(){
+            
+            CarritoDao dao= new CarritoDao(con);
+            
+            dao.delete(producto.getIdProducto());
+            
+            
+            return SUCCESS;
+        }
+
+    
 
     public String realizarCompra() {
         List<ProductoBean> lista = new ArrayList();
@@ -171,7 +185,7 @@ public class Compras extends ActionSupport {
          int user=(Integer)carrito1.get("idUsuario");
         
         carrito=daoC.getAllUser(user);
-        System.out.println("tam de la lista: "+carrito.size());
+        
         
         return SUCCESS;
     }

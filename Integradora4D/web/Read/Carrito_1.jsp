@@ -51,8 +51,8 @@
                
                 
                 <td>
-                    <s:form action="eliminarElemento">
-                        <s:hidden name="idProducto"></s:hidden> 
+                    <s:form action="deleteCar">
+                        <s:hidden name="Producto.idProducto"></s:hidden> 
                         <button onclick="eliminar()" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Eliminar del Carrito</button>
                         
                         
@@ -80,7 +80,7 @@
        
         <script>
             function eliminar(){
-                document.eliminarElemento.submit();
+                document.deleteCar.submit();
             }
             
             </script>
