@@ -28,8 +28,8 @@
                 <tr>
                    
                     <td>Producto</td>
-                    <td>Persona</td>
-                    
+                    <td>Cantidad</td>
+                    <td>Compra</td>
                     <td>Eliminar </td>       
 
                    
@@ -44,9 +44,18 @@
                          
                         
                 <td>
-                    <s:property value="idPersona"/> 
+                    <s:form action="buyCar" theme="simple">
+                        <s:hidden name="producto.idProducto"></s:hidden>
+                    <s:textfield  name="cantidadHidden"   value="1" size="16" theme="simple"></s:textfield>
+                     
+                    
+                   
                 </td>
                 
+                <td>
+                    <button onclick="buyCar()" class="btn btn-success"><span class="glyphicon glyphicon-log-in"></span> Realizar compra </button>
+                </td>
+                 </s:form>
                 
                
                 
@@ -69,13 +78,16 @@
 
 
         </table>
-         <s:form action="realizarCompra">
-             
-            <s:submit value="realizar Compra"></s:submit>
-            
-        </s:form>
+        
         
         </div>
+        
+        <script>
+            function eliminar(){
+                document.buyCar.submit();
+            }
+            
+            </script>
         
        
         <script>
