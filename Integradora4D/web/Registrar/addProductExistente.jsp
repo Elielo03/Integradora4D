@@ -10,9 +10,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+                <link rel="stylesheet" type="text/css" href="<s:url value="../Utilerias/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>"/>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="../Utilerias/Otros/otros.css"/>
     </head>
     <body>
+        <%@include file="../Utilerias/Generico/Nav.jsp"%>
         <h1>Producto</h1>
         <s:form action="addExist" enctype="multipart/form-data" method="POST" >
             
@@ -40,5 +43,6 @@
             <s:submit value="Guardar"/>
 
         </s:form>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     </body>
 </html>

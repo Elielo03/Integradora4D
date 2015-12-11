@@ -15,9 +15,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <title>Categoria</title>
+                <link rel="stylesheet" type="text/css" href="<s:url value="../Utilerias/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>"/>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="../Utilerias/Otros/otros.css"/>
     </head>
     <body>
-        
+        <%@include file="../Utilerias/Generico/Nav.jsp"%>
         <div class="container">
             <h1>Categoria</h1>
 
@@ -60,7 +63,7 @@
     </s:form>
 
 
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 
 

@@ -11,7 +11,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">      
         <link rel="stylesheet" type="text/css" href="<s:url value="../Utilerias/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>"/>
-
         <script src="https://code.jquery.com/jquery.js"></script>
         <link rel="stylesheet" type="text/css" href="../Utilerias/Otros/otros.css"/>
         <title>Liverpool</title>
@@ -20,9 +19,6 @@
 
         <%@include file="../Utilerias/Generico/Nav.jsp"%>
         <div class="container well">
-
-<<<<<<< HEAD
-
             <%@include file="../Utilerias/Generico/Jump.jsp"%>
             <h1>Proximamente</h1>
             <div class="">
@@ -104,14 +100,9 @@
                 </div>
             </div>
         </div>
-            
-=======
        
-        <%@include file="../Utilerias/Generico/Foter.jsp"%>
-        
-
->>>>>>> origin/master
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     </body>
+
 </html>

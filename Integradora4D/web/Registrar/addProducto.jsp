@@ -11,9 +11,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <title>Producto</title>
+                <link rel="stylesheet" type="text/css" href="<s:url value="../Utilerias/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>"/>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="../Utilerias/Otros/otros.css"/>
     </head>
     <body>
+        <%@include file="../Utilerias/Generico/Nav.jsp"%>
         <div class="form-group">
         <h1>Agregar Producto</h1>
         <a href="<s:url action="addExistente"/>">Agregar Existente</a>
@@ -111,5 +114,6 @@
 
         </s:form>
         </div>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     </body>
 </html>

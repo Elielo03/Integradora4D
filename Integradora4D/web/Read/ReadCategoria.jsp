@@ -12,13 +12,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../Utilerias/metas.jsp" %>
         <title>Lista de Categorias</title>
-
+        <link rel="stylesheet" type="text/css" href="<s:url value="../Utilerias/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>"/>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="../Utilerias/Otros/otros.css"/>
 
 
     </head>
     <body>
 
-
+<%@include file="../Utilerias/Generico/Nav.jsp"%>
 
         <h1>Lista de Categorias </h1>
         <div class="container">
@@ -26,7 +28,7 @@
             <table  id="tabla" class="table table-responsive table-striped table-bordered table-hover">
                 <thead>
                     <tr>
-                        
+
                         <td>Nombre</td>
                         <td>Estado</td>
                         <td>Departamento</td>
@@ -36,29 +38,29 @@
                 </thead>
                 <tbody>
                     <s:iterator   value="categorias"  >
-                       
-                        
+
+
                         <tr>
-                           
+
                             <td><s:property value="nombre"></s:property></td>
-                            
-                            <td>
-                                <form action="updateEstadoCategoria">
-                                 <s:hidden name="idCategoria"></s:hidden>
-                                
-                                
-                                
-                                <%
-                                   String estado=""+pageContext.findAttribute("estado");
-                                    String strclass;
-                                   
-                                    if(estado.equals("true")){
-                                        
-                                        strclass="btn btn-success";
-                                    }else{
-                                         
-                                        strclass="btn btn-danger";
-                                    }
+
+                                <td>
+                                    <form action="updateEstadoCategoria">
+                                    <s:hidden name="idCategoria"></s:hidden>
+
+
+
+                                    <%
+                                        String estado = "" + pageContext.findAttribute("estado");
+                                        String strclass;
+
+                                        if (estado.equals("true")) {
+
+                                            strclass = "btn btn-success";
+                                        } else {
+
+                                            strclass = "btn btn-danger";
+                                        }
                                     %>
                                     <button  onclick="updateCategoria()" name="button2id" class="<%=strclass%>"> <%=estado%> </button>
 
@@ -85,8 +87,8 @@
 
             </table>
         </div>
-        
-        
+
+
 
 
         <script type="text/javascript">
@@ -99,6 +101,6 @@
             });
         </script>
 
-
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     </body>
 </html>

@@ -11,9 +11,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../Utilerias/metas.jsp" %>
+        <link rel="stylesheet" type="text/css" href="<s:url value="../Utilerias/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>"/>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="../Utilerias/Otros/otros.css"/>
         <title>Lista de departamentos</title>
     </head>
     <body>
+        <%@include file="../Utilerias/Generico/Nav.jsp"%>
         <h1>Lista de Departamentos </h1>
         <div class="container">
 
@@ -37,22 +41,22 @@
                             <td><s:property value="descripcion"></s:property></td>
                                 <td>
                                     <form action="updateDepartamento" name="updateDepartamento">
-                                         <s:hidden name="idDepartamento"></s:hidden>
-                                <%
-                                    String estado = "" + pageContext.findAttribute("estado");
-                                    String strclass;
+                                    <s:hidden name="idDepartamento"></s:hidden>
+                                    <%
+                                        String estado = "" + pageContext.findAttribute("estado");
+                                        String strclass;
 
-                                    if (estado.equals("true")) {
+                                        if (estado.equals("true")) {
 
-                                        strclass = "btn btn-success";
-                                    } else {
+                                            strclass = "btn btn-success";
+                                        } else {
 
-                                        strclass = "btn btn-danger";
-                                    }
-                                %>
-                                <button onclick="updateDepartamento()"   name="button2id" class="<%=strclass%>"> <%=estado%> </button>
+                                            strclass = "btn btn-danger";
+                                        }
+                                    %>
+                                    <button onclick="updateDepartamento()"   name="button2id" class="<%=strclass%>"> <%=estado%> </button>
 
-                                    </form>
+                                </form>
                             </td>
 
                             <td>  <s:form action="btnUpdateDepartamento">
@@ -72,12 +76,13 @@
                 </tbody>
             </table>
         </div>
-        
+
         <script>
-            function updateDepartamento(){
+            function updateDepartamento() {
                 document.updateDepartamento.submit();
-            };
-            </script>
+            }
+            ;
+        </script>
 
 
         <script type="text/javascript">
@@ -103,6 +108,6 @@
             });
         </script>
 
-
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     </body>
 </html>
