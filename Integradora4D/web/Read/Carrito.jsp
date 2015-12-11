@@ -15,6 +15,7 @@
         <title>Lista Carrito</title>
     </head>
     <body>
+        <%@include file="../Utilerias/Generico/Nav.jsp"%>
         <div class="container">
           
            
