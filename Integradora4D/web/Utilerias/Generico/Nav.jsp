@@ -23,7 +23,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Liverpool</a>
+                <a class="navbar-brand" href="#"><img src="../Utilerias/Imagenes/LOGO-LIVERPOOL-OK.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,7 +37,7 @@
                     %>
                     <li class="dropdown" style="padding-top: 8px; padding-right: 5px; ">
                         <div class="btn-group btn-group-warning">
-                            <button class="btn btn-otro" type="button">Dapartamentos</button>
+                            <button class="btn btn-otro" type="button">Departamentos</button>
                             <button data-toggle="dropdown" class="btn btn-otro dropdown-toggle" type="button"><span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
@@ -65,7 +65,7 @@
                     %>
                     <li class="dropdown" style="padding-top: 8px;  padding-right: 5px; ">
                         <div class="btn-group btn-group-warning">
-                            <button class="btn btn-otro" type="button">Dapartamentos</button>
+                            <button class="btn btn-otro" type="button">Departamentos</button>
                             <button data-toggle="dropdown" class="btn btn-otro dropdown-toggle" type="button"><span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
