@@ -12,6 +12,7 @@ import Dao.DaoReportes;
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import java.net.URL;
 import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
@@ -73,6 +74,7 @@ public class EmployeeReports extends ActionSupport {
             conn = ConexionSQLServer.getConnection();
             params.put("nombreuser", persona.getNombre() + " " + persona.getApp());
             params.put("depto", depto.getNombre());
+            params.put("logo", getClass().getResourceAsStream("liverpool_logo.png"));
             return SUCCESS;
         } else {
             return ERROR;
