@@ -1,7 +1,7 @@
 
 body{
-  background-image: url(../Imagenes/ws_Smooth_Blue_Gradient_2560x1600.png);
- padding-top: 50px;
+    background-image: url(../Imagenes/ws_Smooth_Blue_Gradient_2560x1600.png);
+    padding-top: 50px;
 }
 
 #login-dp{
@@ -72,4 +72,27 @@ body{
 .icon-size
 {
     font-size: 87px;
+}
+
+.btn-group-warning .dropdown-menu {
+    background-color: #FCE2FD !important;
+}
+.btn-group-warning .dropdown-menu li > a:hover,
+.btn-group-warning .dropdown-menu li > a:focus {
+    background-color: #f0ad4e !important;
+}
+
+.btn-otro,
+.btn-otro:hover,
+.btn-otro:active {
+    color: black;
+
+    background-color: #FCE2FD;
+}
+.btn-link2,
+.btn-link2:hover,
+.btn-link2:active {
+    color: black;
+
+    background-color: transparent;
 }

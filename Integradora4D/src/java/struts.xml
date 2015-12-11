@@ -160,6 +160,11 @@
             <result name="success">/JSP/index.jsp</result>        
         </action>
         
+         <action name="buscar" class="Operaciones.Menus" method="buscarDep">
+            <result name="success">/Read/ReadProductoVenta.jsp</result>    
+            <result name="error">/JSP/Exito1.jsp</result>    
+        </action>
+        
         <!-- login -->
         
         
