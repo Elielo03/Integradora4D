@@ -180,15 +180,32 @@
             <result type="redirect">compras</result>
         </action>
         
+        <action name="addCar" class="Operaciones.Compras" method="addCar">
+            
+            <result type="redirect">readCarrito</result>
+        </action>
+        
+        
         <action name="readCarrito">
             
             <result name="success">/Read/Carrito.jsp</result>
+        </action>
+        
+        <action name="readCarrito_1" class="Operaciones.Compras" method="getCar">
+            
+            <result name="success">/Read/Carrito_1.jsp</result>
         </action>
         
         <action name="eliminarElemento" class="Operaciones.Compras" method="removeElement">
             <result name="success">/Read/Carrito.jsp</result>
             
         </action>
+        
+        <action name="deleteCar" class="Operaciones.Compras" method="deleteCar">
+            <result type="redirect">readCarrito_1</result>
+            
+        </action>
+        
         
         <action name="realizarCompra" class="Operaciones.Compras" method="realizarCompra">
             <result type="redirect">readVentas</result>
@@ -249,7 +266,7 @@
         
         <action name="EmployeeProductReport" class="Reports.EmployeeReports" method="EmployeeProductReport">
             <result name = "success" type = "jasper">
-                <param name = "location">/WEB-INF/Prueba4.jasper</param>
+                <param name = "location">/WEB-INF/EmployeeProductReport.jasper</param>
                 <param name = "connection">conn</param>
                 <param name = "reportParameters">params</param>
                 <param name = "format">PDF</param>

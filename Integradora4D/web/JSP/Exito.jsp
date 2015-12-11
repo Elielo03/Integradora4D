@@ -60,6 +60,10 @@
         <s:form action="readVentas">
             <s:submit value="readVentas"></s:submit>
         </s:form>
+        
+         <s:form action="readCarrito_1">
+            <s:submit value="readVentas"></s:submit>
+        </s:form>
 
         <h1>-------Reportes--------</h1>  
         <h1>ADMINISTRADOR</h1>

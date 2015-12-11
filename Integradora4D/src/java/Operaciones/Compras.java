@@ -5,11 +5,13 @@
  */
 package Operaciones;
 
+import Beans.CarritoBean;
 import Beans.PersonaBean;
 import Beans.ProductoBean;
 import Beans.VentaBean;
 import Beans.VentaDetalleBean;
 import Conexion.ConexionSQLServer;
+import Dao.CarritoDao;
 import Dao.PersonaDao;
 import Dao.ProductoDao;
 import Dao.VentaDao;
@@ -30,7 +32,7 @@ import java.util.logging.Logger;
  * @author Eliel Rodriguez
  */
 public class Compras extends ActionSupport {
-
+    List<CarritoBean> carrito= new ArrayList();
     int idProducto;
 
     ProductoBean producto = new ProductoBean();
@@ -86,20 +88,36 @@ public class Compras extends ActionSupport {
         ProductoDao dao = new ProductoDao(con);
         Map carrito = ActionContext.getContext().getSession();
         lista = ((List<ProductoBean>) carrito.get("listaProductos"));
-        producto = dao.get(idProducto);
-
+        
+        
         for (ProductoBean productoBean : lista) {
 
-            if (productoBean.getIdProducto() == producto.getIdProducto()) {
+            if (productoBean.getIdProducto() == idProducto) {
 
                 lista.remove(productoBean);
             }
+            
+            carrito.put("listaProductos", lista);
         }
-
-        carrito.put("listaProductos", lista);
+        
+       
+        
 
         return SUCCESS;
     }
+    
+    
+     public String deleteCar(){
+            
+            CarritoDao dao= new CarritoDao(con);
+            
+            dao.delete(producto.getIdProducto());
+            
+            
+            return SUCCESS;
+        }
+
+    
 
     public String realizarCompra() {
         List<ProductoBean> lista = new ArrayList();
@@ -110,11 +128,12 @@ public class Compras extends ActionSupport {
 
         VentaDetalleDao daoDetalle = new VentaDetalleDao(con);
         VentaDetalleBean beanDetalle = new VentaDetalleBean();
-        beanP=daoP.get(2);
+        
         
 
         Map carrito = ActionContext.getContext().getSession();
         lista = ((List<ProductoBean>) carrito.get("listaProductos"));
+        beanP=daoP.get((Integer)carrito.get("idUsuario"));
 
 //        HashSet<ProductoBean> hashSet = new HashSet<>(lista);
 //        lista.clear();
@@ -141,6 +160,35 @@ public class Compras extends ActionSupport {
 
         return SUCCESS;
     }
+    
+    public String addCar(){
+        
+       
+       ProductoDao productoD= new ProductoDao(con);
+       CarritoDao daoC= new CarritoDao(con);
+       CarritoBean carritoB=new CarritoBean();
+        ProductoBean beanP= new ProductoBean();
+              beanP=  productoD.get(idProducto);
+              Map carrito = ActionContext.getContext().getSession();
+             
+           
+           carritoB.setIdPersona((Integer)carrito.get("idUsuario"));
+           carritoB.setProducto(beanP);
+           daoC.add(carritoB);
+       
+        return SUCCESS;
+    }
+    
+    public String getCar() throws SQLException{
+         Map carrito1 = ActionContext.getContext().getSession();
+        CarritoDao daoC= new CarritoDao(con);
+         int user=(Integer)carrito1.get("idUsuario");
+        
+        carrito=daoC.getAllUser(user);
+        
+        
+        return SUCCESS;
+    }
 
     public int getIdProducto() {
         return idProducto;
@@ -160,6 +208,14 @@ public class Compras extends ActionSupport {
 
     public void setCantidadHidden(int cantidadHidden) {
         this.cantidadHidden = cantidadHidden;
+    }
+
+    public List<CarritoBean> getCarrito() {
+        return carrito;
+    }
+
+    public void setCarrito(List<CarritoBean> carrito) {
+        this.carrito = carrito;
     }
 
 }

@@ -12,7 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="../Utilerias/metas.jsp" %>
-        <title>Lista Carrito</title>
+        <title>Lista Carrito User</title>
     </head>
     <body>
         <div class="container">
@@ -20,45 +20,39 @@
            
             
             
-        <h1>Lista Carrito</h1>
+        <h1>Lista Carrito Usuario</h1>
       
 
         <table   id="tabla" class="table table-responsive table-striped table-bordered table-hover" >
             <thead>
                 <tr>
-                    <td>Nombre Producto</td>
-                    <td>Codigo Producto</td>
-                    <td>Precio Venta</td>
-                    <td>Compra</td>
+                   
+                    <td>Producto</td>
+                    <td>Persona</td>
+                    
                     <td>Eliminar </td>       
 
                    
                 </tr>
             </thead>
             <tbody>
-                <s:iterator value="#session.listaProductos">
+                <s:iterator value="carrito">
                      <tr>
                          <td>
-                    <s:property value="nombre"/> 
+                    <s:property value="producto.nombre"/> 
                 </td>
-                <td>
-                    <s:property value="codigo"/> 
-                </td>
-                <td>
-                    <s:property value="precio_v" />
-                </td>
-                
-                <td>
-                    <s:form action="addCar">
-                    <button onclick="" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Comprar Después </button>
-                    <s:hidden name="idProducto"></s:hidden>
-                    </s:form>
-                </td>
-                
-                <td>
-                    <s:form action="eliminarElemento">
-                        <s:hidden name="idProducto"></s:hidden> 
+                         
                         
+                <td>
+                    <s:property value="idPersona"/> 
+                </td>
+                
+                
+               
+                
+                <td>
+                    <s:form action="deleteCar">
+                        <s:hidden name="Producto.idProducto"></s:hidden> 
                         <button onclick="eliminar()" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Eliminar del Carrito</button>
                         
                         
@@ -77,33 +71,19 @@
         </table>
          <s:form action="realizarCompra">
              
-             <button onclick="realizarCompra()" class="btn btn-success"><span class="glyphicon glyphicon-log-in"></span> Realizar compra </button>
+            <s:submit value="realizar Compra"></s:submit>
             
         </s:form>
         
         </div>
         
+       
         <script>
-            function formulario(){
-                document.addCar.submit();
-            }
-            
-            </script>
-            
-            <script>
             function eliminar(){
-                document.eliminarElemento.submit();
+                document.deleteCar.submit();
             }
             
             </script>
-            
-            <script>
-            function realizarCompra(){
-                document.realizarCompra.submit();
-            }
-            
-            </script>
-
         
 
 
