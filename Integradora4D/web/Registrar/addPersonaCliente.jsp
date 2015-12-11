@@ -59,7 +59,7 @@
                 <div class=" form-group ">
                     <label class="col-md-4 control-label" for="textinput">Fecha de Nacimiento: </label>     
                     <div class="col-md-4">
-                        <s:textfield id="fecha" onkeyup="validar('fecha');"  name="persona.fechaNac" cssClass="datepicker form-control"  />
+                        <s:textfield id="fecha"   name="persona.fechaNac" cssClass="datepicker form-control"  />
                         <span class="help-block"></span>
                     </div>
                 </div>

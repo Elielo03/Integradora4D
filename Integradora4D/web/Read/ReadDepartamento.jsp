@@ -18,7 +18,7 @@
     </head>
     <body>
         <%@include file="../Utilerias/Generico/Nav.jsp"%>
-        <h1>Lista de Departamentos </h1>
+       
         <div class="container">
 
             <table  id="tabla" class="table table-responsive table-striped table-bordered table-hover">

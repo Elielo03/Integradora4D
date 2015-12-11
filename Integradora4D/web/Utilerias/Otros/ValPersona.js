@@ -48,7 +48,7 @@ function verificar() {
     v7 = validar('telefono');
 //    v8 = validar('contraseña');
 
-    if (v1 === false || v2 === false || v4 === false || v5 === false || v7 === false) {
+    if (v1 === false || v2 === false || v5 === false || v7 === false) {
         $("#exito").hide();
         $("#error").show();
         return false;
@@ -170,10 +170,10 @@ function validar(campo) {
             $("#" + campo).parent().children("span").text("El campo " + campo + " esta vacio").show();
             $("#" + campo).parent().append("<span id='icono" + campo + "' class='glyphicon glyphicon-remove form-control-feedback'></span>");
             return false;
-        } else if (!(/^\d{9}$/.test(valor))) {
+        } else if (!(/^\d{10}$/.test(valor))) {
             $("#icono" + campo).remove();
             $("#" + campo).parent().parent().attr("class", "form-group has-error has-feedback");
-            $("#" + campo).parent().children("span").text("Se necesitan 9 caracteres").show();
+            $("#" + campo).parent().children("span").text("Se necesitan 10 caracteres").show();
             $("#" + campo).parent().append("<span id='icono" + campo + "' class='glyphicon glyphicon-remove form-control-feedback'></span>");
             return false;
         } else {

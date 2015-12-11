@@ -97,7 +97,7 @@
                             <button data-toggle="dropdown" class="btn btn-otro dropdown-toggle" type="button"><span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a href="<s:url action="llenarVacio"/>">Agregar</a></li>
+                                <li><a href="<s:url action="LlenarEmpleado"/>">Agregar</a></li>
                                 <li class="divider"></li>
                                 <li><a href="<s:url action="LlenarPersona"/>">Consultar</a></li>  
 
