@@ -213,6 +213,13 @@
             
         </action>
         
+        <action name="buyCar" class="Operaciones.Compras" method="buyCar">
+            <result type="redirect">readVentas</result>
+            
+            
+        </action>
+        
+        
         <!-- compras -->
         
         <!-- ventas -->

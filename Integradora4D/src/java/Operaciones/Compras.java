@@ -43,7 +43,7 @@ public class Compras extends ActionSupport {
         try {
             con = ConexionSQLServer.getConnection();
         } catch (SQLException ex) {
-            Logger.getLogger(Producto.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
         }
     }
 
@@ -89,20 +89,20 @@ public class Compras extends ActionSupport {
         Map carrito = ActionContext.getContext().getSession();
         lista = ((List<ProductoBean>) carrito.get("listaProductos"));
         
-        
+        int cont=0;
+        int indice=0;
         for (ProductoBean productoBean : lista) {
 
             if (productoBean.getIdProducto() == idProducto) {
 
-                lista.remove(productoBean);
+            indice=cont;    
             }
             
-            carrito.put("listaProductos", lista);
+            cont++;
         }
+        lista.remove(indice);
         
-       
-        
-
+        carrito.put("listaProductos", lista);
         return SUCCESS;
     }
     
@@ -158,6 +158,45 @@ public class Compras extends ActionSupport {
         
         
 
+        return SUCCESS;
+    }
+    
+    
+    public String buyCar(){
+         VentaDao dao = new VentaDao(con);
+        VentaBean bean = new VentaBean();
+        PersonaDao daoP= new PersonaDao(con);
+        PersonaBean beanP = new PersonaBean();
+        ProductoDao daoPro= new ProductoDao(con);
+        ProductoBean beanProducto= new ProductoBean();
+
+        VentaDetalleDao daoDetalle = new VentaDetalleDao(con);
+        VentaDetalleBean beanDetalle = new VentaDetalleBean();
+        
+        Map carrito = ActionContext.getContext().getSession();
+        beanProducto= daoPro.get(producto.getIdProducto());
+        beanProducto.setCantidad(cantidadHidden);
+        beanP=daoP.get((Integer)carrito.get("idUsuario"));
+        
+         bean.setPersona(beanP);
+        bean.setDescripcion("Sin Obervaciones");
+              
+        if(dao.add(bean)){
+            
+            beanDetalle.setCantidad(beanProducto.getCantidad());
+            beanDetalle.setCosto_venta(beanProducto.getPrecio_v());
+            beanDetalle.setIdProducto(beanProducto.getIdProducto());
+            beanDetalle.setIdVenta(dao.lastSell());
+            daoDetalle.add(beanDetalle);
+            
+             CarritoDao daoCarrito= new CarritoDao(con);
+            
+            daoCarrito.delete(producto.getIdProducto());
+            
+        }
+
+        
+        
         return SUCCESS;
     }
     
