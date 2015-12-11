@@ -6,6 +6,7 @@
 
 
 <!-- CDN BOOTSTRAP -->
+<%@taglib prefix="s" uri="/struts-tags" %>
  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
         <!-- DataTables CSS -->
@@ -24,3 +25,8 @@
 
 
         <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/1.10.7/i18n/Spanish.json">
+        
+         <link rel="stylesheet" type="text/css" href="<s:url value="../Utilerias/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>"/>
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="../Utilerias/Otros/otros.css"/>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>

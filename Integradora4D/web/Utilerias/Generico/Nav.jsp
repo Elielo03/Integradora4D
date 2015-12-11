@@ -11,7 +11,7 @@
 <%@page import="com.opensymphony.xwork2.ActionContext"%>
 <%@page import="java.util.Map"%>
 <%Map objetosSesion = ActionContext.getContext().getSession();%>
-
+<%@include file="../metas.jsp"%>
 <div class="container">
     <nav class="navbar navbar-default navbar-default" role="navigation">
         <div class="container-fluid">
