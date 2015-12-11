@@ -15,7 +15,7 @@
         <link rel="stylesheet" type="text/css" href="<s:url value="../Utilerias/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>"/>
         <script src="https://code.jquery.com/jquery.js"></script>
         <link rel="stylesheet" type="text/css" href="../Utilerias/Otros/otros.css"/>
-        <title>Liverpool</title>
+        <title>JSP Page</title>
     </head>
     <body>
         <%Map objetos1 = ActionContext.getContext().getSession();%>
