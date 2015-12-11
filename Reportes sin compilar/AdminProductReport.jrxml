@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
-<!-- 2015-11-25T01:58:19 -->
+<!-- 2015-12-11T01:49:22 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteProducto" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4cf2d4a1-f2ea-4b10-856d-c18e0f9f99c7">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="nombreuser" class="java.lang.String"/>
+	<parameter name="logo" class="java.io.InputStream"/>
 	<queryString>
 		<![CDATA[SELECT codigo, Producto.nombre, Categoria.nombre AS categoria, imagen, existencias, precio_v  
 FROM Producto JOIN Categoria ON Producto.idCategoria = Categoria.idCategoria WHERE Producto.estado = 'true'
@@ -53,7 +54,7 @@ ORDER BY Categoria.nombre]]>
 		<band height="87" splitType="Stretch">
 			<image hAlign="Center" vAlign="Middle">
 				<reportElement x="0" y="0" width="180" height="79" uuid="458d99e8-ce15-47ee-8dbc-fbf22743c13b"/>
-				<imageExpression><![CDATA["C:/Users/spown/Documents/GitHub/Integradora4D/Reportes sin compilar/Liverpool-Mexico-logo.jpg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="190" y="0" width="200" height="30" uuid="bb7990bc-7537-46ef-aeb0-8c9578c5a7f2"/>
@@ -118,55 +119,54 @@ ORDER BY Categoria.nombre]]>
 				<text><![CDATA[Nombre]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="230" y="0" width="100" height="20" uuid="09a3f7d2-477a-4d5b-b3ca-e6dec395da77"/>
-				<textElement textAlignment="Center">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Imagen]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="365" y="0" width="70" height="20" uuid="79315c25-073d-4f73-9e96-f0474f496f32"/>
+				<reportElement x="248" y="0" width="70" height="20" uuid="79315c25-073d-4f73-9e96-f0474f496f32"/>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Existencias]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="470" y="0" width="100" height="20" uuid="d2138bd5-fb32-4985-9a8e-8925f74286a1"/>
+				<reportElement x="338" y="0" width="100" height="20" uuid="d2138bd5-fb32-4985-9a8e-8925f74286a1"/>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Precio de Venta]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="457" y="0" width="100" height="20" uuid="09a3f7d2-477a-4d5b-b3ca-e6dec395da77"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Imagen]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="41" splitType="Stretch">
+		<band height="71" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="80" height="20" uuid="b5e5b20b-60af-4de1-9ef0-2e64277ee3e3"/>
+				<reportElement x="0" y="24" width="80" height="20" uuid="b5e5b20b-60af-4de1-9ef0-2e64277ee3e3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="80" y="-1" width="150" height="20" uuid="a7dd829c-4c8d-4bd4-ac72-1a411628dd4f"/>
+				<reportElement x="80" y="23" width="150" height="20" uuid="a7dd829c-4c8d-4bd4-ac72-1a411628dd4f"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="230" y="2" width="100" height="30" uuid="4fb27a1d-5410-45e9-8edc-bf9dd78a4dad"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{imagen}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="365" y="-1" width="70" height="20" uuid="e0ec8c7a-1723-4a4e-ba41-aa6e23401dd3"/>
+				<reportElement x="248" y="23" width="70" height="20" uuid="e0ec8c7a-1723-4a4e-ba41-aa6e23401dd3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{existencias}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤#,##0.##;¤-#,##0.##">
-				<reportElement x="470" y="0" width="100" height="20" uuid="b816054a-d4c6-465d-93f5-45128ac2db34"/>
+				<reportElement x="338" y="24" width="100" height="20" uuid="b816054a-d4c6-465d-93f5-45128ac2db34"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{precio_v}]]></textFieldExpression>
 			</textField>
+			<image>
+				<reportElement x="482" y="2" width="70" height="66" uuid="dd6cbf00-d059-47b9-8219-b94ff97dad09"/>
+				<imageExpression><![CDATA[$F{imagen}]]></imageExpression>
+			</image>
 		</band>
 	</detail>
 	<columnFooter>

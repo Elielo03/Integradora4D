@@ -69,6 +69,7 @@ public class AdminReports extends ActionSupport {
             params = new HashMap();
             conn = ConexionSQLServer.getConnection();
             params.put("nombreuser", persona.getNombre() + " " + persona.getApp());
+            params.put("logo", getClass().getResourceAsStream("liverpool_logo.png"));
             return SUCCESS;
         } else {
             return ERROR;
@@ -86,6 +87,7 @@ public class AdminReports extends ActionSupport {
             params.put("desde", desde);
             params.put("hasta", hasta);
             params.put("nombre", persona.getNombre() + " " + persona.getApp());
+            params.put("logo", getClass().getResourceAsStream("liverpool_logo.png"));
             return SUCCESS;
         } else {
             return ERROR;
@@ -104,6 +106,7 @@ public class AdminReports extends ActionSupport {
             params.put("desde", desde);
             params.put("hasta", hasta);
             params.put("nombre", persona.getNombre() + " " + persona.getApp());
+            params.put("logo", getClass().getResourceAsStream("liverpool_logo.png"));
             return SUCCESS;
         }else{
             return ERROR;
