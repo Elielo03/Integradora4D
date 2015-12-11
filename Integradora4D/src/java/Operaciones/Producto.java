@@ -87,6 +87,8 @@ public class Producto  extends ActionSupport{
         
         bean.setCategoria(categoria);
         bean.setImagen(url);
+        bean.setEstado(true);
+        
        return dao.add(bean);
         
         
