@@ -22,7 +22,7 @@
         } else {
         %>
         <h1 style="color: black">Bienvenido a Liverpool.com </h1>
-        
+       
         <p style="color: black">poner un mensaje para los usuarios no clientes</p>
         <%
             }
