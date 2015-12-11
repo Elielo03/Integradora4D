@@ -270,7 +270,7 @@ public class ProductoDao extends DaoAbstract<ProductoBean> {
             ps.setInt(5, bean.getStock());
             ps.setDouble(6, bean.getPrecio_c());
             ps.setDouble(7, bean.getPrecio_v());
-            ps.setBoolean(8, bean.isEstado());
+            ps.setString(8, ""+bean.isEstado());
             ps.setString(9, bean.getMarca());
             ps.setString(10, bean.getImagen());
             ps.setInt(11, bean.getCategoria().getIdCategoria());

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
-<!-- 2015-11-26T11:33:24 -->
+<!-- 2015-12-11T02:34:36 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EmployeeSalesReport" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b412e869-4b9a-49c1-8791-1fd6db795e4d">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="nombreuser" class="java.lang.String"/>
 	<parameter name="depto" class="java.lang.String"/>
 	<parameter name="desde" class="java.lang.String"/>
 	<parameter name="hasta" class="java.lang.String"/>
+	<parameter name="logo" class="java.io.InputStream"/>
 	<queryString>
 		<![CDATA[SELECT dept.nombre AS Departamento, v.fecha_compra, pr.nombre, pr.app, pr.apm, SUM(vd.costo_venta) AS TotalCompra
 FROM Venta_detalle vd JOIN Producto pd ON vd.idProducto = pd.idProducto
@@ -45,7 +46,7 @@ GROUP BY pr.nombre, pr.app, pr.apm, v.fecha_compra, dept.nombre ORDER BY v.fecha
 		<band height="102" splitType="Stretch">
 			<image hAlign="Center" vAlign="Middle">
 				<reportElement x="0" y="0" width="180" height="81" uuid="a8c70766-1d13-469c-a0c5-babcb14087dd"/>
-				<imageExpression><![CDATA["C:/Users/spown/Documents/GitHub/Integradora4D/Reportes sin compilar/Liverpool-Mexico-logo.jpg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="190" y="0" width="200" height="30" uuid="ada18f00-ea53-496f-81bf-d3e1e202c76e"/>
@@ -107,7 +108,7 @@ GROUP BY pr.nombre, pr.app, pr.apm, v.fecha_compra, dept.nombre ORDER BY v.fecha
 	<pageHeader>
 		<band height="22" splitType="Stretch">
 			<textField isBlankWhenNull="false">
-				<reportElement x="0" y="0" width="570" height="20" uuid="d51614be-0830-400e-846e-1bea121d5ec6"/>
+				<reportElement mode="Opaque" x="0" y="0" width="570" height="20" backcolor="#ED40D9" uuid="d51614be-0830-400e-846e-1bea121d5ec6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
@@ -150,7 +151,7 @@ GROUP BY pr.nombre, pr.app, pr.apm, v.fecha_compra, dept.nombre ORDER BY v.fecha
 			<textField isBlankWhenNull="true">
 				<reportElement x="150" y="0" width="270" height="20" uuid="80a4761a-68a8-454f-b92e-ac6dbda59151"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{nombre} + " " + $F{app} + " " + $F{apm}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{nombre} + " " + $F{app}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="450" y="0" width="100" height="20" uuid="f772677f-1ca4-464a-877e-db4d9a987e1c"/>

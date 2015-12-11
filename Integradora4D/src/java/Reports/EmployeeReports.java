@@ -95,6 +95,7 @@ public class EmployeeReports extends ActionSupport {
             params.put("depto", depto.getNombre());
             params.put("desde", desde);
             params.put("hasta", hasta);
+            params.put("logo", getClass().getResourceAsStream("liverpool_logo.png"));
             return SUCCESS;
         } else {
             return ERROR;

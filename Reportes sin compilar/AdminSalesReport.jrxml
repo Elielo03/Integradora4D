@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
-<!-- 2015-11-25T12:54:34 -->
+<!-- 2015-12-11T02:07:25 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteEstadisticoAdmin2" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9a94cfeb-8e96-4ea0-8d73-dddb064d3bb4">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="nombre" class="java.lang.String"/>
 	<parameter name="desde" class="java.lang.String"/>
 	<parameter name="hasta" class="java.lang.String"/>
+	<parameter name="logo" class="java.io.InputStream"/>
 	<queryString>
 		<![CDATA[SELECT v.fecha_compra, SUM(vd.costo_venta) AS SumaCostoVenta
 FROM Venta_detalle vd JOIN Venta v ON vd.idVenta = v.idVenta
@@ -38,7 +39,7 @@ ORDER BY v.fecha_compra]]>
 		<band height="83" splitType="Stretch">
 			<image hAlign="Center" vAlign="Middle">
 				<reportElement x="0" y="0" width="180" height="80" uuid="0ae6e706-3716-4b15-9d97-89fb06fac2cc"/>
-				<imageExpression><![CDATA["C:/Users/spown/Documents/GitHub/Integradora4D/Reportes sin compilar/Liverpool-Mexico-logo.jpg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="190" y="0" width="200" height="30" uuid="8f84ce27-c1dd-47be-8bf7-5ef018b715da"/>

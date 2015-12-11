@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
-<!-- 2015-11-25T10:47:43 -->
+<!-- 2015-12-11T02:24:53 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EstadisticoAdmin" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2b014c3a-2206-46c4-88b9-2708daefead4">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="desde" class="java.lang.String"/>
 	<parameter name="hasta" class="java.lang.String"/>
 	<parameter name="nombre" class="java.lang.String"/>
+	<parameter name="logo" class="java.io.InputStream"/>
 	<queryString>
 		<![CDATA[SELECT TOP 10 sum(vd.cantidad) as cantidad, sum(vd.costo_venta) as total, p.nombre
 FROM Venta_detalle vd JOIN Producto p ON vd.idProducto = p.idProducto JOIN Venta v ON v.idVenta = vd.idVenta
@@ -22,7 +23,7 @@ GROUP BY vd.idProducto, p.nombre ORDER BY cantidad DESC;]]>
 		<band height="82" splitType="Stretch">
 			<image hAlign="Center" vAlign="Middle">
 				<reportElement x="0" y="0" width="180" height="80" uuid="c98daaaf-fdaa-47af-ade5-9600a1f629ac"/>
-				<imageExpression><![CDATA["C:/Users/spown/Documents/GitHub/Integradora4D/Reportes sin compilar/Liverpool-Mexico-logo.jpg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="190" y="0" width="200" height="30" uuid="dd022397-26f2-45a6-b9b3-21f76a6fe89e"/>
@@ -70,8 +71,8 @@ GROUP BY vd.idProducto, p.nombre ORDER BY cantidad DESC;]]>
 	<pageHeader>
 		<band height="22" splitType="Stretch">
 			<textField pattern="">
-				<reportElement x="0" y="0" width="570" height="20" uuid="ba083e55-fa52-4f23-8c19-cf1eef94c555"/>
-				<textElement textAlignment="Center" verticalAlignment="Bottom">
+				<reportElement mode="Opaque" x="0" y="2" width="570" height="20" backcolor="#DE4BB9" uuid="ba083e55-fa52-4f23-8c19-cf1eef94c555"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Periodo de ventas del " + $P{desde} + " al " + $P{hasta}]]></textFieldExpression>

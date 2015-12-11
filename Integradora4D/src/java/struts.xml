@@ -243,7 +243,7 @@
         
         <action name="AdminProductReport" class="Reports.AdminReports" method="AdminProductReport">
             <result name = "success" type = "jasper">
-                <param name = "location">/WEB-INF/Prueba1.jasper</param>
+                <param name = "location">/WEB-INF/AdminProductReport.jasper</param>
                 <param name = "connection">conn</param>
                 <param name = "reportParameters">params</param>
                 <param name = "format">PDF</param>
@@ -253,7 +253,7 @@
         
         <action name="AdminSalesReportGraph" class="Reports.AdminReports" method="AdminSalesReportGraph">
             <result name = "success" type = "jasper">
-                <param name = "location">/WEB-INF/Prueba2.jasper</param>
+                <param name = "location">/WEB-INF/AdminSalesReportGraph.jasper</param>
                 <param name = "connection">conn</param>
                 <param name = "reportParameters">params</param>
                 <param name = "format">PDF</param>
@@ -262,7 +262,7 @@
         
         <action name="AdminSalesReport" class="Reports.AdminReports" method="AdminSalesReport">
             <result name = "success" type = "jasper">
-                <param name = "location">/WEB-INF/Prueba3.jasper</param>
+                <param name = "location">/WEB-INF/AdminSalesReport.jasper</param>
                 <param name = "connection">conn</param>
                 <param name = "reportParameters">params</param>
                 <param name = "format">PDF</param>
@@ -282,7 +282,7 @@
         
         <action name="EmployeeSalesReport" class="Reports.EmployeeReports" method="EmployeeSalesReport">
             <result name = "success" type = "jasper">
-                <param name = "location">/WEB-INF/Prueba5.jasper</param>
+                <param name = "location">/WEB-INF/EmployeeSalesReport.jasper</param>
                 <param name = "connection">conn</param>
                 <param name = "reportParameters">params</param>
                 <param name = "format">PDF</param>
