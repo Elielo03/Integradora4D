@@ -175,7 +175,7 @@
                 <%                    if (objetosSesion.get("estado") == null) {
                 %><%@include file="session.jsp"%><%
                 } else {
-                %>
+                    %>
                 <%@include file="cerrar.jsp"%>
                 <%                    }
                 %>

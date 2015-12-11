@@ -2,6 +2,7 @@
 body{
     background-image: url(../Imagenes/ws_Smooth_Blue_Gradient_2560x1600.png);
     padding-top: 50px;
+    height: 100%;
 }
 
 #login-dp{
@@ -103,3 +104,26 @@ body{
 .navbar-default .navbar-brand {
     color: white;
 }
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30%;
+  background-color: white;
+}
+ hr { 
+   border: 1px solid black; 
+   border-radius: 300px ; 
+   height: 0px; 
+   text-align: center; 
+ }
+ *.jumbotron{
+    background-image: url(../Imagenes/20141219_11_43_LiverpoolPerisur_Twit.png) 
+     
+ }
