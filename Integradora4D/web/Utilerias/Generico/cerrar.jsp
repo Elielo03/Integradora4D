@@ -9,9 +9,9 @@
 <%Map objetosSesion1 = ActionContext.getContext().getSession();%>
 <ul class="nav navbar-nav navbar-right">
     <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white;">
             <span class="glyphicon glyphicon-user"></span> 
-            <strong>Mi cuenta</strong>
+            <strong >Mi cuenta</strong>
             <span class="glyphicon glyphicon-chevron-down"></span>
         </a>
         <ul class="dropdown-menu">

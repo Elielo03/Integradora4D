@@ -79,7 +79,7 @@ body{
 }
 .btn-group-warning .dropdown-menu li > a:hover,
 .btn-group-warning .dropdown-menu li > a:focus {
-    background-color: #f0ad4e !important;
+    background-color: white !important;
 }
 
 .btn-otro,
@@ -95,4 +95,11 @@ body{
     color: black;
 
     background-color: transparent;
+}
+.navbar-default {
+    background-color: #e10098;
+    border-color: #E7E7E7;
+}
+.navbar-default .navbar-brand {
+    color: white;
 }

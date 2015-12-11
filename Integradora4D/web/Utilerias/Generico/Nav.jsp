@@ -3,12 +3,17 @@
     Created on : 25/11/2015, 09:43:40 AM
     Author     : Hermanos Saucedo
 --%>
+<%@page import="Beans.DepartamentoBean"%>
+<%@page import="java.util.List"%>
+<%@page import="Operaciones.Menus"%>
+
 <%@taglib prefix="s" uri="/struts-tags" %>
 <%@page import="com.opensymphony.xwork2.ActionContext"%>
 <%@page import="java.util.Map"%>
 <%Map objetosSesion = ActionContext.getContext().getSession();%>
+
 <div class="container">
-    <nav class="navbar navbar-default navbar-inverse" role="navigation">
+    <nav class="navbar navbar-default navbar-default" role="navigation">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -30,17 +35,26 @@
 
 
                     %>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Departamentos <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
+                    <li class="dropdown" style="padding-top: 8px; ">
+                        <div class="btn-group btn-group-warning">
+                            <button class="btn btn-otro" type="button">Dapartamentos</button>
+                            <button data-toggle="dropdown" class="btn btn-otro dropdown-toggle" type="button"><span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <%                                    Menus menu = new Menus();
+                                    List<DepartamentoBean> lista = menu.departamentos();
+                                    for (DepartamentoBean lista1 : lista) {
+                                %>      
+                                <s:form action="buscar" theme="simple" >    
+                                    <div class="container col-lg-12">
+                                        <input name="id" type="hidden" value="<%=lista1.getIdDepartamento()%>">
+                                        <li><button type="submit" class="btn btn-link2"><%=lista1.getNombre()%></button></li>
+                                    </div>      
+                                </s:form>
+                                <%                                }
+                                %>
+                            </ul>
+                        </div>
                     </li>
 
                     <%                        }
@@ -48,65 +62,95 @@
 
                             if ((Integer) objetosSesion.get("tipo") == 3) {
                     %>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Departamentos <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="<s:url action="addDepa"/>">Agregar</a></li>
-                            <li class="divider"></li>
-                            <li><a href="<s:url action="readDepartamento"/>">Consultar</a></li>         
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categoria <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="<s:url action="llenarLista"/>">Agregar</a></li>
-                            <li class="divider"></li>
-                            <li><a href="<s:url action="readCategoria"/>">Consultar</a></li>         
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Personal/Clientes <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="<s:url action="llenarVacio"/>">Agregar</a></li>
-                            <li class="divider"></li>
-                            <li><a href="<s:url action="LlenarPersona"/>">Consultar</a></li>         
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="<s:url action="addPro"/>">Agregar</a></li>
-                            <li class="divider"></li>
-                            <li><a href="<s:url action="readProducto"/>">Consultar</a></li>         
-                        </ul>
+                    <li class="dropdown" style="padding-top: 8px;  padding-right: 5px; ">
+                        <div class="btn-group btn-group-warning">
+                            <button class="btn btn-otro" type="button">Dapartamentos</button>
+                            <button data-toggle="dropdown" class="btn btn-otro dropdown-toggle" type="button"><span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="<s:url action="addDepa"/>">Agregar</a></li>
+                                <li class="divider"></li>
+                                <li><a href="<s:url action="readDepartamento"/>">Consultar</a></li>   
+
+                            </ul>
+                        </div>
                     </li>
 
+                    <li class="dropdown" style="padding-top: 8px;  padding-right: 5px; ">
+                        <div class="btn-group btn-group-warning">
+                            <button class="btn btn-otro" type="button">Categoria</button>
+                            <button data-toggle="dropdown" class="btn btn-otro dropdown-toggle" type="button"><span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="<s:url action="llenarLista"/>">Agregar</a></li>
+                                <li class="divider"></li>
+                                <li><a href="<s:url action="readCategoria"/>">Consultar</a></li>   
+
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="dropdown" style="padding-top: 8px;  padding-right: 5px; ">
+                        <div class="btn-group btn-group-warning">
+                            <button class="btn btn-otro" type="button">Personal/Clientes</button>
+                            <button data-toggle="dropdown" class="btn btn-otro dropdown-toggle" type="button"><span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="<s:url action="llenarVacio"/>">Agregar</a></li>
+                                <li class="divider"></li>
+                                <li><a href="<s:url action="LlenarPersona"/>">Consultar</a></li>  
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="dropdown" style="padding-top: 8px; padding-right: 5px; ">
+                        <div class="btn-group btn-group-warning">
+                            <button class="btn btn-otro" type="button">Productos</button>
+                            <button data-toggle="dropdown" class="btn btn-otro dropdown-toggle" type="button"><span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="<s:url action="addPro"/>">Agregar</a></li>
+                                <li class="divider"></li>
+                                <li><a href="<s:url action="readProducto"/>">Consultar</a></li>  
+
+                            </ul>
+                        </div>
+                    </li>
 
                     <%
                     } else if ((Integer) objetosSesion.get("tipo") == 1) {
                     %>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registro de Personal <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="<s:url action="LlenarEmpleado"/>">Agregar</a></li>
-                            <li class="divider"></li>
-                            <li><a href="<s:url action="LlenarPersona"/>">Consultar</a></li>         
-                        </ul>
+                    <li class="dropdown" style="padding-top: 8px; padding-right: 5px; ">
+                        <div class="btn-group btn-group-warning">
+                            <button class="btn btn-otro" type="button">Registro de Empleados</button>
+                            <button data-toggle="dropdown" class="btn btn-otro dropdown-toggle" type="button"><span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="<s:url action="LlenarEmpleado"/>">Agregar</a></li>
+                                <li class="divider"></li>
+                                <li><a href="<s:url action="LlenarPersona"/>">Consultar</a></li>        
+
+                            </ul>
+                        </div>
                     </li>
 
                     <%
                     } else if ((Integer) objetosSesion.get("tipo") == 2) {
                     %>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Registro de Empleados <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="<s:url action="LlenarEmpleado"/>">Agregar</a></li>
-                            <li class="divider"></li>
-                            <li><a href="<s:url action="LlenarPersona"/>">Consultar</a></li>         
-                        </ul>
+
+                    <li class="dropdown" style="padding-top: 8px; padding-right: 5px; ">
+                        <div class="btn-group btn-group-warning">
+                            <button class="btn btn-otro" type="button">Registro de Empleados</button>
+                            <button data-toggle="dropdown" class="btn btn-otro dropdown-toggle" type="button"><span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="<s:url action="LlenarEmpleado"/>">Agregar</a></li>
+                                <li class="divider"></li>
+                                <li><a href="<s:url action="LlenarPersona"/>">Consultar</a></li>         
+
+                            </ul>
+                        </div>
                     </li>
-
-
                     <%
                             }
                         }
@@ -124,8 +168,7 @@
                 } else {
                 %>
                 <%@include file="cerrar.jsp"%>
-                <%
-                    }
+                <%                    }
                 %>
 
 

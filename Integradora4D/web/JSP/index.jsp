@@ -19,7 +19,7 @@
     </head>
     <body>
         <%Map objetos1 = ActionContext.getContext().getSession();%>
-        <%@include file="../Utilerias/Generico/NavIndex.jsp"%>
+        <%@include file="../Utilerias/Generico/Nav.jsp"%>
         <div class="container">
             <div class="jumbotron">
                 <%
