@@ -50,7 +50,7 @@
                 
                 <td>
                     <s:form action="addCar">
-                    <button onclick="" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Comprar Después </button>
+                    <button onclick="formulario()" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Comprar Después </button>
                     <s:hidden name="idProducto"></s:hidden>
                     </s:form>
                 </td>
@@ -85,6 +85,7 @@
         
         <script>
             function formulario(){
+                alert("Agredo a comprar Depues!");
                 document.addCar.submit();
             }
             

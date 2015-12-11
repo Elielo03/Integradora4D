@@ -213,7 +213,28 @@ public class Compras extends ActionSupport {
            
            carritoB.setIdPersona((Integer)carrito.get("idUsuario"));
            carritoB.setProducto(beanP);
-           daoC.add(carritoB);
+          if (daoC.add(carritoB)){
+               List<ProductoBean> lista = new ArrayList();
+               Map carrito1 = ActionContext.getContext().getSession();
+        lista = ((List<ProductoBean>) carrito.get("listaProductos"));
+        
+        int cont=0;
+        int indice=0;
+        for (ProductoBean productoBean : lista) {
+
+            if (productoBean.getIdProducto() == idProducto) {
+
+            indice=cont;    
+            }
+            
+            cont++;
+        }
+        lista.remove(indice);
+        
+        carrito.put("listaProductos", lista);
+        
+        
+          }
        
         return SUCCESS;
     }
