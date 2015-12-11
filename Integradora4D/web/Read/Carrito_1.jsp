@@ -53,7 +53,7 @@
                 <td>
                     <s:form action="eliminarElemento">
                         <s:hidden name="idProducto"></s:hidden> 
-                        <s:submit value="Eliminar del Carrito"></s:submit>
+                        <button onclick="eliminar()" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Eliminar del Carrito</button>
                         
                         
                     </s:form>
@@ -78,7 +78,12 @@
         </div>
         
        
-
+        <script>
+            function eliminar(){
+                document.eliminarElemento.submit();
+            }
+            
+            </script>
         
 
 
