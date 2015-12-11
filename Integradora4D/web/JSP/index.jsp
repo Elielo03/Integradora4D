@@ -14,13 +14,15 @@
 
         <script src="https://code.jquery.com/jquery.js"></script>
         <link rel="stylesheet" type="text/css" href="../Utilerias/Otros/otros.css"/>
-        <title>JSP Page</title>
+        <title>Liverpool</title>
     </head>
     <body>
 
         <%@include file="../Utilerias/Generico/Nav.jsp"%>
         <%@include file="../Utilerias/Generico/Jump.jsp"%>
+       
         <%@include file="../Utilerias/Generico/Foter.jsp"%>
+        
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     </body>
