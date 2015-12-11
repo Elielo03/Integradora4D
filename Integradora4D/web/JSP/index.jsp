@@ -19,8 +19,91 @@
     <body>
 
         <%@include file="../Utilerias/Generico/Nav.jsp"%>
-        <%@include file="../Utilerias/Generico/Jump.jsp"%>
+        <div class="container well">
 
+
+            <%@include file="../Utilerias/Generico/Jump.jsp"%>
+            <h1>Proximamente</h1>
+            <div class="">
+                <div class="row ">
+                    <ul class="thumbnails">
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="../Utilerias/Imagenes/2ee2bdea-1550-47b8-b136-ce1d836ebb07.png" alt="ALT NAME" class="img-responsive" />
+                                <div class="caption">
+                                    <h3>Xbox one Edicion Oro</h3>
+                                    
+                                    <p align="center"><a href="http://bootsnipp.com/" class="btn btn-primary btn-block">Proximamente</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="../Utilerias/Imagenes/PS4.png" alt="ALT NAME" class="img-responsive" />
+                                <div class="caption">
+                                    <h3>Ps4 Capacidad 2 TB</h3>
+                                   
+                                    <p align="center"><a href="http://bootsnipp.com/" class="btn btn-primary btn-block">Proximamente</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="../Utilerias/Imagenes/Steam-Controller.png" alt="ALT NAME" class="img-responsive" />
+                                <div class="caption">
+                                    <h3>Steam controller</h3>
+
+                                    <p align="center"><a href="http://bootsnipp.com/" class="btn btn-primary btn-block">Proximamente</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="">
+                <div class="row ">
+                    <ul class="thumbnails">
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="../Utilerias/Imagenes/iphone-6-rumores-humor-pantalla-iphone10.jpg" alt="ALT NAME" class="img-responsive" />
+                                <div class="caption">
+                                    <h3>Iphone 10</h3>
+                                    
+                                    <p align="center"><a href="http://bootsnipp.com/" class="btn btn-primary btn-block">Proximamente</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="../Utilerias/Imagenes/42222a51-579c-402c-b388-cbb6b3e89e1e.jpg" alt="ALT NAME" class="img-responsive" />
+                                <div class="caption">
+                                    <h3>Surface</h3>
+                                   
+                                    <p align="center"><a href="http://bootsnipp.com/" class="btn btn-primary btn-block">Proximamente</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail">
+                                <img src="../Utilerias/Imagenes/1425042800_400163_1425054962_sumario_normal.jpg" alt="ALT NAME" class="img-responsive" />
+                                <div class="caption">
+                                    <h3>Ropa</h3>
+
+                                    <p align="center"><a href="http://bootsnipp.com/" class="btn btn-primary btn-block">Proximamente</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     </body>

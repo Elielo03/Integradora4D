@@ -1,6 +1,6 @@
 
 body{
-    background-image: url(../Imagenes/ws_Smooth_Blue_Gradient_2560x1600.png);
+/*background-image: url(../Imagenes/ws_Smooth_Blue_Gradient_2560x1600.png);*/
     padding-top: 50px;
     height: 100%;
 }
@@ -76,11 +76,11 @@ body{
 }
 
 .btn-group-warning .dropdown-menu {
-    background-color: #FCE2FD !important;
+    background-color: white !important;
 }
 .btn-group-warning .dropdown-menu li > a:hover,
 .btn-group-warning .dropdown-menu li > a:focus {
-    background-color: white !important;
+    background-color: gainsboro !important;
 }
 
 .btn-otro,
@@ -88,7 +88,7 @@ body{
 .btn-otro:active {
     color: black;
 
-    background-color: #FCE2FD;
+    background-color: white;
 }
 .btn-link2,
 .btn-link2:hover,
@@ -126,5 +126,16 @@ hr {
 *.jumbotron{
     background-image: url(../Imagenes/20141219_11_43_LiverpoolPerisur_Twit.png) 
 
+}
+.texto1 {
+    color:white;   /* Color del texto */
+    text-shadow: 1px 1px 0 white,
+        -1px -1px white,
+        1px -1px white,
+        -1px 1px white,
+        0 1px white,
+        1px 0 white,
+        -1px 0 white,
+        0 -1px white;
 }
 

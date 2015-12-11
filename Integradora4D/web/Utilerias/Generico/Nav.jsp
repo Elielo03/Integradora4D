@@ -23,7 +23,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="../Utilerias/Imagenes/LOGO-LIVERPOOL-OK.png"></a>
+                <a class="navbar-brand" href="#">Liverpool</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -155,11 +155,7 @@
                     <%
                     } else if ((Integer) objetosSesion.get("tipo") == 4) {
                     %>
-                    <li class="dropdown" style="padding-top: 8px; padding-right: 5px; ">
-                        <div class="btn-group btn-group-warning">
-                            <a href="<s:url action="compras"/>">Compras temporal</a>        
-                        </div>
-                    </li>
+
                     <%
                             }
                         }
