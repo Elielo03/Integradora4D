@@ -287,8 +287,10 @@ public class ProductoDao extends DaoAbstract<ProductoBean> {
     }
 
     public List<ProductoBean> Menu(int codigo) {
-        String query = "SELECT * FROM Producto where idCategoria=(select idCategoria from Categoria where idDepartamento=?);";
-        List<ProductoBean> lista =  new ArrayList<>();
+        String query = "SELECT * FROM Producto  join Categoria on Producto.idCategoria=Categoria.idCategoria\n"
+                + "\n"
+                + "where Categoria.idDepartamento=?";
+        List<ProductoBean> lista = new ArrayList<>();
         try {
             PreparedStatement ps = con.prepareStatement(query);
             ps.setInt(1, codigo);
