@@ -48,6 +48,28 @@ public class CarritoDao extends DaoAbstract <CarritoBean>{
         return carrito;
         
     }
+    
+     public List<CarritoBean> getAllUser(int user)  {
+        List<CarritoBean> carrito= new ArrayList<>();
+        
+         String query="SELECT * From carrito where idPersona=?;";
+           try {
+               PreparedStatement ps = con.prepareStatement(query);
+               ps.setInt(1, user);
+               
+               ps.executeQuery();
+               
+               
+        ResultSet result = ps.executeQuery();
+       
+            carrito=passResultSet(result, carrito);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        
+        return carrito;
+        
+    }
 
     
 

@@ -27,7 +27,7 @@
             <thead>
                 <tr>
                    
-                   
+                    <td>Producto</td>
                     <td>Persona</td>
                     
                     <td>Eliminar </td>       
@@ -38,6 +38,10 @@
             <tbody>
                 <s:iterator value="carrito">
                      <tr>
+                         <td>
+                    <s:property value="producto.nombre"/> 
+                </td>
+                         
                         
                 <td>
                     <s:property value="idPersona"/> 

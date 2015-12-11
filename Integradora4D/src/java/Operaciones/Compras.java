@@ -165,11 +165,13 @@ public class Compras extends ActionSupport {
         return SUCCESS;
     }
     
-    public String getCar(){
+    public String getCar() throws SQLException{
+         Map carrito1 = ActionContext.getContext().getSession();
         CarritoDao daoC= new CarritoDao(con);
+         int user=(Integer)carrito1.get("idUsuario");
         
-        carrito=daoC.getAll();
-        System.out.println("listaaaaaaaaaaaa: "+carrito.size());
+        carrito=daoC.getAllUser(user);
+        System.out.println("tam de la lista: "+carrito.size());
         
         return SUCCESS;
     }
@@ -192,6 +194,14 @@ public class Compras extends ActionSupport {
 
     public void setCantidadHidden(int cantidadHidden) {
         this.cantidadHidden = cantidadHidden;
+    }
+
+    public List<CarritoBean> getCarrito() {
+        return carrito;
+    }
+
+    public void setCarrito(List<CarritoBean> carrito) {
+        this.carrito = carrito;
     }
 
 }

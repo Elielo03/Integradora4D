@@ -30,7 +30,7 @@
                                 <%
                                     if ((Integer) objetosSesion1.get("tipo") == 4) {
                                 %>
-                                <a href="<s:url action="readCarrito"/>" class="btn btn-primary btn-block btn-sm">Carrito</a>
+                                <a href="<s:url action="readCarrito_1"/>" class="btn btn-primary btn-block btn-sm">Carrito</a>
                                 <%
                                     }
                                 %>
