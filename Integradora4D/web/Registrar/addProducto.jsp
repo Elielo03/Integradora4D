@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <title>JSP Page</title>
+        <title>Producto</title>
     </head>
     <body>
         <div class="form-group">
@@ -89,7 +89,7 @@
         
             <label class="col-md-4 control-label" for="departamento.idDepartamento">Categoria</label>
             <div class="col-md-4">
-          <s:select name="idCategoria"   label="Seleccionar una Categoria" list="categorias" listValue="nombre"
+          <s:select name="categoria.idCategoria"   label="Seleccionar una Categoria" list="categorias" listValue="nombre"
                       listKey="idCategoria" cssClass="form-control"></s:select>
                  
              

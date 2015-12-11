@@ -44,6 +44,16 @@ public class Departamento  extends ActionSupport{
           
     }
     
+    public String getActive(){
+        
+        DepartamentoDao dao= new DepartamentoDao(con);
+        departamentos=dao.getAllActive();
+        departamento=dao.get(idDepartamento);
+        
+        
+        return SUCCESS;
+    }
+    
     public boolean add(){
        
         DepartamentoDao dao = new DepartamentoDao(con);
