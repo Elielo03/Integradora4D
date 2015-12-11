@@ -14,10 +14,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-        <title>JSP Page</title>
+        <title>Categoria</title>
     </head>
     <body>
-        <h1>Categoria</h1>
+        
+        <div class="container">
+            <h1>Categoria</h1>
 
         <s:form action="addCategoria" cssClass="form-horizontal" theme="simple">      
 
@@ -40,19 +42,20 @@
                 <s:select id="departamento.idDepartamento" name="departamento.idDepartamento" 
                           list="departamentos" listValue="nombre" listKey="idDepartamento" cssClass="form-control"></s:select>
                    
-               
+               <s:submit id="singlebutton" value="Guardar" name="singlebutton" cssClass="btn btn-primary" theme="simple"></s:submit>
             </div>
+            
+            
        
 
         <!-- Button -->
        
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="singlebutton"></label>
-            <div class="col-md-4">
-            <s:submit id="singlebutton" value="Guardar" name="singlebutton" cssClass="btn btn-primary"></s:submit>
-            </div>
-            </div>
-
+        
+            
+                
+                    
+              
+        </div>
            
     </s:form>
 

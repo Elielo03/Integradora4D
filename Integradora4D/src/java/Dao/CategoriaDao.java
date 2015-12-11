@@ -76,7 +76,7 @@ public class CategoriaDao extends DaoAbstract<CategoriaBean>{
             PreparedStatement ps =con.prepareStatement(query);
             
             ps.setString(1, bean.getNombre());
-          ps.setBoolean(2, bean.isEstado());
+          ps.setString(2, ""+bean.isEstado());
             ps.setInt(3,bean.getDepartamento().getIdDepartamento());
             ps.setInt(4, bean.getIdCategoria());
             if(ps.executeUpdate()>=1){

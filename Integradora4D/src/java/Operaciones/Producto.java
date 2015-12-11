@@ -35,6 +35,7 @@ public class Producto  extends ActionSupport{
     List<CategoriaBean> categorias=new ArrayList<>();
     List<ProductoBean> productos=new ArrayList<>();
     ProductoBean bean =new ProductoBean();
+    CategoriaBean categoria= new CategoriaBean();
     Connection con;
     int idProducto;
     int idCategoria;
@@ -68,6 +69,11 @@ public class Producto  extends ActionSupport{
         
         categorias=daoC.getAllActive();
         productos=daoP.getAllActive();
+        bean=daoP.get(idProducto);
+        
+        
+        categoria=bean.getCategoria();
+        
         
         return SUCCESS;
     }
@@ -78,10 +84,6 @@ public class Producto  extends ActionSupport{
          CategoriaBean categoria = new CategoriaBean();
         
          addImagen();
-        
-         
-         
-      
         
        categoria= daoC.get(idCategoria);
         
@@ -96,19 +98,21 @@ public class Producto  extends ActionSupport{
     
     public boolean update() throws IOException{
         ProductoDao dao= new ProductoDao(con);
-        bean= dao.get(bean.getIdProducto());
+        CategoriaDao daoC=new CategoriaDao(con);
         
-        if(url!=bean.getImagen()){
+        
+        
+        
+        
+        if(!url.equals(bean.getImagen())){
             return dao.update(bean);
         }else{
-            
             addImagen();
-            
         }
-        
-        
         return dao.update(bean);
     }
+    
+    
     public String updateEstado(){
         ProductoDao dao= new ProductoDao(con);
         bean= dao.get(idProducto);
@@ -142,6 +146,7 @@ public class Producto  extends ActionSupport{
         }
 
         if (update()) {
+            
 
             return SUCCESS;
         }
@@ -244,6 +249,14 @@ public class Producto  extends ActionSupport{
 
     public void setIdCategoria(int idCategoria) {
         this.idCategoria = idCategoria;
+    }
+
+    public CategoriaBean getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(CategoriaBean categoria) {
+        this.categoria = categoria;
     }
     
     
