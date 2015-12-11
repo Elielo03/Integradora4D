@@ -35,7 +35,7 @@
 
 
                     %>
-                    <li class="dropdown" style="padding-top: 8px; ">
+                    <li class="dropdown" style="padding-top: 8px; padding-right: 5px; ">
                         <div class="btn-group btn-group-warning">
                             <button class="btn btn-otro" type="button">Dapartamentos</button>
                             <button data-toggle="dropdown" class="btn btn-otro dropdown-toggle" type="button"><span class="caret"></span>
@@ -56,6 +56,7 @@
                             </ul>
                         </div>
                     </li>
+
 
                     <%                        }
                         if (objetosSesion.get("estado") != null) {
@@ -149,6 +150,14 @@
                                 <li><a href="<s:url action="LlenarPersona"/>">Consultar</a></li>         
 
                             </ul>
+                        </div>
+                    </li>
+                    <%
+                    } else if ((Integer) objetosSesion.get("tipo") == 4) {
+                    %>
+                    <li class="dropdown" style="padding-top: 8px; padding-right: 5px; ">
+                        <div class="btn-group btn-group-warning">
+                            <a href="<s:url action="compras"/>">Compras temporal</a>        
                         </div>
                     </li>
                     <%
